@@ -31,13 +31,13 @@ void loadGame(){
 
 void closeGame(){
     int r, cnt = 5, n = 30;
-    gotoXY(36,14);
+    gotoXY(40, 20);
     printf("SHUTTING DOWN...");
     for(r=1;r<=20;r++){
         gotoXY(n, 15);
         Sleep(100);
         printf("%c", 177);
-        gotoXY(51, 15);
+        gotoXY(60, 16);
         printf("%3d/100", cnt);
         cnt += 5;
         n++;
