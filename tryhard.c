@@ -5,7 +5,6 @@
 #include <time.h>
 #include <windows.h>
 
-
 #include "TextSettings.h"
 #include "Initializer.h"
 #include "DrawPieces.h"
