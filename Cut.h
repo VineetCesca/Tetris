@@ -8,8 +8,8 @@ int intro(){
         printTitle("WELCOME TO TETRIS GAME");
         printGameMenu();
         saltaRighe(1);
-        printf("Select an option(0, 1, 2): ");
-    }while( ( (scanf("%d%c", &opt, &c) != 2 || c != '\n') && clean_stdin() == 1 ) || opt < 0 || opt > 2);
+        printf("Select an option(0, 1, 2, 3): ");
+    }while( ( (scanf("%d%c", &opt, &c) != 2 || c != '\n') && clean_stdin() == 1 ) || opt < 0 || opt > 3);
 
     return opt;
 
@@ -64,7 +64,7 @@ void selectProcess(int avaiblep[6], int dim, int *selectedSM, int *rotation,
     saltaRighe(1);
     printAvaiblePieces(avaiblep, dim);
     saltaRighe(1);
-    printLegendaAllPieces(width, height);
+    printLegendaAllPieces(width, height, "blue");
     *selectedSM = selectPiece(avaiblep, dim); /*T = 0  Z = 1 I = 2  L = 3  Lr = 4  O = 5 */
     *rotation = selectRotation();
     *drawn = drawSelected(map, width, height, x, y, *selectedSM, *rotation);
@@ -282,7 +282,7 @@ int movePiece(int map[15][10], int width, int height, int x, int y, int selected
         while(esc == 0){
             
             introSDynamic(map, width, height, "blue", *score);
-            printMoveMenu(x, y);
+            printMoveMenu(x, y, "blue");
 
             while(!kbhit()){
                 sy = getLastCoords(y, selectedSM, rotation);

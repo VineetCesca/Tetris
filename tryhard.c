@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <time.h>
 #include <stdlib.h>
 #include <conio.h>
 #include <time.h>
@@ -61,6 +60,22 @@ int main(void){
         if(opt == 2){
             setcolorText("red", 1);
             opt = 0;
+        }
+
+        if(opt== 3){
+            system("cls");
+            setCursor(&x, &y, 0, 0);
+            printMoveMenu(x, y, "blue");            
+            saltaRighe(4);
+            gotoXY(0, 24);
+            printLegendaPieces();
+            saltaRighe(4);
+            printLegendaAllPieces(width, height, "blue");
+            gotoXY(0, 17);
+            centerText(100);
+            printf("ENTER ANYTHING TO GO BACK TO THE MENU: ");
+            getch();
+            setcolorText("white", 1);
         }
 
         if(opt == 0){

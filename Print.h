@@ -61,6 +61,7 @@ void printTitle(char *title){
 void printGameMenu(){
     printf("1 - SINGLE PLAYER\n");
     printf("2 - MULTIPLAYER\n");
+    printf("3 - GAME INSTRUCTIONS\n");
     printf("0 - QUIT\n");
 }
 
@@ -87,6 +88,7 @@ void printAvaiblePieces(int *pieces, int dim){ /* perchè stamparli tutti se te 
 }
 
 void printLegendaPieces(){
+    setcolorText("blue", 1);
     printf("0 - ");
     setcolorText("green", 1);
     printf("T\n");
@@ -113,7 +115,7 @@ void printLegendaPieces(){
     setcolorText("blue", 1);
 }
 
-void printLegendaAllPieces(int width, int height){ /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
+void printLegendaAllPieces(int width, int height, char *colorMode){ /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
     int i, j, k;
     int gx = 28, gy = 25;
     int f;
@@ -142,6 +144,7 @@ void printLegendaAllPieces(int width, int height){ /* T = 0  Z = 1  I = 2  L = 3
         }
     }
 
+    setcolorText(colorMode, 1);
     for(i = 0; i < 4; i++){
         gotoXY(gx - 11, 25 + i*4);
         printf("ROTATION: %d", i);
@@ -255,10 +258,17 @@ void printLegendaAllPieces(int width, int height){ /* T = 0  Z = 1  I = 2  L = 3
     setcolorText("blue", 1);
 }
 
-void printMoveMenu(int x, int y){
-    printf("USE THE A-S-D KEYS TO MOVE THE PIECE AROUND THE MAP \n\n");
-    printf("ENTER Q or q TO QUIT AND SET THE PIECE AT X:%d Y:%d POSITION \n\n", x, y);
-    printf("ENTER W or 0-1-2-3 TO CHANGE THE PIECE ROTATION \n", x, y);
+void printMoveMenu(int x, int y, char *colorMode){
+    setcolorText(colorMode, 1);
+    centerText(100);
+    printf("USE THE A-D KEYS TO MOVE THE PIECE AROUND THE MAP \n\n");
+    centerText(100);
+    printf("USE THE W KEY TO ROTATE THE PIECE \n\n");
+    centerText(100);
+    printf("USE 0-1-2-3 TO SET THE EXACT ROTATION \n\n", x, y);
+    centerText(100);
+    printf("ENTER Q TO QUIT AND SET THE PIECE AT X:%d Y:%d POSITION \n\n", x, y);
+
 }
 
 void printScore(int score){
