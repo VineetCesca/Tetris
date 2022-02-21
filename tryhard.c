@@ -51,7 +51,7 @@ int main(void){
                 selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y);
                 saltaRighe(2);
                 winning = movePiece(map, width, height, x, y, selectedSM, rotation, &released, &score);
-
+                checkWin(avaiblep, dim, &won);
             }while(winning != 0 && !won);
 
             setcolorText("white", 1); 
@@ -65,6 +65,8 @@ int main(void){
         if(opt== 3){
             system("cls");
             setCursor(&x, &y, 0, 0);
+            setcolorText("white", 1);
+            printTitle("GAME INSTRUCTIONS\n");
             printMoveMenu(x, y, "blue");            
             saltaRighe(4);
             gotoXY(0, 24);

@@ -260,6 +260,16 @@ void printLegendaAllPieces(int width, int height, char *colorMode){ /* T = 0  Z 
 
 void printMoveMenu(int x, int y, char *colorMode){
     setcolorText(colorMode, 1);
+    printf("HOW TO SELECT THE PIECE: \n\n");
+    printf("   1- SELECT THE PIECE SHAPE TYPE: \n");
+    centerText(100);
+    printf("EACH LETTER IS ABBINED WITH A NUMBER: \n");
+    centerText(100);
+    printf(" T = 0, Z = 1,  I = 2, L = 3,  Lr = 4,  O = 5\n\n");
+    printf("   2- SELECT THE PIECE ROTATION: \n");
+    centerText(100);
+    printf("YOU CAN CHOOSE A ROTATION FROM 0 TO 3\n\n");
+    printf("HOW TO MOVE THE PIECE: \n\n");
     centerText(100);
     printf("USE THE A-D KEYS TO MOVE THE PIECE AROUND THE MAP \n\n");
     centerText(100);

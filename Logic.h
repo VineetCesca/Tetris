@@ -225,6 +225,19 @@ void updateScoreSM(int map[15][10], int width, int height, int *score){
         *score += count;
     }
 }
+
+void checkWin(int avaiblep[6], int dim, int *won){
+    int i;
+    int count = 0;
+    for(i = 0; i < dim; i++){
+        if(avaiblep[i] == 0){
+            count++;
+        }
+    }
+    if(count == dim){
+        *won = 1;
+    }
+}
    
    
    
