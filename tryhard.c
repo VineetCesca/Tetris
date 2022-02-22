@@ -18,22 +18,23 @@ int main(void){
     
     int i, j;
     int map[15][10];
+    int map1[5][10];
     int height, width;
     height = 15;
     width = 10;
-    int winning;
-    int x, y;
+    int winning, winning1;
+    int x, y, x1, y1;
     int opt, singleopt, multiopt;
-    int avaiblep[6];
+    int avaiblep[6], avaiblep1[6];
     int dim;
     dim = 6; /* T, I, O, Z, L, Lr */
-    int selectedSM;
-    selectedSM;
-    int rotation;
-    int drawn;
-    int released = 0;
-    int score;
-    int won = 0;
+    int selectedSM, selectedMP;
+    int rotation, rotation1;
+    int drawn, drawn1;
+    int released = 0, released1 = 0;
+    int score, score1;
+    int won = 0, won1;
+
 
     loadGame();
 
@@ -58,8 +59,29 @@ int main(void){
         }
 
         if(opt == 2){
-            setcolorText("red", 1);
-            opt = 0;
+            multiopt = whoEnemy();
+            
+            if(multiopt != 0){ /* p1 vs pc? p1 vs p2?*/
+
+                initGame(map, width, height, avaiblep, dim);
+                initGame(map1, width, height, avaiblep1, dim);
+                setCursor(&x, &y, 4, 0);
+                setCursor(&x1, &y1, 4, 0);
+                initScore(&score);
+                initScore(&score1);
+
+                if(multiopt == 1){
+
+                } else if(multiopt == 2){
+                    do{
+                        introMP2(map, map1, width, height, "red", score, score1);
+                        Sleep(10000);
+                    }while(!winning && !winning1 && !won && !won1);
+                }
+
+            }
+             
+            setcolorText("white", 1);
         }
 
         if(opt== 3){

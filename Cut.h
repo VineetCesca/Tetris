@@ -32,7 +32,7 @@ int introS(int map[15][10], int width, int height, char *colorMode){
         system("cls");
         printTitle("SINGLE MODE");
         saltaRighe(2);
-        printMapColor(map, width, height, "green", colorMode);
+        printMapColor(map, width, height, "green", colorMode, 100);
         printSModeOptions();
         saltaRighe(1);
         printf("Select an option (0, 1, 2): ");
@@ -45,9 +45,23 @@ void introSDynamic(int map[15][10], int width, int height, char* colorMode, int 
     system("cls");
     printTitle("SINGLE MODE");
     saltaRighe(2);
-    printMapColor(map, width, height, "green", colorMode);
+    printMapColor(map, width, height, "green", colorMode, 100);
     saltaRighe(2);
-    printScore(score);
+    printScore(score, colorMode, 3);
+    gotoXY(0, 25);
+}
+
+void introMP2(int map[15][10], int map1[15][10], int width, int height, char* colorMode, int score, int score1){
+    setcolorText(colorMode, 1);
+    system("cls");
+    printTitle("MULTIPLAYER MODE");
+    saltaRighe(2);
+    /*printMapColor(map, width, height, "yellow", colorMode, 80);
+    printMapColor(map1, width, height, "purple", colorMode, 115);*/
+    printMaps(map, map1, width, height, "yellow", "purple", colorMode);
+    saltaRighe(2);
+    printScore(score, "yellow", 3);
+    printScore(score1, "purple", 5);
     gotoXY(0, 25);
 }
 
@@ -71,7 +85,7 @@ void selectProcess(int avaiblep[6], int dim, int *selectedSM, int *rotation,
     printf("drawn = %d\n", *drawn);
     Sleep(1000);
     updateAvPieces(avaiblep, *selectedSM, *drawn);
-    printMapColor(map, width, height, "green", "blue");
+    printMapColor(map, width, height, "green", "blue", 100);
 }
 
 int avoidPieces(int map[15][10], int x, int sy, int selected, int rotation){
@@ -279,10 +293,10 @@ int movePiece(int map[15][10], int width, int height, int x, int y, int selected
         int esc = 0;
         int tempo;
         *released = 0;
+
         while(esc == 0){
             
             introSDynamic(map, width, height, "blue", *score);
-            printMoveMenu(x, y, "blue");
 
             while(!kbhit()){
                 sy = getLastCoords(y, selectedSM, rotation);
@@ -353,7 +367,7 @@ int movePiece(int map[15][10], int width, int height, int x, int y, int selected
 
             
             winning = drawSelected(map, width, height, x, y, selectedSM, rotation);
-            printMapColor(map, width, height, "green", "blue");
+            printMapColor(map, width, height, "green", "blue", 100);
 
             if(!winning){
                 system("cls");

@@ -238,6 +238,17 @@ void checkWin(int avaiblep[6], int dim, int *won){
         *won = 1;
     }
 }
+
+int whoEnemy(){
+
+    int p;
+    char c;
+    do{
+        system("cls");
+        printf("How many players? (0, 1, 2): ");
+    }while( ( (scanf("%d%c", &p, &c) != 2 || c != '\n') && clean_stdin() == 1 ) || p < 0 || p > 2);
+    
+}
    
    
    

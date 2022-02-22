@@ -15,16 +15,46 @@ void printMap(int map[15][10], int width, int height){
     saltaRighe(3);
 }
 
-void printMapColor(int map[15][10], int width, int height, char *color1, char *color0){
+void printMapColor(int map[15][10], int width, int height, char *color1, char *color0, int center){
     int i, j;
     for(i = 0; i < height; i++){
-        centerText(100);
+        centerText(center);
         for(j = 0; j < width; j++){
             if(j == 0 || j == width - 1 || i == height - 1){
                 setcolorText(color0, 1);
                 printf("%d ", map[i][j]);
             } else if(map[i][j] == 1){
                 setcolorText(color1, 1);
+                printf("%d ", map[i][j]);
+            } else {
+                printf("  ");
+            }
+        }
+        printf("\n");
+    }
+    setcolorText(color0, 1);
+    saltaRighe(3);
+}
+
+void printMaps(int map[15][10], int map1[15][10], int width, int height, char *color1, char *color2, char *color0){
+    int i, j;
+    for(i = 0; i < height; i++){
+        for(j = 0; j < width; j++){
+            if(j == 0 || j == width - 1 || i == height - 1){
+                setcolorText(color0, 1);
+                gotoXY(40 + j*2, 7 + i);
+                printf("%d ", map[i][j]);
+                /* second map */
+                gotoXY(70 + j*2, 7 + i);
+                printf("%d ", map[i][j]);
+
+            } else if(map[i][j] == 1){
+                setcolorText(color1, 1);
+                gotoXY(40 + j*2, 7 + i);
+                printf("%d ", map[i][j]);
+                /* second map */
+                setcolorText(color2, 1);
+                gotoXY(70 + j*2, 7 + i);
                 printf("%d ", map[i][j]);
             } else {
                 printf("  ");
@@ -281,9 +311,9 @@ void printMoveMenu(int x, int y, char *colorMode){
 
 }
 
-void printScore(int score){
-    gotoXY(100, 3);
-    setcolorText("green", 1);
+void printScore(int score, char *colorMode, int y){
+    gotoXY(100, y);
+    setcolorText(colorMode, 1);
     printf("SCORE: %d", score);
     setcolorText("blue", 1);
 }
