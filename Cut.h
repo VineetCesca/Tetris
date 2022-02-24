@@ -45,9 +45,22 @@ void introSDynamic(int map[15][10], int width, int height, char* colorMode, int 
     system("cls");
     printTitle("SINGLE MODE");
     saltaRighe(2);
-    printMapColor(map, width, height, "green", colorMode, 100);
+    printMapColor(map, width, height, "green", colorMode, 103);
     saltaRighe(2);
-    printScore(score, colorMode, 3);
+    printScore(score, "green", 3);
+    gotoXY(0, 25);
+}
+
+void introMPDynamic(int map[15][10], int width, int height, char *colorPiece, char* colorMode, int score, int center){
+    setcolorText(colorMode, 1);
+    system("cls");
+    printTitle("MULTIPLAYER MODE");
+    saltaRighe(2);
+    /*printMapColor(map, width, height, "yellow", colorMode, 80);
+    printMapColor(map1, width, height, "purple", colorMode, 115);*/
+    printMapColor(map, width, height, colorPiece, colorMode, center);
+    saltaRighe(2);
+    printScore(score, colorPiece, 3);
     gotoXY(0, 25);
 }
 
@@ -55,14 +68,15 @@ void introMP2(int map[15][10], int map1[15][10], int width, int height, char* co
     setcolorText(colorMode, 1);
     system("cls");
     printTitle("MULTIPLAYER MODE");
-    saltaRighe(2);
+    
     /*printMapColor(map, width, height, "yellow", colorMode, 80);
     printMapColor(map1, width, height, "purple", colorMode, 115);*/
     printMaps(map, map1, width, height, "yellow", "purple", colorMode);
-    saltaRighe(2);
+    
     printScore(score, "yellow", 3);
     printScore(score1, "purple", 5);
     gotoXY(0, 25);
+    
 }
 
 void updateAvPieces(int avaiblep[6], int selectedSM, int drawn){
@@ -72,21 +86,23 @@ void updateAvPieces(int avaiblep[6], int selectedSM, int drawn){
 }
 
 void selectProcess(int avaiblep[6], int dim, int *selectedSM, int *rotation, 
-                   int *drawn, int map[15][10], int width, int height, int x, int y){
+                   int *drawn, int map[15][10], int width, int height, int x, int y,
+                   char *colorMode, char *colorPiece){
     saltaRighe(1);
-    printLegendaPieces();
+    printLegendaPieces(colorMode, colorPiece);
     saltaRighe(1);
-    printAvaiblePieces(avaiblep, dim);
+    printAvaiblePieces(avaiblep, dim, colorMode, colorPiece);
     saltaRighe(1);
-    printLegendaAllPieces(width, height, "blue");
-    *selectedSM = selectPiece(avaiblep, dim); /*T = 0  Z = 1 I = 2  L = 3  Lr = 4  O = 5 */
-    *rotation = selectRotation();
+    printLegendaAllPieces(width, height, colorMode, colorPiece);
+    *selectedSM = selectPiece(avaiblep, dim, colorPiece); /*T = 0  Z = 1 I = 2  L = 3  Lr = 4  O = 5 */
+    *rotation = selectRotation(colorPiece);
     *drawn = drawSelected(map, width, height, x, y, *selectedSM, *rotation);
     printf("drawn = %d\n", *drawn);
     Sleep(1000);
     updateAvPieces(avaiblep, *selectedSM, *drawn);
-    printMapColor(map, width, height, "green", "blue", 100);
+    gotoXY(0, 25);
 }
+
 
 int avoidPieces(int map[15][10], int x, int sy, int selected, int rotation){
 
@@ -282,6 +298,25 @@ void fallDown(int map[15][10], int width, int height, int x, int y, int sy, int 
     } while(sy < height - 2);
 }
 
+void fallDownMP(int map[15][10], int width, int height, int x, int y, int sy, int selected, int rotation, int *score, char *colorPiece, char *colorMode, int center){
+     /* servono le coordinate x e y dell'ultima riga di 1 del pezzo considerato */
+    do{
+        if(sy < height - 2 && avoidPieces(map, x, sy, selected, rotation) == 1){ 
+        /* devi capire che tu stai permettendo al pezzo di scendere anche 
+        se è nell'ultima posizione possibile (height - 1) mentre se dici di mandare giù nella
+        penultima sei apposto */
+            updateScoreMP2(map, width, height, score);
+            introMPDynamic(map, width, height, colorPiece, colorMode, *score, center);
+            movebackSelected(map, width, height, x, y, selected, rotation);
+            drawSelected(map, width, height, x, y + 1, selected, rotation);
+        } else {
+            return;
+        }
+        y++;
+        sy++;
+    } while(sy < height - 2);
+}
+
 
 
 int movePiece(int map[15][10], int width, int height, int x, int y, int selectedSM, int rotation, int *released, int *score){
@@ -368,6 +403,109 @@ int movePiece(int map[15][10], int width, int height, int x, int y, int selected
             
             winning = drawSelected(map, width, height, x, y, selectedSM, rotation);
             printMapColor(map, width, height, "green", "blue", 100);
+
+            if(!winning){
+                system("cls");
+                setcolorText("red", 1);
+                printTitle("COLLISION! GAME OVER!\n");
+                Sleep(1500);
+                setcolorText("white", 0);
+                return 0;
+            }
+            //getch();
+        }
+
+        return 1;
+
+    } else{
+        printf("YOU NEED TO SELECT A PIECE BEFORE MOVING IT..\n");
+    }
+}
+
+int movePieceMP(int map[15][10], int width, int height, int x, int y, int selectedMP, int rotation, int *released, int *score, 
+                char *colorMode, char *colorPiece, int center){
+
+    int winning = 1;
+    int sy;
+    if(selectedMP >= 0 && selectedMP <= 5){
+        char key;
+        int esc = 0;
+        int tempo;
+        *released = 0;
+
+        while(esc == 0){
+
+            introMPDynamic(map, width, height, colorPiece, colorMode, *score, center);            
+
+            while(!kbhit()){
+                sy = getLastCoords(y, selectedMP, rotation);
+                if(sy < height - 2 && avoidPieces(map, x, sy, selectedMP, rotation) == 1){
+                    delay(0.300); /* handle timing fall */
+                    updateScoreMP2(map, width, height, score);
+                    introMPDynamic(map, width, height, colorPiece, colorMode, *score, center);  
+                    movebackSelected(map, width, height, x, y, selectedMP, rotation);
+                    y++;
+                    drawSelected(map, width, height, x, y, selectedMP, rotation);
+                } else if(avoidPieces(map, x, sy, selectedMP, rotation) == 0){
+                    gotoXY(100, 5);
+                    printf("\n ENTER Q TO FALL \n"); /* user can decide if move the piece
+                    before the final fall */
+                } else if(sy == height - 2){
+                    return 1;
+                }
+                
+            }
+  
+            key = getch();
+            saltaRighe(1);
+            movebackSelected(map, width, height, x, y, selectedMP, rotation); /* ERRORE DELLA COLLISIONE DIRETTA */
+
+            if(key == 'w'){ /* up arrow */
+                if(rotation < 3 && getLastCoords1(x, selectedMP, rotation + 1) 
+                    < width - 1 && getLastCoords(y, selectedMP, rotation + 1) < height - 1){
+                    rotation++;
+                } else if(rotation == 3 && getLastCoords1(x, selectedMP, 0) < width - 1
+                           && getLastCoords(y, selectedMP, 0) < height - 1){
+                    rotation = 0;
+                } else { /* se vuole ruotarlo quando è vicino ai bordi della mappa, si sposta finchè può */
+                    y--;
+                    x--;
+                }
+                
+            } else if(key == 's' && getLastCoords(y, selectedMP, rotation) < height - 2){ /* down arrow */
+                y++;
+            } else if(key == 'a' && x > 1){ /* left arrow */
+                x--;
+            } else if(key == 'd' && getLastCoords1(x, selectedMP, rotation) < width - 2){ /* right arrow */
+                x++;
+            } else if(key == 'q' || key == 'Q'){
+                *released = 1;
+                sy = getLastCoords(y, selectedMP, rotation);
+                if(sy < height - 2 && avoidPieces(map, x, sy, selectedMP, rotation) == 1){
+                    fallDownMP(map, width, height, x, y, sy, selectedMP, rotation, score, colorPiece, colorMode, center);
+                } else{
+                    /* serve solo quando il pezzo è a terra oppure ha sotto altri pezzi: così non viene cancellato */
+                    drawSelected(map, width, height, x, y, selectedMP, rotation); 
+                }
+                
+                return 1;
+
+            } else if(key == '0' && getLastCoords1(x, selectedMP, 0) < width - 2
+                           && getLastCoords(y, selectedMP, 0) < height - 2){
+                rotation = 0;
+            } else if(key == '1' && getLastCoords1(x, selectedMP, 1) < width - 2
+                           && getLastCoords(y, selectedMP, 1) < height - 2){
+                rotation = 1;
+            } else if(key == '2' && getLastCoords1(x, selectedMP, 2) < width - 2
+                           && getLastCoords(y, selectedMP, 2) < height - 2){
+                rotation = 2;
+            } else if(key == '3' && getLastCoords1(x, selectedMP, 3) < width - 2
+                           && getLastCoords(y, selectedMP, 3) < height - 2){
+                rotation = 3;
+            }
+
+            winning = drawSelected(map, width, height, x, y, selectedMP, rotation);
+            printMapColor(map, width, height, colorPiece, colorMode, center);
 
             if(!winning){
                 system("cls");

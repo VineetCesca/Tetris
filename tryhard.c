@@ -18,7 +18,7 @@ int main(void){
     
     int i, j;
     int map[15][10];
-    int map1[5][10];
+    int map1[15][10];
     int height, width;
     height = 15;
     width = 10;
@@ -31,9 +31,13 @@ int main(void){
     int selectedSM, selectedMP;
     int rotation, rotation1;
     int drawn, drawn1;
-    int released = 0, released1 = 0;
+    int released, released1;
+    released = 0;
+    released1 = 0;
     int score, score1;
-    int won = 0, won1;
+    int won, won1;
+    won = 0; 
+    won1 = 0;
 
 
     loadGame();
@@ -49,8 +53,7 @@ int main(void){
                 released = 0;
                 updateScoreSM(map, width, height, &score);
                 introSDynamic(map, width, height, "blue", score);
-                selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y);
-                saltaRighe(2);
+                selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y, "blue", "green");
                 winning = movePiece(map, width, height, x, y, selectedSM, rotation, &released, &score);
                 checkWin(avaiblep, dim, &won);
             }while(winning != 0 && !won);
@@ -74,9 +77,38 @@ int main(void){
 
                 } else if(multiopt == 2){
                     do{
+
                         introMP2(map, map1, width, height, "red", score, score1);
-                        Sleep(10000);
-                    }while(!winning && !winning1 && !won && !won1);
+
+                        released = 0;
+
+                        updateScoreSM(map, width, height, &score);
+
+                        selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y, "red", "yellow");
+
+                        winning = movePieceMP(map, width, height, x, y, selectedSM, rotation, &released, &score, "red", "yellow", 80);
+
+                        introMP2(map, map1, width, height, "red", score, score1);
+
+                        updateScoreSM(map, width, height, &score);
+
+                        checkWin(avaiblep, dim, &won);
+
+                        released1 = 0;
+
+                        updateScoreSM(map1, width, height, &score1);
+
+                        selectProcess(avaiblep1, dim, &selectedMP, &rotation1, &drawn1, map1, width, height, x1, y1, "red", "purple");
+
+                        winning1 = movePieceMP(map1, width, height, x1, y1, selectedMP, rotation1, &released1, &score1, "red", "purple", 150);
+
+                        introMP2(map, map1, width, height, "red", score, score1);
+
+                        updateScoreSM(map1, width, height, &score);
+
+                        checkWin(avaiblep1, dim, &won1);
+
+                    }while( (winning1 != 0 && !won1) && (winning != 0 && !won));
                 }
 
             }
@@ -92,9 +124,9 @@ int main(void){
             printMoveMenu(x, y, "blue");            
             saltaRighe(4);
             gotoXY(0, 24);
-            printLegendaPieces();
+            printLegendaPieces("blue", "green");
             saltaRighe(4);
-            printLegendaAllPieces(width, height, "blue");
+            printLegendaAllPieces(width, height, "blue", "green");
             gotoXY(0, 17);
             centerText(100);
             printf("ENTER ANYTHING TO GO BACK TO THE MENU: ");
@@ -105,8 +137,10 @@ int main(void){
         if(opt == 0){
             system("cls");
             initMap(map, width, height);
+            initMap(map1, width, height);
             fillOne(map, width, height);
-            printMap2(map, width, height);
+            fillOne(map1, width, height);
+            printMaps(map, map1, width, height, "yellow", "purple", "red");
             setcolorText("white", 1);
             Sleep(1500);
             closeGame();

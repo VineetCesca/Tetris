@@ -46,17 +46,22 @@ void printMaps(int map[15][10], int map1[15][10], int width, int height, char *c
                 printf("%d ", map[i][j]);
                 /* second map */
                 gotoXY(70 + j*2, 7 + i);
-                printf("%d ", map[i][j]);
+                printf("%d ", map1[i][j]);
 
-            } else if(map[i][j] == 1){
-                setcolorText(color1, 1);
-                gotoXY(40 + j*2, 7 + i);
-                printf("%d ", map[i][j]);
+            } else if(map[i][j] == 1 || map1[i][j] == 1){
+                if(map[i][j] == 1){
+                    setcolorText(color1, 1);
+                    gotoXY(40 + j*2, 7 + i);
+                    printf("%d ", map[i][j]);
+                }
+
                 /* second map */
-                setcolorText(color2, 1);
-                gotoXY(70 + j*2, 7 + i);
-                printf("%d ", map[i][j]);
-            } else {
+                if(map1[i][j] == 1){
+                    setcolorText(color2, 1);
+                    gotoXY(70 + j*2, 7 + i);
+                    printf("%d ", map1[i][j]);
+                }
+            } else{
                 printf("  ");
             }
         }
@@ -101,15 +106,15 @@ void printSModeOptions(){
     printf("0 - Quit\n");
 }
 
-void printAvaiblePieces(int *pieces, int dim){ /* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */
+void printAvaiblePieces(int *pieces, int dim, char *colorMode, char *colorPiece){ /* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */
     int i;
     for(i = 0; i < dim; i++){
         if(pieces[i] > 0){
             
             printf("Piece %d : ", i);
-            setcolorText("green", 1);
+            setcolorText(colorPiece, 1);
             printf("%d\n", pieces[i]);
-            setcolorText("blue", 1);
+            setcolorText(colorMode, 1);
 
         } else {
             printf("Piece %d is not avaible! \n", i);
@@ -117,35 +122,35 @@ void printAvaiblePieces(int *pieces, int dim){ /* perchè stamparli tutti se te 
     }
 }
 
-void printLegendaPieces(){
-    setcolorText("blue", 1);
+void printLegendaPieces(char *colorMode, char *colorPiece){
+    setcolorText(colorMode, 1);
     printf("0 - ");
-    setcolorText("green", 1);
+    setcolorText(colorPiece, 1);
     printf("T\n");
-    setcolorText("blue", 1);
+    setcolorText(colorMode, 1);
     printf("1 - ");
-    setcolorText("green", 1);
+    setcolorText(colorPiece, 1);
     printf("Z\n");
-    setcolorText("blue", 1);
+    setcolorText(colorMode, 1);
     printf("2 - ");
-    setcolorText("green", 1);
+    setcolorText(colorPiece, 1);
     printf("I\n");
-    setcolorText("blue", 1);
+    setcolorText(colorMode, 1);
     printf("3 - ");
-    setcolorText("green", 1);
+    setcolorText(colorPiece, 1);
     printf("L\n");
-    setcolorText("blue", 1);
+    setcolorText(colorMode, 1);
     printf("4 - ");
-    setcolorText("green", 1);
+    setcolorText(colorPiece, 1);
     printf("Lr\n");
-    setcolorText("blue", 1);
+    setcolorText(colorMode, 1);
     printf("5 - ");
-    setcolorText("green", 1);
+    setcolorText(colorPiece, 1);
     printf("O\n");
-    setcolorText("blue", 1);
+    setcolorText(colorMode, 1);
 }
 
-void printLegendaAllPieces(int width, int height, char *colorMode){ /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
+void printLegendaAllPieces(int width, int height, char *colorMode, char *colorPiece){ /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
     int i, j, k;
     int gx = 28, gy = 25;
     int f;
@@ -179,7 +184,7 @@ void printLegendaAllPieces(int width, int height, char *colorMode){ /* T = 0  Z 
         gotoXY(gx - 11, 25 + i*4);
         printf("ROTATION: %d", i);
     }
-    setcolorText("green", 1);
+    setcolorText(colorPiece, 1);
     for(k = 0; k < 84; k += 14){
         initMap(map, width, height);
         if(k == 0){
@@ -285,7 +290,7 @@ void printLegendaAllPieces(int width, int height, char *colorMode){ /* T = 0  Z 
             } 
         }
     }
-    setcolorText("blue", 1);
+    setcolorText(colorMode, 1);
 }
 
 void printMoveMenu(int x, int y, char *colorMode){

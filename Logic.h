@@ -5,9 +5,10 @@ int checkAvaible(int *pieces, int dim, int selected){
     return 1; /* piece is avaible */
 }
 
-int selectPiece(int *pieces, int dim){
+int selectPiece(int *pieces, int dim, char *colorPiece){
     int selected;
     char c;
+    setcolorText(colorPiece, 1);
     do{
         printf("Select a piece (0, 1, 2, 3, 4, 5): "); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
     }while( ( (scanf("%d%c", &selected, &c) != 2 || c != '\n') && clean_stdin() == 1 ) || selected < 0 || selected > 5);
@@ -18,9 +19,10 @@ int selectPiece(int *pieces, int dim){
     return selected;
 }
 
-int selectRotation(){
+int selectRotation(char *colorPiece){
     int r;
     char c;
+    setcolorText(colorPiece, 1);
     do{
         printf("Select a rotation (0, 1, 2, 3): ");
     } while(  ( (scanf("%d%c", &r, &c) != 2 || c != '\n') && clean_stdin() == 1 ) || r < 0 || r > 3);
@@ -224,6 +226,29 @@ void updateScoreSM(int map[15][10], int width, int height, int *score){
         FallAll(map, width, height);
         *score += count;
     }
+}
+
+void updateScoreMP2(int map[15][10], int width, int height, int *score){
+    int count = countRows(map, width, height);
+    if(count == 0){
+        return;
+    } else if(count == 1){
+        FallAll(map, width, height);
+        *score += 1;
+    } else if(count == 2){
+        FallAll(map, width, height);
+        *score += 3;
+    } else if(count == 3){
+        FallAll(map, width, height);
+        *score += 6;
+    } else if(count == 4){
+        FallAll(map, width, height);
+        *score += 12;
+    } else {
+        FallAll(map, width, height);
+        *score += count;
+    }
+    /* aggiungi le cose dalla consegna del progetto nel pdf */
 }
 
 void checkWin(int avaiblep[6], int dim, int *won){

@@ -11,33 +11,33 @@ void gotoXY(int x, int y){
 }
 
 void loadGame(){
-    int r, cnt = 5, n = 30;
-    gotoXY(36,14);
+    int r, cnt = 5, n = 60, m = n;
+    gotoXY(n + 5, 25);
     printf("LOADING...");
     for(r=1;r<=20;r++){
-        gotoXY(n, 15);
+        gotoXY(n, 26);
         Sleep(100);
         printf("%c", 177);
-        gotoXY(51, 15);
+        gotoXY(n + 5, 27);
         printf("%3d/100", cnt);
         cnt += 5;
         n++;
     }
     
-    gotoXY(30, 19);
+    gotoXY(m + 2, 30);
     printf("Enter anything to play \n");  
     getch();
 }
 
 void closeGame(){
-    int r, cnt = 5, n = 30;
-    gotoXY(40, 20);
+    int r, cnt = 5, n = 60;
+    gotoXY(n + 2, 25);
     printf("SHUTTING DOWN...");
     for(r=1;r<=20;r++){
-        gotoXY(n, 15);
+        gotoXY(n, 26);
         Sleep(100);
         printf("%c", 177);
-        gotoXY(60, 16);
+        gotoXY(n + 5, 27);
         printf("%3d/100", cnt);
         cnt += 5;
         n++;
