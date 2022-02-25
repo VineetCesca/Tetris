@@ -78,33 +78,25 @@ int main(void){
                 } else if(multiopt == 2){
                     do{
 
-                        introMP2(map, map1, width, height, "red", score, score1);
+                        introMP2(map, map1, width, height, "red", score, score1, "yellow", "purple");
 
                         released = 0;
-
-                        updateScoreSM(map, width, height, &score);
 
                         selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y, "red", "yellow");
 
                         winning = movePieceMP(map, width, height, x, y, selectedSM, rotation, &released, &score, "red", "yellow", 80);
 
-                        introMP2(map, map1, width, height, "red", score, score1);
-
-                        updateScoreSM(map, width, height, &score);
+                        introMP2(map, map1, width, height, "red", score, score1,  "yellow", "purple");
 
                         checkWin(avaiblep, dim, &won);
 
                         released1 = 0;
 
-                        updateScoreSM(map1, width, height, &score1);
-
                         selectProcess(avaiblep1, dim, &selectedMP, &rotation1, &drawn1, map1, width, height, x1, y1, "red", "purple");
 
                         winning1 = movePieceMP(map1, width, height, x1, y1, selectedMP, rotation1, &released1, &score1, "red", "purple", 150);
 
-                        introMP2(map, map1, width, height, "red", score, score1);
-
-                        updateScoreSM(map1, width, height, &score);
+                        introMP2(map, map1, width, height, "red", score, score1,  "yellow", "purple");
 
                         checkWin(avaiblep1, dim, &won1);
 

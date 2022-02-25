@@ -92,53 +92,53 @@ void movebackSelected(int map[15][10], int width, int height, int x, int y, int 
     /*rotation = 0 1 2 3 */
     if(selected == 0){
         if(rotation == 0){
-            movebackT(map, width, height, x, y, 0, 0, 0);
+            deleteT(map, width, height, x, y);
         } else if(rotation == 1){
-            movebackT1(map, width, height, x, y, 0, 0, 0);
+            deleteT1(map, width, height, x, y);
         } else if(rotation == 2){
-            movebackT2(map, width, height, x, y, 0, 0, 0);
+            deleteT2(map, width, height, x, y);
         } else if(rotation == 3){
-            movebackT3(map, width, height, x, y, 0, 0, 0);
+            deleteT3(map, width, height, x, y);
         }
     } else if(selected == 1){
         if(rotation == 0){
-            movebackZ(map, width, height, x, y, 0, 0, 0);
+            deleteZ(map, width, height, x, y);
         } else if(rotation == 1){
-            movebackZ1(map, width, height, x, y, 0, 0, 0);
+            deleteZ1(map, width, height, x, y);
         } else if(rotation == 2){
-            movebackZ2(map, width, height, x, y, 0, 0, 0);
+            deleteZ2(map, width, height, x, y);
         } else if(rotation == 3){
-            movebackZ3(map, width, height, x, y, 0, 0, 0);
+            deleteZ3(map, width, height, x, y);
         }
     } else if(selected == 2){
         if(rotation == 0 || rotation == 2){
-            movebackI(map, width, height, x, y, 0, 0, 0);
+            deleteI(map, width, height, x, y);
         } else if(rotation == 1 || rotation == 3){
-            movebackI1(map, width, height, x, y, 0, 0, 0);
+            deleteI1(map, width, height, x, y);
         }
     } else if(selected == 3){
         if(rotation == 0){
-            movebackL(map, width, height, x, y, 0, 0, 0);
+            deleteL(map, width, height, x, y);
         } else if(rotation == 1){
-            movebackL1(map, width, height, x, y, 0, 0, 0);
+            deleteL1(map, width, height, x, y);
         } else if(rotation == 2){
-            movebackL2(map, width, height, x, y, 0, 0, 0);
+            deleteL2(map, width, height, x, y);
         } else if(rotation == 3){
-            movebackL3(map, width, height, x, y, 0, 0, 0);
+            deleteL3(map, width, height, x, y);
         }
     } else if(selected == 4){
         if(rotation == 0){
-            movebackLr(map, width, height, x, y, 0, 0, 0);
+            deleteLr(map, width, height, x, y);
         } else if(rotation == 1){
-            movebackLr1(map, width, height, x, y, 0, 0, 0);
+            deleteLr1(map, width, height, x, y);
         } else if(rotation == 2){
-            movebackLr2(map, width, height, x, y, 0, 0, 0);
+            deleteLr2(map, width, height, x, y);
         } else if(rotation == 3){
-            movebackLr3(map, width, height, x, y, 0, 0, 0);
+            deleteLr3(map, width, height, x, y);
         }
     } else if(selected == 5){
         if(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3){
-            movebackO(map, width, height, x, y, 0, 0, 0);
+            deleteO(map, width, height, x, y);
         }
     }
 } 

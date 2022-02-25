@@ -56,9 +56,7 @@ void deleteT(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackT(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteT(map, width, height, x + moveright - moveleft, y + movedown);
-}
+
 
 /*   *   */
 /*  ***  */
@@ -103,9 +101,6 @@ void deleteT1(int map[15][10], int width, int height, int x, int y){  /* */
     }
 }
 
-void movebackT1(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){ /* ottimizziamo mettendo tutti i movimenti in unica move e poi lo stesso con le moveback */
-    deleteT1(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /*   +   */
 /*   ++   */
@@ -151,9 +146,6 @@ void deleteT2(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackT2(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteT2(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /*    +   */
 /*   ++   */
@@ -198,10 +190,6 @@ void deleteT3(int map[15][10], int width, int height, int x, int y){
             }
         }
     }
-}
-
-void movebackT3(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteT3(map, width, height, x + moveright - moveleft, y + movedown);
 }
 
 /* T, T1, T2, T3 */
@@ -258,9 +246,6 @@ void deleteZ(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackZ(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteZ(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /*    *
     * *
@@ -313,10 +298,6 @@ void deleteZ1(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackZ1(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteZ1(map, width, height, x + moveright - moveleft, y + movedown);
-}
-
 /*    * *
     * *     */
 
@@ -365,10 +346,6 @@ void deleteZ2(int map[15][10], int width, int height, int x, int y){
             }
         }
     }
-}
-
-void movebackZ2(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteZ2(map, width, height, x + moveright - moveleft, y + movedown);
 }
 
 /*  *
@@ -422,9 +399,6 @@ void deleteZ3(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackZ3(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteZ3(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* Z, Z1, Z2, Z3 */
 /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
@@ -474,9 +448,6 @@ void deleteI(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackI(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteI(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* 
     * * * *
@@ -519,9 +490,6 @@ void deleteI1(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackI1(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteI1(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* I, I1 */
 /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
@@ -576,9 +544,6 @@ void deleteL(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackL(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteL(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* 
     * * *
@@ -628,9 +593,6 @@ void deleteL1(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackL1(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteL1(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* 
     * *
@@ -681,9 +643,6 @@ void deleteL2(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackL2(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteL2(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* 
         *
@@ -733,9 +692,6 @@ void deleteL3(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackL3(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteL3(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* L, L1, L2, L3 */
 /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
@@ -789,9 +745,6 @@ void deleteLr(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackLr(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteLr(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* 
     *
@@ -841,9 +794,6 @@ void deleteLr1(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackLr1(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteLr1(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* 
     * *
@@ -894,9 +844,6 @@ void deleteLr2(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackLr2(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteLr2(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* 
     * * *
@@ -946,9 +893,6 @@ void deleteLr3(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackLr3(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteLr3(map, width, height, x + moveright - moveleft, y + movedown);
-}
 
 /* Lr, Lr1, Lr2, Lr3 */
 /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
@@ -998,7 +942,4 @@ void deleteO(int map[15][10], int width, int height, int x, int y){
     }
 }
 
-void movebackO(int map[15][10], int width, int height, int x, int y, int moveright, int moveleft, int movedown){
-    deleteO(map, width, height, x + moveright - moveleft, y + movedown);
-}
 

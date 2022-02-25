@@ -64,17 +64,19 @@ void introMPDynamic(int map[15][10], int width, int height, char *colorPiece, ch
     gotoXY(0, 25);
 }
 
-void introMP2(int map[15][10], int map1[15][10], int width, int height, char* colorMode, int score, int score1){
+void introMP2(int map[15][10], int map1[15][10], int width, int height, char* colorMode, int score, int score1,
+             char *color1, char *color2){
     setcolorText(colorMode, 1);
     system("cls");
     printTitle("MULTIPLAYER MODE");
     
     /*printMapColor(map, width, height, "yellow", colorMode, 80);
     printMapColor(map1, width, height, "purple", colorMode, 115);*/
-    printMaps(map, map1, width, height, "yellow", "purple", colorMode);
-    
-    printScore(score, "yellow", 3);
-    printScore(score1, "purple", 5);
+    updateScoreMP2(map, width, height, &score);
+    updateScoreMP2(map1, width, height, &score1);
+    printMaps(map, map1, width, height, color1, color2, colorMode);
+    printScore(score, color1, 3);
+    printScore(score1, color2, 5);
     gotoXY(0, 25);
     
 }
