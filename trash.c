@@ -66,7 +66,7 @@ int main(){
     printf("%s \n", asctime (loc_time));
     key = 's';
 
-    while(i < 15){
+    while(1){
 
         while(!kbhit()){
             i += 2;
@@ -78,6 +78,9 @@ int main(){
         key = getch();
 
         printf("%c ", key);
+
+
+        fflush(stdin);
     }
 
     return 0;

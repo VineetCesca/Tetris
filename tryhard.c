@@ -23,7 +23,7 @@ int main(void){
     height = 15;
     width = 10;
     int winning, winning1;
-    int x, y, x1, y1;
+    int x, y;
     int opt, singleopt, multiopt;
     int avaiblep[6], avaiblep1[6];
     int dim;
@@ -69,7 +69,6 @@ int main(void){
                 initGame(map, width, height, avaiblep, dim);
                 initGame(map1, width, height, avaiblep1, dim);
                 setCursor(&x, &y, 4, 0);
-                setCursor(&x1, &y1, 4, 0);
                 initScore(&score);
                 initScore(&score1);
 
@@ -78,27 +77,8 @@ int main(void){
                 } else if(multiopt == 2){
                     do{
 
-                        introMP2(map, map1, width, height, "red", score, score1, "yellow", "purple");
-
-                        released = 0;
-
-                        selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y, "red", "yellow");
-
-                        winning = movePieceMP(map, width, height, x, y, selectedSM, rotation, &released, &score, "red", "yellow", 80);
-
-                        introMP2(map, map1, width, height, "red", score, score1,  "yellow", "purple");
-
-                        checkWin(avaiblep, dim, &won);
-
-                        released1 = 0;
-
-                        selectProcess(avaiblep1, dim, &selectedMP, &rotation1, &drawn1, map1, width, height, x1, y1, "red", "purple");
-
-                        winning1 = movePieceMP(map1, width, height, x1, y1, selectedMP, rotation1, &released1, &score1, "red", "purple", 150);
-
-                        introMP2(map, map1, width, height, "red", score, score1,  "yellow", "purple");
-
-                        checkWin(avaiblep1, dim, &won1);
+                        gameTurn(map, map1, width, height, x, y, &score, &score1, &drawn, &drawn1, &rotation, &rotation1, &released, &released1, &selectedSM, 
+                                 &selectedMP, avaiblep, avaiblep1, dim, &won, &won1, &winning, &winning1, "red", "yellow", "purple");
 
                     }while( (winning1 != 0 && !won1) && (winning != 0 && !won));
                 }

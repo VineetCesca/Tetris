@@ -54,7 +54,7 @@ int main(void){
 
                 if(singleopt == 1){
                     
-                    selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y);                    
+                    selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y, "blue", "green");                    
                     released = 0;
 
                 } else if(singleopt == 2){

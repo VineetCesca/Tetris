@@ -355,6 +355,7 @@ int movePiece(int map[15][10], int width, int height, int x, int y, int selected
             }
   
             key = getch();
+
             saltaRighe(1);
             movebackSelected(map, width, height, x, y, selectedSM, rotation); /* ERRORE DELLA COLLISIONE DIRETTA */
 
@@ -401,8 +402,7 @@ int movePiece(int map[15][10], int width, int height, int x, int y, int selected
                            && getLastCoords(y, selectedSM, 3) < height - 2){
                 rotation = 3;
             }
-
-            
+            fflush(stdin);
             winning = drawSelected(map, width, height, x, y, selectedSM, rotation);
             printMapColor(map, width, height, "green", "blue", 100);
 
@@ -415,6 +415,7 @@ int movePiece(int map[15][10], int width, int height, int x, int y, int selected
                 return 0;
             }
             //getch();
+            
         }
 
         return 1;
@@ -436,8 +437,10 @@ int movePieceMP(int map[15][10], int width, int height, int x, int y, int select
         *released = 0;
 
         while(esc == 0){
-
-            introMPDynamic(map, width, height, colorPiece, colorMode, *score, center);            
+            
+            updateScoreMP2(map, width, height, score); 
+            introMPDynamic(map, width, height, colorPiece, colorMode, *score, center);
+                    
 
             while(!kbhit()){
                 sy = getLastCoords(y, selectedMP, rotation);
@@ -459,6 +462,12 @@ int movePieceMP(int map[15][10], int width, int height, int x, int y, int select
             }
   
             key = getch();
+            if(sizeof(key) > sizeof(char)){
+                do{
+                    key = getch();
+                } while (sizeof(key) > sizeof(char));
+                
+            }
             saltaRighe(1);
             movebackSelected(map, width, height, x, y, selectedMP, rotation); /* ERRORE DELLA COLLISIONE DIRETTA */
 
@@ -509,6 +518,7 @@ int movePieceMP(int map[15][10], int width, int height, int x, int y, int select
             winning = drawSelected(map, width, height, x, y, selectedMP, rotation);
             printMapColor(map, width, height, colorPiece, colorMode, center);
 
+
             if(!winning){
                 system("cls");
                 setcolorText("red", 1);
@@ -525,6 +535,35 @@ int movePieceMP(int map[15][10], int width, int height, int x, int y, int select
     } else{
         printf("YOU NEED TO SELECT A PIECE BEFORE MOVING IT..\n");
     }
+}
+
+
+void gameTurn(int map[15][10], int map1[15][10], int width, int height, int x, int y, int *score, int *score1, int *drawn,
+              int *drawn1, int *rotation, int *rotation1, int *released, int *released1, int *selectedSM, int *selectedMP,
+              int avaiblep[6], int avaiblep1[6], int dim, int *won, int *won1, int *winning, int *winning1, char *colorMode, 
+              char *color1, char *color2){
+
+    introMP2(map, map1, width, height, colorMode, *score, *score1, color1, color2);
+
+    *released = 0;
+
+    selectProcess(avaiblep, dim, selectedSM, rotation, drawn, map, width, height, x, y, colorMode, color1);
+
+    *winning = movePieceMP(map, width, height, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80);
+
+    introMP2(map, map1, width, height, colorMode, *score, *score1,  color1, color2);
+
+    checkWin(avaiblep, dim, won);
+
+    *released1 = 0;
+
+    selectProcess(avaiblep1, dim, selectedMP, rotation1, drawn1, map1, width, height, x, y, colorMode, color2);
+
+    *winning1 = movePieceMP(map1, width, height, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150);
+
+    introMP2(map, map1, width, height, colorMode, *score, *score1,  color1, color2);
+
+    checkWin(avaiblep1, dim, won1);
 }
 
 
