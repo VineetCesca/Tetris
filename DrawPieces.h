@@ -11,7 +11,7 @@
 /*  ***  */
 /*   *   */
 
-int drawT(int map[15][10], int width, int height, int x, int y){
+int drawT(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 2 < width - 1; j++){
@@ -40,7 +40,7 @@ int drawT(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteT(int map[15][10], int width, int height, int x, int y){
+void deleteT(int map[15][10], int x, int y){
     int k, i, j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -61,7 +61,7 @@ void deleteT(int map[15][10], int width, int height, int x, int y){
 /*   *   */
 /*  ***  */
 
-int drawT1(int map[15][10], int width, int height, int x, int y){  /* */
+int drawT1(int map[15][10], int x, int y){  /* */
     int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 2 < width - 1; j++){
@@ -87,7 +87,7 @@ int drawT1(int map[15][10], int width, int height, int x, int y){  /* */
     return f;
 }
 
-void deleteT1(int map[15][10], int width, int height, int x, int y){  /* */
+void deleteT1(int map[15][10], int x, int y){  /* */
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -106,7 +106,7 @@ void deleteT1(int map[15][10], int width, int height, int x, int y){  /* */
 /*   ++   */
 /*   +    */
 
-int drawT2(int map[15][10], int width, int height, int x, int y){
+int drawT2(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 2 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -132,7 +132,7 @@ int drawT2(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteT2(int map[15][10], int width, int height, int x, int y){
+void deleteT2(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -151,7 +151,7 @@ void deleteT2(int map[15][10], int width, int height, int x, int y){
 /*   ++   */
 /*    +    */
 
-int drawT3(int map[15][10], int width, int height, int x, int y){
+int drawT3(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 2 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -178,7 +178,7 @@ int drawT3(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteT3(int map[15][10], int width, int height, int x, int y){
+void deleteT3(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -199,7 +199,7 @@ void deleteT3(int map[15][10], int width, int height, int x, int y){
 /*  **
      **  */
 
-int drawZ(int map[15][10], int width, int height, int x, int y){
+int drawZ(int map[15][10], int x, int y){
    int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 2 < width - 1; j++){
@@ -228,7 +228,7 @@ int drawZ(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteZ(int map[15][10], int width, int height, int x, int y){
+void deleteZ(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -251,7 +251,7 @@ void deleteZ(int map[15][10], int width, int height, int x, int y){
     * *
     *   */
 
-int drawZ1(int map[15][10], int width, int height, int x, int y){
+int drawZ1(int map[15][10], int x, int y){
    int k, i , j, f = 1;
     for(i = 0; i + 2 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -280,7 +280,7 @@ int drawZ1(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteZ1(int map[15][10], int width, int height, int x, int y){
+void deleteZ1(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -301,7 +301,7 @@ void deleteZ1(int map[15][10], int width, int height, int x, int y){
 /*    * *
     * *     */
 
-int drawZ2(int map[15][10], int width, int height, int x, int y){
+int drawZ2(int map[15][10], int x, int y){
    int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 2 < width - 1; j++){
@@ -330,7 +330,7 @@ int drawZ2(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteZ2(int map[15][10], int width, int height, int x, int y){
+void deleteZ2(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -352,7 +352,7 @@ void deleteZ2(int map[15][10], int width, int height, int x, int y){
     * *
       *   */
 
-int drawZ3(int map[15][10], int width, int height, int x, int y){
+int drawZ3(int map[15][10], int x, int y){
    int k, i , j, f = 1;
     for(i = 0; i + 2 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -381,7 +381,7 @@ int drawZ3(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteZ3(int map[15][10], int width, int height, int x, int y){
+void deleteZ3(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -411,7 +411,7 @@ void deleteZ3(int map[15][10], int width, int height, int x, int y){
     * 
 */
 
-int drawI(int map[15][10], int width, int height, int x, int y){
+int drawI(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 3 < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -435,7 +435,7 @@ int drawI(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteI(int map[15][10], int width, int height, int x, int y){
+void deleteI(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -453,7 +453,7 @@ void deleteI(int map[15][10], int width, int height, int x, int y){
     * * * *
 */
 
-int drawI1(int map[15][10], int width, int height, int x, int y){
+int drawI1(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j + 3 < width - 1; j++){
@@ -477,7 +477,7 @@ int drawI1(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteI1(int map[15][10], int width, int height, int x, int y){
+void deleteI1(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -501,7 +501,7 @@ void deleteI1(int map[15][10], int width, int height, int x, int y){
     * *
 */
 
-int drawL(int map[15][10], int width, int height, int x, int y){
+int drawL(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 2 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -528,7 +528,7 @@ int drawL(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteL(int map[15][10], int width, int height, int x, int y){
+void deleteL(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -550,7 +550,7 @@ void deleteL(int map[15][10], int width, int height, int x, int y){
     *
 */
 
-int drawL1(int map[15][10], int width, int height, int x, int y){
+int drawL1(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 2 < width - 1; j++){
@@ -577,7 +577,7 @@ int drawL1(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteL1(int map[15][10], int width, int height, int x, int y){
+void deleteL1(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -600,7 +600,7 @@ void deleteL1(int map[15][10], int width, int height, int x, int y){
       * 
 */
 
-int drawL2(int map[15][10], int width, int height, int x, int y){
+int drawL2(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 2 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -627,7 +627,7 @@ int drawL2(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteL2(int map[15][10], int width, int height, int x, int y){
+void deleteL2(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -649,7 +649,7 @@ void deleteL2(int map[15][10], int width, int height, int x, int y){
     * * *
 */
 
-int drawL3(int map[15][10], int width, int height, int x, int y){
+int drawL3(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 2 < width - 1; j++){
@@ -676,7 +676,7 @@ int drawL3(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteL3(int map[15][10], int width, int height, int x, int y){
+void deleteL3(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -702,7 +702,7 @@ void deleteL3(int map[15][10], int width, int height, int x, int y){
     * *
 */
 
-int drawLr(int map[15][10], int width, int height, int x, int y){
+int drawLr(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 2 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -729,7 +729,7 @@ int drawLr(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteLr(int map[15][10], int width, int height, int x, int y){
+void deleteLr(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -751,7 +751,7 @@ void deleteLr(int map[15][10], int width, int height, int x, int y){
     * * *
 */
 
-int drawLr1(int map[15][10], int width, int height, int x, int y){
+int drawLr1(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 2 < width - 1; j++){
@@ -778,7 +778,7 @@ int drawLr1(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteLr1(int map[15][10], int width, int height, int x, int y){
+void deleteLr1(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -801,7 +801,7 @@ void deleteLr1(int map[15][10], int width, int height, int x, int y){
     * 
 */
 
-int drawLr2(int map[15][10], int width, int height, int x, int y){
+int drawLr2(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 2 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -828,7 +828,7 @@ int drawLr2(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteLr2(int map[15][10], int width, int height, int x, int y){
+void deleteLr2(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -850,7 +850,7 @@ void deleteLr2(int map[15][10], int width, int height, int x, int y){
         *
 */
 
-int drawLr3(int map[15][10], int width, int height, int x, int y){
+int drawLr3(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 2 < width - 1; j++){
@@ -877,7 +877,7 @@ int drawLr3(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteLr3(int map[15][10], int width, int height, int x, int y){
+void deleteLr3(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -903,7 +903,7 @@ void deleteLr3(int map[15][10], int width, int height, int x, int y){
     * *
 */
 
-int drawO(int map[15][10], int width, int height, int x, int y){
+int drawO(int map[15][10], int x, int y){
     int k, i , j, f = 1;
     for(i = 0; i + 1 < height - 1; i++){
         for(j = 1; j + 1 < width - 1; j++){
@@ -928,7 +928,7 @@ int drawO(int map[15][10], int width, int height, int x, int y){
     return f;
 }
 
-void deleteO(int map[15][10], int width, int height, int x, int y){
+void deleteO(int map[15][10], int x, int y){
     int k, i , j;
     for(i = 0; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){

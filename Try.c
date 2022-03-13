@@ -45,21 +45,21 @@ int main(void){
 
         if(opt == 1){
 
-            initGame(map, width, height, avaiblep, dim);
+            initGame(map, avaiblep, dim);
             setCursor(&x, &y, 4, 0);
             initScore(&score);
             do{
 
-                singleopt = introS(map, width, height, "blue");
+                singleopt = introS(map, "blue");
 
                 if(singleopt == 1){
                     
-                    selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, width, height, x, y, "blue", "green");                    
+                    selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, x, y, "blue", "green");                    
                     released = 0;
 
                 } else if(singleopt == 2){
                     if(released == 0){
-                        winning = movePiece(map, width, height, x, y, selectedSM, rotation, &released, score);
+                        winning = movePiece(map, x, y, selectedSM, rotation, &released, score);
                         if(!winning){
                             singleopt = 0;
                         }
@@ -82,7 +82,7 @@ int main(void){
 
         if(opt == 0){
             system("cls");
-            printMap2(map, width, height);
+            printMap2(map);
             setcolorText("white", 1);
             Sleep(1500);
             closeGame();

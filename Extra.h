@@ -52,7 +52,7 @@ int clean_stdin() /* useful to prevent input data errors */
 }
 
 /* self-made */
-void fillOne(int map[15][10], int width, int height){
+void fillOne(int map[15][10]){
     int i, j;
     for (i = 1; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){

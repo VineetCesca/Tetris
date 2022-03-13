@@ -1,4 +1,4 @@
-void initMap(int map[15][10], int width, int height){
+void initMap(int map[15][10]){
     int i, j;
     for(i = 0; i < height; i++){
         for(j = 0; j < width; j++){

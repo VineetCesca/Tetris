@@ -30,115 +30,115 @@ int selectRotation(char *colorPiece){
     return r;
 }
 
-int drawSelected(int map[15][10], int width, int height, int x, int y, int selected, int rotation){
+int drawSelected(int map[15][10], int x, int y, int selected, int rotation){
     /*rotation = 0 1 2 3 */
     int drawn;
     if(selected == 0){
         if(rotation == 0){
-            drawn = drawT(map, width, height, x, y);
+            drawn = drawT(map, x, y);
         } else if(rotation == 1){
-            drawn = drawT1(map, width, height, x, y);
+            drawn = drawT1(map, x, y);
         } else if(rotation == 2){
-            drawn = drawT2(map, width, height, x, y);
+            drawn = drawT2(map, x, y);
         } else if(rotation == 3){
-            drawn = drawT3(map, width, height, x, y);
+            drawn = drawT3(map, x, y);
         }  
     } else if(selected == 1){
         if(rotation == 0){
-            drawn = drawZ(map, width, height, x, y);
+            drawn = drawZ(map, x, y);
         } else if(rotation == 1){
-            drawn = drawZ1(map, width, height, x, y);
+            drawn = drawZ1(map, x, y);
         } else if(rotation == 2){
-            drawn = drawZ2(map, width, height, x, y);
+            drawn = drawZ2(map, x, y);
         } else if(rotation == 3){
-            drawn = drawZ3(map, width, height, x, y);
+            drawn = drawZ3(map, x, y);
         }
     } else if(selected == 2){
         if(rotation == 0 || rotation == 2){
-            drawn = drawI(map, width, height, x, y);
+            drawn = drawI(map, x, y);
         } else if(rotation == 1 || rotation == 3){
-            drawn = drawI1(map, width, height, x, y);
+            drawn = drawI1(map, x, y);
         }
     } else if(selected == 3){
         if(rotation == 0){
-            drawn = drawL(map, width, height, x, y);
+            drawn = drawL(map, x, y);
         } else if(rotation == 1){
-            drawn = drawL1(map, width, height, x, y);
+            drawn = drawL1(map, x, y);
         } else if(rotation == 2){
-            drawn = drawL2(map, width, height, x, y);
+            drawn = drawL2(map, x, y);
         } else if(rotation == 3){
-            drawn = drawL3(map, width, height, x, y);
+            drawn = drawL3(map, x, y);
         }
     } else if(selected == 4){
         if(rotation == 0){
-            drawn = drawLr(map, width, height, x, y);
+            drawn = drawLr(map, x, y);
         } else if(rotation == 1){
-            drawn = drawLr1(map, width, height, x, y);
+            drawn = drawLr1(map, x, y);
         } else if(rotation == 2){
-            drawn = drawLr2(map, width, height, x, y);
+            drawn = drawLr2(map, x, y);
         } else if(rotation == 3){
-            drawn = drawLr3(map, width, height, x, y);
+            drawn = drawLr3(map, x, y);
         }
     } else if(selected == 5){
         if(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3){
-            drawn = drawO(map, width, height, x, y);
+            drawn = drawO(map, x, y);
         }
     }
 
     return drawn;
 }
 
-void movebackSelected(int map[15][10], int width, int height, int x, int y, int selected, int rotation){
+void movebackSelected(int map[15][10], int x, int y, int selected, int rotation){
     /*rotation = 0 1 2 3 */
     if(selected == 0){
         if(rotation == 0){
-            deleteT(map, width, height, x, y);
+            deleteT(map, x, y);
         } else if(rotation == 1){
-            deleteT1(map, width, height, x, y);
+            deleteT1(map, x, y);
         } else if(rotation == 2){
-            deleteT2(map, width, height, x, y);
+            deleteT2(map, x, y);
         } else if(rotation == 3){
-            deleteT3(map, width, height, x, y);
+            deleteT3(map, x, y);
         }
     } else if(selected == 1){
         if(rotation == 0){
-            deleteZ(map, width, height, x, y);
+            deleteZ(map, x, y);
         } else if(rotation == 1){
-            deleteZ1(map, width, height, x, y);
+            deleteZ1(map, x, y);
         } else if(rotation == 2){
-            deleteZ2(map, width, height, x, y);
+            deleteZ2(map, x, y);
         } else if(rotation == 3){
-            deleteZ3(map, width, height, x, y);
+            deleteZ3(map, x, y);
         }
     } else if(selected == 2){
         if(rotation == 0 || rotation == 2){
-            deleteI(map, width, height, x, y);
+            deleteI(map, x, y);
         } else if(rotation == 1 || rotation == 3){
-            deleteI1(map, width, height, x, y);
+            deleteI1(map, x, y);
         }
     } else if(selected == 3){
         if(rotation == 0){
-            deleteL(map, width, height, x, y);
+            deleteL(map, x, y);
         } else if(rotation == 1){
-            deleteL1(map, width, height, x, y);
+            deleteL1(map, x, y);
         } else if(rotation == 2){
-            deleteL2(map, width, height, x, y);
+            deleteL2(map, x, y);
         } else if(rotation == 3){
-            deleteL3(map, width, height, x, y);
+            deleteL3(map, x, y);
         }
     } else if(selected == 4){
         if(rotation == 0){
-            deleteLr(map, width, height, x, y);
+            deleteLr(map, x, y);
         } else if(rotation == 1){
-            deleteLr1(map, width, height, x, y);
+            deleteLr1(map, x, y);
         } else if(rotation == 2){
-            deleteLr2(map, width, height, x, y);
+            deleteLr2(map, x, y);
         } else if(rotation == 3){
-            deleteLr3(map, width, height, x, y);
+            deleteLr3(map, x, y);
         }
     } else if(selected == 5){
         if(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3){
-            deleteO(map, width, height, x, y);
+            deleteO(map, x, y);
         }
     }
 } 
@@ -149,7 +149,7 @@ void movebackSelected(int map[15][10], int width, int height, int x, int y, int 
  * 3 punti, tre righe 6 punti, quattro righe 12 punti.
  */
 
-void FallColumn(int map[15][10], int height, int j){
+void FallColumn(int map[15][10], int j){
     int i, k, count;
     for(i = 0; i < height - 1; i++){
         count = 0;
@@ -165,14 +165,14 @@ void FallColumn(int map[15][10], int height, int j){
     }
 }
 
-void FallAll(int map[15][10], int width, int height){
+void FallAll(int map[15][10]){
     int j;
     for(j = 1; j < width - 1; j++){
-        FallColumn(map, height, j);
+        FallColumn(map, j);
     }
 }
 
-void deleteRow(int map[15][10], int width, int height, int i){
+void deleteRow(int map[15][10], int i){
     int k, j;
     for(k = 0; k < height - 1; k++){
         if(k == i){
@@ -183,11 +183,7 @@ void deleteRow(int map[15][10], int width, int height, int i){
     }
 }
 
-void invertRow(int map[15][10], int width, int height, int i){
-
-}
-
-int countRows(int map[15][10], int width, int height){
+int countRows(int map[15][10]){
     int i, j, n, count;
     count = 0;
     for(i = 0; i < height - 1; i++){
@@ -199,7 +195,7 @@ int countRows(int map[15][10], int width, int height){
         }
         if(n == 1){
             count++;
-            deleteRow(map, width, height, i);/* l'iesima riga deve essere eliminata */
+            deleteRow(map, i);/* l'iesima riga deve essere eliminata */
         }
     }
     return count;
@@ -211,9 +207,9 @@ int countRows(int map[15][10], int width, int height){
  * 3 punti, tre righe 6 punti, quattro righe 12 punti.
  */
 
-void updateScoreSM(int map[15][10], int width, int height, int *score){
+void updateScoreSM(int map[15][10], int *score){
     int count;
-    count = countRows(map, width, height);
+    count = countRows(map);
     if(count <= 0){
         return;
     } else{
@@ -232,10 +228,10 @@ void updateScoreSM(int map[15][10], int width, int height, int *score){
 
     } 
 
-    FallAll(map, width, height); /* FallAll sempre e comunque,  */
+    FallAll(map); /* FallAll sempre e comunque,  */
 }
 
-void invertEnemy(int map[15][10], int width, int height, int invert){
+void invertEnemy(int map[15][10], int invert){
     int i, j;
     for(i = height - invert - 1; i < height - 1; i++){
         for(j = 1; j < width - 1; j++){
@@ -248,10 +244,10 @@ void invertEnemy(int map[15][10], int width, int height, int invert){
     }
 }
 
-int updateScoreMP2(int map[15][10], int width, int height, int *score){
+int updateScoreMP2(int map[15][10], int *score){
     
     int count;
-    count = countRows(map, width, height);
+    count = countRows(map);
 
     if(count <= 0){
         return 0;
@@ -271,7 +267,7 @@ int updateScoreMP2(int map[15][10], int width, int height, int *score){
 
     }
 
-    FallAll(map, width, height);
+    FallAll(map);
 
     /* aggiungi le cose dalla consegna del progetto nel pdf */
     return count;

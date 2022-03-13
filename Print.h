@@ -1,4 +1,4 @@
-void printMap(int map[15][10], int width, int height){
+void printMap(int map[15][10]){
     int i, j;
     for(i = 0; i < height; i++){
         centerText(100);
@@ -15,7 +15,7 @@ void printMap(int map[15][10], int width, int height){
     saltaRighe(3);
 }
 
-void printMapColor(int map[15][10], int width, int height, char *color1, char *color0, int center){
+void printMapColor(int map[15][10], char *color1, char *color0, int center){
     int i, j;
     for(i = 0; i < height; i++){
         centerText(center);
@@ -36,7 +36,7 @@ void printMapColor(int map[15][10], int width, int height, char *color1, char *c
     saltaRighe(3);
 }
 
-void printMaps(int map[15][10], int map1[15][10], int width, int height, char *color1, char *color2, char *color0){
+void printMaps(int map[15][10], int map1[15][10], char *color1, char *color2, char *color0){
     int i, j;
     for(i = 0; i < height; i++){
         for(j = 0; j < width; j++){
@@ -71,7 +71,7 @@ void printMaps(int map[15][10], int map1[15][10], int width, int height, char *c
     saltaRighe(3);
 }
 
-void printMap2(int map[15][10], int width, int height){
+void printMap2(int map[15][10]){
     int i, j;
     for(i = 0; i < height; i++){
         centerText(100);
@@ -150,7 +150,7 @@ void printLegendaPieces(char *colorMode, char *colorPiece){
     setcolorText(colorMode, 1);
 }
 
-void printLegendaAllPieces(int width, int height, char *colorMode, char *colorPiece){ /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
+void printLegendaAllPieces(char *colorMode, char *colorPiece){ /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
     int i, j, k;
     int gx = 28, gy = 25;
     int f;
@@ -186,12 +186,12 @@ void printLegendaAllPieces(int width, int height, char *colorMode, char *colorPi
     }
     setcolorText(colorPiece, 1);
     for(k = 0; k < 84; k += 14){
-        initMap(map, width, height);
+        initMap(map);
         if(k == 0){
-            f = drawT(map, width, height, x, y);
-            f = drawT1(map, width, height, x, y + 3);
-            f = drawT2(map, width, height, x, y + 6);
-            f = drawT3(map, width, height, x, y + 10);
+            f = drawT(map, x, y);
+            f = drawT1(map, x, y + 3);
+            f = drawT2(map, x, y + 6);
+            f = drawT3(map, x, y + 10);
             for(i = 0; i < height; i++){
                 gotoXY(gx + k, gy + i);
                 for(j = 0; j < width; j++){
@@ -205,10 +205,10 @@ void printLegendaAllPieces(int width, int height, char *colorMode, char *colorPi
             }
             
         } else if(k == 14){ 
-            f = drawZ(map, width, height, x, y);
-            f = drawZ1(map, width, height, x, y + 3);
-            f = drawZ2(map, width, height, x, y + 7);
-            f = drawZ3(map, width, height, x, y + 10);
+            f = drawZ(map, x, y);
+            f = drawZ1(map, x, y + 3);
+            f = drawZ2(map, x, y + 7);
+            f = drawZ3(map, x, y + 10);
             for(i = 0; i < height; i++){
                 gotoXY(gx + k, gy + i);
                 for(j = 0; j < width; j++){
@@ -222,10 +222,10 @@ void printLegendaAllPieces(int width, int height, char *colorMode, char *colorPi
             }
 
         } else if(k == 28){
-            f = drawI(map, width, height, x, y); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
-            f = drawI1(map, width, height, x - 1, y + 5);
-            f = drawI(map, width, height, x, y + 7);
-            f = drawI1(map, width, height, x - 1, y + 12);
+            f = drawI(map, x, y); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
+            f = drawI1(map, x - 1, y + 5);
+            f = drawI(map, x, y + 7);
+            f = drawI1(map, x - 1, y + 12);
             for(i = 0; i < height; i++){
                 gotoXY(gx + k, gy + i);
                 for(j = 0; j < width; j++){
@@ -239,10 +239,10 @@ void printLegendaAllPieces(int width, int height, char *colorMode, char *colorPi
             }
 
         } else if(k == 42){
-            f = drawL(map, width, height, x, y); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
-            f = drawL1(map, width, height, x, y + 4);
-            f = drawL2(map, width, height, x, y + 7);
-            f = drawL3(map, width, height, x, y + 11);
+            f = drawL(map, x, y); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
+            f = drawL1(map, x, y + 4);
+            f = drawL2(map, x, y + 7);
+            f = drawL3(map, x, y + 11);
             for(i = 0; i < height; i++){
                 gotoXY(gx + k, gy + i);
                 for(j = 0; j < width; j++){
@@ -256,10 +256,10 @@ void printLegendaAllPieces(int width, int height, char *colorMode, char *colorPi
             }
 
         } else if(k == 56){
-            f = drawLr(map, width, height, x, y); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
-            f = drawLr1(map, width, height, x, y + 4);
-            f = drawLr2(map, width, height, x, y + 7);
-            f = drawLr3(map, width, height, x, y + 11);
+            f = drawLr(map, x, y); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
+            f = drawLr1(map, x, y + 4);
+            f = drawLr2(map, x, y + 7);
+            f = drawLr3(map, x, y + 11);
             for(i = 0; i < height; i++){
                 gotoXY(gx + k, gy + i);
                 for(j = 0; j < width; j++){
@@ -273,10 +273,10 @@ void printLegendaAllPieces(int width, int height, char *colorMode, char *colorPi
             }            
 
         } else if(k == 70){
-            f = drawO(map, width, height, x, y); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
-            f = drawO(map, width, height, x, y + 4);
-            f = drawO(map, width, height, x, y + 7);
-            f = drawO(map, width, height, x, y + 11);
+            f = drawO(map, x, y); /* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */
+            f = drawO(map, x, y + 4);
+            f = drawO(map, x, y + 7);
+            f = drawO(map, x, y + 11);
             for(i = 0; i < height; i++){
                 gotoXY(gx + k, gy + i);
                 for(j = 0; j < width; j++){
