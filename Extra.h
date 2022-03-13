@@ -10,13 +10,24 @@ void gotoXY(int x, int y){
  
 }
 
+void delay(float number_of_seconds){
+    // Converting time into milli_seconds
+    float milli_seconds = 1000 * number_of_seconds;
+  
+    // Storing start time
+    clock_t start_time = clock();
+  
+    // looping till required time is not achieved
+    while (clock() < start_time + milli_seconds);
+}
+
 void loadGame(){
     int r, cnt = 5, n = 60, m = n;
     gotoXY(n + 5, 25);
     printf("LOADING...");
     for(r=1;r<=20;r++){
         gotoXY(n, 26);
-        Sleep(100);
+        delay(0.100);
         printf("%c", 177);
         gotoXY(n + 5, 27);
         printf("%3d/100", cnt);
@@ -35,7 +46,7 @@ void closeGame(){
     printf("SHUTTING DOWN...");
     for(r=1;r<=20;r++){
         gotoXY(n, 26);
-        Sleep(100);
+        delay(0.100);
         printf("%c", 177);
         gotoXY(n + 5, 27);
         printf("%3d/100", cnt);
@@ -61,15 +72,5 @@ void fillOne(int map[15][10]){
     }
 }
 
-void delay(float number_of_seconds){
-    // Converting time into milli_seconds
-    float milli_seconds = 1000 * number_of_seconds;
-  
-    // Storing start time
-    clock_t start_time = clock();
-  
-    // looping till required time is not achieved
-    while (clock() < start_time + milli_seconds);
-}
 
 

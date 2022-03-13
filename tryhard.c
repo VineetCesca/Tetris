@@ -75,6 +75,13 @@ int main(void){
 
                 if(multiopt == 1){
 
+                    do{
+
+                        gameOneVSPC(map, map1, x, y, &score, &score1, &drawn, &drawn1, &rotation, &rotation1, &released, &released1, &selectedSM, 
+                                 &selectedMP, avaiblepMP, dim, &won, &won1, &winning, &winning1, colorMP, color1, color2);
+
+                    }while( (winning1 != 0 && !won1) && (winning != 0 && !won) );
+
                 } else if(multiopt == 2){
                     do{
 
@@ -94,12 +101,12 @@ int main(void){
             setCursor(&x, &y, 0, 0);
             setcolorText("white", 1);
             printTitle("GAME INSTRUCTIONS\n");
-            printMoveMenu(x, y, "blue");            
+            printMoveMenu(x, y, colorSM);            
             saltaRighe(4);
             gotoXY(0, 24);
-            printLegendaPieces("blue", "green");
+            printLegendaPieces(colorSM, colorSMPiece);
             saltaRighe(4);
-            printLegendaAllPieces("blue", "green");
+            printLegendaAllPieces(colorSM, colorSMPiece);
             gotoXY(0, 17);
             centerText(100);
             printf("ENTER ANYTHING TO GO BACK TO THE MENU: ");
@@ -113,9 +120,9 @@ int main(void){
             initMap(map1);
             fillOne(map);
             fillOne(map1);
-            printMaps(map, map1, "yellow", "purple", "red");
+            printMaps(map, map1, color1, color2, colorMP);
             setcolorText("white", 1);
-            Sleep(1500);
+            delay(1.5);
             closeGame();
         }
 

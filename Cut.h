@@ -117,7 +117,26 @@ void selectProcess(int avaiblep[6], int dim, int *selectedSM, int *rotation,
     *rotation = selectRotation(colorPiece);
     *drawn = drawSelected(map, x, y, *selectedSM, *rotation);
     printf("drawn = %d\n", *drawn);
-    Sleep(1000);
+    delay(0.5);
+    updateAvPieces(avaiblep, *selectedSM, *drawn);
+    gotoXY(0, 25);
+}
+
+void selectProcessPC(int avaiblep[6], int dim, int *selectedSM, int *rotation, 
+                   int *drawn, int map[15][10], int x, int y,
+                   char *colorMode, char *colorPiece){
+    saltaRighe(1);
+    printLegendaPieces(colorMode, colorPiece);
+    saltaRighe(1);
+    printAvaiblePieces(avaiblep, dim, colorMode, colorPiece);
+    saltaRighe(1);
+    printLegendaAllPieces(colorMode, colorPiece);
+    *selectedSM = rand()% 6; /*T = 0  Z = 1 I = 2  L = 3  Lr = 4  O = 5 */
+    *rotation = rand() % 4; /* random rotation from 0 to 3 -> don't need to initialize rand() because this
+    function will be recalled everytime with random values */
+    *drawn = drawSelected(map, x, y, *selectedSM, *rotation);
+    printf("drawn = %d\n", *drawn);
+    delay(1.5);
     updateAvPieces(avaiblep, *selectedSM, *drawn);
     gotoXY(0, 25);
 }
@@ -436,7 +455,7 @@ int movePiece(int map[15][10], int x, int y, int selectedSM, int rotation, int *
                 system("cls");
                 setcolorText(colorMP, 1);
                 printTitle("COLLISION! GAME OVER!\n");
-                Sleep(1500);
+                delay(1.5);
                 setcolorText("white", 0);
                 return 0;
             }
@@ -563,7 +582,7 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
                 system("cls");
                 setcolorText("red", 1);
                 printTitle("COLLISION! GAME OVER!\n");
-                Sleep(1500);
+                delay(1.5);
                 setcolorText("white", 0);
                 return 0;
             }
@@ -598,6 +617,33 @@ void gameOneVSOne(int map[15][10], int map1[15][10], int x, int y, int *score, i
     *released1 = 0;
 
     selectProcess(avaiblepMP, dim, selectedMP, rotation1, drawn1, map1, x, y, colorMode, color2);
+
+    *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150);
+
+    checkWin(avaiblepMP, dim, won1);
+
+}
+
+void gameOneVSPC(int map[15][10], int map1[15][10], int x, int y, int *score, int *score1, int *drawn,
+              int *drawn1, int *rotation, int *rotation1, int *released, int *released1, int *selectedSM, int *selectedMP,
+              int avaiblepMP[6], int dim, int *won, int *won1, int *winning, int *winning1, char *colorMode, 
+              char *color1, char *color2){
+
+    introMP2(map, map1, colorMode, score, score1, color1, color2);
+
+    *released = 0;
+
+    selectProcess(avaiblepMP, dim, selectedSM, rotation, drawn, map, x, y, colorMode, color1);
+
+    *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80);
+
+    checkWin(avaiblepMP, dim, won);
+
+    introMP2(map, map1, colorMode, score, score1, color1, color2);
+
+    *released1 = 0;
+
+    selectProcessPC(avaiblepMP, dim, selectedMP, rotation1, drawn1, map1, x, y, colorMode, color2);
 
     *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150);
 
