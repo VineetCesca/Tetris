@@ -25,7 +25,7 @@ int main(void){
     int winning, winning1;
     int x, y;
     int opt, singleopt, multiopt;
-    int avaiblep[6], avaiblep1[6];
+    int avaiblep[6], avaiblepMP[6];
     int dim;
     dim = 6; /* T, I, O, Z, L, Lr */
     int selectedSM, selectedMP;
@@ -64,10 +64,9 @@ int main(void){
         if(opt == 2){
             multiopt = whoEnemy();
             
-            if(multiopt != 0){ /* p1 vs pc? p1 vs p2?*/
+            if(multiopt > 0){ /* p1 vs pc? p1 vs p2?*/
 
-                initGame(map, width, height, avaiblep, dim);
-                initGame(map1, width, height, avaiblep1, dim);
+                initGameMP(map, map1, width, height, avaiblepMP, dim);
                 setCursor(&x, &y, 4, 0);
                 initScore(&score);
                 initScore(&score1);
@@ -77,10 +76,10 @@ int main(void){
                 } else if(multiopt == 2){
                     do{
 
-                        gameTurn(map, map1, width, height, x, y, &score, &score1, &drawn, &drawn1, &rotation, &rotation1, &released, &released1, &selectedSM, 
-                                 &selectedMP, avaiblep, avaiblep1, dim, &won, &won1, &winning, &winning1, "red", "yellow", "purple");
+                        gameOneVSOne(map, map1, width, height, x, y, &score, &score1, &drawn, &drawn1, &rotation, &rotation1, &released, &released1, &selectedSM, 
+                                 &selectedMP, avaiblepMP, dim, &won, &won1, &winning, &winning1, "red", "yellow", "purple");
 
-                    }while( (winning1 != 0 && !won1) && (winning != 0 && !won));
+                    }while( (winning1 != 0 && !won1) && (winning != 0 && !won) );
                 }
 
             }

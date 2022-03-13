@@ -183,8 +183,13 @@ void deleteRow(int map[15][10], int width, int height, int i){
     }
 }
 
+void invertRow(int map[15][10], int width, int height, int i){
+
+}
+
 int countRows(int map[15][10], int width, int height){
-    int i, j, n, count = 0;
+    int i, j, n, count;
+    count = 0;
     for(i = 0; i < height - 1; i++){
         n = 1;
         for(j = 1; j < width - 1; j++){
@@ -207,48 +212,69 @@ int countRows(int map[15][10], int width, int height){
  */
 
 void updateScoreSM(int map[15][10], int width, int height, int *score){
-    int count = countRows(map, width, height);
-    if(count == 0){
+    int count;
+    count = countRows(map, width, height);
+    if(count <= 0){
         return;
-    } else if(count == 1){
-        FallAll(map, width, height);
-        *score += 1;
-    } else if(count == 2){
-        FallAll(map, width, height);
-        *score += 3;
-    } else if(count == 3){
-        FallAll(map, width, height);
-        *score += 6;
-    } else if(count == 4){
-        FallAll(map, width, height);
-        *score += 12;
-    } else {
-        FallAll(map, width, height);
-        *score += count;
+    } else{
+
+        if(count == 1){
+            *score = *score +  1;     /* BIG MISTAKE: *score += 1 -> WRONG */
+        } else if(count == 2){
+            *score = *score +  3;
+        } else if(count == 3){
+            *score = *score +  6;
+        } else if(count == 4){
+            *score = *score +  12;
+        } else {
+            *score = *score +  count;
+        }
+
+    } 
+
+    FallAll(map, width, height); /* FallAll sempre e comunque,  */
+}
+
+void invertEnemy(int map[15][10], int width, int height, int invert){
+    int i, j;
+    for(i = height - invert - 1; i < height - 1; i++){
+        for(j = 1; j < width - 1; j++){
+            if(map[i][j] == 0){
+                map[i][j] = 1;
+            } else if(map[i][j] == 1){
+                map[i][j] = 0;
+            }
+        }
     }
 }
 
-void updateScoreMP2(int map[15][10], int width, int height, int *score){
-    int count = countRows(map, width, height);
-    if(count == 0){
-        return;
-    } else if(count == 1){
-        FallAll(map, width, height);
-        *score += 1;
-    } else if(count == 2){
-        FallAll(map, width, height);
-        *score += 3;
-    } else if(count == 3){
-        FallAll(map, width, height);
-        *score += 6;
-    } else if(count == 4){
-        FallAll(map, width, height);
-        *score += 12;
+int updateScoreMP2(int map[15][10], int width, int height, int *score){
+    
+    int count;
+    count = countRows(map, width, height);
+
+    if(count <= 0){
+        return 0;
     } else {
-        FallAll(map, width, height);
-        *score += count;
+        
+        if(count == 1){
+            *score = *score +  1;   /* BIG MISTAKE: *score += 1 -> WRONG */
+        } else if(count == 2){
+            *score = *score +  3;
+        } else if(count == 3){
+            *score = *score +  6;
+        } else if(count == 4){
+            *score = *score +  12;
+        } else {
+            *score = *score + count;
+        }
+
     }
+
+    FallAll(map, width, height);
+
     /* aggiungi le cose dalla consegna del progetto nel pdf */
+    return count;
 }
 
 void checkWin(int avaiblep[6], int dim, int *won){

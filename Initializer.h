@@ -12,9 +12,10 @@ void setCursor(int *x, int *y, int vx, int vy){
     *y = vy;
 }
 
-void initAvaiblePieces(int *pieces, int dim){ /* T  Z  I  L Lr  O */
+void initAvaiblePieces(int *pieces, int dim, int limit){ /* T  Z  I  L Lr  O */
     int i;                                    /* 0  1  2  3  4  5 */
     for(i = 0; i < dim; i++){
-        pieces[i] = 20;
+        pieces[i] = limit;
     }
 }
+
