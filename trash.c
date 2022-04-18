@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <strings.h>
 #include <time.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -7,6 +9,14 @@
 #include <time.h>
 #include <windows.h>
 #include <process.h>
+
+const int height = 15, width = 10;
+const int dim = 6; /* T, I, O, Z, L, Lr */
+char *colorSM = "blue";
+char *colorSMPiece = "green";
+char *colorMP = "red";
+char *color1 = "yellow";
+char *color2 = "purple";
 
 #include "TextSettings.h"
 #include "Initializer.h"
@@ -54,7 +64,7 @@ int main(){
     Displaying date and time in standard format
     printf("%s", asctime (loc_time));
 
-*/
+
 
     char key;
     int t;
@@ -81,7 +91,17 @@ int main(){
 
 
         fflush(stdin);
-    }
+    }*/
+    
+    char playerone[20];
+
+    askName(playerone);
+
+    printf("Your name is: %s \n", playerone);
+
+    char *name = playerone;
+
+    stampaNome(name);
 
     return 0;
 }

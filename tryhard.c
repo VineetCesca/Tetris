@@ -40,6 +40,7 @@ int main(void){
         score, score1,
         won, won1;
 
+    char player1[20], player2[20];
 
     loadGame();
 
@@ -67,26 +68,32 @@ int main(void){
             multiopt = whoEnemy();
             
             if(multiopt > 0){ /* p1 vs pc? p1 vs p2?*/
-
+                //askNames();
                 initGameMP(map, map1, avaiblepMP, dim);
                 setCursor(&x, &y, 4, 0);
                 initScore(&score);
                 initScore(&score1);
 
                 if(multiopt == 1){
+                    
+                    askName(player1, '1');
 
                     do{
 
                         gameOneVSPC(map, map1, x, y, &score, &score1, &drawn, &drawn1, &rotation, &rotation1, &released, &released1, &selectedSM, 
-                                 &selectedMP, avaiblepMP, dim, &won, &won1, &winning, &winning1, colorMP, color1, color2);
+                                 &selectedMP, avaiblepMP, dim, &won, &won1, &winning, &winning1, colorMP, color1, color2, player1);
 
                     }while( (winning1 != 0 && !won1) && (winning != 0 && !won) );
 
                 } else if(multiopt == 2){
+
+                    askName(player1, '1');
+                    askName(player2, '2');
+
                     do{
 
                         gameOneVSOne(map, map1, x, y, &score, &score1, &drawn, &drawn1, &rotation, &rotation1, &released, &released1, &selectedSM, 
-                                 &selectedMP, avaiblepMP, dim, &won, &won1, &winning, &winning1, colorMP, color1, color2);
+                                 &selectedMP, avaiblepMP, dim, &won, &won1, &winning, &winning1, colorMP, color1, color2, player1, player2);
 
                     }while( (winning1 != 0 && !won1) && (winning != 0 && !won) );
                 }

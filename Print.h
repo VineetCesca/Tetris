@@ -316,11 +316,32 @@ void printMoveMenu(int x, int y, char *colorMode){
 
 }
 
-void printScore(int score, char *colorMode, int y){
+void printScoreName(int score, char *colorMode, int y, char player, char name[20]){
     gotoXY(100, y);
     setcolorText(colorMode, 1);
-    printf("SCORE: %d", score);
+    if(player == '1'){
+        printf("SCORE %s: %d", name, score);
+    } else if(player == '2'){
+        printf("SCORE %s: %d", name, score);
+    }
     setcolorText("blue", 1);
+}
+
+void printScorePC(int score, char *colorMode, int y, char player){
+    gotoXY(100, y);
+    setcolorText(colorMode, 1);
+    printf("SCORE PC: %d", score);
+    setcolorText("blue", 1);
+    /*gotoXY(100, y);
+    setcolorText(colorMode, 1);
+    if(player == '1'){
+        printf("SCORE PLAYER 1: %d", score);
+    } else if(player == '2'){
+        printf("SCORE PLAYER 2: %d", score);
+    } else {
+        printf("SCORE PC: %d", score);
+    }
+    setcolorText("blue", 1);*/
 }
 
 void dude(){

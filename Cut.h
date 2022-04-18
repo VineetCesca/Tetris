@@ -1,5 +1,42 @@
 /* map è passato come parametro per righe e colonne ma basta specificare il numero delle colonne*/
 
+void stampaNome(char *playerone){
+    printf("Your name is %s \n", playerone);
+}
+
+void askName(char name[20], char n){
+    int a = 0;
+    char confirm;
+
+    do{
+
+        system("cls");
+
+        printf("Type player %c name: ", n);
+        scanf("%s", name);
+
+        printf("You've typed: %s, are you sure? (Y/N):", name);
+        /*
+          The %c conversion specifier won't automatically skip any leading whitespace, so if there's
+          a stray newline in the input stream (from a previous entry, for example) the scanf call
+          will consume it immediately.
+          One way around the problem is to put a blank space before the conversion specifier
+          in the format string:
+          
+          scanf(" %c", &c);
+        
+        */
+        scanf(" %c", &confirm);
+
+        if(confirm == 'y' || confirm == 'Y'){
+            a = 1;
+        }
+
+    }while(a != 1);
+
+}
+
+
 int intro(){
     int opt;
     char c;
@@ -53,11 +90,11 @@ void introSDynamic(int map[15][10], char* colorMode, int score){
     saltaRighe(2);
     printMapColor(map, colorSMPiece, colorMode, 103);
     saltaRighe(2);
-    printScore(score, colorSMPiece, 3);
+    printScorePC(score, colorSMPiece, 3, '1');
     gotoXY(0, 25);
 }
 
-void introMPDynamic(int map[15][10], char *colorPiece, char* colorMode, int score, int center){
+void introMPDynamicName(int map[15][10], char *colorPiece, char* colorMode, int score, int center, char player, char name[20]){
     setcolorText(colorMode, 1);
     system("cls");
     printTitle("MULTIPLAYER MODE");
@@ -66,12 +103,25 @@ void introMPDynamic(int map[15][10], char *colorPiece, char* colorMode, int scor
     printMapColor(map1, width, height, "purple", colorMode, 115);*/
     printMapColor(map, colorPiece, colorMode, center);
     saltaRighe(2);
-    printScore(score, colorPiece, 3);
+    printScoreName(score, colorPiece, 3, player, name);
     gotoXY(0, 25);
 }
 
-void introMP2(int map[15][10], int map1[15][10], char* colorMode, int *score, int *score1,
-             char *color1, char *color2){
+void introMPDynamicPC(int map[15][10], char *colorPiece, char* colorMode, int score, int center, char player){
+    setcolorText(colorMode, 1);
+    system("cls");
+    printTitle("MULTIPLAYER MODE");
+    saltaRighe(2);
+    /*printMapColor(map, width, height, "yellow", colorMode, 80);
+    printMapColor(map1, width, height, "purple", colorMode, 115);*/
+    printMapColor(map, colorPiece, colorMode, center);
+    saltaRighe(2);
+    printScorePC(score, colorPiece, 3, player);
+    gotoXY(0, 25);
+}
+
+void introMP2PC(int map[15][10], int map1[15][10], char* colorMode, int *score, int *score1,
+             char *color1, char *color2, char name[20]){
     int invert;
     setcolorText(colorMode, 1);
     system("cls");
@@ -92,8 +142,38 @@ void introMP2(int map[15][10], int map1[15][10], char* colorMode, int *score, in
     }
     
     printMaps(map, map1, color1, color2, colorMode);
-    printScore(*score, color1, 3);
-    printScore(*score1, color2, 5);
+    printScoreName(*score, color1, 3, '1', name);
+    printScorePC(*score1, color2, 5, '0');
+    
+    gotoXY(0, 25);
+    
+}
+
+void introMP2(int map[15][10], int map1[15][10], char* colorMode, int *score, int *score1,
+             char *color1, char *color2, char name1[20], char name2[20]){
+    int invert;
+    setcolorText(colorMode, 1);
+    system("cls");
+    printTitle("MULTIPLAYER MODE");
+    
+    /*printMapColor(map, width, height, "yellow", colorMode, 80);
+    printMapColor(map1, width, height, "purple", colorMode, 115);*/
+    invert = updateScoreMP2(map, score);
+
+    if(invert >= 2){
+        invertEnemy(map1, invert);
+    }
+
+    invert = updateScoreMP2(map1, score1);
+
+    if(invert >= 2){
+        invertEnemy(map, invert);
+    }
+    
+    printMaps(map, map1, color1, color2, colorMode);
+    printScoreName(*score, color1, 3, '1', name1);
+    printScoreName(*score1, color2, 5, '2', name2);
+    
     gotoXY(0, 25);
     
 }
@@ -308,7 +388,7 @@ int getLastCoords1(int x, int selected, int rotation){
     return sx;
 }
 
-void fall(int map[15][10], int x, int y, int sy, int selected, int rotation, int score){
+void fall(int map[15][10], int x, int y, int sy, int selected, int rotation, int score, char player){
     if(sy < height - 2 && avoidPieces(map, x, sy, selected, rotation) == 1){
         introSDynamic(map, colorSM, score);
         movebackSelected(map, x, y, selected, rotation);
@@ -337,9 +417,8 @@ void fallDown(int map[15][10], int x, int y, int sy, int selected, int rotation,
 }
 
 void fallDownMP(int map[15][10], int mapEnemy[15][10], int x, int y, int sy, int selected, int rotation, int *score,
-                 char *colorPiece, char *colorMode, int center){
+                 char *colorPiece, char *colorMode, int center, char player, char name[20]){
     /* servono le coordinate x e y dell'ultima riga di 1 del pezzo considerato */
-    int player;
     int invert;
 
     do{
@@ -351,7 +430,11 @@ void fallDownMP(int map[15][10], int mapEnemy[15][10], int x, int y, int sy, int
             if(invert >= 2){
                 invertEnemy(mapEnemy, invert);
             }
-            introMPDynamic(map, colorPiece, colorMode, *score, center);
+            if(player != '0'){
+                introMPDynamicName(map, colorPiece, colorMode, *score, center, player, name);
+            } else {
+                introMPDynamicPC(map, colorPiece, colorMode, *score, center, player);
+            }
             movebackSelected(map, x, y, selected, rotation);
             drawSelected(map, x, y + 1, selected, rotation);
         } else {
@@ -471,7 +554,7 @@ int movePiece(int map[15][10], int x, int y, int selectedSM, int rotation, int *
 }
 
 int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selectedMP, int rotation, int *released, int *score, 
-                char *colorMode, char *colorPiece, int center){
+                char *colorMode, char *colorPiece, int center, char player, char name[20]){
 
     int winning = 1;
     int sy;
@@ -491,7 +574,12 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
                 invertEnemy(mapEnemy, invert);
             }
 
-            introMPDynamic(map, colorPiece, colorMode, *score, center);
+            if(player != '0'){
+                introMPDynamicName(map, colorPiece, colorMode, *score, center, player, name);
+            } else {
+                introMPDynamicPC(map, colorPiece, colorMode, *score, center, player);
+            }
+            
                     
             while(!kbhit()){
 
@@ -504,7 +592,11 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
                 
                 if(sy < height - 2 && avoidPieces(map, x, sy, selectedMP, rotation) == 1){
                     delay(tempo); /* handle timing fall */
-                    introMPDynamic(map, colorPiece, colorMode, *score, center);  
+                    if(player != '0'){
+                        introMPDynamicName(map, colorPiece, colorMode, *score, center, player, name);  
+                    } else {
+                        introMPDynamicPC(map, colorPiece, colorMode, *score, center, player);  
+                    }
                     movebackSelected(map, x, y, selectedMP, rotation);
                     y++;
                     drawSelected(map, x, y, selectedMP, rotation);
@@ -550,7 +642,7 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
                 *released = 1;
                 sy = getLastCoords(y, selectedMP, rotation);
                 if(sy < height - 2 && avoidPieces(map, x, sy, selectedMP, rotation) == 1){
-                    fallDownMP(map, mapEnemy, x, y, sy, selectedMP, rotation, score, colorPiece, colorMode, center);
+                    fallDownMP(map, mapEnemy, x, y, sy, selectedMP, rotation, score, colorPiece, colorMode, center, player, name);
                 } else{
                     /* serve solo quando il pezzo è a terra oppure ha sotto altri pezzi: così non viene cancellato */
                     drawSelected(map, x, y, selectedMP, rotation); 
@@ -600,25 +692,25 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
 void gameOneVSOne(int map[15][10], int map1[15][10], int x, int y, int *score, int *score1, int *drawn,
               int *drawn1, int *rotation, int *rotation1, int *released, int *released1, int *selectedSM, int *selectedMP,
               int avaiblepMP[6], int dim, int *won, int *won1, int *winning, int *winning1, char *colorMode, 
-              char *color1, char *color2){
+              char *color1, char *color2, char name1[20], char name2[20]){
 
-    introMP2(map, map1, colorMode, score, score1, color1, color2);
+    introMP2(map, map1, colorMode, score, score1, color1, color2, name1, name2);
 
     *released = 0;
 
     selectProcess(avaiblepMP, dim, selectedSM, rotation, drawn, map, x, y, colorMode, color1);
 
-    *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80);
+    *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80, '1', name1);
 
     checkWin(avaiblepMP, dim, won);
 
-    introMP2(map, map1, colorMode, score, score1, color1, color2);
+    introMP2(map, map1, colorMode, score, score1, color1, color2, name1, name2);
 
     *released1 = 0;
 
     selectProcess(avaiblepMP, dim, selectedMP, rotation1, drawn1, map1, x, y, colorMode, color2);
 
-    *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150);
+    *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150, '2', name2);
 
     checkWin(avaiblepMP, dim, won1);
 
@@ -627,25 +719,25 @@ void gameOneVSOne(int map[15][10], int map1[15][10], int x, int y, int *score, i
 void gameOneVSPC(int map[15][10], int map1[15][10], int x, int y, int *score, int *score1, int *drawn,
               int *drawn1, int *rotation, int *rotation1, int *released, int *released1, int *selectedSM, int *selectedMP,
               int avaiblepMP[6], int dim, int *won, int *won1, int *winning, int *winning1, char *colorMode, 
-              char *color1, char *color2){
+              char *color1, char *color2, char name[20]){
 
-    introMP2(map, map1, colorMode, score, score1, color1, color2);
+    introMP2PC(map, map1, colorMode, score, score1, color1, color2, name);
 
     *released = 0;
 
     selectProcess(avaiblepMP, dim, selectedSM, rotation, drawn, map, x, y, colorMode, color1);
 
-    *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80);
+    *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80, '1', name);
 
     checkWin(avaiblepMP, dim, won);
 
-    introMP2(map, map1, colorMode, score, score1, color1, color2);
+    introMP2PC(map, map1, colorMode, score, score1, color1, color2, name);
 
     *released1 = 0;
 
     selectProcessPC(avaiblepMP, dim, selectedMP, rotation1, drawn1, map1, x, y, colorMode, color2);
 
-    *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150);
+    *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150, '0', name);
 
     checkWin(avaiblepMP, dim, won1);
 
