@@ -129,15 +129,16 @@ void introMP2PC(int map[15][10], int map1[15][10], char* colorMode, int *score, 
     
     /*printMapColor(map, width, height, "yellow", colorMode, 80);
     printMapColor(map1, width, height, "purple", colorMode, 115);*/
+    
     invert = updateScoreMP2(map, score);
 
-    if(invert >= 2){
+    if(invert >= 3){ //per i test ho provato con 2 e funziona, con 3 è più difficile creare la situazione
         invertEnemy(map1, invert);
     }
 
     invert = updateScoreMP2(map1, score1);
 
-    if(invert >= 2){
+    if(invert >= 3){
         invertEnemy(map, invert);
     }
     
@@ -160,13 +161,13 @@ void introMP2(int map[15][10], int map1[15][10], char* colorMode, int *score, in
     printMapColor(map1, width, height, "purple", colorMode, 115);*/
     invert = updateScoreMP2(map, score);
 
-    if(invert >= 2){
+    if(invert >= 3){
         invertEnemy(map1, invert);
     }
 
     invert = updateScoreMP2(map1, score1);
 
-    if(invert >= 2){
+    if(invert >= 3){
         invertEnemy(map, invert);
     }
     
@@ -427,7 +428,7 @@ void fallDownMP(int map[15][10], int mapEnemy[15][10], int x, int y, int sy, int
         se è nell'ultima posizione possibile (height - 1) mentre se dici di mandare giù nella
         penultima sei apposto */
             invert = updateScoreMP2(map, score);
-            if(invert >= 2){
+            if(invert >= 3){
                 invertEnemy(mapEnemy, invert);
             }
             if(player != '0'){
@@ -570,7 +571,7 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
 
             invert = updateScoreMP2(map, score); 
 
-            if(invert >= 2){
+            if(invert >= 3){
                 invertEnemy(mapEnemy, invert);
             }
 
@@ -586,7 +587,7 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
                 sy = getLastCoords(y, selectedMP, rotation);
 
                 invert = updateScoreMP2(map, score); 
-                if(invert >= 2){
+                if(invert >= 3){
                     invertEnemy(mapEnemy, invert);
                 }
                 

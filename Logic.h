@@ -233,7 +233,8 @@ void updateScoreSM(int map[15][10], int *score){
 
 void invertEnemy(int map[15][10], int invert){
     int i, j;
-    for(i = height - invert - 1; i < height - 1; i++){
+    for(i = height - invert - 2; i < height - 1 && i >= 0; i++){  /*usiamo i = height - invert - 2 perchè le 
+                                                posizioni i = height e i = height - 1 non sono valide */
         for(j = 1; j < width - 1; j++){
             if(map[i][j] == 0){
                 map[i][j] = 1;
