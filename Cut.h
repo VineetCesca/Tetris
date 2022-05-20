@@ -454,6 +454,7 @@ int movePiece(int map[15][10], int x, int y, int selectedSM, int rotation, int *
     int sy;
     if(selectedSM >= 0 && selectedSM <= 5){
         char key;
+        
         int esc = 0;
         float tempo = 0.300; /* handle delay time fall */
         *released = 0;

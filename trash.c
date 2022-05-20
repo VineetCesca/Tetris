@@ -94,8 +94,9 @@ int main(){
     }*/
     
     char playerone[20];
+    char n;
 
-    askName(playerone);
+    askName(playerone, n);
 
     printf("Your name is: %s \n", playerone);
 
