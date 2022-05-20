@@ -1,0 +1,380 @@
+\hypertarget{_print_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Print.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{keywordtype}{void} printMap(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{2     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{3     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{4         centerText(100);}
+\DoxyCodeLine{5         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{6             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1 || map[i][j] == 1)\{}
+\DoxyCodeLine{7                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{8             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{9                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{10             \}}
+\DoxyCodeLine{11         \}}
+\DoxyCodeLine{12         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{13     \}}
+\DoxyCodeLine{14     }
+\DoxyCodeLine{15     saltaRighe(3);}
+\DoxyCodeLine{16 \}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keywordtype}{void} printMapColor(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color0, \textcolor{keywordtype}{int} center)\{}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{20     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{21         centerText(center);}
+\DoxyCodeLine{22         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{23             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1)\{}
+\DoxyCodeLine{24                 setcolorText(color0, 1);}
+\DoxyCodeLine{25                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{26             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{27                 setcolorText(color1, 1);}
+\DoxyCodeLine{28                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{29             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{30                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{31             \}}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35     setcolorText(color0, 1);}
+\DoxyCodeLine{36     saltaRighe(3);}
+\DoxyCodeLine{37 \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keywordtype}{void} printMaps(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color2, \textcolor{keywordtype}{char} *color0)\{}
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{41     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{42         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{43             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1)\{}
+\DoxyCodeLine{44                 setcolorText(color0, 1);}
+\DoxyCodeLine{45                 gotoXY(40 + j*2, 7 + i);}
+\DoxyCodeLine{46                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{47                 \textcolor{comment}{/* second map */}}
+\DoxyCodeLine{48                 gotoXY(70 + j*2, 7 + i);}
+\DoxyCodeLine{49                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1 || map1[i][j] == 1)\{}
+\DoxyCodeLine{52                 \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{53                     setcolorText(color1, 1);}
+\DoxyCodeLine{54                     gotoXY(40 + j*2, 7 + i);}
+\DoxyCodeLine{55                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{56                 \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58                 \textcolor{comment}{/* second map */}}
+\DoxyCodeLine{59                 \textcolor{keywordflow}{if}(map1[i][j] == 1)\{}
+\DoxyCodeLine{60                     setcolorText(color2, 1);}
+\DoxyCodeLine{61                     gotoXY(70 + j*2, 7 + i);}
+\DoxyCodeLine{62                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
+\DoxyCodeLine{63                 \}}
+\DoxyCodeLine{64             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{65                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{66             \}}
+\DoxyCodeLine{67         \}}
+\DoxyCodeLine{68         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{69     \}}
+\DoxyCodeLine{70     setcolorText(color0, 1);}
+\DoxyCodeLine{71     saltaRighe(3);}
+\DoxyCodeLine{72 \}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keywordtype}{void} printMap2(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{75     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{76     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{77         centerText(100);}
+\DoxyCodeLine{78         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{79             \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{80                 setcolorText(\textcolor{stringliteral}{"{}red"{}}, 1);}
+\DoxyCodeLine{81             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{82                 setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{83             \}}
+\DoxyCodeLine{84             printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88 \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} printTitle(\textcolor{keywordtype}{char} *title)\{}
+\DoxyCodeLine{91     centerText(110);}
+\DoxyCodeLine{92     printf(\textcolor{stringliteral}{"{}\%s"{}}, title);}
+\DoxyCodeLine{93     saltaRighe(3);}
+\DoxyCodeLine{94 \}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{keywordtype}{void} printGameMenu()\{}
+\DoxyCodeLine{97     printf(\textcolor{stringliteral}{"{}1 -\/ SINGLE PLAYER\(\backslash\)n"{}});}
+\DoxyCodeLine{98     printf(\textcolor{stringliteral}{"{}2 -\/ MULTIPLAYER\(\backslash\)n"{}});}
+\DoxyCodeLine{99     printf(\textcolor{stringliteral}{"{}3 -\/ GAME INSTRUCTIONS\(\backslash\)n"{}});}
+\DoxyCodeLine{100     printf(\textcolor{stringliteral}{"{}0 -\/ QUIT\(\backslash\)n"{}});}
+\DoxyCodeLine{101 \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keywordtype}{void} printSModeOptions()\{}
+\DoxyCodeLine{104     printf(\textcolor{stringliteral}{"{}1 -\/ SELECT A PIECE\(\backslash\)n"{}});}
+\DoxyCodeLine{105     printf(\textcolor{stringliteral}{"{}2 -\/ MOVE THE PIECE\(\backslash\)n"{}});}
+\DoxyCodeLine{106     printf(\textcolor{stringliteral}{"{}0 -\/ Quit\(\backslash\)n"{}});}
+\DoxyCodeLine{107 \}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} printAvaiblePieces(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */}}
+\DoxyCodeLine{110     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{111     \textcolor{keywordflow}{for}(i = 0; i < dim; i++)\{}
+\DoxyCodeLine{112         \textcolor{keywordflow}{if}(pieces[i] > 0)\{}
+\DoxyCodeLine{113             }
+\DoxyCodeLine{114             printf(\textcolor{stringliteral}{"{}Piece \%d : "{}}, i);}
+\DoxyCodeLine{115             setcolorText(colorPiece, 1);}
+\DoxyCodeLine{116             printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)n"{}}, pieces[i]);}
+\DoxyCodeLine{117             setcolorText(colorMode, 1);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{120             printf(\textcolor{stringliteral}{"{}Piece \%d is not avaible! \(\backslash\)n"{}}, i);}
+\DoxyCodeLine{121         \}}
+\DoxyCodeLine{122     \}}
+\DoxyCodeLine{123 \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} printLegendaPieces(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{126     setcolorText(colorMode, 1);}
+\DoxyCodeLine{127     printf(\textcolor{stringliteral}{"{}0 -\/ "{}});}
+\DoxyCodeLine{128     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{129     printf(\textcolor{stringliteral}{"{}T\(\backslash\)n"{}});}
+\DoxyCodeLine{130     setcolorText(colorMode, 1);}
+\DoxyCodeLine{131     printf(\textcolor{stringliteral}{"{}1 -\/ "{}});}
+\DoxyCodeLine{132     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{133     printf(\textcolor{stringliteral}{"{}Z\(\backslash\)n"{}});}
+\DoxyCodeLine{134     setcolorText(colorMode, 1);}
+\DoxyCodeLine{135     printf(\textcolor{stringliteral}{"{}2 -\/ "{}});}
+\DoxyCodeLine{136     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{137     printf(\textcolor{stringliteral}{"{}I\(\backslash\)n"{}});}
+\DoxyCodeLine{138     setcolorText(colorMode, 1);}
+\DoxyCodeLine{139     printf(\textcolor{stringliteral}{"{}3 -\/ "{}});}
+\DoxyCodeLine{140     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{141     printf(\textcolor{stringliteral}{"{}L\(\backslash\)n"{}});}
+\DoxyCodeLine{142     setcolorText(colorMode, 1);}
+\DoxyCodeLine{143     printf(\textcolor{stringliteral}{"{}4 -\/ "{}});}
+\DoxyCodeLine{144     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{145     printf(\textcolor{stringliteral}{"{}Lr\(\backslash\)n"{}});}
+\DoxyCodeLine{146     setcolorText(colorMode, 1);}
+\DoxyCodeLine{147     printf(\textcolor{stringliteral}{"{}5 -\/ "{}});}
+\DoxyCodeLine{148     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{149     printf(\textcolor{stringliteral}{"{}O\(\backslash\)n"{}});}
+\DoxyCodeLine{150     setcolorText(colorMode, 1);}
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{void} printLegendaAllPieces(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{154     \textcolor{keywordtype}{int} i, j, k;}
+\DoxyCodeLine{155     \textcolor{keywordtype}{int} gx = 28, gy = 25;}
+\DoxyCodeLine{156     \textcolor{keywordtype}{int} f;}
+\DoxyCodeLine{157     \textcolor{keywordtype}{int} x = 4, y = 0;}
+\DoxyCodeLine{158     \textcolor{keywordtype}{int} map[15][10];}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
+\DoxyCodeLine{161         \textcolor{keywordflow}{if}(k == 0)\{}
+\DoxyCodeLine{162             gotoXY(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{163             printf(\textcolor{stringliteral}{"{}T"{}});}
+\DoxyCodeLine{164         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{}
+\DoxyCodeLine{165             gotoXY(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{166             printf(\textcolor{stringliteral}{"{}Z"{}});}
+\DoxyCodeLine{167         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
+\DoxyCodeLine{168             gotoXY(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{169             printf(\textcolor{stringliteral}{"{}I"{}});}
+\DoxyCodeLine{170         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
+\DoxyCodeLine{171             gotoXY(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{172             printf(\textcolor{stringliteral}{"{}L"{}});}
+\DoxyCodeLine{173         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
+\DoxyCodeLine{174             gotoXY(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{175             printf(\textcolor{stringliteral}{"{}Lr"{}});}
+\DoxyCodeLine{176         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
+\DoxyCodeLine{177             gotoXY(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{178             printf(\textcolor{stringliteral}{"{}O"{}});}
+\DoxyCodeLine{179         \}}
+\DoxyCodeLine{180     \}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     setcolorText(colorMode, 1);}
+\DoxyCodeLine{183     \textcolor{keywordflow}{for}(i = 0; i < 4; i++)\{}
+\DoxyCodeLine{184         gotoXY(gx -\/ 11, 25 + i*4);}
+\DoxyCodeLine{185         printf(\textcolor{stringliteral}{"{}ROTATION: \%d"{}}, i);}
+\DoxyCodeLine{186     \}}
+\DoxyCodeLine{187     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{188     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
+\DoxyCodeLine{189         initMap(map);}
+\DoxyCodeLine{190         \textcolor{keywordflow}{if}(k == 0)\{}
+\DoxyCodeLine{191             f = drawT(map, x, y);}
+\DoxyCodeLine{192             f = drawT1(map, x, y + 3);}
+\DoxyCodeLine{193             f = drawT2(map, x, y + 6);}
+\DoxyCodeLine{194             f = drawT3(map, x, y + 10);}
+\DoxyCodeLine{195             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{196                 gotoXY(gx + k, gy + i);}
+\DoxyCodeLine{197                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{198                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{199                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{200                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{201                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{202                     \}  }
+\DoxyCodeLine{203                 \}}
+\DoxyCodeLine{204                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{205             \}}
+\DoxyCodeLine{206             }
+\DoxyCodeLine{207         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{ }
+\DoxyCodeLine{208             f = drawZ(map, x, y);}
+\DoxyCodeLine{209             f = drawZ1(map, x, y + 3);}
+\DoxyCodeLine{210             f = drawZ2(map, x, y + 7);}
+\DoxyCodeLine{211             f = drawZ3(map, x, y + 10);}
+\DoxyCodeLine{212             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{213                 gotoXY(gx + k, gy + i);}
+\DoxyCodeLine{214                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{215                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{216                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{217                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{218                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{219                     \}  }
+\DoxyCodeLine{220                 \}}
+\DoxyCodeLine{221                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{222             \}}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
+\DoxyCodeLine{225             f = drawI(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{226             f = drawI1(map, x -\/ 1, y + 5);}
+\DoxyCodeLine{227             f = drawI(map, x, y + 7);}
+\DoxyCodeLine{228             f = drawI1(map, x -\/ 1, y + 12);}
+\DoxyCodeLine{229             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{230                 gotoXY(gx + k, gy + i);}
+\DoxyCodeLine{231                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{232                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{233                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{234                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{235                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{236                     \}  }
+\DoxyCodeLine{237                 \}}
+\DoxyCodeLine{238                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{239             \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
+\DoxyCodeLine{242             f = drawL(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{243             f = drawL1(map, x, y + 4);}
+\DoxyCodeLine{244             f = drawL2(map, x, y + 7);}
+\DoxyCodeLine{245             f = drawL3(map, x, y + 11);}
+\DoxyCodeLine{246             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{247                 gotoXY(gx + k, gy + i);}
+\DoxyCodeLine{248                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{249                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{250                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{251                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{252                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{253                     \}  }
+\DoxyCodeLine{254                 \}}
+\DoxyCodeLine{255                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{256             \}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
+\DoxyCodeLine{259             f = drawLr(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{260             f = drawLr1(map, x, y + 4);}
+\DoxyCodeLine{261             f = drawLr2(map, x, y + 7);}
+\DoxyCodeLine{262             f = drawLr3(map, x, y + 11);}
+\DoxyCodeLine{263             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{264                 gotoXY(gx + k, gy + i);}
+\DoxyCodeLine{265                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{266                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{267                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{268                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{269                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{270                     \}  }
+\DoxyCodeLine{271                 \}}
+\DoxyCodeLine{272                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{273             \}            }
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
+\DoxyCodeLine{276             f = drawO(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{277             f = drawO(map, x, y + 4);}
+\DoxyCodeLine{278             f = drawO(map, x, y + 7);}
+\DoxyCodeLine{279             f = drawO(map, x, y + 11);}
+\DoxyCodeLine{280             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{281                 gotoXY(gx + k, gy + i);}
+\DoxyCodeLine{282                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{283                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{284                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{285                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{286                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{287                     \}  }
+\DoxyCodeLine{288                 \}}
+\DoxyCodeLine{289                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{290             \} }
+\DoxyCodeLine{291         \}}
+\DoxyCodeLine{292     \}}
+\DoxyCodeLine{293     setcolorText(colorMode, 1);}
+\DoxyCodeLine{294 \}}
+\DoxyCodeLine{295 }
+\DoxyCodeLine{296 \textcolor{keywordtype}{void} printMoveMenu(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} *colorMode)\{}
+\DoxyCodeLine{297     setcolorText(colorMode, 1);}
+\DoxyCodeLine{298     printf(\textcolor{stringliteral}{"{}HOW TO SELECT THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{299     printf(\textcolor{stringliteral}{"{}   1-\/ SELECT THE PIECE SHAPE TYPE: \(\backslash\)n"{}});}
+\DoxyCodeLine{300     centerText(100);}
+\DoxyCodeLine{301     printf(\textcolor{stringliteral}{"{}EACH LETTER IS ABBINED WITH A NUMBER: \(\backslash\)n"{}});}
+\DoxyCodeLine{302     centerText(100);}
+\DoxyCodeLine{303     printf(\textcolor{stringliteral}{"{} T = 0, Z = 1,  I = 2, L = 3,  Lr = 4,  O = 5\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{304     printf(\textcolor{stringliteral}{"{}   2-\/ SELECT THE PIECE ROTATION: \(\backslash\)n"{}});}
+\DoxyCodeLine{305     centerText(100);}
+\DoxyCodeLine{306     printf(\textcolor{stringliteral}{"{}YOU CAN CHOOSE A ROTATION FROM 0 TO 3\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{307     printf(\textcolor{stringliteral}{"{}HOW TO MOVE THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{308     centerText(100);}
+\DoxyCodeLine{309     printf(\textcolor{stringliteral}{"{}USE THE A-\/D KEYS TO MOVE THE PIECE AROUND THE MAP \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{310     centerText(100);}
+\DoxyCodeLine{311     printf(\textcolor{stringliteral}{"{}USE THE W KEY TO ROTATE THE PIECE \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{312     centerText(100);}
+\DoxyCodeLine{313     printf(\textcolor{stringliteral}{"{}USE 0-\/1-\/2-\/3 TO SET THE EXACT ROTATION \(\backslash\)n\(\backslash\)n"{}}, x, y);}
+\DoxyCodeLine{314     centerText(100);}
+\DoxyCodeLine{315     printf(\textcolor{stringliteral}{"{}ENTER Q TO QUIT AND SET THE PIECE AT X:\%d Y:\%d POSITION \(\backslash\)n\(\backslash\)n"{}}, x, y);}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317 \}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{keywordtype}{void} printScoreName(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player, \textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{320     gotoXY(100, y);}
+\DoxyCodeLine{321     setcolorText(colorMode, 1);}
+\DoxyCodeLine{322     \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'1'})\{}
+\DoxyCodeLine{323         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
+\DoxyCodeLine{324     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'2'})\{}
+\DoxyCodeLine{325         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
+\DoxyCodeLine{326     \}}
+\DoxyCodeLine{327     setcolorText(\textcolor{stringliteral}{"{}blue"{}}, 1);}
+\DoxyCodeLine{328 \}}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{keywordtype}{void} printScorePC(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player)\{}
+\DoxyCodeLine{331     gotoXY(100, y);}
+\DoxyCodeLine{332     setcolorText(colorMode, 1);}
+\DoxyCodeLine{333     printf(\textcolor{stringliteral}{"{}SCORE PC: \%d"{}}, score);}
+\DoxyCodeLine{334     setcolorText(\textcolor{stringliteral}{"{}blue"{}}, 1);}
+\DoxyCodeLine{335     \textcolor{comment}{/*gotoXY(100, y);}}
+\DoxyCodeLine{336 \textcolor{comment}{    setcolorText(colorMode, 1);}}
+\DoxyCodeLine{337 \textcolor{comment}{    if(player == '1')\{}}
+\DoxyCodeLine{338 \textcolor{comment}{        printf("{}SCORE PLAYER 1: \%d"{}, score);}}
+\DoxyCodeLine{339 \textcolor{comment}{    \} else if(player == '2')\{}}
+\DoxyCodeLine{340 \textcolor{comment}{        printf("{}SCORE PLAYER 2: \%d"{}, score);}}
+\DoxyCodeLine{341 \textcolor{comment}{    \} else \{}}
+\DoxyCodeLine{342 \textcolor{comment}{        printf("{}SCORE PC: \%d"{}, score);}}
+\DoxyCodeLine{343 \textcolor{comment}{    \}}}
+\DoxyCodeLine{344 \textcolor{comment}{    setcolorText("{}blue"{}, 1);*/}}
+\DoxyCodeLine{345 \}}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347 \textcolor{keywordtype}{void} printWinner(\textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{348     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{349     setcolorText(\textcolor{stringliteral}{"{}green"{}}, 1);}
+\DoxyCodeLine{350     centerText(100);}
+\DoxyCodeLine{351     printf(\textcolor{stringliteral}{"{}THE WINNER IS \%s \(\backslash\)n"{}}, name);}
+\DoxyCodeLine{352     delay(2.0); \textcolor{comment}{/*due . 0 secondi*/}}
+\DoxyCodeLine{353     setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{354 \}}
+\DoxyCodeLine{355 }
+\DoxyCodeLine{356 \textcolor{keywordtype}{void} printLoser(\textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{357     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{358     setcolorText(\textcolor{stringliteral}{"{}red"{}}, 1);}
+\DoxyCodeLine{359     centerText(100);}
+\DoxyCodeLine{360     printf(\textcolor{stringliteral}{"{}\%s LOOSE AGAINST PC"{}}, name);}
+\DoxyCodeLine{361     delay(2.0);}
+\DoxyCodeLine{362     setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{363 \}}
+\DoxyCodeLine{364 }
+\DoxyCodeLine{365 \textcolor{keywordtype}{void} printPareggio()\{}
+\DoxyCodeLine{366     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{367     setcolorText(\textcolor{stringliteral}{"{}yellow"{}}, 1);}
+\DoxyCodeLine{368     printTitle(\textcolor{stringliteral}{"{}DRAW"{}});}
+\DoxyCodeLine{369     delay(2.0);}
+\DoxyCodeLine{370     setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{371 \}}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373 \textcolor{keywordtype}{void} dude()\{}
+\DoxyCodeLine{374     printf(\textcolor{stringliteral}{"{}DUDE\(\backslash\)n"{}});}
+\DoxyCodeLine{375 \}}
+
+\end{DoxyCode}

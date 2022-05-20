@@ -22,7 +22,6 @@ char *color2 = "purple";
 #include "Cut.h"
 
 
-
 int main(void){
     
     int map[15][10];

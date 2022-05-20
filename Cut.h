@@ -1,5 +1,5 @@
 /* map è passato come parametro per righe e colonne ma basta specificare il numero delle colonne*/
-
+/// riceve in ingresso il nome del player (char *) e lo stampa
 void stampaNome(char *playerone){
     printf("Your name is %s \n", playerone);
 }

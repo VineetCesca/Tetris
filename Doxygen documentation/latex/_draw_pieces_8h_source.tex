@@ -1,0 +1,950 @@
+\hypertarget{_draw_pieces_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Draw\+Pieces.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* T, T1, T2, T3 */}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/* ERRORE DI PIANIFICAZIONE NEL DISEGNO DEI PEZZI: E' MOLTO PIU' COMODO TENERE CONTO DELLA COORDINATA}}
+\DoxyCodeLine{4 \textcolor{comment}{    X E Y DEGLI 1 PIU' IN BASSO DEL PEZZO CHE SI STA CONSIDERANDO: QUESTO PERMETTE DI FARE}}
+\DoxyCodeLine{5 \textcolor{comment}{    CADERE PEZZI DI DIMENSIONE DIVERSA O RUOTATI FINO AL BORDO DELLA MAPPA OPPURE FINCHE' NON}}
+\DoxyCodeLine{6 \textcolor{comment}{    TROVANO UN 1 APPENA SOTTO */}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{/* ERRORE DELLA COLLISIONE DIRETTA */}}
+\DoxyCodeLine{9 \textcolor{comment}{/* ATTENTO ALLE FUNZIONI DELETE: DEVONO SETTARE I VALORI A 0 E NON A 1: CANCELLARE!!! */}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/*  ***  */}}
+\DoxyCodeLine{12 \textcolor{comment}{/*   *   */}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keywordtype}{int} drawT(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{16     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{for}(j = 1; j + 2 < width -\/ 1; j++)\{}
+\DoxyCodeLine{18             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{19                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{20                     \textcolor{keywordflow}{if}(map[i][k] == 1 || map[i + 1][j + 1] == 1)\{}
+\DoxyCodeLine{21                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{22                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{23                     \}}
+\DoxyCodeLine{24                 \}}
+\DoxyCodeLine{25                 }
+\DoxyCodeLine{26                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{27                     map[i][k] = 1;}
+\DoxyCodeLine{28                     \textcolor{keywordflow}{if}(k == j + 1)\{}
+\DoxyCodeLine{29                         map[i + 1][k] = 1;}
+\DoxyCodeLine{30                     \}}
+\DoxyCodeLine{31                 \}}
+\DoxyCodeLine{32                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{35                 f = 0;}
+\DoxyCodeLine{36             \}}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{41 \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keywordtype}{void} deleteT(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} k, i, j;}
+\DoxyCodeLine{45     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{46         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{47             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{48                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{49                     map[i][k] = 0;}
+\DoxyCodeLine{50                     \textcolor{keywordflow}{if}(k == j + 1)\{}
+\DoxyCodeLine{51                         map[i + 1][k] = 0;}
+\DoxyCodeLine{52                     \}}
+\DoxyCodeLine{53                 \}}
+\DoxyCodeLine{54             \}}
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57 \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{/*   *   */}}
+\DoxyCodeLine{62 \textcolor{comment}{/*  ***  */}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{int} drawT1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{  \textcolor{comment}{/* */}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{66     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{67         \textcolor{keywordflow}{for}(j = 1; j + 2 < width -\/ 1; j++)\{}
+\DoxyCodeLine{68             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{69                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{70                     \textcolor{keywordflow}{if}(map[i][j + 1] == 1 || map[i + 1][k] == 1)\{}
+\DoxyCodeLine{71                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{72                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{73                     \}}
+\DoxyCodeLine{74                 \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{77                     map[i + 1][k] = 1;}
+\DoxyCodeLine{78                     \textcolor{keywordflow}{if}(k == j + 1)\{}
+\DoxyCodeLine{79                         map[i][j + 1] = 1;}
+\DoxyCodeLine{80                     \}}
+\DoxyCodeLine{81                 \}}
+\DoxyCodeLine{82                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84             \}}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{88 \}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} deleteT1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{  \textcolor{comment}{/* */}}
+\DoxyCodeLine{91     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{92     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{93         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{94             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{95                 map[i][j + 1] = 0;}
+\DoxyCodeLine{96                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{97                     map[i + 1][k] = 0;}
+\DoxyCodeLine{98                 \}}
+\DoxyCodeLine{99             \}}
+\DoxyCodeLine{100         \}}
+\DoxyCodeLine{101     \}}
+\DoxyCodeLine{102 \}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{/*   +   */}}
+\DoxyCodeLine{106 \textcolor{comment}{/*   ++   */}}
+\DoxyCodeLine{107 \textcolor{comment}{/*   +    */}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keywordtype}{int} drawT2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{110     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{111     \textcolor{keywordflow}{for}(i = 0; i + 2 < height -\/ 1; i++)\{}
+\DoxyCodeLine{112         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{113             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{114                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{115                     \textcolor{keywordflow}{if}(map[i + 1][j + 1] == 1 || map[k][j] == 1)\{}
+\DoxyCodeLine{116                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{117                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{118                     \}}
+\DoxyCodeLine{119                 \}}
+\DoxyCodeLine{120                 }
+\DoxyCodeLine{121                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{122                     map[k][j] = 1;}
+\DoxyCodeLine{123                     \textcolor{keywordflow}{if}(k == i + 1)\{}
+\DoxyCodeLine{124                         map[k][j + 1] = 1;}
+\DoxyCodeLine{125                     \}}
+\DoxyCodeLine{126                 \}}
+\DoxyCodeLine{127                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129             \}}
+\DoxyCodeLine{130         \}}
+\DoxyCodeLine{131     \}}
+\DoxyCodeLine{132     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{133 \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{keywordtype}{void} deleteT2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{136     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{137     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{138         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{139             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{140                 map[i + 1][j + 1] = 0;}
+\DoxyCodeLine{141                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{142                     map[k][j] = 0;}
+\DoxyCodeLine{143                 \}}
+\DoxyCodeLine{144             \}}
+\DoxyCodeLine{145         \}}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147 \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150 \textcolor{comment}{/*    +   */}}
+\DoxyCodeLine{151 \textcolor{comment}{/*   ++   */}}
+\DoxyCodeLine{152 \textcolor{comment}{/*    +    */}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{keywordtype}{int} drawT3(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{155     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{156     \textcolor{keywordflow}{for}(i = 0; i + 2 < height -\/ 1; i++)\{}
+\DoxyCodeLine{157         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{158             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{159                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{160                     \textcolor{keywordflow}{if}(map[i + 1][j] == 1 || map[k][j + 1] == 1)\{}
+\DoxyCodeLine{161                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{162                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{163                     \}}
+\DoxyCodeLine{164                 \}}
+\DoxyCodeLine{165                 }
+\DoxyCodeLine{166                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{167                     map[k][j + 1] = 1;}
+\DoxyCodeLine{168                     \textcolor{keywordflow}{if}(k == i + 1)\{}
+\DoxyCodeLine{169                         map[i + 1][j] = 1;}
+\DoxyCodeLine{170                     \}}
+\DoxyCodeLine{171                 \}}
+\DoxyCodeLine{172                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174             \}}
+\DoxyCodeLine{175         \}}
+\DoxyCodeLine{176     \}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{179 \}}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{keywordtype}{void} deleteT3(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{182     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{183     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{184         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{185             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{186                 map[i + 1][j] = 0;}
+\DoxyCodeLine{187                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{188                     map[k][j + 1] = 0;}
+\DoxyCodeLine{189                 \}}
+\DoxyCodeLine{190             \}}
+\DoxyCodeLine{191         \}}
+\DoxyCodeLine{192     \}}
+\DoxyCodeLine{193 \}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{comment}{/* T, T1, T2, T3 */}}
+\DoxyCodeLine{196 \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{197 \textcolor{comment}{/* Z, Z1, Z2, Z3 */}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{comment}{/*  **}}
+\DoxyCodeLine{200 \textcolor{comment}{     **  */}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{keywordtype}{int} drawZ(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{203    \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{204     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{205         \textcolor{keywordflow}{for}(j = 1; j + 2 < width -\/ 1; j++)\{}
+\DoxyCodeLine{206             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{207                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{208                     \textcolor{keywordflow}{if}( (k <= j + 1 \&\& map[i][k] == 1 ) || ( k >= j + 1 \&\& map[i + 1][k] == 1) )\{}
+\DoxyCodeLine{209                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{210                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{211                     \}}
+\DoxyCodeLine{212                 \}}
+\DoxyCodeLine{213                 }
+\DoxyCodeLine{214                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{215                     \textcolor{keywordflow}{if}(k <= j + 1)\{}
+\DoxyCodeLine{216                         map[i][k] = 1;}
+\DoxyCodeLine{217                     \}}
+\DoxyCodeLine{218                     \textcolor{keywordflow}{if}(k >= j + 1)\{}
+\DoxyCodeLine{219                         map[i + 1][k] = 1;}
+\DoxyCodeLine{220                     \}}
+\DoxyCodeLine{221                 \}}
+\DoxyCodeLine{222                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224             \}}
+\DoxyCodeLine{225         \}}
+\DoxyCodeLine{226     \}}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{229 \}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{keywordtype}{void} deleteZ(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{232     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{233     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{234         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{235             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{236                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{237                     \textcolor{keywordflow}{if}(k <= j + 1)\{}
+\DoxyCodeLine{238                         map[i][k] = 0;}
+\DoxyCodeLine{239                     \}}
+\DoxyCodeLine{240                     \textcolor{keywordflow}{if}(k >= j + 1)\{}
+\DoxyCodeLine{241                         map[i + 1][k] = 0;}
+\DoxyCodeLine{242                     \}}
+\DoxyCodeLine{243                 \}}
+\DoxyCodeLine{244             \}}
+\DoxyCodeLine{245         \}}
+\DoxyCodeLine{246     \}}
+\DoxyCodeLine{247 \}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{comment}{/*    *}}
+\DoxyCodeLine{251 \textcolor{comment}{    * *}}
+\DoxyCodeLine{252 \textcolor{comment}{    *   */}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254 \textcolor{keywordtype}{int} drawZ1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{255    \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{256     \textcolor{keywordflow}{for}(i = 0; i + 2 < height -\/ 1; i++)\{}
+\DoxyCodeLine{257         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{258             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{259                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{260                     \textcolor{keywordflow}{if}( (k <= i + 1 \&\& map[k][j + 1] == 1 ) || ( k >= i + 1 \&\& map[k][j] == 1) )\{}
+\DoxyCodeLine{261                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{262                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{263                     \}}
+\DoxyCodeLine{264                 \}}
+\DoxyCodeLine{265                 }
+\DoxyCodeLine{266                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{267                     \textcolor{keywordflow}{if}(k <= i + 1)\{}
+\DoxyCodeLine{268                         map[k][j + 1] = 1;}
+\DoxyCodeLine{269                     \}}
+\DoxyCodeLine{270                     \textcolor{keywordflow}{if}(k >= i + 1)\{}
+\DoxyCodeLine{271                         map[k][j] = 1;}
+\DoxyCodeLine{272                     \}}
+\DoxyCodeLine{273                 \}}
+\DoxyCodeLine{274                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{275 }
+\DoxyCodeLine{276             \}}
+\DoxyCodeLine{277         \}}
+\DoxyCodeLine{278     \}}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{281 \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283 \textcolor{keywordtype}{void} deleteZ1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{284     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{285     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{286         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{287             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{288                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{289                     \textcolor{keywordflow}{if}(k <= i + 1)\{}
+\DoxyCodeLine{290                         map[k][j + 1] = 0;}
+\DoxyCodeLine{291                     \}}
+\DoxyCodeLine{292                     \textcolor{keywordflow}{if}(k >= i + 1)\{}
+\DoxyCodeLine{293                         map[k][j] = 0;}
+\DoxyCodeLine{294                     \}}
+\DoxyCodeLine{295                 \}}
+\DoxyCodeLine{296             \}}
+\DoxyCodeLine{297         \}}
+\DoxyCodeLine{298     \}}
+\DoxyCodeLine{299 \}}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \textcolor{comment}{/*    * *}}
+\DoxyCodeLine{302 \textcolor{comment}{    * *     */}}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{keywordtype}{int} drawZ2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{305    \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{306     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{307         \textcolor{keywordflow}{for}(j = 1; j + 2 < width -\/ 1; j++)\{}
+\DoxyCodeLine{308             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{309                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{310                     \textcolor{keywordflow}{if}( (k >= j + 1 \&\& map[i][k] == 1 ) || ( k <= j + 1 \&\& map[i + 1][k] == 1) )\{}
+\DoxyCodeLine{311                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{312                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{313                     \}}
+\DoxyCodeLine{314                 \}}
+\DoxyCodeLine{315                 }
+\DoxyCodeLine{316                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{317                     \textcolor{keywordflow}{if}(k >= j + 1)\{}
+\DoxyCodeLine{318                         map[i][k] = 1;}
+\DoxyCodeLine{319                     \}}
+\DoxyCodeLine{320                     \textcolor{keywordflow}{if}(k <= j + 1)\{}
+\DoxyCodeLine{321                         map[i + 1][k] = 1;}
+\DoxyCodeLine{322                     \}}
+\DoxyCodeLine{323                 \}}
+\DoxyCodeLine{324                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326             \}}
+\DoxyCodeLine{327         \}}
+\DoxyCodeLine{328     \}}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{331 \}}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 \textcolor{keywordtype}{void} deleteZ2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{334     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{335     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{336         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{337             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{338                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{339                     \textcolor{keywordflow}{if}(k >= j + 1)\{}
+\DoxyCodeLine{340                         map[i][k] = 0;}
+\DoxyCodeLine{341                     \}}
+\DoxyCodeLine{342                     \textcolor{keywordflow}{if}(k <= j + 1)\{}
+\DoxyCodeLine{343                         map[i + 1][k] = 0;}
+\DoxyCodeLine{344                     \}}
+\DoxyCodeLine{345                 \}}
+\DoxyCodeLine{346             \}}
+\DoxyCodeLine{347         \}}
+\DoxyCodeLine{348     \}}
+\DoxyCodeLine{349 \}}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{comment}{/*  *}}
+\DoxyCodeLine{352 \textcolor{comment}{    * *}}
+\DoxyCodeLine{353 \textcolor{comment}{      *   */}}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{keywordtype}{int} drawZ3(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{356    \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{357     \textcolor{keywordflow}{for}(i = 0; i + 2 < height -\/ 1; i++)\{}
+\DoxyCodeLine{358         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{359             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{360                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{361                     \textcolor{keywordflow}{if}( (k >= i + 1 \&\& map[k][j + 1] == 1 ) || ( k <= i + 1 \&\& map[k][j] == 1) )\{}
+\DoxyCodeLine{362                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{363                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{364                     \}}
+\DoxyCodeLine{365                 \}}
+\DoxyCodeLine{366                 }
+\DoxyCodeLine{367                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{368                     \textcolor{keywordflow}{if}(k >= i + 1)\{}
+\DoxyCodeLine{369                         map[k][j + 1] = 1;}
+\DoxyCodeLine{370                     \}}
+\DoxyCodeLine{371                     \textcolor{keywordflow}{if}(k <= i + 1)\{}
+\DoxyCodeLine{372                         map[k][j] = 1;}
+\DoxyCodeLine{373                     \}}
+\DoxyCodeLine{374                 \}}
+\DoxyCodeLine{375                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377             \}}
+\DoxyCodeLine{378         \}}
+\DoxyCodeLine{379     \}}
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{382 \}}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{keywordtype}{void} deleteZ3(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{385     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{386     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{387         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{388             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{389                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{390                     \textcolor{keywordflow}{if}(k >= i + 1)\{}
+\DoxyCodeLine{391                         map[k][j + 1] = 0;}
+\DoxyCodeLine{392                     \}}
+\DoxyCodeLine{393                     \textcolor{keywordflow}{if}(k <= i + 1)\{}
+\DoxyCodeLine{394                         map[k][j] = 0;}
+\DoxyCodeLine{395                     \}}
+\DoxyCodeLine{396                 \}}
+\DoxyCodeLine{397             \}}
+\DoxyCodeLine{398         \}}
+\DoxyCodeLine{399     \}}
+\DoxyCodeLine{400 \}}
+\DoxyCodeLine{401 }
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403 \textcolor{comment}{/* Z, Z1, Z2, Z3 */}}
+\DoxyCodeLine{404 \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{405 \textcolor{comment}{/* I, I1 */}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407 \textcolor{comment}{/* }}
+\DoxyCodeLine{408 \textcolor{comment}{    *}}
+\DoxyCodeLine{409 \textcolor{comment}{    *}}
+\DoxyCodeLine{410 \textcolor{comment}{    * }}
+\DoxyCodeLine{411 \textcolor{comment}{    * }}
+\DoxyCodeLine{412 \textcolor{comment}{*/}}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414 \textcolor{keywordtype}{int} drawI(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{415     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{416     \textcolor{keywordflow}{for}(i = 0; i + 3 < height -\/ 1; i++)\{}
+\DoxyCodeLine{417         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{418             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{419                 \textcolor{keywordflow}{for}(k = i; k < i + 4; k++)\{}
+\DoxyCodeLine{420                     \textcolor{keywordflow}{if}(map[k][j] == 1)\{}
+\DoxyCodeLine{421                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{422                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{423                     \}}
+\DoxyCodeLine{424                 \}}
+\DoxyCodeLine{425                 }
+\DoxyCodeLine{426                 \textcolor{keywordflow}{for}(k = i; k < i + 4; k++)\{}
+\DoxyCodeLine{427                     map[k][j] = 1;}
+\DoxyCodeLine{428                 \}}
+\DoxyCodeLine{429                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{430 }
+\DoxyCodeLine{431             \}}
+\DoxyCodeLine{432         \}}
+\DoxyCodeLine{433     \}}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{436 \}}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438 \textcolor{keywordtype}{void} deleteI(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{439     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{440     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{441         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{442             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{443                 \textcolor{keywordflow}{for}(k = i; k < i + 4; k++)\{}
+\DoxyCodeLine{444                     map[k][j] = 0;}
+\DoxyCodeLine{445                 \}}
+\DoxyCodeLine{446             \}}
+\DoxyCodeLine{447         \}}
+\DoxyCodeLine{448     \}}
+\DoxyCodeLine{449 \}}
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452 \textcolor{comment}{/* }}
+\DoxyCodeLine{453 \textcolor{comment}{    * * * *}}
+\DoxyCodeLine{454 \textcolor{comment}{*/}}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456 \textcolor{keywordtype}{int} drawI1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{457     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{458     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{459         \textcolor{keywordflow}{for}(j = 1; j + 3 < width -\/ 1; j++)\{}
+\DoxyCodeLine{460             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{461                 \textcolor{keywordflow}{for}(k = j; k < j + 4; k++)\{}
+\DoxyCodeLine{462                     \textcolor{keywordflow}{if}(map[i][k] == 1)\{}
+\DoxyCodeLine{463                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{464                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{465                     \}}
+\DoxyCodeLine{466                 \}}
+\DoxyCodeLine{467                 }
+\DoxyCodeLine{468                 \textcolor{keywordflow}{for}(k = j; k < j + 4; k++)\{}
+\DoxyCodeLine{469                     map[i][k] = 1;}
+\DoxyCodeLine{470                 \}}
+\DoxyCodeLine{471                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473             \}}
+\DoxyCodeLine{474         \}}
+\DoxyCodeLine{475     \}}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{478 \}}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{keywordtype}{void} deleteI1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{481     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{482     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{483         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{484             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{485                 \textcolor{keywordflow}{for}(k = j; k < j + 4; k++)\{}
+\DoxyCodeLine{486                     map[i][k] = 0;}
+\DoxyCodeLine{487                 \}}
+\DoxyCodeLine{488             \}}
+\DoxyCodeLine{489         \}}
+\DoxyCodeLine{490     \}}
+\DoxyCodeLine{491 \}}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494 \textcolor{comment}{/* I, I1 */}}
+\DoxyCodeLine{495 \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{496 \textcolor{comment}{/* L, L1, L2, L3 */}}
+\DoxyCodeLine{497 }
+\DoxyCodeLine{498 \textcolor{comment}{/* }}
+\DoxyCodeLine{499 \textcolor{comment}{    *}}
+\DoxyCodeLine{500 \textcolor{comment}{    *}}
+\DoxyCodeLine{501 \textcolor{comment}{    * *}}
+\DoxyCodeLine{502 \textcolor{comment}{*/}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{keywordtype}{int} drawL(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{505     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{506     \textcolor{keywordflow}{for}(i = 0; i + 2 < height -\/ 1; i++)\{}
+\DoxyCodeLine{507         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{508             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{509                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{510                     \textcolor{keywordflow}{if}(map[k][j] == 1 || (map[k][j + 1] == 1 \&\& k == i + 2) )\{}
+\DoxyCodeLine{511                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{512                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{513                     \}}
+\DoxyCodeLine{514                 \}}
+\DoxyCodeLine{515                 }
+\DoxyCodeLine{516                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{         }
+\DoxyCodeLine{517                     map[k][j] = 1;}
+\DoxyCodeLine{518                     \textcolor{keywordflow}{if}(k == i + 2)\{}
+\DoxyCodeLine{519                         map[k][j + 1] = 1;}
+\DoxyCodeLine{520                     \}}
+\DoxyCodeLine{521                 \}}
+\DoxyCodeLine{522                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{524             \}}
+\DoxyCodeLine{525         \}}
+\DoxyCodeLine{526     \}}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{529 \}}
+\DoxyCodeLine{530 }
+\DoxyCodeLine{531 \textcolor{keywordtype}{void} deleteL(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{532     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{533     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{534         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{535             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{536                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{         }
+\DoxyCodeLine{537                     map[k][j] = 0;}
+\DoxyCodeLine{538                     \textcolor{keywordflow}{if}(k == i + 2)\{}
+\DoxyCodeLine{539                         map[k][j + 1] = 0;}
+\DoxyCodeLine{540                     \}}
+\DoxyCodeLine{541                 \}}
+\DoxyCodeLine{542             \}}
+\DoxyCodeLine{543         \}}
+\DoxyCodeLine{544     \}}
+\DoxyCodeLine{545 \}}
+\DoxyCodeLine{546 }
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548 \textcolor{comment}{/* }}
+\DoxyCodeLine{549 \textcolor{comment}{    * * *}}
+\DoxyCodeLine{550 \textcolor{comment}{    *}}
+\DoxyCodeLine{551 \textcolor{comment}{*/}}
+\DoxyCodeLine{552 }
+\DoxyCodeLine{553 \textcolor{keywordtype}{int} drawL1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{554     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{555     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{556         \textcolor{keywordflow}{for}(j = 1; j + 2 < width -\/ 1; j++)\{}
+\DoxyCodeLine{557             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{558                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{559                     \textcolor{keywordflow}{if}(map[i][k] == 1 || map[i + 1][j] == 1)\{}
+\DoxyCodeLine{560                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{561                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{562                     \}}
+\DoxyCodeLine{563                 \}}
+\DoxyCodeLine{564                 }
+\DoxyCodeLine{565                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{         }
+\DoxyCodeLine{566                     map[i][k] = 1;}
+\DoxyCodeLine{567                     \textcolor{keywordflow}{if}(k == j)\{}
+\DoxyCodeLine{568                         map[i + 1][k] = 1;}
+\DoxyCodeLine{569                     \}}
+\DoxyCodeLine{570                 \}}
+\DoxyCodeLine{571                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573             \}}
+\DoxyCodeLine{574         \}}
+\DoxyCodeLine{575     \}}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{578 \}}
+\DoxyCodeLine{579 }
+\DoxyCodeLine{580 \textcolor{keywordtype}{void} deleteL1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{581     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{582     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{583         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{584             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{585                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{         }
+\DoxyCodeLine{586                     map[i][k] = 0;}
+\DoxyCodeLine{587                     \textcolor{keywordflow}{if}(k == j)\{}
+\DoxyCodeLine{588                         map[i + 1][k] = 0;}
+\DoxyCodeLine{589                     \}}
+\DoxyCodeLine{590                 \}}
+\DoxyCodeLine{591             \}}
+\DoxyCodeLine{592         \}}
+\DoxyCodeLine{593     \}}
+\DoxyCodeLine{594 \}}
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596 }
+\DoxyCodeLine{597 \textcolor{comment}{/* }}
+\DoxyCodeLine{598 \textcolor{comment}{    * *}}
+\DoxyCodeLine{599 \textcolor{comment}{      *}}
+\DoxyCodeLine{600 \textcolor{comment}{      * }}
+\DoxyCodeLine{601 \textcolor{comment}{*/}}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603 \textcolor{keywordtype}{int} drawL2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{604     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{605     \textcolor{keywordflow}{for}(i = 0; i + 2 < height -\/ 1; i++)\{}
+\DoxyCodeLine{606         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{607             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{608                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{609                     \textcolor{keywordflow}{if}(map[k][j + 1] == 1 || (map[k][j] == 1 \&\& k == i) )\{}
+\DoxyCodeLine{610                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{611                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{612                     \}}
+\DoxyCodeLine{613                 \}}
+\DoxyCodeLine{614                 }
+\DoxyCodeLine{615                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{         }
+\DoxyCodeLine{616                     map[k][j + 1] = 1;}
+\DoxyCodeLine{617                     \textcolor{keywordflow}{if}(k == i)\{}
+\DoxyCodeLine{618                         map[k][j] = 1;}
+\DoxyCodeLine{619                     \}}
+\DoxyCodeLine{620                 \}}
+\DoxyCodeLine{621                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{623             \}}
+\DoxyCodeLine{624         \}}
+\DoxyCodeLine{625     \}}
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{628 \}}
+\DoxyCodeLine{629 }
+\DoxyCodeLine{630 \textcolor{keywordtype}{void} deleteL2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{631     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{632     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{633         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{634             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{635                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{         }
+\DoxyCodeLine{636                     map[k][j + 1] = 0;}
+\DoxyCodeLine{637                     \textcolor{keywordflow}{if}(k == i)\{}
+\DoxyCodeLine{638                         map[k][j] = 0;}
+\DoxyCodeLine{639                     \}}
+\DoxyCodeLine{640                 \}}
+\DoxyCodeLine{641             \}}
+\DoxyCodeLine{642         \}}
+\DoxyCodeLine{643     \}}
+\DoxyCodeLine{644 \}}
+\DoxyCodeLine{645 }
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647 \textcolor{comment}{/* }}
+\DoxyCodeLine{648 \textcolor{comment}{        *}}
+\DoxyCodeLine{649 \textcolor{comment}{    * * *}}
+\DoxyCodeLine{650 \textcolor{comment}{*/}}
+\DoxyCodeLine{651 }
+\DoxyCodeLine{652 \textcolor{keywordtype}{int} drawL3(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{653     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{654     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{655         \textcolor{keywordflow}{for}(j = 1; j + 2 < width -\/ 1; j++)\{}
+\DoxyCodeLine{656             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{657                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{658                     \textcolor{keywordflow}{if}(map[i + 1][k] == 1 || map[i][j + 2] == 1)\{}
+\DoxyCodeLine{659                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{660                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{661                     \}}
+\DoxyCodeLine{662                 \}}
+\DoxyCodeLine{663                 }
+\DoxyCodeLine{664                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{         }
+\DoxyCodeLine{665                     map[i + 1][k] = 1;}
+\DoxyCodeLine{666                     \textcolor{keywordflow}{if}(k == j + 2)\{}
+\DoxyCodeLine{667                         map[i][k] = 1;}
+\DoxyCodeLine{668                     \}}
+\DoxyCodeLine{669                 \}}
+\DoxyCodeLine{670                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{671 }
+\DoxyCodeLine{672             \}}
+\DoxyCodeLine{673         \}}
+\DoxyCodeLine{674     \}}
+\DoxyCodeLine{675 }
+\DoxyCodeLine{676     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{677 \}}
+\DoxyCodeLine{678 }
+\DoxyCodeLine{679 \textcolor{keywordtype}{void} deleteL3(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{680     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{681     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{682         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{683             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{684                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{         }
+\DoxyCodeLine{685                     map[i + 1][k] = 0;}
+\DoxyCodeLine{686                     \textcolor{keywordflow}{if}(k == j + 2)\{}
+\DoxyCodeLine{687                         map[i][k] = 0;}
+\DoxyCodeLine{688                     \}}
+\DoxyCodeLine{689                 \}}
+\DoxyCodeLine{690             \}}
+\DoxyCodeLine{691         \}}
+\DoxyCodeLine{692     \}}
+\DoxyCodeLine{693 \}}
+\DoxyCodeLine{694 }
+\DoxyCodeLine{695 }
+\DoxyCodeLine{696 \textcolor{comment}{/* L, L1, L2, L3 */}}
+\DoxyCodeLine{697 \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{698 \textcolor{comment}{/* Lr, Lr1, Lr2, Lr3 */}}
+\DoxyCodeLine{699 }
+\DoxyCodeLine{700 \textcolor{comment}{/*    *}}
+\DoxyCodeLine{701 \textcolor{comment}{      *}}
+\DoxyCodeLine{702 \textcolor{comment}{    * *}}
+\DoxyCodeLine{703 \textcolor{comment}{*/}}
+\DoxyCodeLine{704 }
+\DoxyCodeLine{705 \textcolor{keywordtype}{int} drawLr(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{706     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{707     \textcolor{keywordflow}{for}(i = 0; i + 2 < height -\/ 1; i++)\{}
+\DoxyCodeLine{708         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{709             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{710                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{711                     \textcolor{keywordflow}{if}(map[k][j + 1] == 1 || (map[k][j] == 1 \&\& k == i + 2) )\{}
+\DoxyCodeLine{712                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{713                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{714                     \}}
+\DoxyCodeLine{715                 \}}
+\DoxyCodeLine{716                 }
+\DoxyCodeLine{717                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{         }
+\DoxyCodeLine{718                     map[k][j + 1] = 1;}
+\DoxyCodeLine{719                     \textcolor{keywordflow}{if}(k == i + 2)\{}
+\DoxyCodeLine{720                         map[k][j] = 1;}
+\DoxyCodeLine{721                     \}}
+\DoxyCodeLine{722                 \}}
+\DoxyCodeLine{723                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{724 }
+\DoxyCodeLine{725             \}}
+\DoxyCodeLine{726         \}}
+\DoxyCodeLine{727     \}}
+\DoxyCodeLine{728 }
+\DoxyCodeLine{729     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{730 \}}
+\DoxyCodeLine{731 }
+\DoxyCodeLine{732 \textcolor{keywordtype}{void} deleteLr(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{733     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{734     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{735         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{736             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{737                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{         }
+\DoxyCodeLine{738                     map[k][j + 1] = 0;}
+\DoxyCodeLine{739                     \textcolor{keywordflow}{if}(k == i + 2)\{}
+\DoxyCodeLine{740                         map[k][j] = 0;}
+\DoxyCodeLine{741                     \}}
+\DoxyCodeLine{742                 \}}
+\DoxyCodeLine{743             \}}
+\DoxyCodeLine{744         \}}
+\DoxyCodeLine{745     \}}
+\DoxyCodeLine{746 \}}
+\DoxyCodeLine{747 }
+\DoxyCodeLine{748 }
+\DoxyCodeLine{749 \textcolor{comment}{/* }}
+\DoxyCodeLine{750 \textcolor{comment}{    *}}
+\DoxyCodeLine{751 \textcolor{comment}{    * * *}}
+\DoxyCodeLine{752 \textcolor{comment}{*/}}
+\DoxyCodeLine{753 }
+\DoxyCodeLine{754 \textcolor{keywordtype}{int} drawLr1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{755     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{756     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{757         \textcolor{keywordflow}{for}(j = 1; j + 2 < width -\/ 1; j++)\{}
+\DoxyCodeLine{758             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{759                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{760                     \textcolor{keywordflow}{if}(map[i][k] == 1 || map[i + 1][j] == 1)\{}
+\DoxyCodeLine{761                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{762                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{763                     \}}
+\DoxyCodeLine{764                 \}}
+\DoxyCodeLine{765                 }
+\DoxyCodeLine{766                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{         }
+\DoxyCodeLine{767                     map[i + 1][k] = 1;}
+\DoxyCodeLine{768                     \textcolor{keywordflow}{if}(k == j)\{}
+\DoxyCodeLine{769                         map[i][k] = 1;}
+\DoxyCodeLine{770                     \}}
+\DoxyCodeLine{771                 \}}
+\DoxyCodeLine{772                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{773 }
+\DoxyCodeLine{774             \}}
+\DoxyCodeLine{775         \}}
+\DoxyCodeLine{776     \}}
+\DoxyCodeLine{777 }
+\DoxyCodeLine{778     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{779 \}}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781 \textcolor{keywordtype}{void} deleteLr1(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{782     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{783     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{784         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{785             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{786                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{         }
+\DoxyCodeLine{787                     map[i + 1][k] = 0;}
+\DoxyCodeLine{788                     \textcolor{keywordflow}{if}(k == j)\{}
+\DoxyCodeLine{789                         map[i][k] = 0;}
+\DoxyCodeLine{790                     \}}
+\DoxyCodeLine{791                 \}}
+\DoxyCodeLine{792             \}}
+\DoxyCodeLine{793         \}}
+\DoxyCodeLine{794     \}}
+\DoxyCodeLine{795 \}}
+\DoxyCodeLine{796 }
+\DoxyCodeLine{797 }
+\DoxyCodeLine{798 \textcolor{comment}{/* }}
+\DoxyCodeLine{799 \textcolor{comment}{    * *}}
+\DoxyCodeLine{800 \textcolor{comment}{    *}}
+\DoxyCodeLine{801 \textcolor{comment}{    * }}
+\DoxyCodeLine{802 \textcolor{comment}{*/}}
+\DoxyCodeLine{803 }
+\DoxyCodeLine{804 \textcolor{keywordtype}{int} drawLr2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{805     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{806     \textcolor{keywordflow}{for}(i = 0; i + 2 < height -\/ 1; i++)\{}
+\DoxyCodeLine{807         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{808             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{809                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{}
+\DoxyCodeLine{810                     \textcolor{keywordflow}{if}(map[k][j] == 1 || (map[k][j + 1] == 1 \&\& k == i) )\{}
+\DoxyCodeLine{811                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{812                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{813                     \}}
+\DoxyCodeLine{814                 \}}
+\DoxyCodeLine{815                 }
+\DoxyCodeLine{816                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{         }
+\DoxyCodeLine{817                     map[k][j] = 1;}
+\DoxyCodeLine{818                     \textcolor{keywordflow}{if}(k == i)\{}
+\DoxyCodeLine{819                         map[k][j + 1] = 1;}
+\DoxyCodeLine{820                     \}}
+\DoxyCodeLine{821                 \}}
+\DoxyCodeLine{822                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{823 }
+\DoxyCodeLine{824             \}}
+\DoxyCodeLine{825         \}}
+\DoxyCodeLine{826     \}}
+\DoxyCodeLine{827 }
+\DoxyCodeLine{828     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{829 \}}
+\DoxyCodeLine{830 }
+\DoxyCodeLine{831 \textcolor{keywordtype}{void} deleteLr2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{832     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{833     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{834         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{835             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{836                 \textcolor{keywordflow}{for}(k = i; k < i + 3; k++)\{         }
+\DoxyCodeLine{837                     map[k][j] = 0;}
+\DoxyCodeLine{838                     \textcolor{keywordflow}{if}(k == i)\{}
+\DoxyCodeLine{839                         map[k][j + 1] = 0;}
+\DoxyCodeLine{840                     \}}
+\DoxyCodeLine{841                 \}}
+\DoxyCodeLine{842             \}}
+\DoxyCodeLine{843         \}}
+\DoxyCodeLine{844     \}}
+\DoxyCodeLine{845 \}}
+\DoxyCodeLine{846 }
+\DoxyCodeLine{847 }
+\DoxyCodeLine{848 \textcolor{comment}{/* }}
+\DoxyCodeLine{849 \textcolor{comment}{    * * *}}
+\DoxyCodeLine{850 \textcolor{comment}{        *}}
+\DoxyCodeLine{851 \textcolor{comment}{*/}}
+\DoxyCodeLine{852 }
+\DoxyCodeLine{853 \textcolor{keywordtype}{int} drawLr3(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{854     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{855     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{856         \textcolor{keywordflow}{for}(j = 1; j + 2 < width -\/ 1; j++)\{}
+\DoxyCodeLine{857             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{858                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{}
+\DoxyCodeLine{859                     \textcolor{keywordflow}{if}(map[i][k] == 1 || map[i + 1][j + 2] == 1)\{}
+\DoxyCodeLine{860                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{861                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{862                     \}}
+\DoxyCodeLine{863                 \}}
+\DoxyCodeLine{864                 }
+\DoxyCodeLine{865                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{         }
+\DoxyCodeLine{866                     map[i][k] = 1;}
+\DoxyCodeLine{867                     \textcolor{keywordflow}{if}(k == j + 2)\{}
+\DoxyCodeLine{868                         map[i + 1][k] = 1;}
+\DoxyCodeLine{869                     \}}
+\DoxyCodeLine{870                 \}}
+\DoxyCodeLine{871                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{872 }
+\DoxyCodeLine{873             \}}
+\DoxyCodeLine{874         \}}
+\DoxyCodeLine{875     \}}
+\DoxyCodeLine{876 }
+\DoxyCodeLine{877     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{878 \}}
+\DoxyCodeLine{879 }
+\DoxyCodeLine{880 \textcolor{keywordtype}{void} deleteLr3(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{881     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{882     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{883         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{884             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{885                 \textcolor{keywordflow}{for}(k = j; k < j + 3; k++)\{         }
+\DoxyCodeLine{886                     map[i][k] = 0;}
+\DoxyCodeLine{887                     \textcolor{keywordflow}{if}(k == j + 2)\{}
+\DoxyCodeLine{888                         map[i + 1][k] = 0;}
+\DoxyCodeLine{889                     \}}
+\DoxyCodeLine{890                 \}}
+\DoxyCodeLine{891             \}}
+\DoxyCodeLine{892         \}}
+\DoxyCodeLine{893     \}}
+\DoxyCodeLine{894 \}}
+\DoxyCodeLine{895 }
+\DoxyCodeLine{896 }
+\DoxyCodeLine{897 \textcolor{comment}{/* Lr, Lr1, Lr2, Lr3 */}}
+\DoxyCodeLine{898 \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{899 \textcolor{comment}{/* O */}}
+\DoxyCodeLine{900 }
+\DoxyCodeLine{901 \textcolor{comment}{/* }}
+\DoxyCodeLine{902 \textcolor{comment}{    * *}}
+\DoxyCodeLine{903 \textcolor{comment}{    * *}}
+\DoxyCodeLine{904 \textcolor{comment}{*/}}
+\DoxyCodeLine{905 }
+\DoxyCodeLine{906 \textcolor{keywordtype}{int} drawO(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{907     \textcolor{keywordtype}{int} k, i , j, f = 1;}
+\DoxyCodeLine{908     \textcolor{keywordflow}{for}(i = 0; i + 1 < height -\/ 1; i++)\{}
+\DoxyCodeLine{909         \textcolor{keywordflow}{for}(j = 1; j + 1 < width -\/ 1; j++)\{}
+\DoxyCodeLine{910             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{911                 \textcolor{keywordflow}{for}(k = j; k < j + 2; k++)\{}
+\DoxyCodeLine{912                     \textcolor{keywordflow}{if}(map[i][k] == 1 || map[i + 1][k] == 1)\{}
+\DoxyCodeLine{913                         printf(\textcolor{stringliteral}{"{}\(\backslash\)nPiece cannot be here \(\backslash\)n"{}});}
+\DoxyCodeLine{914                         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{915                     \}}
+\DoxyCodeLine{916                 \}}
+\DoxyCodeLine{917                 }
+\DoxyCodeLine{918                 \textcolor{keywordflow}{for}(k = j; k < j + 2; k++)\{         }
+\DoxyCodeLine{919                     map[i][k] = 1;}
+\DoxyCodeLine{920                     map[i + 1][k] = 1;}
+\DoxyCodeLine{921                 \}}
+\DoxyCodeLine{922                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{923 }
+\DoxyCodeLine{924             \}}
+\DoxyCodeLine{925         \}}
+\DoxyCodeLine{926     \}}
+\DoxyCodeLine{927 }
+\DoxyCodeLine{928     \textcolor{keywordflow}{return} f;}
+\DoxyCodeLine{929 \}}
+\DoxyCodeLine{930 }
+\DoxyCodeLine{931 \textcolor{keywordtype}{void} deleteO(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{932     \textcolor{keywordtype}{int} k, i , j;}
+\DoxyCodeLine{933     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{934         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{935             \textcolor{keywordflow}{if}(i == y \&\& j == x)\{}
+\DoxyCodeLine{936                 \textcolor{keywordflow}{for}(k = j; k < j + 2; k++)\{         }
+\DoxyCodeLine{937                     map[i][k] = 0;}
+\DoxyCodeLine{938                     map[i + 1][k] = 0;}
+\DoxyCodeLine{939                 \}}
+\DoxyCodeLine{940             \}}
+\DoxyCodeLine{941         \}}
+\DoxyCodeLine{942     \}}
+\DoxyCodeLine{943 \}}
+\DoxyCodeLine{944 }
+\DoxyCodeLine{945 }
+
+\end{DoxyCode}

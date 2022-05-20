@@ -1,0 +1,783 @@
+\hypertarget{_cut_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Cut.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* map è passato come parametro per righe e colonne ma basta specificare il numero delle colonne*/}}
+\DoxyCodeLine{3 \textcolor{keywordtype}{void} stampaNome(\textcolor{keywordtype}{char} *playerone)\{}
+\DoxyCodeLine{4     printf(\textcolor{stringliteral}{"{}Your name is \%s \(\backslash\)n"{}}, playerone);}
+\DoxyCodeLine{5 \}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keywordtype}{void} askName(\textcolor{keywordtype}{char} name[20], \textcolor{keywordtype}{char} n)\{}
+\DoxyCodeLine{8     \textcolor{keywordtype}{int} a = 0;}
+\DoxyCodeLine{9     \textcolor{keywordtype}{char} confirm;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         printf(\textcolor{stringliteral}{"{}Type player \%c name: "{}}, n);}
+\DoxyCodeLine{16         scanf(\textcolor{stringliteral}{"{}\%s"{}}, name);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         printf(\textcolor{stringliteral}{"{}You've typed: \%s, are you sure? (Y/N):"{}}, name);}
+\DoxyCodeLine{19         \textcolor{comment}{/*}}
+\DoxyCodeLine{20 \textcolor{comment}{          The \%c conversion specifier won't automatically skip any leading whitespace, so if there's}}
+\DoxyCodeLine{21 \textcolor{comment}{          a stray newline in the input stream (from a previous entry, for example) the scanf call}}
+\DoxyCodeLine{22 \textcolor{comment}{          will consume it immediately.}}
+\DoxyCodeLine{23 \textcolor{comment}{          One way around the problem is to put a blank space before the conversion specifier}}
+\DoxyCodeLine{24 \textcolor{comment}{          in the format string:}}
+\DoxyCodeLine{25 \textcolor{comment}{          }}
+\DoxyCodeLine{26 \textcolor{comment}{          scanf("{} \%c"{}, \&c);}}
+\DoxyCodeLine{27 \textcolor{comment}{        }}
+\DoxyCodeLine{28 \textcolor{comment}{        */}}
+\DoxyCodeLine{29         scanf(\textcolor{stringliteral}{"{} \%c"{}}, \&confirm);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \textcolor{keywordflow}{if}(confirm == \textcolor{charliteral}{'y'} || confirm == \textcolor{charliteral}{'Y'})\{}
+\DoxyCodeLine{32             a = 1;}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \}\textcolor{keywordflow}{while}(a != 1);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keywordtype}{int} intro()\{}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} opt;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{43     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{44         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{45         printTitle(\textcolor{stringliteral}{"{}WELCOME TO TETRIS GAME"{}});}
+\DoxyCodeLine{46         printGameMenu();}
+\DoxyCodeLine{47         saltaRighe(1);}
+\DoxyCodeLine{48         printf(\textcolor{stringliteral}{"{}Select an option(0, 1, 2, 3): "{}});}
+\DoxyCodeLine{49     \}\textcolor{keywordflow}{while}( ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&opt, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& clean\_stdin() == 1 ) || opt < 0 || opt > 3);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keywordflow}{return} opt;}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keywordtype}{void} initGame(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} avaiblep[6], \textcolor{keywordtype}{int} dim)\{}
+\DoxyCodeLine{56     initMap(map);}
+\DoxyCodeLine{57     initAvaiblePieces(avaiblep, dim, 20);}
+\DoxyCodeLine{58 \}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{keywordtype}{void} initGameMP(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{int} avaibleMP[6], \textcolor{keywordtype}{int} dim)\{}
+\DoxyCodeLine{61     initMap(map);}
+\DoxyCodeLine{62     initMap(map1);}
+\DoxyCodeLine{63     initAvaiblePieces(avaibleMP, dim, 40);}
+\DoxyCodeLine{64 \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keywordtype}{void} initScore(\textcolor{keywordtype}{int} *score)\{}
+\DoxyCodeLine{67     *score = 0;}
+\DoxyCodeLine{68 \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{keywordtype}{int} introS(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *colorMode)\{}
+\DoxyCodeLine{71     \textcolor{keywordtype}{int} singleopt; }
+\DoxyCodeLine{72     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{73     setcolorText(colorMode, 1);}
+\DoxyCodeLine{74     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{75         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{76         printTitle(\textcolor{stringliteral}{"{}SINGLE MODE"{}});}
+\DoxyCodeLine{77         saltaRighe(2);}
+\DoxyCodeLine{78         printMapColor(map, colorSMPiece, colorMode, 100);}
+\DoxyCodeLine{79         printSModeOptions();}
+\DoxyCodeLine{80         saltaRighe(1);}
+\DoxyCodeLine{81         printf(\textcolor{stringliteral}{"{}Select an option (0, 1, 2): "{}});}
+\DoxyCodeLine{82     \}\textcolor{keywordflow}{while}( ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&singleopt, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& clean\_stdin() == 1 ) || singleopt < 0 || singleopt > 2);}
+\DoxyCodeLine{83     \textcolor{keywordflow}{return} singleopt;}
+\DoxyCodeLine{84 \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{keywordtype}{void} introSDynamic(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char}* colorMode, \textcolor{keywordtype}{int} score)\{}
+\DoxyCodeLine{87     setcolorText(colorMode, 1);}
+\DoxyCodeLine{88     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{89     printTitle(\textcolor{stringliteral}{"{}SINGLE MODE"{}});}
+\DoxyCodeLine{90     saltaRighe(2);}
+\DoxyCodeLine{91     printMapColor(map, colorSMPiece, colorMode, 103);}
+\DoxyCodeLine{92     saltaRighe(2);}
+\DoxyCodeLine{93     printScorePC(score, colorSMPiece, 3, \textcolor{charliteral}{'1'});}
+\DoxyCodeLine{94     gotoXY(0, 25);}
+\DoxyCodeLine{95 \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keywordtype}{void} introMPDynamicName(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *colorPiece, \textcolor{keywordtype}{char}* colorMode, \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{int} center, \textcolor{keywordtype}{char} player, \textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{98     setcolorText(colorMode, 1);}
+\DoxyCodeLine{99     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{100     printTitle(\textcolor{stringliteral}{"{}MULTIPLAYER MODE"{}});}
+\DoxyCodeLine{101     saltaRighe(2);}
+\DoxyCodeLine{102     \textcolor{comment}{/*printMapColor(map, width, height, "{}yellow"{}, colorMode, 80);}}
+\DoxyCodeLine{103 \textcolor{comment}{    printMapColor(map1, width, height, "{}purple"{}, colorMode, 115);*/}}
+\DoxyCodeLine{104     printMapColor(map, colorPiece, colorMode, center);}
+\DoxyCodeLine{105     saltaRighe(2);}
+\DoxyCodeLine{106     printScoreName(score, colorPiece, 3, player, name);}
+\DoxyCodeLine{107     gotoXY(0, 25);}
+\DoxyCodeLine{108 \}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{keywordtype}{void} introMPDynamicPC(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *colorPiece, \textcolor{keywordtype}{char}* colorMode, \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{int} center, \textcolor{keywordtype}{char} player)\{}
+\DoxyCodeLine{111     setcolorText(colorMode, 1);}
+\DoxyCodeLine{112     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{113     printTitle(\textcolor{stringliteral}{"{}MULTIPLAYER MODE"{}});}
+\DoxyCodeLine{114     saltaRighe(2);}
+\DoxyCodeLine{115     \textcolor{comment}{/*printMapColor(map, width, height, "{}yellow"{}, colorMode, 80);}}
+\DoxyCodeLine{116 \textcolor{comment}{    printMapColor(map1, width, height, "{}purple"{}, colorMode, 115);*/}}
+\DoxyCodeLine{117     printMapColor(map, colorPiece, colorMode, center);}
+\DoxyCodeLine{118     saltaRighe(2);}
+\DoxyCodeLine{119     printScorePC(score, colorPiece, 3, player);}
+\DoxyCodeLine{120     gotoXY(0, 25);}
+\DoxyCodeLine{121 \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} introMP2PC(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char}* colorMode, \textcolor{keywordtype}{int} *score, \textcolor{keywordtype}{int} *score1,}
+\DoxyCodeLine{124              \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color2, \textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{125     \textcolor{keywordtype}{int} invert;}
+\DoxyCodeLine{126     setcolorText(colorMode, 1);}
+\DoxyCodeLine{127     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{128     printTitle(\textcolor{stringliteral}{"{}MULTIPLAYER MODE"{}});}
+\DoxyCodeLine{129     }
+\DoxyCodeLine{130     \textcolor{comment}{/*printMapColor(map, width, height, "{}yellow"{}, colorMode, 80);}}
+\DoxyCodeLine{131 \textcolor{comment}{    printMapColor(map1, width, height, "{}purple"{}, colorMode, 115);*/}}
+\DoxyCodeLine{132     }
+\DoxyCodeLine{133     invert = updateScoreMP2(map, score);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     \textcolor{keywordflow}{if}(invert >= 3)\{ \textcolor{comment}{/*per i test ho provato con 2 e funziona, con 3 è più difficile creare la situazione*/}}
+\DoxyCodeLine{136         invertEnemy(map1, invert);}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     invert = updateScoreMP2(map1, score1);}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     \textcolor{keywordflow}{if}(invert >= 3)\{}
+\DoxyCodeLine{142         invertEnemy(map, invert);}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144     }
+\DoxyCodeLine{145     printMaps(map, map1, color1, color2, colorMode);}
+\DoxyCodeLine{146     printScoreName(*score, color1, 3, \textcolor{charliteral}{'1'}, name);}
+\DoxyCodeLine{147     printScorePC(*score1, color2, 5, \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{148     }
+\DoxyCodeLine{149     gotoXY(0, 25);}
+\DoxyCodeLine{150     }
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{void} introMP2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char}* colorMode, \textcolor{keywordtype}{int} *score, \textcolor{keywordtype}{int} *score1,}
+\DoxyCodeLine{154              \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color2, \textcolor{keywordtype}{char} name1[20], \textcolor{keywordtype}{char} name2[20])\{}
+\DoxyCodeLine{155     \textcolor{keywordtype}{int} invert;}
+\DoxyCodeLine{156     setcolorText(colorMode, 1);}
+\DoxyCodeLine{157     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{158     printTitle(\textcolor{stringliteral}{"{}MULTIPLAYER MODE"{}});}
+\DoxyCodeLine{159     }
+\DoxyCodeLine{160     \textcolor{comment}{/*printMapColor(map, width, height, "{}yellow"{}, colorMode, 80);}}
+\DoxyCodeLine{161 \textcolor{comment}{    printMapColor(map1, width, height, "{}purple"{}, colorMode, 115);*/}}
+\DoxyCodeLine{162     invert = updateScoreMP2(map, score);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{keywordflow}{if}(invert >= 3)\{}
+\DoxyCodeLine{165         invertEnemy(map1, invert);}
+\DoxyCodeLine{166     \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168     invert = updateScoreMP2(map1, score1);}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keywordflow}{if}(invert >= 3)\{}
+\DoxyCodeLine{171         invertEnemy(map, invert);}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173     }
+\DoxyCodeLine{174     printMaps(map, map1, color1, color2, colorMode);}
+\DoxyCodeLine{175     printScoreName(*score, color1, 3, \textcolor{charliteral}{'1'}, name1);}
+\DoxyCodeLine{176     printScoreName(*score1, color2, 5, \textcolor{charliteral}{'2'}, name2);}
+\DoxyCodeLine{177     }
+\DoxyCodeLine{178     gotoXY(0, 25);}
+\DoxyCodeLine{179     }
+\DoxyCodeLine{180 \}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{keywordtype}{void} updateAvPieces(\textcolor{keywordtype}{int} avaiblep[6], \textcolor{keywordtype}{int} selectedSM, \textcolor{keywordtype}{int} drawn)\{}
+\DoxyCodeLine{183     \textcolor{keywordflow}{if}(drawn == 0)\{}
+\DoxyCodeLine{184         avaiblep[selectedSM]++;}
+\DoxyCodeLine{185     \}}
+\DoxyCodeLine{186 \}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{keywordtype}{void} selectProcess(\textcolor{keywordtype}{int} avaiblep[6], \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} *selectedSM, \textcolor{keywordtype}{int} *rotation, }
+\DoxyCodeLine{189                    \textcolor{keywordtype}{int} *drawn, \textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y,}
+\DoxyCodeLine{190                    \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{191     saltaRighe(1);}
+\DoxyCodeLine{192     printLegendaPieces(colorMode, colorPiece);}
+\DoxyCodeLine{193     saltaRighe(1);}
+\DoxyCodeLine{194     printAvaiblePieces(avaiblep, dim, colorMode, colorPiece);}
+\DoxyCodeLine{195     saltaRighe(1);}
+\DoxyCodeLine{196     printLegendaAllPieces(colorMode, colorPiece);}
+\DoxyCodeLine{197     *selectedSM = selectPiece(avaiblep, dim, colorPiece); \textcolor{comment}{/*T = 0  Z = 1 I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{198     *rotation = selectRotation(colorPiece);}
+\DoxyCodeLine{199     *drawn = drawSelected(map, x, y, *selectedSM, *rotation);}
+\DoxyCodeLine{200     printf(\textcolor{stringliteral}{"{}drawn = \%d\(\backslash\)n"{}}, *drawn);}
+\DoxyCodeLine{201     delay(0.5);}
+\DoxyCodeLine{202     updateAvPieces(avaiblep, *selectedSM, *drawn);}
+\DoxyCodeLine{203     gotoXY(0, 25);}
+\DoxyCodeLine{204 \}}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206 \textcolor{keywordtype}{void} selectProcessPC(\textcolor{keywordtype}{int} avaiblep[6], \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} *selectedSM, \textcolor{keywordtype}{int} *rotation, }
+\DoxyCodeLine{207                    \textcolor{keywordtype}{int} *drawn, \textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y,}
+\DoxyCodeLine{208                    \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{209     saltaRighe(1);}
+\DoxyCodeLine{210     printLegendaPieces(colorMode, colorPiece);}
+\DoxyCodeLine{211     saltaRighe(1);}
+\DoxyCodeLine{212     printAvaiblePieces(avaiblep, dim, colorMode, colorPiece);}
+\DoxyCodeLine{213     saltaRighe(1);}
+\DoxyCodeLine{214     printLegendaAllPieces(colorMode, colorPiece);}
+\DoxyCodeLine{215     *selectedSM = rand()\% 6; \textcolor{comment}{/*T = 0  Z = 1 I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{216     *rotation = rand() \% 4; \textcolor{comment}{/* random rotation from 0 to 3 -\/> don't need to initialize rand() because this}}
+\DoxyCodeLine{217 \textcolor{comment}{    function will be recalled everytime with random values */}}
+\DoxyCodeLine{218     *drawn = drawSelected(map, x, y, *selectedSM, *rotation);}
+\DoxyCodeLine{219     printf(\textcolor{stringliteral}{"{}drawn = \%d\(\backslash\)n"{}}, *drawn);}
+\DoxyCodeLine{220     delay(1.5);}
+\DoxyCodeLine{221     updateAvPieces(avaiblep, *selectedSM, *drawn);}
+\DoxyCodeLine{222     gotoXY(0, 25);}
+\DoxyCodeLine{223 \}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 \textcolor{keywordtype}{int} avoidPieces(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} sy, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{228     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230     \textcolor{comment}{/* Istruzioni che non hanno bisogno del ciclo for (ottimizziamo il ciclo) */}}
+\DoxyCodeLine{231     }
+\DoxyCodeLine{232     \textcolor{keywordflow}{if}( (selected == 0 \&\& rotation == 2) \&\& (map[sy + 1][x] == 1 }
+\DoxyCodeLine{233         || map[sy][x + 1] == 1 ) )\{ \textcolor{comment}{/* ERRORE DELLA COLLISIONE DIRETTA */}}
+\DoxyCodeLine{234             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{235     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 0 \&\& rotation == 3 \&\& (map[sy + 1][x + 1] == 1}
+\DoxyCodeLine{236         || map[sy][x] == 1) )\{}
+\DoxyCodeLine{237             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{238     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1 \&\& rotation == 1 \&\& (map[sy + 1][x] == 1}
+\DoxyCodeLine{239         || map[sy][x + 1] == 1) )\{}
+\DoxyCodeLine{240             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{241     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1 \&\& rotation == 3 \&\& (map[sy + 1][x + 1] == 1}
+\DoxyCodeLine{242         || map[sy][x] == 1) )\{}
+\DoxyCodeLine{243             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{244     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2 \&\& (rotation == 0 || rotation == 2) \&\& map[sy + 1][x] == 1)\{}
+\DoxyCodeLine{245         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{246     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3 \&\& rotation == 2 \&\& (map[sy + 1][x + 1] == 1 || map[sy -\/ 1][x] == 1) )\{}
+\DoxyCodeLine{247         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{248     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4 \&\& rotation == 2 \&\& (map[sy + 1][x] == 1 || map[sy -\/ 1][x + 1] == 1) )\{}
+\DoxyCodeLine{249         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{250     \}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     \textcolor{comment}{/* Istruzioni che necessitano il ciclo for: 2 cicli o 3 cicli o 4 cicli */}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254     \textcolor{keywordflow}{if}(selected == 3 \&\& rotation == 0)\{}
+\DoxyCodeLine{255         \textcolor{keywordflow}{for}(i = x; i < x + 2; i++)\{}
+\DoxyCodeLine{256             \textcolor{keywordflow}{if}(map[sy + 1][i] == 1)\{}
+\DoxyCodeLine{257                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{258             \}}
+\DoxyCodeLine{259         \}}
+\DoxyCodeLine{260     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4 \&\& rotation == 0)\{}
+\DoxyCodeLine{261         \textcolor{keywordflow}{for}(i = x; i < x + 2; i++)\{}
+\DoxyCodeLine{262             \textcolor{keywordflow}{if}(map[sy + 1][i] == 1)\{}
+\DoxyCodeLine{263                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{264             \}}
+\DoxyCodeLine{265         \}}
+\DoxyCodeLine{266     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
+\DoxyCodeLine{267         \textcolor{keywordflow}{for}(i = x; i < x + 2; i++)\{}
+\DoxyCodeLine{268             \textcolor{keywordflow}{if}(map[sy + 1][i] == 1)\{}
+\DoxyCodeLine{269                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{270             \}}
+\DoxyCodeLine{271         \}}
+\DoxyCodeLine{272     \}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     \textcolor{keywordflow}{if}(selected == 2 \&\& (rotation == 1 || rotation == 3) )\{}
+\DoxyCodeLine{275         \textcolor{keywordflow}{for}(i = x; i < x + 4; i++)\{}
+\DoxyCodeLine{276             \textcolor{keywordflow}{if}(map[sy + 1][i] == 1)\{}
+\DoxyCodeLine{277                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{278             \}}
+\DoxyCodeLine{279         \}}
+\DoxyCodeLine{280     \}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282     \textcolor{keywordflow}{for}(i = x; i < x + 3; i++)\{}
+\DoxyCodeLine{283         \textcolor{keywordflow}{if}(selected == 0 \&\& rotation == 0 \&\& (map[sy + 1][x + 1] == 1}
+\DoxyCodeLine{284         || map[sy][i] == 1 \&\& i != x + 1) )\{}
+\DoxyCodeLine{285             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{286         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 0 \&\& rotation == 1 \&\& map[sy + 1][i] == 1)\{}
+\DoxyCodeLine{287             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{288         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1 \&\& rotation == 0 \&\& ( (map[sy + 1][i] == 1 \&\& i != x) }
+\DoxyCodeLine{289         || (map[sy][x] == 1) ) )\{}
+\DoxyCodeLine{290             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{291         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1 \&\& rotation == 2 \&\& ( (map[sy + 1][i] == 1 \&\& i != x + 2) }
+\DoxyCodeLine{292         || map[sy][x + 2] == 1) )\{}
+\DoxyCodeLine{293             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{294         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3 \&\& rotation == 1 \&\& ( map[sy + 1][x] == 1 || (map[sy][i] == 1 \&\& i != x) ) )\{}
+\DoxyCodeLine{295             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{296         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3 \&\& rotation == 3 \&\& map[sy + 1][i] == 1)\{}
+\DoxyCodeLine{297             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{298         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4 \&\& rotation == 1 \&\&  map[sy + 1][i] == 1)\{}
+\DoxyCodeLine{299             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{300         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4 \&\& rotation == 3 \&\&  (map[sy + 1][x + 2] == 1 || (map[sy][i] == 1 \&\& i != x + 2) ) )\{}
+\DoxyCodeLine{301             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{302         \}}
+\DoxyCodeLine{303     \}}
+\DoxyCodeLine{304 }
+\DoxyCodeLine{305     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{306 \}}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308 \textcolor{keywordtype}{int} getLastCoords(\textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
+\DoxyCodeLine{309     \textcolor{comment}{/* ci da le coordinate corrette per il falldown}}
+\DoxyCodeLine{310 \textcolor{comment}{     in base al pezzo e alla rotazione: man mano che il pezzo cade, quindi y aumenta,}}
+\DoxyCodeLine{311 \textcolor{comment}{     allora anche la coordinata dell'ultimo 1 cambia */}}
+\DoxyCodeLine{312     \textcolor{keywordtype}{int} sy;}
+\DoxyCodeLine{313     \textcolor{keywordflow}{if}(selected == 0)\{}
+\DoxyCodeLine{314         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 1)\{}
+\DoxyCodeLine{315             sy = y + 1;}
+\DoxyCodeLine{316         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2 || rotation == 3)\{}
+\DoxyCodeLine{317             sy = y + 2;}
+\DoxyCodeLine{318         \}}
+\DoxyCodeLine{319     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1)\{}
+\DoxyCodeLine{320         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{321             sy = y + 1;}
+\DoxyCodeLine{322         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{323             sy = y + 2;}
+\DoxyCodeLine{324         \}}
+\DoxyCodeLine{325     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2)\{}
+\DoxyCodeLine{326         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{327             sy = y + 3;}
+\DoxyCodeLine{328         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{329             sy = y;}
+\DoxyCodeLine{330         \}}
+\DoxyCodeLine{331     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3)\{}
+\DoxyCodeLine{332         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{333             sy = y + 2;}
+\DoxyCodeLine{334         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{335             sy = y + 1;}
+\DoxyCodeLine{336         \}}
+\DoxyCodeLine{337     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4)\{}
+\DoxyCodeLine{338         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{339             sy = y + 2;}
+\DoxyCodeLine{340         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{341             sy = y + 1;}
+\DoxyCodeLine{342         \}}
+\DoxyCodeLine{343     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
+\DoxyCodeLine{344         sy = y + 1;}
+\DoxyCodeLine{345     \}}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347     \textcolor{keywordflow}{return} sy;}
+\DoxyCodeLine{348 \}}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350 \textcolor{keywordtype}{int} getLastCoords1(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
+\DoxyCodeLine{351     \textcolor{comment}{/* ci da le coordinate corrette per il falldown}}
+\DoxyCodeLine{352 \textcolor{comment}{     in base al pezzo e alla rotazione: man mano che il pezzo cade, quindi y aumenta,}}
+\DoxyCodeLine{353 \textcolor{comment}{     allora anche la coordinata dell'ultimo 1 cambia */}}
+\DoxyCodeLine{354     \textcolor{keywordtype}{int} sx;}
+\DoxyCodeLine{355     \textcolor{keywordflow}{if}(selected == 0)\{}
+\DoxyCodeLine{356         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 1)\{}
+\DoxyCodeLine{357             sx = x + 2;}
+\DoxyCodeLine{358         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2 || rotation == 3)\{}
+\DoxyCodeLine{359             sx = x + 1;}
+\DoxyCodeLine{360         \}}
+\DoxyCodeLine{361     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1)\{}
+\DoxyCodeLine{362         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{363             sx = x + 2;}
+\DoxyCodeLine{364         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{365             sx = x + 1;}
+\DoxyCodeLine{366         \}}
+\DoxyCodeLine{367     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2)\{}
+\DoxyCodeLine{368         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{369             sx = x;}
+\DoxyCodeLine{370         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{371             sx = x + 3;}
+\DoxyCodeLine{372         \}}
+\DoxyCodeLine{373     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3)\{}
+\DoxyCodeLine{374         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{375             sx = x + 1;}
+\DoxyCodeLine{376         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{377             sx = x + 2;}
+\DoxyCodeLine{378         \}}
+\DoxyCodeLine{379     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4)\{}
+\DoxyCodeLine{380         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{381             sx = x + 1;}
+\DoxyCodeLine{382         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{383             sx = x + 2;}
+\DoxyCodeLine{384         \}}
+\DoxyCodeLine{385     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
+\DoxyCodeLine{386         sx = x + 1;}
+\DoxyCodeLine{387     \}}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389     \textcolor{keywordflow}{return} sx;}
+\DoxyCodeLine{390 \}}
+\DoxyCodeLine{391 }
+\DoxyCodeLine{392 \textcolor{keywordtype}{void} fall(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} sy, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation, \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} player)\{}
+\DoxyCodeLine{393     \textcolor{keywordflow}{if}(sy < height -\/ 2 \&\& avoidPieces(map, x, sy, selected, rotation) == 1)\{}
+\DoxyCodeLine{394         introSDynamic(map, colorSM, score);}
+\DoxyCodeLine{395         movebackSelected(map, x, y, selected, rotation);}
+\DoxyCodeLine{396         drawSelected(map, x, y + 1, selected, rotation);}
+\DoxyCodeLine{397     \}}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399 \}}
+\DoxyCodeLine{400 }
+\DoxyCodeLine{401 \textcolor{keywordtype}{void} fallDown(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} sy, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation, \textcolor{keywordtype}{int} *score)\{}
+\DoxyCodeLine{402      \textcolor{comment}{/* servono le coordinate x e y dell'ultima riga di 1 del pezzo considerato */}}
+\DoxyCodeLine{403     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{404         \textcolor{keywordflow}{if}(sy < height -\/ 2 \&\& avoidPieces(map, x, sy, selected, rotation) == 1)\{ }
+\DoxyCodeLine{405         \textcolor{comment}{/* devi capire che tu stai permettendo al pezzo di scendere anche }}
+\DoxyCodeLine{406 \textcolor{comment}{        se è nell'ultima posizione possibile (height -\/ 1) mentre se dici di mandare giù nella}}
+\DoxyCodeLine{407 \textcolor{comment}{        penultima sei apposto */}}
+\DoxyCodeLine{408             updateScoreSM(map, score);}
+\DoxyCodeLine{409             introSDynamic(map, colorSM, *score);}
+\DoxyCodeLine{410             movebackSelected(map, x, y, selected, rotation);}
+\DoxyCodeLine{411             drawSelected(map, x, y + 1, selected, rotation);}
+\DoxyCodeLine{412         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{413             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{414         \}}
+\DoxyCodeLine{415         y++;}
+\DoxyCodeLine{416         sy++;}
+\DoxyCodeLine{417     \} \textcolor{keywordflow}{while}(sy < height -\/ 2);}
+\DoxyCodeLine{418 \}}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420 \textcolor{keywordtype}{void} fallDownMP(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} mapEnemy[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} sy, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation, \textcolor{keywordtype}{int} *score,}
+\DoxyCodeLine{421                  \textcolor{keywordtype}{char} *colorPiece, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} center, \textcolor{keywordtype}{char} player, \textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{422     \textcolor{comment}{/* servono le coordinate x e y dell'ultima riga di 1 del pezzo considerato */}}
+\DoxyCodeLine{423     \textcolor{keywordtype}{int} invert;}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{426         \textcolor{keywordflow}{if}(sy < height -\/ 2 \&\& avoidPieces(map, x, sy, selected, rotation) == 1)\{ }
+\DoxyCodeLine{427         \textcolor{comment}{/* devi capire che tu stai permettendo al pezzo di scendere anche }}
+\DoxyCodeLine{428 \textcolor{comment}{        se è nell'ultima posizione possibile (height -\/ 1) mentre se dici di mandare giù nella}}
+\DoxyCodeLine{429 \textcolor{comment}{        penultima sei apposto */}}
+\DoxyCodeLine{430             invert = updateScoreMP2(map, score);}
+\DoxyCodeLine{431             \textcolor{keywordflow}{if}(invert >= 3)\{}
+\DoxyCodeLine{432                 invertEnemy(mapEnemy, invert);}
+\DoxyCodeLine{433             \}}
+\DoxyCodeLine{434             \textcolor{keywordflow}{if}(player != \textcolor{charliteral}{'0'})\{}
+\DoxyCodeLine{435                 introMPDynamicName(map, colorPiece, colorMode, *score, center, player, name);}
+\DoxyCodeLine{436             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{437                 introMPDynamicPC(map, colorPiece, colorMode, *score, center, player);}
+\DoxyCodeLine{438             \}}
+\DoxyCodeLine{439             movebackSelected(map, x, y, selected, rotation);}
+\DoxyCodeLine{440             drawSelected(map, x, y + 1, selected, rotation);}
+\DoxyCodeLine{441         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{442             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{443         \}}
+\DoxyCodeLine{444         y++;}
+\DoxyCodeLine{445         sy++;}
+\DoxyCodeLine{446     \} \textcolor{keywordflow}{while}(sy < height -\/ 2);}
+\DoxyCodeLine{447 \}}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450 }
+\DoxyCodeLine{451 \textcolor{keywordtype}{int} movePiece(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selectedSM, \textcolor{keywordtype}{int} rotation, \textcolor{keywordtype}{int} *released, \textcolor{keywordtype}{int} *score)\{}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453     \textcolor{keywordtype}{int} winning = 1;}
+\DoxyCodeLine{454     \textcolor{keywordtype}{int} sy;}
+\DoxyCodeLine{455     \textcolor{keywordflow}{if}(selectedSM >= 0 \&\& selectedSM <= 5)\{}
+\DoxyCodeLine{456         \textcolor{keywordtype}{char} key;}
+\DoxyCodeLine{457         }
+\DoxyCodeLine{458         \textcolor{keywordtype}{int} esc = 0;}
+\DoxyCodeLine{459         \textcolor{keywordtype}{float} tempo = 0.300; \textcolor{comment}{/* handle delay time fall */}}
+\DoxyCodeLine{460         *released = 0;}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462         \textcolor{keywordflow}{while}(esc == 0)\{}
+\DoxyCodeLine{463             }
+\DoxyCodeLine{464             introSDynamic(map,  colorSM, *score);}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466             \textcolor{keywordflow}{while}(!kbhit())\{}
+\DoxyCodeLine{467                 sy = getLastCoords(y, selectedSM, rotation);}
+\DoxyCodeLine{468                 \textcolor{keywordflow}{if}(sy < height -\/ 2 \&\& avoidPieces(map, x, sy, selectedSM, rotation) == 1)\{}
+\DoxyCodeLine{469                     delay(tempo); }
+\DoxyCodeLine{470                     updateScoreSM(map, score);}
+\DoxyCodeLine{471                     introSDynamic(map, colorSM, *score);}
+\DoxyCodeLine{472                     movebackSelected(map, x, y, selectedSM, rotation);}
+\DoxyCodeLine{473                     y++;}
+\DoxyCodeLine{474                     drawSelected(map, x, y, selectedSM, rotation);}
+\DoxyCodeLine{475                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(avoidPieces(map, x, sy, selectedSM, rotation) == 0)\{}
+\DoxyCodeLine{476                     gotoXY(100, 5);}
+\DoxyCodeLine{477                     printf(\textcolor{stringliteral}{"{}\(\backslash\)n ENTER Q TO FALL \(\backslash\)n"{}}); \textcolor{comment}{/* user can decide if move the piece}}
+\DoxyCodeLine{478 \textcolor{comment}{                    before the final fall */}}
+\DoxyCodeLine{479                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(sy == height -\/ 2)\{}
+\DoxyCodeLine{480                     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{481                 \}}
+\DoxyCodeLine{482                 }
+\DoxyCodeLine{483             \}}
+\DoxyCodeLine{484   }
+\DoxyCodeLine{485             key = getch();}
+\DoxyCodeLine{486 }
+\DoxyCodeLine{487             saltaRighe(1);}
+\DoxyCodeLine{488             movebackSelected(map, x, y, selectedSM, rotation); \textcolor{comment}{/* ERRORE DELLA COLLISIONE DIRETTA */}}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490             \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'w'})\{ \textcolor{comment}{/* up arrow */}}
+\DoxyCodeLine{491                 \textcolor{keywordflow}{if}(rotation < 3 \&\& getLastCoords1(x, selectedSM, rotation + 1) }
+\DoxyCodeLine{492                     < width -\/ 1 \&\& getLastCoords(y, selectedSM, rotation + 1) < height -\/ 1)\{}
+\DoxyCodeLine{493                     rotation++;}
+\DoxyCodeLine{494                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3 \&\& getLastCoords1(x, selectedSM, 0) < width -\/ 1}
+\DoxyCodeLine{495                            \&\& getLastCoords(y, selectedSM, 0) < height -\/ 1)\{}
+\DoxyCodeLine{496                     rotation = 0;}
+\DoxyCodeLine{497                 \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{/* se vuole ruotarlo quando è vicino ai bordi della mappa, si sposta finchè può */}}
+\DoxyCodeLine{498                     y-\/-\/;}
+\DoxyCodeLine{499                     x-\/-\/;}
+\DoxyCodeLine{500                 \}}
+\DoxyCodeLine{501                 }
+\DoxyCodeLine{502             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'s'} \&\& getLastCoords(y, selectedSM, rotation) < height -\/ 2)\{ \textcolor{comment}{/* down arrow */}}
+\DoxyCodeLine{503                 y++;}
+\DoxyCodeLine{504             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'a'} \&\& x > 1)\{ \textcolor{comment}{/* left arrow */}}
+\DoxyCodeLine{505                 x-\/-\/;}
+\DoxyCodeLine{506             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'d'} \&\& getLastCoords1(x, selectedSM, rotation) < width -\/ 2)\{ \textcolor{comment}{/* right arrow */}}
+\DoxyCodeLine{507                 x++;}
+\DoxyCodeLine{508             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'q'} || key == \textcolor{charliteral}{'Q'})\{}
+\DoxyCodeLine{509                 *released = 1;}
+\DoxyCodeLine{510                 sy = getLastCoords(y, selectedSM, rotation);}
+\DoxyCodeLine{511                 \textcolor{keywordflow}{if}(sy < height -\/ 2 \&\& avoidPieces(map, x, sy, selectedSM, rotation) == 1)\{}
+\DoxyCodeLine{512                     fallDown(map, x, y, sy, selectedSM, rotation, score);}
+\DoxyCodeLine{513                 \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{514                     \textcolor{comment}{/* serve solo quando il pezzo è a terra oppure ha sotto altri pezzi: così non viene cancellato */}}
+\DoxyCodeLine{515                     drawSelected(map, x, y, selectedSM, rotation); }
+\DoxyCodeLine{516                 \}}
+\DoxyCodeLine{517                 }
+\DoxyCodeLine{518                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'0'} \&\& getLastCoords1(x, selectedSM, 0) < width -\/ 2}
+\DoxyCodeLine{521                            \&\& getLastCoords(y, selectedSM, 0) < height -\/ 2)\{}
+\DoxyCodeLine{522                 rotation = 0;}
+\DoxyCodeLine{523             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'1'} \&\& getLastCoords1(x, selectedSM, 1) < width -\/ 2}
+\DoxyCodeLine{524                            \&\& getLastCoords(y, selectedSM, 1) < height -\/ 2)\{}
+\DoxyCodeLine{525                 rotation = 1;}
+\DoxyCodeLine{526             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'2'} \&\& getLastCoords1(x, selectedSM, 2) < width -\/ 2}
+\DoxyCodeLine{527                            \&\& getLastCoords(y, selectedSM, 2) < height -\/ 2)\{}
+\DoxyCodeLine{528                 rotation = 2;}
+\DoxyCodeLine{529             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'3'} \&\& getLastCoords1(x, selectedSM, 3) < width -\/ 2}
+\DoxyCodeLine{530                            \&\& getLastCoords(y, selectedSM, 3) < height -\/ 2)\{}
+\DoxyCodeLine{531                 rotation = 3;}
+\DoxyCodeLine{532             \}}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534             fflush(stdin); \textcolor{comment}{/*  risolve parzialmente il blocco causato dallo spam di movimenti */}}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536             winning = drawSelected(map, x, y, selectedSM, rotation);}
+\DoxyCodeLine{537             printMapColor(map, colorSMPiece, colorSM, 100);}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{539             \textcolor{keywordflow}{if}(!winning)\{ \textcolor{comment}{/*GAME OVER SCREEN -\/> only in SINGOL GAME MODE */}}
+\DoxyCodeLine{540                 system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{541                 setcolorText(colorMP, 1);}
+\DoxyCodeLine{542                 printTitle(\textcolor{stringliteral}{"{}COLLISION! GAME OVER!\(\backslash\)n"{}});}
+\DoxyCodeLine{543                 delay(2.0);}
+\DoxyCodeLine{544                 setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{545                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{546             \}}
+\DoxyCodeLine{547             }
+\DoxyCodeLine{548         \}}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{553         printf(\textcolor{stringliteral}{"{}YOU NEED TO SELECT A PIECE BEFORE MOVING IT..\(\backslash\)n"{}});}
+\DoxyCodeLine{554     \}}
+\DoxyCodeLine{555 \}}
+\DoxyCodeLine{556 }
+\DoxyCodeLine{557 \textcolor{keywordtype}{int} movePieceMP(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} mapEnemy[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selectedMP, \textcolor{keywordtype}{int} rotation, \textcolor{keywordtype}{int} *released, \textcolor{keywordtype}{int} *score, }
+\DoxyCodeLine{558                 \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece, \textcolor{keywordtype}{int} center, \textcolor{keywordtype}{char} player, \textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560     \textcolor{keywordtype}{int} winning = 1;}
+\DoxyCodeLine{561     \textcolor{keywordtype}{int} sy;}
+\DoxyCodeLine{562     \textcolor{keywordflow}{if}(selectedMP >= 0 \&\& selectedMP <= 5)\{}
+\DoxyCodeLine{563         \textcolor{keywordtype}{char} key;}
+\DoxyCodeLine{564         \textcolor{keywordtype}{int} esc = 0;}
+\DoxyCodeLine{565         \textcolor{keywordtype}{float} tempo = 0.300; \textcolor{comment}{/* handle delay time fall */}}
+\DoxyCodeLine{566         *released = 0;}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568         \textcolor{keywordflow}{while}(esc == 0)\{}
+\DoxyCodeLine{569             }
+\DoxyCodeLine{570             \textcolor{keywordtype}{int} invert;}
+\DoxyCodeLine{571 }
+\DoxyCodeLine{572             invert = updateScoreMP2(map, score); }
+\DoxyCodeLine{573 }
+\DoxyCodeLine{574             \textcolor{keywordflow}{if}(invert >= 3)\{}
+\DoxyCodeLine{575                 invertEnemy(mapEnemy, invert);}
+\DoxyCodeLine{576             \}}
+\DoxyCodeLine{577 }
+\DoxyCodeLine{578             \textcolor{keywordflow}{if}(player != \textcolor{charliteral}{'0'})\{}
+\DoxyCodeLine{579                 introMPDynamicName(map, colorPiece, colorMode, *score, center, player, name);}
+\DoxyCodeLine{580             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{581                 introMPDynamicPC(map, colorPiece, colorMode, *score, center, player);}
+\DoxyCodeLine{582             \}}
+\DoxyCodeLine{583             }
+\DoxyCodeLine{584                     }
+\DoxyCodeLine{585             \textcolor{keywordflow}{while}(!kbhit())\{}
+\DoxyCodeLine{586 }
+\DoxyCodeLine{587                 sy = getLastCoords(y, selectedMP, rotation);}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589                 invert = updateScoreMP2(map, score); }
+\DoxyCodeLine{590                 \textcolor{keywordflow}{if}(invert >= 3)\{}
+\DoxyCodeLine{591                     invertEnemy(mapEnemy, invert);}
+\DoxyCodeLine{592                 \}}
+\DoxyCodeLine{593                 }
+\DoxyCodeLine{594                 \textcolor{keywordflow}{if}(sy < height -\/ 2 \&\& avoidPieces(map, x, sy, selectedMP, rotation) == 1)\{}
+\DoxyCodeLine{595                     delay(tempo); \textcolor{comment}{/* handle timing fall */}}
+\DoxyCodeLine{596                     \textcolor{keywordflow}{if}(player != \textcolor{charliteral}{'0'})\{}
+\DoxyCodeLine{597                         introMPDynamicName(map, colorPiece, colorMode, *score, center, player, name);  }
+\DoxyCodeLine{598                     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{599                         introMPDynamicPC(map, colorPiece, colorMode, *score, center, player);  }
+\DoxyCodeLine{600                     \}}
+\DoxyCodeLine{601                     movebackSelected(map, x, y, selectedMP, rotation);}
+\DoxyCodeLine{602                     y++;}
+\DoxyCodeLine{603                     drawSelected(map, x, y, selectedMP, rotation);}
+\DoxyCodeLine{604                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(avoidPieces(map, x, sy, selectedMP, rotation) == 0)\{}
+\DoxyCodeLine{605                     gotoXY(100, 5);}
+\DoxyCodeLine{606                     printf(\textcolor{stringliteral}{"{}\(\backslash\)n ENTER Q TO FALL \(\backslash\)n"{}}); \textcolor{comment}{/* user can decide if move the piece}}
+\DoxyCodeLine{607 \textcolor{comment}{                    before the final fall */}}
+\DoxyCodeLine{608                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(sy == height -\/ 2)\{}
+\DoxyCodeLine{609                     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{610                 \}}
+\DoxyCodeLine{611                 }
+\DoxyCodeLine{612             \}}
+\DoxyCodeLine{613   }
+\DoxyCodeLine{614             key = getch();}
+\DoxyCodeLine{615             \textcolor{comment}{/*if(sizeof(key) > sizeof(char))\{}}
+\DoxyCodeLine{616 \textcolor{comment}{                do\{}}
+\DoxyCodeLine{617 \textcolor{comment}{                    key = getch();}}
+\DoxyCodeLine{618 \textcolor{comment}{                \} while (sizeof(key) > sizeof(char));}}
+\DoxyCodeLine{619 \textcolor{comment}{                }}
+\DoxyCodeLine{620 \textcolor{comment}{            \}*/}}
+\DoxyCodeLine{621             saltaRighe(1);}
+\DoxyCodeLine{622             movebackSelected(map, x, y, selectedMP, rotation); \textcolor{comment}{/* ERRORE DELLA COLLISIONE DIRETTA */}}
+\DoxyCodeLine{623 }
+\DoxyCodeLine{624             \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'w'})\{ \textcolor{comment}{/* up arrow */}}
+\DoxyCodeLine{625                 \textcolor{keywordflow}{if}(rotation < 3 \&\& getLastCoords1(x, selectedMP, rotation + 1) }
+\DoxyCodeLine{626                     < width -\/ 1 \&\& getLastCoords(y, selectedMP, rotation + 1) < height -\/ 1)\{}
+\DoxyCodeLine{627                     rotation++;}
+\DoxyCodeLine{628                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3 \&\& getLastCoords1(x, selectedMP, 0) < width -\/ 1}
+\DoxyCodeLine{629                            \&\& getLastCoords(y, selectedMP, 0) < height -\/ 1)\{}
+\DoxyCodeLine{630                     rotation = 0;}
+\DoxyCodeLine{631                 \} \textcolor{keywordflow}{else} \{ \textcolor{comment}{/* se vuole ruotarlo quando è vicino ai bordi della mappa, si sposta finchè può */}}
+\DoxyCodeLine{632                     y-\/-\/;}
+\DoxyCodeLine{633                     x-\/-\/;}
+\DoxyCodeLine{634                 \}}
+\DoxyCodeLine{635                 }
+\DoxyCodeLine{636             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'s'} \&\& getLastCoords(y, selectedMP, rotation) < height -\/ 2)\{ \textcolor{comment}{/* down arrow */}}
+\DoxyCodeLine{637                 y++;}
+\DoxyCodeLine{638             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'a'} \&\& x > 1)\{ \textcolor{comment}{/* left arrow */}}
+\DoxyCodeLine{639                 x-\/-\/;}
+\DoxyCodeLine{640             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'d'} \&\& getLastCoords1(x, selectedMP, rotation) < width -\/ 2)\{ \textcolor{comment}{/* right arrow */}}
+\DoxyCodeLine{641                 x++;}
+\DoxyCodeLine{642             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'q'} || key == \textcolor{charliteral}{'Q'})\{}
+\DoxyCodeLine{643                 *released = 1;}
+\DoxyCodeLine{644                 sy = getLastCoords(y, selectedMP, rotation);}
+\DoxyCodeLine{645                 \textcolor{keywordflow}{if}(sy < height -\/ 2 \&\& avoidPieces(map, x, sy, selectedMP, rotation) == 1)\{}
+\DoxyCodeLine{646                     fallDownMP(map, mapEnemy, x, y, sy, selectedMP, rotation, score, colorPiece, colorMode, center, player, name);}
+\DoxyCodeLine{647                 \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{648                     \textcolor{comment}{/* serve solo quando il pezzo è a terra oppure ha sotto altri pezzi: così non viene cancellato */}}
+\DoxyCodeLine{649                     drawSelected(map, x, y, selectedMP, rotation); }
+\DoxyCodeLine{650                 \}}
+\DoxyCodeLine{651                 }
+\DoxyCodeLine{652                 \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{653 }
+\DoxyCodeLine{654             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'0'} \&\& getLastCoords1(x, selectedMP, 0) < width -\/ 2}
+\DoxyCodeLine{655                            \&\& getLastCoords(y, selectedMP, 0) < height -\/ 2)\{}
+\DoxyCodeLine{656                 rotation = 0;}
+\DoxyCodeLine{657             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'1'} \&\& getLastCoords1(x, selectedMP, 1) < width -\/ 2}
+\DoxyCodeLine{658                            \&\& getLastCoords(y, selectedMP, 1) < height -\/ 2)\{}
+\DoxyCodeLine{659                 rotation = 1;}
+\DoxyCodeLine{660             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'2'} \&\& getLastCoords1(x, selectedMP, 2) < width -\/ 2}
+\DoxyCodeLine{661                            \&\& getLastCoords(y, selectedMP, 2) < height -\/ 2)\{}
+\DoxyCodeLine{662                 rotation = 2;}
+\DoxyCodeLine{663             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(key == \textcolor{charliteral}{'3'} \&\& getLastCoords1(x, selectedMP, 3) < width -\/ 2}
+\DoxyCodeLine{664                            \&\& getLastCoords(y, selectedMP, 3) < height -\/ 2)\{}
+\DoxyCodeLine{665                 rotation = 3;}
+\DoxyCodeLine{666             \}}
+\DoxyCodeLine{667 }
+\DoxyCodeLine{668             fflush(stdin); \textcolor{comment}{/*  risolve parzialmente il blocco causato dallo spam di movimenti */}}
+\DoxyCodeLine{669 }
+\DoxyCodeLine{670             winning = drawSelected(map, x, y, selectedMP, rotation);}
+\DoxyCodeLine{671             printMapColor(map, colorPiece, colorMode, center);}
+\DoxyCodeLine{672 }
+\DoxyCodeLine{673 }
+\DoxyCodeLine{674             \textcolor{keywordflow}{if}(!winning)\{}
+\DoxyCodeLine{675                 system(\textcolor{stringliteral}{"{}cls"{}}); \textcolor{comment}{/*will check scores and print the winner */}}
+\DoxyCodeLine{676                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{677             \}}
+\DoxyCodeLine{678             }
+\DoxyCodeLine{679         \}}
+\DoxyCodeLine{680 }
+\DoxyCodeLine{681         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{682 }
+\DoxyCodeLine{683     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{684         printf(\textcolor{stringliteral}{"{}YOU NEED TO SELECT A PIECE BEFORE MOVING IT..\(\backslash\)n"{}});}
+\DoxyCodeLine{685     \}}
+\DoxyCodeLine{686 \}}
+\DoxyCodeLine{687 }
+\DoxyCodeLine{688 }
+\DoxyCodeLine{689 \textcolor{keywordtype}{void} gameOneVSOne(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} *score, \textcolor{keywordtype}{int} *score1, \textcolor{keywordtype}{int} *drawn,}
+\DoxyCodeLine{690               \textcolor{keywordtype}{int} *drawn1, \textcolor{keywordtype}{int} *rotation, \textcolor{keywordtype}{int} *rotation1, \textcolor{keywordtype}{int} *released, \textcolor{keywordtype}{int} *released1, \textcolor{keywordtype}{int} *selectedSM, \textcolor{keywordtype}{int} *selectedMP,}
+\DoxyCodeLine{691               \textcolor{keywordtype}{int} avaiblepMP[6], \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} *won, \textcolor{keywordtype}{int} *won1, \textcolor{keywordtype}{int} *winning, \textcolor{keywordtype}{int} *winning1, \textcolor{keywordtype}{char} *colorMode, }
+\DoxyCodeLine{692               \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color2, \textcolor{keywordtype}{char} name1[20], \textcolor{keywordtype}{char} name2[20])\{}
+\DoxyCodeLine{693 }
+\DoxyCodeLine{694     introMP2(map, map1, colorMode, score, score1, color1, color2, name1, name2);}
+\DoxyCodeLine{695 }
+\DoxyCodeLine{696     *released = 0;}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698     selectProcess(avaiblepMP, dim, selectedSM, rotation, drawn, map, x, y, colorMode, color1);}
+\DoxyCodeLine{699 }
+\DoxyCodeLine{700     *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80, \textcolor{charliteral}{'1'}, name1);}
+\DoxyCodeLine{701 }
+\DoxyCodeLine{702     checkEndGame(avaiblepMP, dim, won);\textcolor{comment}{/*verifichiamo la disponibilità dei tetramini (condivisi) -\/> se non }}
+\DoxyCodeLine{703 \textcolor{comment}{    ce ne sono più, bisogna concludere il gioco*/}}
+\DoxyCodeLine{704 }
+\DoxyCodeLine{705     \textcolor{keywordflow}{if}(*winning == 0)\{ \textcolor{comment}{/*il giocatore p1 ha posizionato male i tetramini -\/> ha perso indipendentemente dal punteggio*/}}
+\DoxyCodeLine{706         printWinner(name2);}
+\DoxyCodeLine{707         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{708     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(*won == 1)\{ \textcolor{comment}{/*il giocatore p1 ha finito i pezzi (condivisi) per cui si controllano i punteggi: winner o pareggio*/}}
+\DoxyCodeLine{709         checkWinMP(name1, name2, *score, *score1);}
+\DoxyCodeLine{710         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{711     \}}
+\DoxyCodeLine{712 }
+\DoxyCodeLine{713     introMP2(map, map1, colorMode, score, score1, color1, color2, name1, name2);}
+\DoxyCodeLine{714 }
+\DoxyCodeLine{715     *released1 = 0;}
+\DoxyCodeLine{716 }
+\DoxyCodeLine{717     selectProcess(avaiblepMP, dim, selectedMP, rotation1, drawn1, map1, x, y, colorMode, color2);}
+\DoxyCodeLine{718 }
+\DoxyCodeLine{719     *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150, \textcolor{charliteral}{'2'}, name2);}
+\DoxyCodeLine{720 }
+\DoxyCodeLine{721     checkEndGame(avaiblepMP, dim, won1);\textcolor{comment}{/*verifichiamo la disponibilità dei tetramini (condivisi) -\/> se non }}
+\DoxyCodeLine{722 \textcolor{comment}{    ce ne sono più, bisogna concludere il gioco*/}}
+\DoxyCodeLine{723 }
+\DoxyCodeLine{724     \textcolor{keywordflow}{if}(*winning1 == 0)\{ \textcolor{comment}{/*il giocatore p2 ha posizionato male i tetramini -\/> ha perso indipendentemente dal punteggio*/}}
+\DoxyCodeLine{725         printWinner(name1);}
+\DoxyCodeLine{726         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{727     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(*won1 == 1)\{ \textcolor{comment}{/*il giocatore p2 ha finito i pezzi (condivisi) per cui si controllano i punteggi: winner o pareggio*/}}
+\DoxyCodeLine{728         checkWinMP(name1, name2, *score, *score1);}
+\DoxyCodeLine{729         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{730     \}}
+\DoxyCodeLine{731 }
+\DoxyCodeLine{732 \}}
+\DoxyCodeLine{733 }
+\DoxyCodeLine{734 \textcolor{keywordtype}{void} gameOneVSPC(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} *score, \textcolor{keywordtype}{int} *score1, \textcolor{keywordtype}{int} *drawn,}
+\DoxyCodeLine{735               \textcolor{keywordtype}{int} *drawn1, \textcolor{keywordtype}{int} *rotation, \textcolor{keywordtype}{int} *rotation1, \textcolor{keywordtype}{int} *released, \textcolor{keywordtype}{int} *released1, \textcolor{keywordtype}{int} *selectedSM, \textcolor{keywordtype}{int} *selectedMP,}
+\DoxyCodeLine{736               \textcolor{keywordtype}{int} avaiblepMP[6], \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} *won, \textcolor{keywordtype}{int} *won1, \textcolor{keywordtype}{int} *winning, \textcolor{keywordtype}{int} *winning1, \textcolor{keywordtype}{char} *colorMode, }
+\DoxyCodeLine{737               \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color2, \textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{738 }
+\DoxyCodeLine{739     introMP2PC(map, map1, colorMode, score, score1, color1, color2, name);}
+\DoxyCodeLine{740 }
+\DoxyCodeLine{741     *released = 0;}
+\DoxyCodeLine{742 }
+\DoxyCodeLine{743     selectProcess(avaiblepMP, dim, selectedSM, rotation, drawn, map, x, y, colorMode, color1);}
+\DoxyCodeLine{744 }
+\DoxyCodeLine{745     *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80, \textcolor{charliteral}{'1'}, name);}
+\DoxyCodeLine{746 }
+\DoxyCodeLine{747     checkEndGame(avaiblepMP, dim, won); \textcolor{comment}{/*verifichiamo la disponibilità dei tetramini (condivisi) -\/> se non }}
+\DoxyCodeLine{748 \textcolor{comment}{    ce ne sono più, bisogna concludere il gioco*/}}
+\DoxyCodeLine{749 }
+\DoxyCodeLine{750     \textcolor{keywordflow}{if}(*winning == 0)\{ \textcolor{comment}{/* il p1 ha fatto posizionato male i tetramini, ha perso, il pc ha vinto */}}
+\DoxyCodeLine{751         printLoser(name);}
+\DoxyCodeLine{752         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{753     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(*won == 1)\{  \textcolor{comment}{/*il p1 ha finito i tetramini condivisi, si controllano i punteggi e il gioco si conclude */}}
+\DoxyCodeLine{754         checkWinMPC(name, *score, *score1);}
+\DoxyCodeLine{755         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{756     \}}
+\DoxyCodeLine{757 }
+\DoxyCodeLine{758     introMP2PC(map, map1, colorMode, score, score1, color1, color2, name);}
+\DoxyCodeLine{759 }
+\DoxyCodeLine{760     *released1 = 0;}
+\DoxyCodeLine{761 }
+\DoxyCodeLine{762     selectProcessPC(avaiblepMP, dim, selectedMP, rotation1, drawn1, map1, x, y, colorMode, color2);}
+\DoxyCodeLine{763 }
+\DoxyCodeLine{764     *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150, \textcolor{charliteral}{'0'}, name);}
+\DoxyCodeLine{765 }
+\DoxyCodeLine{766     checkEndGame(avaiblepMP, dim, won1);  \textcolor{comment}{/*verifichiamo la disponibilità dei tetramini (condivisi) -\/> se non }}
+\DoxyCodeLine{767 \textcolor{comment}{    ce ne sono più, bisogna concludere il gioco*/}}
+\DoxyCodeLine{768 }
+\DoxyCodeLine{769     \textcolor{keywordflow}{if}(*winning1 == 0)\{ \textcolor{comment}{/* il pc ha fatto posizionato male i tetramini, ha perso il pc */}}
+\DoxyCodeLine{770         printWinner(name);}
+\DoxyCodeLine{771         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{772     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(*won1 == 1)\{  \textcolor{comment}{/*il pc ha finito i tetramini condivisi, si controllano i punteggi e il gioco si conclude */}}
+\DoxyCodeLine{773         checkWinMPC(name, *score, *score1);}
+\DoxyCodeLine{774         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{775     \}}
+\DoxyCodeLine{776 }
+\DoxyCodeLine{777 \}}
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779 }
+
+\end{DoxyCode}

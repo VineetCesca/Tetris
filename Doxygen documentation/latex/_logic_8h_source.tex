@@ -1,0 +1,334 @@
+\hypertarget{_logic_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Logic.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{keywordtype}{int} checkAvaible(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} selected)\{}
+\DoxyCodeLine{2     \textcolor{keywordflow}{if}(pieces[selected] <= 0)\{}
+\DoxyCodeLine{3         \textcolor{keywordflow}{return} 0; \textcolor{comment}{/* piece is not avaible */}}
+\DoxyCodeLine{4     \}}
+\DoxyCodeLine{5     \textcolor{keywordflow}{return} 1; \textcolor{comment}{/* piece is avaible */}}
+\DoxyCodeLine{6 \}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keywordtype}{int} selectPiece(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} selected;}
+\DoxyCodeLine{10     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{11     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{12     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{13         printf(\textcolor{stringliteral}{"{}Select a piece (0, 1, 2, 3, 4, 5): "{}}); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{14     \}\textcolor{keywordflow}{while}( ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&selected, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& clean\_stdin() == 1 ) || selected < 0 || selected > 5);}
+\DoxyCodeLine{15     \textcolor{keywordflow}{if}( checkAvaible(pieces, dim, selected) == 1 )\{}
+\DoxyCodeLine{16         pieces[selected]-\/-\/; \textcolor{comment}{/* update avaiblepieces */}}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18     }
+\DoxyCodeLine{19     \textcolor{keywordflow}{return} selected;}
+\DoxyCodeLine{20 \}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{int} selectRotation(\textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} r;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{25     setcolorText(colorPiece, 1);}
+\DoxyCodeLine{26     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{27         printf(\textcolor{stringliteral}{"{}Select a rotation (0, 1, 2, 3): "{}});}
+\DoxyCodeLine{28     \} \textcolor{keywordflow}{while}(  ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&r, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& clean\_stdin() == 1 ) || r < 0 || r > 3);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordflow}{return} r;}
+\DoxyCodeLine{31 \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keywordtype}{int} drawSelected(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
+\DoxyCodeLine{34     \textcolor{comment}{/*rotation = 0 1 2 3 */}}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} drawn;}
+\DoxyCodeLine{36     \textcolor{keywordflow}{if}(selected == 0)\{}
+\DoxyCodeLine{37         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{38             drawn = drawT(map, x, y);}
+\DoxyCodeLine{39         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{40             drawn = drawT1(map, x, y);}
+\DoxyCodeLine{41         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{42             drawn = drawT2(map, x, y);}
+\DoxyCodeLine{43         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{44             drawn = drawT3(map, x, y);}
+\DoxyCodeLine{45         \}  }
+\DoxyCodeLine{46     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1)\{}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{48             drawn = drawZ(map, x, y);}
+\DoxyCodeLine{49         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{50             drawn = drawZ1(map, x, y);}
+\DoxyCodeLine{51         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{52             drawn = drawZ2(map, x, y);}
+\DoxyCodeLine{53         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{54             drawn = drawZ3(map, x, y);}
+\DoxyCodeLine{55         \}}
+\DoxyCodeLine{56     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2)\{}
+\DoxyCodeLine{57         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{58             drawn = drawI(map, x, y);}
+\DoxyCodeLine{59         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{60             drawn = drawI1(map, x, y);}
+\DoxyCodeLine{61         \}}
+\DoxyCodeLine{62     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3)\{}
+\DoxyCodeLine{63         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{64             drawn = drawL(map, x, y);}
+\DoxyCodeLine{65         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{66             drawn = drawL1(map, x, y);}
+\DoxyCodeLine{67         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{68             drawn = drawL2(map, x, y);}
+\DoxyCodeLine{69         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{70             drawn = drawL3(map, x, y);}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4)\{}
+\DoxyCodeLine{73         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{74             drawn = drawLr(map, x, y);}
+\DoxyCodeLine{75         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{76             drawn = drawLr1(map, x, y);}
+\DoxyCodeLine{77         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{78             drawn = drawLr2(map, x, y);}
+\DoxyCodeLine{79         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{80             drawn = drawLr3(map, x, y);}
+\DoxyCodeLine{81         \}}
+\DoxyCodeLine{82     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3)\{}
+\DoxyCodeLine{84             drawn = drawO(map, x, y);}
+\DoxyCodeLine{85         \}}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordflow}{return} drawn;}
+\DoxyCodeLine{89 \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{keywordtype}{void} movebackSelected(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
+\DoxyCodeLine{92     \textcolor{comment}{/*rotation = 0 1 2 3 */}}
+\DoxyCodeLine{93     \textcolor{keywordflow}{if}(selected == 0)\{}
+\DoxyCodeLine{94         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{95             deleteT(map, x, y);}
+\DoxyCodeLine{96         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{97             deleteT1(map, x, y);}
+\DoxyCodeLine{98         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{99             deleteT2(map, x, y);}
+\DoxyCodeLine{100         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{101             deleteT3(map, x, y);}
+\DoxyCodeLine{102         \}}
+\DoxyCodeLine{103     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1)\{}
+\DoxyCodeLine{104         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{105             deleteZ(map, x, y);}
+\DoxyCodeLine{106         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{107             deleteZ1(map, x, y);}
+\DoxyCodeLine{108         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{109             deleteZ2(map, x, y);}
+\DoxyCodeLine{110         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{111             deleteZ3(map, x, y);}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2)\{}
+\DoxyCodeLine{114         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{115             deleteI(map, x, y);}
+\DoxyCodeLine{116         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{117             deleteI1(map, x, y);}
+\DoxyCodeLine{118         \}}
+\DoxyCodeLine{119     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3)\{}
+\DoxyCodeLine{120         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{121             deleteL(map, x, y);}
+\DoxyCodeLine{122         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{123             deleteL1(map, x, y);}
+\DoxyCodeLine{124         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{125             deleteL2(map, x, y);}
+\DoxyCodeLine{126         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{127             deleteL3(map, x, y);}
+\DoxyCodeLine{128         \}}
+\DoxyCodeLine{129     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4)\{}
+\DoxyCodeLine{130         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{131             deleteLr(map, x, y);}
+\DoxyCodeLine{132         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{133             deleteLr1(map, x, y);}
+\DoxyCodeLine{134         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{135             deleteLr2(map, x, y);}
+\DoxyCodeLine{136         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{137             deleteLr3(map, x, y);}
+\DoxyCodeLine{138         \}}
+\DoxyCodeLine{139     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
+\DoxyCodeLine{140         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3)\{}
+\DoxyCodeLine{141             deleteO(map, x, y);}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144 \} }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{comment}{/* Una volta posizionato un tetramino, se una o più righe orizzontali vengono riempite}}
+\DoxyCodeLine{147 \textcolor{comment}{ * per intero, queste righe vengono cancellate come nel tetris originale.}}
+\DoxyCodeLine{148 \textcolor{comment}{ * La rimozione di una riga vale 1 punto, la rimozione di due righe con un solo pezzo vale}}
+\DoxyCodeLine{149 \textcolor{comment}{ * 3 punti, tre righe 6 punti, quattro righe 12 punti.}}
+\DoxyCodeLine{150 \textcolor{comment}{ */}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{keywordtype}{void} FallColumn(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} j)\{}
+\DoxyCodeLine{153     \textcolor{keywordtype}{int} i, k, count;}
+\DoxyCodeLine{154     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{155         count = 0;}
+\DoxyCodeLine{156         \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{157             \textcolor{keywordflow}{for}(k = i + 1; k < height -\/ 1 \&\& count < 1;  k++)\{}
+\DoxyCodeLine{158                 \textcolor{keywordflow}{if}(map[k][j] == 0)\{}
+\DoxyCodeLine{159                     map[i][j] = 0;}
+\DoxyCodeLine{160                     map[k][j] = 1;}
+\DoxyCodeLine{161                     count++;}
+\DoxyCodeLine{162                 \}}
+\DoxyCodeLine{163             \}}
+\DoxyCodeLine{164         \}}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166 \}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{keywordtype}{void} FallAll(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{169     \textcolor{keywordtype}{int} j;}
+\DoxyCodeLine{170     \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{171         FallColumn(map, j);}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173 \}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{keywordtype}{void} deleteRow(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} i)\{}
+\DoxyCodeLine{176     \textcolor{keywordtype}{int} k, j;}
+\DoxyCodeLine{177     \textcolor{keywordflow}{for}(k = 0; k < height -\/ 1; k++)\{}
+\DoxyCodeLine{178         \textcolor{keywordflow}{if}(k == i)\{}
+\DoxyCodeLine{179             \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{180                 map[k][j] = 0;}
+\DoxyCodeLine{181             \} }
+\DoxyCodeLine{182         \}}
+\DoxyCodeLine{183     \}}
+\DoxyCodeLine{184 \}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{keywordtype}{int} countRows(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{187     \textcolor{keywordtype}{int} i, j, n, count;}
+\DoxyCodeLine{188     count = 0;}
+\DoxyCodeLine{189     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{190         n = 1;}
+\DoxyCodeLine{191         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{192             \textcolor{keywordflow}{if}(map[i][j] == 0)\{}
+\DoxyCodeLine{193                 n = 0;}
+\DoxyCodeLine{194             \}}
+\DoxyCodeLine{195         \}}
+\DoxyCodeLine{196         \textcolor{keywordflow}{if}(n == 1)\{}
+\DoxyCodeLine{197             count++;}
+\DoxyCodeLine{198             deleteRow(map, i);\textcolor{comment}{/* l'iesima riga deve essere eliminata */}}
+\DoxyCodeLine{199         \}}
+\DoxyCodeLine{200     \}}
+\DoxyCodeLine{201     \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{202 \}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \textcolor{comment}{/* Una volta posizionato un tetramino, se una o più righe orizzontali vengono riempite}}
+\DoxyCodeLine{205 \textcolor{comment}{ * per intero, queste righe vengono cancellate come nel tetris originale.}}
+\DoxyCodeLine{206 \textcolor{comment}{ * La rimozione di una riga vale 1 punto, la rimozione di due righe con un solo pezzo vale}}
+\DoxyCodeLine{207 \textcolor{comment}{ * 3 punti, tre righe 6 punti, quattro righe 12 punti.}}
+\DoxyCodeLine{208 \textcolor{comment}{ */}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 \textcolor{keywordtype}{void} updateScoreSM(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} *score)\{}
+\DoxyCodeLine{211     \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{212     count = countRows(map);}
+\DoxyCodeLine{213     \textcolor{keywordflow}{if}(count <= 0)\{}
+\DoxyCodeLine{214         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{215     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217         \textcolor{keywordflow}{if}(count == 1)\{}
+\DoxyCodeLine{218             *score = *score +  1;     \textcolor{comment}{/* BIG MISTAKE: *score += 1 -\/> WRONG */}}
+\DoxyCodeLine{219         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 2)\{}
+\DoxyCodeLine{220             *score = *score +  3;}
+\DoxyCodeLine{221         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 3)\{}
+\DoxyCodeLine{222             *score = *score +  6;}
+\DoxyCodeLine{223         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 4)\{}
+\DoxyCodeLine{224             *score = *score +  12;}
+\DoxyCodeLine{225         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{226             *score = *score +  count;}
+\DoxyCodeLine{227         \}}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229     \} }
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231     FallAll(map); \textcolor{comment}{/* FallAll sempre e comunque,  */}}
+\DoxyCodeLine{232 \}}
+\DoxyCodeLine{233 }
+\DoxyCodeLine{234 \textcolor{keywordtype}{void} invertEnemy(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} invert)\{}
+\DoxyCodeLine{235     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{236     \textcolor{keywordflow}{for}(i = height -\/ invert -\/ 2; i < height -\/ 1 \&\& i >= 0; i++)\{  \textcolor{comment}{/*usiamo i = height -\/ invert -\/ 2 perchè le }}
+\DoxyCodeLine{237 \textcolor{comment}{                                                posizioni i = height e i = height -\/ 1 non sono valide */}}
+\DoxyCodeLine{238         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{239             \textcolor{keywordflow}{if}(map[i][j] == 0)\{}
+\DoxyCodeLine{240                 map[i][j] = 1;}
+\DoxyCodeLine{241             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{242                 map[i][j] = 0;}
+\DoxyCodeLine{243             \}}
+\DoxyCodeLine{244         \}}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246 \}}
+\DoxyCodeLine{247 }
+\DoxyCodeLine{248 \textcolor{keywordtype}{int} updateScoreMP2(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} *score)\{}
+\DoxyCodeLine{249     }
+\DoxyCodeLine{250     \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{251     count = countRows(map);}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253     \textcolor{keywordflow}{if}(count <= 0)\{}
+\DoxyCodeLine{254         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{255     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{256         }
+\DoxyCodeLine{257         \textcolor{keywordflow}{if}(count == 1)\{}
+\DoxyCodeLine{258             *score = *score +  1;   \textcolor{comment}{/* BIG MISTAKE: *score += 1 -\/> WRONG */}}
+\DoxyCodeLine{259         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 2)\{}
+\DoxyCodeLine{260             *score = *score +  3;}
+\DoxyCodeLine{261         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 3)\{}
+\DoxyCodeLine{262             *score = *score +  6;}
+\DoxyCodeLine{263         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 4)\{}
+\DoxyCodeLine{264             *score = *score +  12;}
+\DoxyCodeLine{265         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{266             *score = *score + count;}
+\DoxyCodeLine{267         \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269     \}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271     FallAll(map);}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273     \textcolor{comment}{/* aggiungi le cose dalla consegna del progetto nel pdf */}}
+\DoxyCodeLine{274     \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{275 \}}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277 \textcolor{keywordtype}{void} checkEndGame(\textcolor{keywordtype}{int} avaiblep[6], \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} *won)\{}
+\DoxyCodeLine{278     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{279     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{280     \textcolor{keywordflow}{for}(i = 0; i < dim; i++)\{}
+\DoxyCodeLine{281         \textcolor{keywordflow}{if}(avaiblep[i] == 0)\{}
+\DoxyCodeLine{282             count++;}
+\DoxyCodeLine{283         \}}
+\DoxyCodeLine{284     \}}
+\DoxyCodeLine{285     \textcolor{keywordflow}{if}(count == dim)\{}
+\DoxyCodeLine{286         *won = 1;}
+\DoxyCodeLine{287     \}}
+\DoxyCodeLine{288 \}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{keywordtype}{void} checkWinMP(\textcolor{keywordtype}{char} name[20], \textcolor{keywordtype}{char} name1[20], \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{int} score1)\{}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292     \textcolor{keywordflow}{if}(score > score1)\{}
+\DoxyCodeLine{293         printWinner(name);}
+\DoxyCodeLine{294     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(score < score1)\{}
+\DoxyCodeLine{295         printWinner(name1);}
+\DoxyCodeLine{296     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{297         printPareggio();}
+\DoxyCodeLine{298     \}}
+\DoxyCodeLine{299     }
+\DoxyCodeLine{300 \}}
+\DoxyCodeLine{301 }
+\DoxyCodeLine{302 \textcolor{keywordtype}{void} checkWinMPC(\textcolor{keywordtype}{char} name[20], \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{int} score1)\{}
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304     \textcolor{keywordflow}{if}(score > score1)\{}
+\DoxyCodeLine{305         printWinner(name);}
+\DoxyCodeLine{306     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(score < score1)\{}
+\DoxyCodeLine{307         printLoser(name);}
+\DoxyCodeLine{308     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{309         printPareggio();}
+\DoxyCodeLine{310     \}}
+\DoxyCodeLine{311     }
+\DoxyCodeLine{312 \}}
+\DoxyCodeLine{313 }
+\DoxyCodeLine{314 \textcolor{keywordtype}{int} whoEnemy()\{}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316     \textcolor{keywordtype}{int} p;}
+\DoxyCodeLine{317     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{318     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{319         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{320         printf(\textcolor{stringliteral}{"{}How many players? (0, 1, 2): "{}});}
+\DoxyCodeLine{321     \}\textcolor{keywordflow}{while}( ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&p, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& clean\_stdin() == 1 ) || p < 0 || p > 2);}
+\DoxyCodeLine{322     }
+\DoxyCodeLine{323 \}}
+\DoxyCodeLine{324    }
+\DoxyCodeLine{325    }
+\DoxyCodeLine{326    }
+\DoxyCodeLine{327    }
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 }
+
+\end{DoxyCode}

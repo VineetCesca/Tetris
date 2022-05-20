@@ -1,0 +1,81 @@
+\hypertarget{_extra_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Extra.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{keywordtype}{void} gotoXY(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
+\DoxyCodeLine{2  }
+\DoxyCodeLine{3  COORD coord;}
+\DoxyCodeLine{4  }
+\DoxyCodeLine{5  coord.X = x;}
+\DoxyCodeLine{6  }
+\DoxyCodeLine{7  coord.Y = y;}
+\DoxyCodeLine{8  }
+\DoxyCodeLine{9  SetConsoleCursorPosition(GetStdHandle(STD\_OUTPUT\_HANDLE), coord);}
+\DoxyCodeLine{10  }
+\DoxyCodeLine{11 \}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keywordtype}{void} delay(\textcolor{keywordtype}{float} number\_of\_seconds)\{}
+\DoxyCodeLine{14     \textcolor{comment}{/* Converting time into milli\_seconds */}}
+\DoxyCodeLine{15     \textcolor{keywordtype}{float} milli\_seconds = 1000 * number\_of\_seconds;}
+\DoxyCodeLine{16   }
+\DoxyCodeLine{17     \textcolor{comment}{/* Storing start time */}}
+\DoxyCodeLine{18     clock\_t start\_time = clock();}
+\DoxyCodeLine{19   }
+\DoxyCodeLine{20     \textcolor{comment}{/* looping till required time is not achieved*/}}
+\DoxyCodeLine{21     \textcolor{keywordflow}{while} (clock() < start\_time + milli\_seconds);}
+\DoxyCodeLine{22 \}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keywordtype}{void} loadGame()\{}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} r, cnt = 5, n = 60, m = n;}
+\DoxyCodeLine{26     gotoXY(n + 5, 25);}
+\DoxyCodeLine{27     printf(\textcolor{stringliteral}{"{}LOADING..."{}});}
+\DoxyCodeLine{28     \textcolor{keywordflow}{for}(r=1;r<=20;r++)\{}
+\DoxyCodeLine{29         gotoXY(n, 26);}
+\DoxyCodeLine{30         delay(0.100);}
+\DoxyCodeLine{31         printf(\textcolor{stringliteral}{"{}\%c"{}}, 177);}
+\DoxyCodeLine{32         gotoXY(n + 5, 27);}
+\DoxyCodeLine{33         printf(\textcolor{stringliteral}{"{}\%3d/100"{}}, cnt);}
+\DoxyCodeLine{34         cnt += 5;}
+\DoxyCodeLine{35         n++;}
+\DoxyCodeLine{36     \}}
+\DoxyCodeLine{37     }
+\DoxyCodeLine{38     gotoXY(m + 2, 30);}
+\DoxyCodeLine{39     printf(\textcolor{stringliteral}{"{}Enter anything to play \(\backslash\)n"{}});  }
+\DoxyCodeLine{40     getch();}
+\DoxyCodeLine{41 \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keywordtype}{void} closeGame()\{}
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} r, cnt = 5, n = 60;}
+\DoxyCodeLine{45     gotoXY(n + 2, 25);}
+\DoxyCodeLine{46     printf(\textcolor{stringliteral}{"{}SHUTTING DOWN..."{}});}
+\DoxyCodeLine{47     \textcolor{keywordflow}{for}(r=1;r<=20;r++)\{}
+\DoxyCodeLine{48         gotoXY(n, 26);}
+\DoxyCodeLine{49         delay(0.100);}
+\DoxyCodeLine{50         printf(\textcolor{stringliteral}{"{}\%c"{}}, 177);}
+\DoxyCodeLine{51         gotoXY(n + 5, 27);}
+\DoxyCodeLine{52         printf(\textcolor{stringliteral}{"{}\%3d/100"{}}, cnt);}
+\DoxyCodeLine{53         cnt += 5;}
+\DoxyCodeLine{54         n++;}
+\DoxyCodeLine{55     \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keywordtype}{int} clean\_stdin() \textcolor{comment}{/* useful to prevent input data errors */}}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61     \textcolor{keywordflow}{while} (getchar()!=\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{62     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{63 \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{/* self-\/made */}}
+\DoxyCodeLine{66 \textcolor{keywordtype}{void} fillOne(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{68     \textcolor{keywordflow}{for} (i = 1; i < height -\/ 1; i++)\{}
+\DoxyCodeLine{69         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
+\DoxyCodeLine{70             map[i][j] = 1;}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72     \}}
+\DoxyCodeLine{73 \}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 }
+
+\end{DoxyCode}

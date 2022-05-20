@@ -1,0 +1,39 @@
+\hypertarget{_text_settings_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Text\+Settings.h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{keywordtype}{void} centerText(\textcolor{keywordtype}{int} n)\{}
+\DoxyCodeLine{2     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{3     \textcolor{keywordflow}{for}(i = 0; i < n/2; i++)\{}
+\DoxyCodeLine{4         printf(\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{5     \}}
+\DoxyCodeLine{6 \}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keywordtype}{void} setcolorText(\textcolor{keywordtype}{char} *color, \textcolor{keywordtype}{int} bold)\{}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}black"{}} || color == \textcolor{stringliteral}{"{}BLACK"{}} || color == \textcolor{stringliteral}{"{}Black"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{11         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;30m"{}}, bold);}
+\DoxyCodeLine{12     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}red"{}} || color == \textcolor{stringliteral}{"{}RED"{}} || color == \textcolor{stringliteral}{"{}Red"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{13         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;31m"{}}, bold); \textcolor{comment}{/*funziona anche così*/}}
+\DoxyCodeLine{14     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}green"{}} || color == \textcolor{stringliteral}{"{}GREEN"{}} || color == \textcolor{stringliteral}{"{}Green"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{15         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;32m"{}}, bold);}
+\DoxyCodeLine{16     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}yellow"{}} || color == \textcolor{stringliteral}{"{}YELLOW"{}} || color == \textcolor{stringliteral}{"{}Yellow"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{17         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;33m"{}}, bold);}
+\DoxyCodeLine{18     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}blue"{}} || color == \textcolor{stringliteral}{"{}BLUE"{}} || color == \textcolor{stringliteral}{"{}Blue"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{19         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;34m"{}}, bold);}
+\DoxyCodeLine{20     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}purple"{}} || color == \textcolor{stringliteral}{"{}PURPLE"{}} || color == \textcolor{stringliteral}{"{}Purple"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{21         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;35m"{}}, bold);}
+\DoxyCodeLine{22     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}cyan"{}} || color == \textcolor{stringliteral}{"{}CYAN"{}} || color == \textcolor{stringliteral}{"{}Cyan"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{23         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;36m"{}}, bold);}
+\DoxyCodeLine{24     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}white"{}} || color == \textcolor{stringliteral}{"{}WHITE"{}} || color == \textcolor{stringliteral}{"{}White"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{25         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;37m"{}}, bold);}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keywordtype}{void} saltaRighe(\textcolor{keywordtype}{int} N)\{}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{for}(i = 0; i < N; i++)\{}
+\DoxyCodeLine{32         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 \}}
+
+\end{DoxyCode}
