@@ -747,10 +747,10 @@ void gameOneVSPC(int map[15][10], int map1[15][10], int x, int y, int *score, in
     checkEndGame(avaiblepMP, dim, won); /*verifichiamo la disponibilità dei tetramini (condivisi) -> se non 
     ce ne sono più, bisogna concludere il gioco*/
 
-    if(*winning == 0){
+    if(*winning == 0){ /* il p1 ha fatto posizionato male i tetramini, ha perso, il pc ha vinto */
         printLoser(name);
         return;
-    } else if(*won == 1){
+    } else if(*won == 1){  /*il p1 ha finito i tetramini condivisi, si controllano i punteggi e il gioco si conclude */
         checkWinMPC(name, *score, *score1);
         return;
     }
