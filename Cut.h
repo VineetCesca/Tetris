@@ -132,7 +132,7 @@ void introMP2PC(int map[15][10], int map1[15][10], char* colorMode, int *score, 
     
     invert = updateScoreMP2(map, score);
 
-    if(invert >= 3){ //per i test ho provato con 2 e funziona, con 3 è più difficile creare la situazione
+    if(invert >= 3){ /*per i test ho provato con 2 e funziona, con 3 è più difficile creare la situazione*/
         invertEnemy(map1, invert);
     }
 
@@ -536,15 +536,14 @@ int movePiece(int map[15][10], int x, int y, int selectedSM, int rotation, int *
             winning = drawSelected(map, x, y, selectedSM, rotation);
             printMapColor(map, colorSMPiece, colorSM, 100);
 
-            if(!winning){
+            if(!winning){ /*GAME OVER SCREEN -> only in SINGOL GAME MODE */
                 system("cls");
                 setcolorText(colorMP, 1);
                 printTitle("COLLISION! GAME OVER!\n");
-                delay(1.5);
-                setcolorText("white", 0);
+                delay(2.0);
+                setcolorText("white", 1);
                 return 0;
             }
-            //getch();
             
         }
 
@@ -673,14 +672,10 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
 
 
             if(!winning){
-                system("cls");
-                setcolorText("red", 1);
-                printTitle("COLLISION! GAME OVER!\n");
-                delay(1.5);
-                setcolorText("white", 0);
+                system("cls"); /*will check scores and print the winner */
                 return 0;
             }
-            //getch();
+            
         }
 
         return 1;
@@ -704,7 +699,16 @@ void gameOneVSOne(int map[15][10], int map1[15][10], int x, int y, int *score, i
 
     *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80, '1', name1);
 
-    checkWin(avaiblepMP, dim, won);
+    checkEndGame(avaiblepMP, dim, won);/*verifichiamo la disponibilità dei tetramini (condivisi) -> se non 
+    ce ne sono più, bisogna concludere il gioco*/
+
+    if(*winning == 0){ /*il giocatore p1 ha posizionato male i tetramini -> ha perso indipendentemente dal punteggio*/
+        printWinner(name2);
+        return;
+    } else if(*won == 1){ /*il giocatore p1 ha finito i pezzi (condivisi) per cui si controllano i punteggi: winner o pareggio*/
+        checkWinMP(name1, name2, *score, *score1);
+        return;
+    }
 
     introMP2(map, map1, colorMode, score, score1, color1, color2, name1, name2);
 
@@ -714,7 +718,16 @@ void gameOneVSOne(int map[15][10], int map1[15][10], int x, int y, int *score, i
 
     *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150, '2', name2);
 
-    checkWin(avaiblepMP, dim, won1);
+    checkEndGame(avaiblepMP, dim, won1);/*verifichiamo la disponibilità dei tetramini (condivisi) -> se non 
+    ce ne sono più, bisogna concludere il gioco*/
+
+    if(*winning1 == 0){ /*il giocatore p2 ha posizionato male i tetramini -> ha perso indipendentemente dal punteggio*/
+        printWinner(name1);
+        return;
+    } else if(*won1 == 1){ /*il giocatore p2 ha finito i pezzi (condivisi) per cui si controllano i punteggi: winner o pareggio*/
+        checkWinMP(name1, name2, *score, *score1);
+        return;
+    }
 
 }
 
@@ -731,7 +744,16 @@ void gameOneVSPC(int map[15][10], int map1[15][10], int x, int y, int *score, in
 
     *winning = movePieceMP(map, map1, x, y, *selectedSM, *rotation, released, score, colorMode, color1, 80, '1', name);
 
-    checkWin(avaiblepMP, dim, won);
+    checkEndGame(avaiblepMP, dim, won); /*verifichiamo la disponibilità dei tetramini (condivisi) -> se non 
+    ce ne sono più, bisogna concludere il gioco*/
+
+    if(*winning == 0){
+        printLoser(name);
+        return;
+    } else if(*won == 1){
+        checkWinMPC(name, *score, *score1);
+        return;
+    }
 
     introMP2PC(map, map1, colorMode, score, score1, color1, color2, name);
 
@@ -741,7 +763,16 @@ void gameOneVSPC(int map[15][10], int map1[15][10], int x, int y, int *score, in
 
     *winning1 = movePieceMP(map1, map, x, y, *selectedMP, *rotation1, released1, score1, colorMode, color2, 150, '0', name);
 
-    checkWin(avaiblepMP, dim, won1);
+    checkEndGame(avaiblepMP, dim, won1);  /*verifichiamo la disponibilità dei tetramini (condivisi) -> se non 
+    ce ne sono più, bisogna concludere il gioco*/
+
+    if(*winning1 == 0){ /* il pc ha fatto posizionato male i tetramini, ha perso il pc */
+        printWinner(name);
+        return;
+    } else if(*won1 == 1){  /*il pc ha finito i tetramini condivisi, si controllano i punteggi e il gioco si conclude */
+        checkWinMPC(name, *score, *score1);
+        return;
+    }
 
 }
 

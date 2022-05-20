@@ -4,7 +4,6 @@
 #include <time.h>
 #include <windows.h>
 
-
 const int height = 15, width = 10;
 const int dim = 6; /* T, I, O, Z, L, Lr */
 char *colorSM = "blue";
@@ -13,12 +12,13 @@ char *colorMP = "red";
 char *color1 = "yellow";
 char *color2 = "purple";
 
+
 #include "TextSettings.h"
 #include "Initializer.h"
 #include "DrawPieces.h"
 #include "Extra.h"
-#include "Logic.h"
 #include "Print.h"
+#include "Logic.h"
 #include "Cut.h"
 
 
@@ -58,7 +58,8 @@ int main(void){
                 introSDynamic(map, colorSM, score);
                 selectProcess(avaiblep, dim, &selectedSM, &rotation, &drawn, map, x, y, colorSM, colorSMPiece);
                 winning = movePiece(map, x, y, selectedSM, rotation, &released, &score);
-                checkWin(avaiblep, dim, &won);
+                checkEndGame(avaiblep, dim, &won);/*verifichiamo la disponibilità dei tetramini (condivisi) -> se non 
+                ce ne sono più, bisogna concludere il gioco*/
             }while(winning != 0 && !won);
 
             setcolorText("white", 1); 
@@ -68,8 +69,14 @@ int main(void){
             multiopt = whoEnemy();
             
             if(multiopt > 0){ /* p1 vs pc? p1 vs p2?*/
-                //askNames();
-                initGameMP(map, map1, avaiblepMP, dim);
+            /*Un giocatore perde la partita se non posiziona correttamente un pezzo nel proprio campo di gioco. Se i pezzi
+            finiscono vince il giocatore con il punteggio più alto.*/
+        
+                won = 0; /* è bene ricordare che all'inizio nessuno dei due vince -> vince chi continua a fare punti */
+                won1 = 0; /*il gioco va in crush se qualcuno fa scontrare i suoi tetramini, motivo per cui la partita termina
+                            e si guarda al punteggio più alto*/
+                initGameMP(map, map1, avaiblepMP, dim); /*un solo array avaibleMP perchè p1 e p2(pc) pescano dallo stesso insieme di tetramini
+                rispetto al avaiblep in modalità singolo giocatore, hai il doppio dei tetramini (20*2) = 40 CODIVISI*/
                 setCursor(&x, &y, 4, 0);
                 initScore(&score);
                 initScore(&score1);

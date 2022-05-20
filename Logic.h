@@ -274,7 +274,7 @@ int updateScoreMP2(int map[15][10], int *score){
     return count;
 }
 
-void checkWin(int avaiblep[6], int dim, int *won){
+void checkEndGame(int avaiblep[6], int dim, int *won){
     int i;
     int count = 0;
     for(i = 0; i < dim; i++){
@@ -285,6 +285,30 @@ void checkWin(int avaiblep[6], int dim, int *won){
     if(count == dim){
         *won = 1;
     }
+}
+
+void checkWinMP(char name[20], char name1[20], int score, int score1){
+
+    if(score > score1){
+        printWinner(name);
+    } else if(score < score1){
+        printWinner(name1);
+    } else {
+        printPareggio();
+    }
+    
+}
+
+void checkWinMPC(char name[20], int score, int score1){
+
+    if(score > score1){
+        printWinner(name);
+    } else if(score < score1){
+        printLoser(name);
+    } else {
+        printPareggio();
+    }
+    
 }
 
 int whoEnemy(){

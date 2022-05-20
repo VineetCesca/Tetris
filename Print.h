@@ -344,6 +344,32 @@ void printScorePC(int score, char *colorMode, int y, char player){
     setcolorText("blue", 1);*/
 }
 
+void printWinner(char name[20]){
+    system("cls");
+    setcolorText("green", 1);
+    centerText(100);
+    printf("THE WINNER IS %s \n", name);
+    delay(2.0); /*due . 0 secondi*/
+    setcolorText("white", 1);
+}
+
+void printLoser(char name[20]){
+    system("cls");
+    setcolorText("red", 1);
+    centerText(100);
+    printf("%s LOOSE AGAINST PC", name);
+    delay(2.0);
+    setcolorText("white", 1);
+}
+
+void printPareggio(){
+    system("cls");
+    setcolorText("yellow", 1);
+    printTitle("DRAW");
+    delay(2.0);
+    setcolorText("white", 1);
+}
+
 void dude(){
     printf("DUDE\n");
 }
