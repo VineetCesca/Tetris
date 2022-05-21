@@ -1,8 +1,10 @@
-/* map è passato come parametro per righe e colonne ma basta specificare il numero delle colonne*/
-/// riceve in ingresso il nome del player (char *) e lo stampa
+/* riceve in ingresso il nome del player (char *) e lo stampa */
+
 void stampaNome(char *playerone){
     printf("Your name is %s \n", playerone);
 }
+
+/* chiede al giocatore n(1 o 2) di inserire il suo nome e aggiorna la variabile chr [20] in ingresso */
 
 void askName(char name[20], char n){
     int a = 0;
@@ -36,6 +38,7 @@ void askName(char name[20], char n){
 
 }
 
+/* menu introduttivo al gioco, mostra le opzioni di gioco (codificate come interi), chiede all'utente di sceglierne una e la restituisce */
 
 int intro(){
     int opt;
@@ -52,10 +55,14 @@ int intro(){
 
 }
 
+/* inizializza una partita in single mode: inizializza la mappa e l'array di tetramini disponibili tramite due funzioni */
+
 void initGame(int map[15][10], int avaiblep[6], int dim){
     initMap(map);
     initAvaiblePieces(avaiblep, dim, 20);
 }
+
+/* inizializza una partita in multiplayer mode: inizializza entrambe le mappe e l'array di tetramini disponibili condiviso tramite altre due funzioni */
 
 void initGameMP(int map[15][10], int map1[15][10], int avaibleMP[6], int dim){
     initMap(map);
@@ -63,9 +70,13 @@ void initGameMP(int map[15][10], int map1[15][10], int avaibleMP[6], int dim){
     initAvaiblePieces(avaibleMP, dim, 40);
 }
 
+/* inizializza il punteggio a zero */
+
 void initScore(int *score){
     *score = 0;
 }
+
+/* menu della modalità single player: selezione del tetramino, stampa della mappa, delle opzioni, della legenda e del punteggio */
 
 int introS(int map[15][10], char *colorMode){
     int singleopt; 
@@ -83,6 +94,8 @@ int introS(int map[15][10], char *colorMode){
     return singleopt;
 }
 
+/* stampa della schermata modalità single player in fase dinamica, non avviene alcuna selezione */
+
 void introSDynamic(int map[15][10], char* colorMode, int score){
     setcolorText(colorMode, 1);
     system("cls");
@@ -93,6 +106,8 @@ void introSDynamic(int map[15][10], char* colorMode, int score){
     printScorePC(score, colorSMPiece, 3, '1');
     gotoXY(0, 25);
 }
+
+/* menu della modalità multiplayer 1 vs 1: stampa opzioni, selezione del tetramino, stampa legenda, punteggio e mappa del giocatore attivo */
 
 void introMPDynamicName(int map[15][10], char *colorPiece, char* colorMode, int score, int center, char player, char name[20]){
     setcolorText(colorMode, 1);
@@ -213,7 +228,11 @@ void selectProcessPC(int avaiblep[6], int dim, int *selectedSM, int *rotation,
     saltaRighe(1);
     printLegendaAllPieces(colorMode, colorPiece);
     *selectedSM = rand()% 6; /*T = 0  Z = 1 I = 2  L = 3  Lr = 4  O = 5 */
-    *rotation = rand() % 4; /* random rotation from 0 to 3 -> don't need to initialize rand() because this
+    /* senza la funzione selectPiece, non decrementa la disponibilità:  */
+    if( checkAvaible(avaiblep, dim, *selectedSM) == 1 ){
+        avaiblep[*selectedSM]--; /* update avaiblepieces */
+    }
+    *rotation = rand()% 4; /* random rotation from 0 to 3 -> don't need to initialize rand() because this
     function will be recalled everytime with random values */
     *drawn = drawSelected(map, x, y, *selectedSM, *rotation);
     printf("drawn = %d\n", *drawn);
