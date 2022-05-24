@@ -8,51 +8,49 @@ void \mbox{\hyperlink{_cut_8h_ac2887fddac9e3cb86275cc401f3fcd77}{stampa\+Nome}} 
 void \mbox{\hyperlink{_cut_8h_a18a2aae538ddaae3f0e111969fd20111}{ask\+Name}} (char name\mbox{[}20\mbox{]}, char n)
 \begin{DoxyCompactList}\small\item\em Asks to player 1 or 2 to type the name and stores it and then asks to confirm. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_cut_8h_ab35e175ef92b0a09d11eade80c803c15}{intro}} ()
-\begin{DoxyCompactList}\small\item\em Main Game Menu\+: Prints out options to select as input\+: \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Prints out the Main Game Menu and asks the user to choose an option. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_ac6cf1cc8abe38959f3638c4b6d791e0d}{init\+Game}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int avaiblep\mbox{[}6\mbox{]}, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}})
 \begin{DoxyCompactList}\small\item\em Initialize a match in Single\+Player. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_a3de115086c75040b94838386ba16902b}{init\+Game\+MP}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int map1\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int avaible\+MP\mbox{[}6\mbox{]}, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}})
 \begin{DoxyCompactList}\small\item\em Initialize a match in Multi\+Player. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_ac60705307c9228dac45d51d603e9fb77}{init\+Score}} (int $\ast$score)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize the score of a match. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_cut_8h_afa801ea6566756e405b70ea9f06e50bf}{introS}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, char $\ast$color\+Mode)
-\item 
+\begin{DoxyCompactList}\small\item\em Prints out the Single\+Player Game Menu and asks the user to choose an option. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_a1515458ebe31caafde5c67c95e8cb9ff}{intro\+SDynamic}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, char $\ast$color\+Mode, int score)
-\item 
+\begin{DoxyCompactList}\small\item\em Prints out the Single\+Player interface while the piece (tetramino) is moving inside the map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_afad99cae6255fb630bef1ba9a484af9f}{intro\+MPDynamic\+Name}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, char $\ast$color\+Piece, char $\ast$color\+Mode, int score, int center, char player, char name\mbox{[}20\mbox{]})
-\item 
+\begin{DoxyCompactList}\small\item\em Prints out the Multi\+Player (1 vs 1) interface while the player 1 or 2 is moving the piece inside the map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_af90f106fad12831a2806a540acc4bc91}{intro\+MPDynamic\+PC}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, char $\ast$color\+Piece, char $\ast$color\+Mode, int score, int center, char player)
-\item 
+\begin{DoxyCompactList}\small\item\em Prints out the Multi\+Player (1 vs PC) interface while the player or PC is moving the piece inside the map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_a5486ee999c7c672bd64802a3311a5e28}{intro\+MP2\+PC}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int map1\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, char $\ast$color\+Mode, int $\ast$score, int $\ast$score1, char $\ast$\mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, char $\ast$\mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, char name\mbox{[}20\mbox{]})
-\item 
+\begin{DoxyCompactList}\small\item\em Prints out the Multi\+Player (1 vs PC) interface, updates the scores and, if occurs, inverts the enemy\textquotesingle{}s rows. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_ad013642412c359a29bc8a25d9628af4f}{intro\+MP2}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int map1\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, char $\ast$color\+Mode, int $\ast$score, int $\ast$score1, char $\ast$\mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, char $\ast$\mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, char name1\mbox{[}20\mbox{]}, char name2\mbox{[}20\mbox{]})
-\item 
+\begin{DoxyCompactList}\small\item\em Prints out the Multi\+Player (1 vs 1) interface, updates the scores and, if occurs, inverts the enemy\textquotesingle{}s rows. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_ad9877321139162ae1207fd239f48ea43}{update\+Av\+Pieces}} (int avaiblep\mbox{[}6\mbox{]}, int selected\+SM, int drawn)
-\item 
+\begin{DoxyCompactList}\small\item\em When a piece could not be drawn, this function stores back the amout (decreased) to its original value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_a31d08c0c40d8f48175b75e48f8412c8b}{select\+Process}} (int avaiblep\mbox{[}6\mbox{]}, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int $\ast$selected\+SM, int $\ast$rotation, int $\ast$drawn, int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, char $\ast$color\+Mode, char $\ast$color\+Piece)
-\item 
+\begin{DoxyCompactList}\small\item\em Selects a piece (tetramino), its rotation and updates avaible pieces. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_ae1436a9803c69c5bd7b6ff9355bed613}{select\+Process\+PC}} (int avaiblep\mbox{[}6\mbox{]}, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int $\ast$selected\+SM, int $\ast$rotation, int $\ast$drawn, int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, char $\ast$color\+Mode, char $\ast$color\+Piece)
-\item 
+\begin{DoxyCompactList}\small\item\em Select randomly a piece (tetramino) and its rotation, then updates avaible pieces (1 vs PC) \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_cut_8h_a9cb7b2d3ea20c422a23e44936eb8e875}{avoid\+Pieces}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int sy, int selected, int rotation)
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the selected piece can move any further to any direction. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_cut_8h_a76773923e027d0b15c74e290a4fe6835}{get\+Last\+Coords}} (int y, int selected, int rotation)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the last y coords of the selected piece. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_cut_8h_ac85689d5eed0c8c34599597430e003e3}{get\+Last\+Coords1}} (int x, int selected, int rotation)
-\item 
-void \mbox{\hyperlink{_cut_8h_aebea68d8de7a864e98a363edb853bff7}{fall}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int sy, int selected, int rotation, int score, char player)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the last x coords of the selected piece. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_af3f41027773f43451ef6f65ef084f34f}{fall\+Down}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int sy, int selected, int rotation, int $\ast$score)
-\item 
+\begin{DoxyCompactList}\small\item\em Make the piece fall until the bottom of the map or the before colliding with another piece (Single\+Player) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_a457202fb177a5b743ac49c05c2e05e2e}{fall\+Down\+MP}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int map\+Enemy\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int sy, int selected, int rotation, int $\ast$score, char $\ast$color\+Piece, char $\ast$color\+Mode, int center, char player, char name\mbox{[}20\mbox{]})
-\item 
+\begin{DoxyCompactList}\small\item\em Make the piece fall until the bottom of the map or the before colliding with another piece and, if it occurs, inverts the rows (Multi\+Player) \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_cut_8h_a1d4d532ae9ededc1d84ef89e8fc3f992}{move\+Piece}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int selected\+SM, int rotation, int $\ast$released, int $\ast$score)
-\item 
+\begin{DoxyCompactList}\small\item\em Move the selected piece inside the map (Single\+Player) \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_cut_8h_af3f86220a64193d10c7eb528f3ab64ea}{move\+Piece\+MP}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int map\+Enemy\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int selected\+MP, int rotation, int $\ast$released, int $\ast$score, char $\ast$color\+Mode, char $\ast$color\+Piece, int center, char player, char name\mbox{[}20\mbox{]})
-\item 
+\begin{DoxyCompactList}\small\item\em Move the selected piece inside the map (Multi\+Player) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_ae0a29bd1d44e72663fe0c6f9ec04bc6d}{game\+One\+VSOne}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int map1\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int $\ast$score, int $\ast$score1, int $\ast$drawn, int $\ast$drawn1, int $\ast$rotation, int $\ast$rotation1, int $\ast$released, int $\ast$released1, int $\ast$selected\+SM, int $\ast$selected\+MP, int avaiblep\+MP\mbox{[}6\mbox{]}, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int $\ast$won, int $\ast$won1, int $\ast$winning, int $\ast$winning1, char $\ast$color\+Mode, char $\ast$\mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, char $\ast$\mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, char name1\mbox{[}20\mbox{]}, char name2\mbox{[}20\mbox{]})
-\item 
+\begin{DoxyCompactList}\small\item\em Move the selected piece inside the map (Multi\+Player) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_cut_8h_aceee05f2d5cc88b14ebf0fc4f714b8d3}{game\+One\+VSPC}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int map1\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int $\ast$score, int $\ast$score1, int $\ast$drawn, int $\ast$drawn1, int $\ast$rotation, int $\ast$rotation1, int $\ast$released, int $\ast$released1, int $\ast$selected\+SM, int $\ast$selected\+MP, int avaiblep\+MP\mbox{[}6\mbox{]}, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int $\ast$won, int $\ast$won1, int $\ast$winning, int $\ast$winning1, char $\ast$color\+Mode, char $\ast$\mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, char $\ast$\mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, char name\mbox{[}20\mbox{]})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Move the selected piece inside the map (Multi\+Player) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -85,17 +83,28 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00016}{16}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00257}{257}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
-
-\mbox{\Hypertarget{_cut_8h_aebea68d8de7a864e98a363edb853bff7}\label{_cut_8h_aebea68d8de7a864e98a363edb853bff7}} 
-\index{Cut.h@{Cut.h}!fall@{fall}}
-\index{fall@{fall}!Cut.h@{Cut.h}}
-\doxysubsubsection{\texorpdfstring{fall()}{fall()}}
-{\footnotesize\ttfamily void fall (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{sy,  }\item[{int}]{selected,  }\item[{int}]{rotation,  }\item[{int}]{score,  }\item[{char}]{player }\end{DoxyParamCaption})}
+Checks if the selected piece can move any further to any direction. 
 
 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em sy} & piece y limit coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & piece rotation \\
+\hline
+\mbox{\texttt{ out}}  & {\em 0} & if it can move further \\
+\hline
+\mbox{\texttt{ out}}  & {\em 1} & if it will collide \\
+\hline
+\end{DoxyParams}
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00423}{423}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00422}{422}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_af3f41027773f43451ef6f65ef084f34f}\label{_cut_8h_af3f41027773f43451ef6f65ef084f34f}} 
 \index{Cut.h@{Cut.h}!fallDown@{fallDown}}
@@ -105,7 +114,39 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00423}{423}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00432}{432}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Make the piece fall until the bottom of the map or the before colliding with another piece (Single\+Player) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em sy} & piece y limit coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & piece rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & current score \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_cut_8h_a9cb7b2d3ea20c422a23e44936eb8e875}{avoid\+Pieces()}} 
+
+update\+Score() 
+
+\mbox{\hyperlink{_cut_8h_a1515458ebe31caafde5c67c95e8cb9ff}{intro\+SDynamic()}} 
+
+\mbox{\hyperlink{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}{moveback\+Selected()}} 
+
+\mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{draw\+Selected()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00634}{634}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_a457202fb177a5b743ac49c05c2e05e2e}\label{_cut_8h_a457202fb177a5b743ac49c05c2e05e2e}} 
 \index{Cut.h@{Cut.h}!fallDownMP@{fallDownMP}}
@@ -115,7 +156,55 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00432}{432}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00451}{451}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Make the piece fall until the bottom of the map or the before colliding with another piece and, if it occurs, inverts the rows (Multi\+Player) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em map\+Enemy} & enemy\textquotesingle{}s game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em sy} & piece y limit coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & piece rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Piece} & map color (the one who is moving the piece) \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em center} & a value to set the text position \\
+\hline
+\mbox{\texttt{ in}}  & {\em player} & index of player \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & player\textquotesingle{}s name (the one who is moving the piece) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_cut_8h_a9cb7b2d3ea20c422a23e44936eb8e875}{avoid\+Pieces()}} 
+
+\mbox{\hyperlink{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}{update\+Score\+MP2()}} 
+
+\mbox{\hyperlink{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}{invert\+Enemy()}} 
+
+\mbox{\hyperlink{_cut_8h_afad99cae6255fb630bef1ba9a484af9f}{intro\+MPDynamic\+Name()}} 
+
+\mbox{\hyperlink{_cut_8h_af90f106fad12831a2806a540acc4bc91}{intro\+MPDynamic\+PC()}} 
+
+\mbox{\hyperlink{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}{moveback\+Selected()}} 
+
+\mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{draw\+Selected()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00680}{680}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_ae0a29bd1d44e72663fe0c6f9ec04bc6d}\label{_cut_8h_ae0a29bd1d44e72663fe0c6f9ec04bc6d}} 
 \index{Cut.h@{Cut.h}!gameOneVSOne@{gameOneVSOne}}
@@ -125,7 +214,77 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00451}{451}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00720}{720}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Move the selected piece inside the map (Multi\+Player) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & player1 game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em map1} & player2 game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & player1 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em score1} & player2 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em drawn} & player1 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em drawn1} & player2 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & player1 piece rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation1} & player2 piece rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em released} & if player1 piece is released or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em released1} & if player2 piece is released or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+SM} & player1 selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+MP} & player2 selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em avaible\+MP} & avaible pieces (shared) \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim} & avaible\+MP array\textquotesingle{}s size \\
+\hline
+\mbox{\texttt{ in}}  & {\em won} & if player1 has finished the pieces avaible \\
+\hline
+\mbox{\texttt{ in}}  & {\em won1} & if player2 has finished the pieces avaible \\
+\hline
+\mbox{\texttt{ in}}  & {\em winning} & if player1 has moved the piece uncorrectly \\
+\hline
+\mbox{\texttt{ in}}  & {\em winning1} & if player2 has moved the piece uncorrectly \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color1} & player1 map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color2} & player2 map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em name1} & player1 name (the one who is moving the piece) \\
+\hline
+\mbox{\texttt{ in}}  & {\em name2} & player2 name (the one who is moving the piece) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_cut_8h_ad013642412c359a29bc8a25d9628af4f}{intro\+MP2()}} 
+
+\mbox{\hyperlink{_cut_8h_a31d08c0c40d8f48175b75e48f8412c8b}{select\+Process()}} 
+
+\mbox{\hyperlink{_cut_8h_af3f86220a64193d10c7eb528f3ab64ea}{move\+Piece\+MP()}} 
+
+\mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{check\+End\+Game()}} 
+
+\mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{print\+Winner()}} 
+
+\mbox{\hyperlink{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}{check\+Win\+MP()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l01040}{1040}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_aceee05f2d5cc88b14ebf0fc4f714b8d3}\label{_cut_8h_aceee05f2d5cc88b14ebf0fc4f714b8d3}} 
 \index{Cut.h@{Cut.h}!gameOneVSPC@{gameOneVSPC}}
@@ -135,7 +294,79 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00720}{720}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00765}{765}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Move the selected piece inside the map (Multi\+Player) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & player1 game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em map1} & player2 game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & player1 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em score1} & player2 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em drawn} & player1 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em drawn1} & player2 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & player1 piece rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation1} & player2 piece rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em released} & if player1 piece is released or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em released1} & if player2 piece is released or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+SM} & player1 selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+MP} & player2 selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em avaible\+MP} & avaible pieces (shared) \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim} & avaible\+MP array\textquotesingle{}s size \\
+\hline
+\mbox{\texttt{ in}}  & {\em won} & if player1 has finished the pieces avaible \\
+\hline
+\mbox{\texttt{ in}}  & {\em won1} & if player2 has finished the pieces avaible \\
+\hline
+\mbox{\texttt{ in}}  & {\em winning} & if player1 has moved the piece uncorrectly \\
+\hline
+\mbox{\texttt{ in}}  & {\em winning1} & if player2 has moved the piece uncorrectly \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color1} & player1 map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color2} & player2 map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & player1 name (the one who is moving the piece) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_cut_8h_a5486ee999c7c672bd64802a3311a5e28}{intro\+MP2\+PC()}} 
+
+\mbox{\hyperlink{_cut_8h_a31d08c0c40d8f48175b75e48f8412c8b}{select\+Process()}} 
+
+\mbox{\hyperlink{_cut_8h_af3f86220a64193d10c7eb528f3ab64ea}{move\+Piece\+MP()}} 
+
+\mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{check\+End\+Game()}} 
+
+\mbox{\hyperlink{_print_8h_a9fbc1f7e744174b1dab9de2a2a923803}{print\+Loser()}} 
+
+\mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{print\+Winner()}} 
+
+\mbox{\hyperlink{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}{check\+Win\+MPC()}} 
+
+\mbox{\hyperlink{_cut_8h_ae1436a9803c69c5bd7b6ff9355bed613}{select\+Process\+PC()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l01120}{1120}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_a76773923e027d0b15c74e290a4fe6835}\label{_cut_8h_a76773923e027d0b15c74e290a4fe6835}} 
 \index{Cut.h@{Cut.h}!getLastCoords@{getLastCoords}}
@@ -145,7 +376,22 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00765}{765}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00339}{339}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Returns the last y coords of the selected piece. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em selected} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & piece rotation \\
+\hline
+\mbox{\texttt{ out}}  & {\em sy} & piece y limit coord. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00512}{512}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_ac85689d5eed0c8c34599597430e003e3}\label{_cut_8h_ac85689d5eed0c8c34599597430e003e3}} 
 \index{Cut.h@{Cut.h}!getLastCoords1@{getLastCoords1}}
@@ -155,7 +401,22 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00339}{339}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00381}{381}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Returns the last x coords of the selected piece. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em selected} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & piece rotation \\
+\hline
+\mbox{\texttt{ out}}  & {\em sx} & piece x limit coord. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00561}{561}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_ac6cf1cc8abe38959f3638c4b6d791e0d}\label{_cut_8h_ac6cf1cc8abe38959f3638c4b6d791e0d}} 
 \index{Cut.h@{Cut.h}!initGame@{initGame}}
@@ -173,13 +434,13 @@ Initialize a match in Single\+Player.
 \hline
 \mbox{\texttt{ in}}  & {\em avaiblep} & avaible pieces \\
 \hline
-\mbox{\texttt{ in}}  & {\em dim} & avaiblep array\textquotesingle{}s dimension \\
+\mbox{\texttt{ in}}  & {\em dim} & avaiblep array\textquotesingle{}s size \\
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{init\+Map(int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]})}} 
+\mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{init\+Map()}} 
 
-\mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{init\+Avaible\+Pieces(int $\ast$pieces, int dim, int limit)}} 
+\mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{init\+Avaible\+Pieces()}} 
 \end{DoxySeeAlso}
 
 
@@ -206,9 +467,14 @@ Initialize a match in Multi\+Player.
 \mbox{\texttt{ in}}  & {\em dim} & avaiblep array\textquotesingle{}s dimension \\
 \hline
 \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{init\+Map()}} 
+
+\mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{init\+Avaible\+Pieces()}} 
+\end{DoxySeeAlso}
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00079}{79}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00081}{81}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_ac60705307c9228dac45d51d603e9fb77}\label{_cut_8h_ac60705307c9228dac45d51d603e9fb77}} 
 \index{Cut.h@{Cut.h}!initScore@{initScore}}
@@ -218,7 +484,16 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00079}{79}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00087}{87}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Initialize the score of a match. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em score} & score of player 1 or player 2 or PC \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00091}{91}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_ab35e175ef92b0a09d11eade80c803c15}\label{_cut_8h_ab35e175ef92b0a09d11eade80c803c15}} 
 \index{Cut.h@{Cut.h}!intro@{intro}}
@@ -228,17 +503,14 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00087}{87}} of file \mbox{\h
 
 
 
-Main Game Menu\+: Prints out options to select as input\+: 
+Prints out the Main Game Menu and asks the user to choose an option. 
 
 
-\begin{DoxyEnumerate}
-\item 2 Game Modes, 2. Game Instructions 3. Quit 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em opt} & game option which the user has selected \\
 \hline
 \end{DoxyParams}
 
-\end{DoxyEnumerate}
 
 Definition at line \mbox{\hyperlink{_cut_8h_source_l00044}{44}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
@@ -250,7 +522,47 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00044}{44}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00180}{180}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Prints out the Multi\+Player (1 vs 1) interface, updates the scores and, if occurs, inverts the enemy\textquotesingle{}s rows. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & player1 game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em map1} & player2 game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & player1 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em score1} & player2 current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em color1} & player1 map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color2} & player2 map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em name1} & player1 name \\
+\hline
+\mbox{\texttt{ in}}  & {\em name2} & player2 name \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolor\+Text()}} 
+
+\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{print\+Title()}} 
+
+\mbox{\hyperlink{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}{update\+Score\+MP2()}} 
+
+\mbox{\hyperlink{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}{invert\+Enemy()}} 
+
+\mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{print\+Maps()}} 
+
+\mbox{\hyperlink{_print_8h_aab849fdc6e864a042e075a698cb0a6b5}{print\+Score\+Name()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00279}{279}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_a5486ee999c7c672bd64802a3311a5e28}\label{_cut_8h_a5486ee999c7c672bd64802a3311a5e28}} 
 \index{Cut.h@{Cut.h}!introMP2PC@{introMP2PC}}
@@ -260,7 +572,47 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00180}{180}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00150}{150}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Prints out the Multi\+Player (1 vs PC) interface, updates the scores and, if occurs, inverts the enemy\textquotesingle{}s rows. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & player\textquotesingle{}s game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em map1} & PC\textquotesingle{}s game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & player\textquotesingle{}s current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em score1} & PC\textquotesingle{}s current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em color1} & player\textquotesingle{}s map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color2} & PC\textquotesingle{}s map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & player\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolor\+Text()}} 
+
+\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{print\+Title()}} 
+
+\mbox{\hyperlink{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}{update\+Score\+MP2()}} 
+
+\mbox{\hyperlink{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}{invert\+Enemy()}} 
+
+\mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{print\+Maps()}} 
+
+\mbox{\hyperlink{_print_8h_aab849fdc6e864a042e075a698cb0a6b5}{print\+Score\+Name()}} 
+
+\mbox{\hyperlink{_print_8h_a535d6e965412bba0c9f8b027d8160b60}{print\+Score\+PC()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00228}{228}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_afad99cae6255fb630bef1ba9a484af9f}\label{_cut_8h_afad99cae6255fb630bef1ba9a484af9f}} 
 \index{Cut.h@{Cut.h}!introMPDynamicName@{introMPDynamicName}}
@@ -270,7 +622,41 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00150}{150}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00124}{124}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Prints out the Multi\+Player (1 vs 1) interface while the player 1 or 2 is moving the piece inside the map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Piece} & map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em center} & a value to set the text position \\
+\hline
+\mbox{\texttt{ in}}  & {\em player} & index player 1 or 2 \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & player\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolor\+Text()}} 
+
+\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{print\+Title()}} 
+
+\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{print\+Map\+Color()}} 
+
+\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+
+\mbox{\hyperlink{_print_8h_aab849fdc6e864a042e075a698cb0a6b5}{print\+Score\+Name()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00167}{167}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_af90f106fad12831a2806a540acc4bc91}\label{_cut_8h_af90f106fad12831a2806a540acc4bc91}} 
 \index{Cut.h@{Cut.h}!introMPDynamicPC@{introMPDynamicPC}}
@@ -280,7 +666,41 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00124}{124}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00137}{137}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Prints out the Multi\+Player (1 vs PC) interface while the player or PC is moving the piece inside the map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Piece} & map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em center} & a value to set the text position \\
+\hline
+\mbox{\texttt{ in}}  & {\em player} & index player 1 or 2 \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & player\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolor\+Text()}} 
+
+\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{print\+Title()}} 
+
+\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{print\+Map\+Color()}} 
+
+\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+
+\mbox{\hyperlink{_print_8h_a535d6e965412bba0c9f8b027d8160b60}{print\+Score\+PC()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00196}{196}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_afa801ea6566756e405b70ea9f06e50bf}\label{_cut_8h_afa801ea6566756e405b70ea9f06e50bf}} 
 \index{Cut.h@{Cut.h}!introS@{introS}}
@@ -290,7 +710,31 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00137}{137}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00093}{93}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Prints out the Single\+Player Game Menu and asks the user to choose an option. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ out}}  & {\em singleopt} & option selected \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolor\+Text()}} 
+
+\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{print\+Title()}} 
+
+\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{print\+Map\+Color()}} 
+
+\mbox{\hyperlink{_print_8h_af93aaa5be98af25bcbce45e2048fe1c5}{print\+SMode\+Options()}} 
+
+\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00107}{107}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_a1515458ebe31caafde5c67c95e8cb9ff}\label{_cut_8h_a1515458ebe31caafde5c67c95e8cb9ff}} 
 \index{Cut.h@{Cut.h}!introSDynamic@{introSDynamic}}
@@ -300,7 +744,35 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00093}{93}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00111}{111}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Prints out the Single\+Player interface while the piece (tetramino) is moving inside the map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & current score \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolor\+Text()}} 
+
+\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{print\+Title()}} 
+
+\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{print\+Map\+Color()}} 
+
+\mbox{\hyperlink{_print_8h_af93aaa5be98af25bcbce45e2048fe1c5}{print\+SMode\+Options()}} 
+
+\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+
+\mbox{\hyperlink{_print_8h_ae953d69c998a186cfa2f6a69aa15c09a}{print\+Score()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00138}{138}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_a1d4d532ae9ededc1d84ef89e8fc3f992}\label{_cut_8h_a1d4d532ae9ededc1d84ef89e8fc3f992}} 
 \index{Cut.h@{Cut.h}!movePiece@{movePiece}}
@@ -310,7 +782,61 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00111}{111}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00482}{482}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Move the selected piece inside the map (Single\+Player) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+SM} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & piece rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em released} & if the piece is released or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & current score \\
+\hline
+\mbox{\texttt{ out}}  & {\em 0} & if the piece wasn\textquotesingle{}t correctly moved \\
+\hline
+\mbox{\texttt{ out}}  & {\em 1} & if the piece was correctly moved \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_cut_8h_a1515458ebe31caafde5c67c95e8cb9ff}{intro\+SDynamic()}} 
+
+\mbox{\hyperlink{_cut_8h_a76773923e027d0b15c74e290a4fe6835}{get\+Last\+Coords()}} 
+
+\mbox{\hyperlink{_cut_8h_a9cb7b2d3ea20c422a23e44936eb8e875}{avoid\+Pieces()}} 
+
+\mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay()}} 
+
+\mbox{\hyperlink{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}{update\+Score\+SM()}} 
+
+\mbox{\hyperlink{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}{moveback\+Selected()}} 
+
+\mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{draw\+Selected()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+
+\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+
+\mbox{\hyperlink{_cut_8h_ac85689d5eed0c8c34599597430e003e3}{get\+Last\+Coords1()}} 
+
+\mbox{\hyperlink{_cut_8h_af3f41027773f43451ef6f65ef084f34f}{fall\+Down()}} 
+
+\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{print\+Map\+Color()}} 
+
+\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolor\+Text()}} 
+
+\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{print\+Title()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00736}{736}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_af3f86220a64193d10c7eb528f3ab64ea}\label{_cut_8h_af3f86220a64193d10c7eb528f3ab64ea}} 
 \index{Cut.h@{Cut.h}!movePieceMP@{movePieceMP}}
@@ -320,7 +846,73 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00482}{482}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00588}{588}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Move the selected piece inside the map (Multi\+Player) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em map\+Enemy} & enemy\textquotesingle{}s game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+SM} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & piece rotation \\
+\hline
+\mbox{\texttt{ in}}  & {\em released} & if the piece is released or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em score} & current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Piece} & map color \\
+\hline
+\mbox{\texttt{ in}}  & {\em center} & a value to set text position \\
+\hline
+\mbox{\texttt{ in}}  & {\em player} & index \\
+\hline
+\mbox{\texttt{ in}}  & {\em name} & player\textquotesingle{}s name (the one who is moving the piece) \\
+\hline
+\mbox{\texttt{ out}}  & {\em 0} & if the piece wasn\textquotesingle{}t correctly moved \\
+\hline
+\mbox{\texttt{ out}}  & {\em 1} & if the piece was correctly moved \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}{update\+Score\+MP2()}} 
+
+\mbox{\hyperlink{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}{invert\+Enemy()}} 
+
+\mbox{\hyperlink{_cut_8h_afad99cae6255fb630bef1ba9a484af9f}{intro\+MPDynamic\+Name()}} 
+
+intro\+MPDynami\+PC() 
+
+\mbox{\hyperlink{_cut_8h_a76773923e027d0b15c74e290a4fe6835}{get\+Last\+Coords()}} 
+
+\mbox{\hyperlink{_cut_8h_a9cb7b2d3ea20c422a23e44936eb8e875}{avoid\+Pieces()}} 
+
+\mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay()}} 
+
+\mbox{\hyperlink{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}{moveback\+Selected()}} 
+
+\mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{draw\+Selected()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+
+\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+
+\mbox{\hyperlink{_cut_8h_ac85689d5eed0c8c34599597430e003e3}{get\+Last\+Coords1()}} 
+
+\mbox{\hyperlink{_cut_8h_a457202fb177a5b743ac49c05c2e05e2e}{fall\+Down\+MP()}} 
+
+\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{print\+Map\+Color()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00874}{874}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_a31d08c0c40d8f48175b75e48f8412c8b}\label{_cut_8h_a31d08c0c40d8f48175b75e48f8412c8b}} 
 \index{Cut.h@{Cut.h}!selectProcess@{selectProcess}}
@@ -330,7 +922,55 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00588}{588}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00215}{215}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Selects a piece (tetramino), its rotation and updates avaible pieces. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em avaiblep} & avaible pieces \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim} & avaiblep array\textquotesingle{}s size \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+SM} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & player\textquotesingle{}s current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em drawn} & if piece was drawn or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Piece} & map color \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+
+\mbox{\hyperlink{_print_8h_ae77770b22209ba7e20e82bbe37cc2b25}{print\+Legenda\+Pieces()}} 
+
+\mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{print\+Avaible\+Pieces()}} 
+
+\mbox{\hyperlink{_print_8h_a5c0024f7636f893e7c57e72c6f0e7f93}{print\+Legenda\+All\+Pieces()}} 
+
+\mbox{\hyperlink{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}{select\+Piece()}} 
+
+\mbox{\hyperlink{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}{select\+Rotation()}} 
+
+\mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{draw\+Selected()}} 
+
+\mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay()}} 
+
+\mbox{\hyperlink{_cut_8h_ad9877321139162ae1207fd239f48ea43}{update\+Av\+Pieces()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00346}{346}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_ae1436a9803c69c5bd7b6ff9355bed613}\label{_cut_8h_ae1436a9803c69c5bd7b6ff9355bed613}} 
 \index{Cut.h@{Cut.h}!selectProcessPC@{selectProcessPC}}
@@ -340,7 +980,53 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00215}{215}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00233}{233}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+Select randomly a piece (tetramino) and its rotation, then updates avaible pieces (1 vs PC) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em avaiblep} & avaible pieces \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim} & avaiblep array\textquotesingle{}s size \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+SM} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em rotation} & player\textquotesingle{}s current score \\
+\hline
+\mbox{\texttt{ in}}  & {\em drawn} & if piece was drawn or not \\
+\hline
+\mbox{\texttt{ in}}  & {\em map} & game map \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & map x coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & map y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Mode} & text color \\
+\hline
+\mbox{\texttt{ in}}  & {\em color\+Piece} & map color \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+
+\mbox{\hyperlink{_print_8h_ae77770b22209ba7e20e82bbe37cc2b25}{print\+Legenda\+Pieces()}} 
+
+\mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{print\+Avaible\+Pieces()}} 
+
+\mbox{\hyperlink{_print_8h_a5c0024f7636f893e7c57e72c6f0e7f93}{print\+Legenda\+All\+Pieces()}} 
+
+\mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{check\+Avaible()}} 
+
+\mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{draw\+Selected()}} 
+
+\mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay()}} 
+
+\mbox{\hyperlink{_cut_8h_ad9877321139162ae1207fd239f48ea43}{update\+Av\+Pieces()}} 
+
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00388}{388}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 
 \mbox{\Hypertarget{_cut_8h_ac2887fddac9e3cb86275cc401f3fcd77}\label{_cut_8h_ac2887fddac9e3cb86275cc401f3fcd77}} 
 \index{Cut.h@{Cut.h}!stampaNome@{stampaNome}}
@@ -369,5 +1055,18 @@ Definition at line \mbox{\hyperlink{_cut_8h_source_l00005}{5}} of file \mbox{\hy
 
 
 
-Definition at line \mbox{\hyperlink{_cut_8h_source_l00209}{209}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
+When a piece could not be drawn, this function stores back the amout (decreased) to its original value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em avaiblep} & avaible pieces \\
+\hline
+\mbox{\texttt{ in}}  & {\em selected\+SM} & selected piece \\
+\hline
+\mbox{\texttt{ in}}  & {\em drawn} & if piece was drawn or not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_cut_8h_source_l00316}{316}} of file \mbox{\hyperlink{_cut_8h_source}{Cut.\+h}}.
 

@@ -81,7 +81,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a18a2aae538ddaae3f0e111969fd20111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asks to player 1 or 2 to type the name and stores it and then asks to confirm.  <a href="_cut_8h.html#a18a2aae538ddaae3f0e111969fd20111">More...</a><br /></td></tr>
 <tr class="separator:a18a2aae538ddaae3f0e111969fd20111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab35e175ef92b0a09d11eade80c803c15"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#ab35e175ef92b0a09d11eade80c803c15">intro</a> ()</td></tr>
-<tr class="memdesc:ab35e175ef92b0a09d11eade80c803c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main Game Menu: Prints out options to select as input:  <a href="_cut_8h.html#ab35e175ef92b0a09d11eade80c803c15">More...</a><br /></td></tr>
+<tr class="memdesc:ab35e175ef92b0a09d11eade80c803c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints out the Main Game Menu and asks the user to choose an option.  <a href="_cut_8h.html#ab35e175ef92b0a09d11eade80c803c15">More...</a><br /></td></tr>
 <tr class="separator:ab35e175ef92b0a09d11eade80c803c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6cf1cc8abe38959f3638c4b6d791e0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#ac6cf1cc8abe38959f3638c4b6d791e0d">initGame</a> (int map[15][10], int avaiblep[6], int <a class="el" href="tryhard_8c.html#afe4f94e033c0d1c57d407b4338a64b33">dim</a>)</td></tr>
 <tr class="memdesc:ac6cf1cc8abe38959f3638c4b6d791e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a match in SinglePlayer.  <a href="_cut_8h.html#ac6cf1cc8abe38959f3638c4b6d791e0d">More...</a><br /></td></tr>
@@ -90,44 +90,61 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3de115086c75040b94838386ba16902b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a match in MultiPlayer.  <a href="_cut_8h.html#a3de115086c75040b94838386ba16902b">More...</a><br /></td></tr>
 <tr class="separator:a3de115086c75040b94838386ba16902b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac60705307c9228dac45d51d603e9fb77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#ac60705307c9228dac45d51d603e9fb77">initScore</a> (int *score)</td></tr>
+<tr class="memdesc:ac60705307c9228dac45d51d603e9fb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the score of a match.  <a href="_cut_8h.html#ac60705307c9228dac45d51d603e9fb77">More...</a><br /></td></tr>
 <tr class="separator:ac60705307c9228dac45d51d603e9fb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa801ea6566756e405b70ea9f06e50bf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#afa801ea6566756e405b70ea9f06e50bf">introS</a> (int map[15][10], char *colorMode)</td></tr>
+<tr class="memdesc:afa801ea6566756e405b70ea9f06e50bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints out the SinglePlayer Game Menu and asks the user to choose an option.  <a href="_cut_8h.html#afa801ea6566756e405b70ea9f06e50bf">More...</a><br /></td></tr>
 <tr class="separator:afa801ea6566756e405b70ea9f06e50bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1515458ebe31caafde5c67c95e8cb9ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#a1515458ebe31caafde5c67c95e8cb9ff">introSDynamic</a> (int map[15][10], char *colorMode, int score)</td></tr>
+<tr class="memdesc:a1515458ebe31caafde5c67c95e8cb9ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints out the SinglePlayer interface while the piece (tetramino) is moving inside the map.  <a href="_cut_8h.html#a1515458ebe31caafde5c67c95e8cb9ff">More...</a><br /></td></tr>
 <tr class="separator:a1515458ebe31caafde5c67c95e8cb9ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afad99cae6255fb630bef1ba9a484af9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#afad99cae6255fb630bef1ba9a484af9f">introMPDynamicName</a> (int map[15][10], char *colorPiece, char *colorMode, int score, int center, char player, char name[20])</td></tr>
+<tr class="memdesc:afad99cae6255fb630bef1ba9a484af9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints out the MultiPlayer (1 vs 1) interface while the player 1 or 2 is moving the piece inside the map.  <a href="_cut_8h.html#afad99cae6255fb630bef1ba9a484af9f">More...</a><br /></td></tr>
 <tr class="separator:afad99cae6255fb630bef1ba9a484af9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af90f106fad12831a2806a540acc4bc91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#af90f106fad12831a2806a540acc4bc91">introMPDynamicPC</a> (int map[15][10], char *colorPiece, char *colorMode, int score, int center, char player)</td></tr>
+<tr class="memdesc:af90f106fad12831a2806a540acc4bc91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints out the MultiPlayer (1 vs PC) interface while the player or PC is moving the piece inside the map.  <a href="_cut_8h.html#af90f106fad12831a2806a540acc4bc91">More...</a><br /></td></tr>
 <tr class="separator:af90f106fad12831a2806a540acc4bc91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5486ee999c7c672bd64802a3311a5e28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#a5486ee999c7c672bd64802a3311a5e28">introMP2PC</a> (int map[15][10], int map1[15][10], char *colorMode, int *score, int *score1, char *<a class="el" href="tryhard_8c.html#ad4b5e2b0713d831828332485842e91f1">color1</a>, char *<a class="el" href="tryhard_8c.html#a7662939be01f9535a08f5a53d83d6c01">color2</a>, char name[20])</td></tr>
+<tr class="memdesc:a5486ee999c7c672bd64802a3311a5e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints out the MultiPlayer (1 vs PC) interface, updates the scores and, if occurs, inverts the enemy's rows.  <a href="_cut_8h.html#a5486ee999c7c672bd64802a3311a5e28">More...</a><br /></td></tr>
 <tr class="separator:a5486ee999c7c672bd64802a3311a5e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad013642412c359a29bc8a25d9628af4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#ad013642412c359a29bc8a25d9628af4f">introMP2</a> (int map[15][10], int map1[15][10], char *colorMode, int *score, int *score1, char *<a class="el" href="tryhard_8c.html#ad4b5e2b0713d831828332485842e91f1">color1</a>, char *<a class="el" href="tryhard_8c.html#a7662939be01f9535a08f5a53d83d6c01">color2</a>, char name1[20], char name2[20])</td></tr>
+<tr class="memdesc:ad013642412c359a29bc8a25d9628af4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints out the MultiPlayer (1 vs 1) interface, updates the scores and, if occurs, inverts the enemy's rows.  <a href="_cut_8h.html#ad013642412c359a29bc8a25d9628af4f">More...</a><br /></td></tr>
 <tr class="separator:ad013642412c359a29bc8a25d9628af4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9877321139162ae1207fd239f48ea43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#ad9877321139162ae1207fd239f48ea43">updateAvPieces</a> (int avaiblep[6], int selectedSM, int drawn)</td></tr>
+<tr class="memdesc:ad9877321139162ae1207fd239f48ea43"><td class="mdescLeft">&#160;</td><td class="mdescRight">When a piece could not be drawn, this function stores back the amout (decreased) to its original value.  <a href="_cut_8h.html#ad9877321139162ae1207fd239f48ea43">More...</a><br /></td></tr>
 <tr class="separator:ad9877321139162ae1207fd239f48ea43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31d08c0c40d8f48175b75e48f8412c8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#a31d08c0c40d8f48175b75e48f8412c8b">selectProcess</a> (int avaiblep[6], int <a class="el" href="tryhard_8c.html#afe4f94e033c0d1c57d407b4338a64b33">dim</a>, int *selectedSM, int *rotation, int *drawn, int map[15][10], int x, int y, char *colorMode, char *colorPiece)</td></tr>
+<tr class="memdesc:a31d08c0c40d8f48175b75e48f8412c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects a piece (tetramino), its rotation and updates avaible pieces.  <a href="_cut_8h.html#a31d08c0c40d8f48175b75e48f8412c8b">More...</a><br /></td></tr>
 <tr class="separator:a31d08c0c40d8f48175b75e48f8412c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1436a9803c69c5bd7b6ff9355bed613"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#ae1436a9803c69c5bd7b6ff9355bed613">selectProcessPC</a> (int avaiblep[6], int <a class="el" href="tryhard_8c.html#afe4f94e033c0d1c57d407b4338a64b33">dim</a>, int *selectedSM, int *rotation, int *drawn, int map[15][10], int x, int y, char *colorMode, char *colorPiece)</td></tr>
+<tr class="memdesc:ae1436a9803c69c5bd7b6ff9355bed613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select randomly a piece (tetramino) and its rotation, then updates avaible pieces (1 vs PC)  <a href="_cut_8h.html#ae1436a9803c69c5bd7b6ff9355bed613">More...</a><br /></td></tr>
 <tr class="separator:ae1436a9803c69c5bd7b6ff9355bed613"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb7b2d3ea20c422a23e44936eb8e875"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#a9cb7b2d3ea20c422a23e44936eb8e875">avoidPieces</a> (int map[15][10], int x, int sy, int selected, int rotation)</td></tr>
+<tr class="memdesc:a9cb7b2d3ea20c422a23e44936eb8e875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the selected piece can move any further to any direction.  <a href="_cut_8h.html#a9cb7b2d3ea20c422a23e44936eb8e875">More...</a><br /></td></tr>
 <tr class="separator:a9cb7b2d3ea20c422a23e44936eb8e875"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76773923e027d0b15c74e290a4fe6835"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#a76773923e027d0b15c74e290a4fe6835">getLastCoords</a> (int y, int selected, int rotation)</td></tr>
+<tr class="memdesc:a76773923e027d0b15c74e290a4fe6835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last y coords of the selected piece.  <a href="_cut_8h.html#a76773923e027d0b15c74e290a4fe6835">More...</a><br /></td></tr>
 <tr class="separator:a76773923e027d0b15c74e290a4fe6835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac85689d5eed0c8c34599597430e003e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#ac85689d5eed0c8c34599597430e003e3">getLastCoords1</a> (int x, int selected, int rotation)</td></tr>
+<tr class="memdesc:ac85689d5eed0c8c34599597430e003e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last x coords of the selected piece.  <a href="_cut_8h.html#ac85689d5eed0c8c34599597430e003e3">More...</a><br /></td></tr>
 <tr class="separator:ac85689d5eed0c8c34599597430e003e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebea68d8de7a864e98a363edb853bff7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#aebea68d8de7a864e98a363edb853bff7">fall</a> (int map[15][10], int x, int y, int sy, int selected, int rotation, int score, char player)</td></tr>
-<tr class="separator:aebea68d8de7a864e98a363edb853bff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3f41027773f43451ef6f65ef084f34f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#af3f41027773f43451ef6f65ef084f34f">fallDown</a> (int map[15][10], int x, int y, int sy, int selected, int rotation, int *score)</td></tr>
+<tr class="memdesc:af3f41027773f43451ef6f65ef084f34f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make the piece fall until the bottom of the map or the before colliding with another piece (SinglePlayer)  <a href="_cut_8h.html#af3f41027773f43451ef6f65ef084f34f">More...</a><br /></td></tr>
 <tr class="separator:af3f41027773f43451ef6f65ef084f34f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a457202fb177a5b743ac49c05c2e05e2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#a457202fb177a5b743ac49c05c2e05e2e">fallDownMP</a> (int map[15][10], int mapEnemy[15][10], int x, int y, int sy, int selected, int rotation, int *score, char *colorPiece, char *colorMode, int center, char player, char name[20])</td></tr>
+<tr class="memdesc:a457202fb177a5b743ac49c05c2e05e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make the piece fall until the bottom of the map or the before colliding with another piece and, if it occurs, inverts the rows (MultiPlayer)  <a href="_cut_8h.html#a457202fb177a5b743ac49c05c2e05e2e">More...</a><br /></td></tr>
 <tr class="separator:a457202fb177a5b743ac49c05c2e05e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d4d532ae9ededc1d84ef89e8fc3f992"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#a1d4d532ae9ededc1d84ef89e8fc3f992">movePiece</a> (int map[15][10], int x, int y, int selectedSM, int rotation, int *released, int *score)</td></tr>
+<tr class="memdesc:a1d4d532ae9ededc1d84ef89e8fc3f992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the selected piece inside the map (SinglePlayer)  <a href="_cut_8h.html#a1d4d532ae9ededc1d84ef89e8fc3f992">More...</a><br /></td></tr>
 <tr class="separator:a1d4d532ae9ededc1d84ef89e8fc3f992"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3f86220a64193d10c7eb528f3ab64ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#af3f86220a64193d10c7eb528f3ab64ea">movePieceMP</a> (int map[15][10], int mapEnemy[15][10], int x, int y, int selectedMP, int rotation, int *released, int *score, char *colorMode, char *colorPiece, int center, char player, char name[20])</td></tr>
+<tr class="memdesc:af3f86220a64193d10c7eb528f3ab64ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the selected piece inside the map (MultiPlayer)  <a href="_cut_8h.html#af3f86220a64193d10c7eb528f3ab64ea">More...</a><br /></td></tr>
 <tr class="separator:af3f86220a64193d10c7eb528f3ab64ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0a29bd1d44e72663fe0c6f9ec04bc6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#ae0a29bd1d44e72663fe0c6f9ec04bc6d">gameOneVSOne</a> (int map[15][10], int map1[15][10], int x, int y, int *score, int *score1, int *drawn, int *drawn1, int *rotation, int *rotation1, int *released, int *released1, int *selectedSM, int *selectedMP, int avaiblepMP[6], int <a class="el" href="tryhard_8c.html#afe4f94e033c0d1c57d407b4338a64b33">dim</a>, int *won, int *won1, int *winning, int *winning1, char *colorMode, char *<a class="el" href="tryhard_8c.html#ad4b5e2b0713d831828332485842e91f1">color1</a>, char *<a class="el" href="tryhard_8c.html#a7662939be01f9535a08f5a53d83d6c01">color2</a>, char name1[20], char name2[20])</td></tr>
+<tr class="memdesc:ae0a29bd1d44e72663fe0c6f9ec04bc6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the selected piece inside the map (MultiPlayer)  <a href="_cut_8h.html#ae0a29bd1d44e72663fe0c6f9ec04bc6d">More...</a><br /></td></tr>
 <tr class="separator:ae0a29bd1d44e72663fe0c6f9ec04bc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aceee05f2d5cc88b14ebf0fc4f714b8d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_cut_8h.html#aceee05f2d5cc88b14ebf0fc4f714b8d3">gameOneVSPC</a> (int map[15][10], int map1[15][10], int x, int y, int *score, int *score1, int *drawn, int *drawn1, int *rotation, int *rotation1, int *released, int *released1, int *selectedSM, int *selectedMP, int avaiblepMP[6], int <a class="el" href="tryhard_8c.html#afe4f94e033c0d1c57d407b4338a64b33">dim</a>, int *won, int *won1, int *winning, int *winning1, char *colorMode, char *<a class="el" href="tryhard_8c.html#ad4b5e2b0713d831828332485842e91f1">color1</a>, char *<a class="el" href="tryhard_8c.html#a7662939be01f9535a08f5a53d83d6c01">color2</a>, char name[20])</td></tr>
+<tr class="memdesc:aceee05f2d5cc88b14ebf0fc4f714b8d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the selected piece inside the map (MultiPlayer)  <a href="_cut_8h.html#aceee05f2d5cc88b14ebf0fc4f714b8d3">More...</a><br /></td></tr>
 <tr class="separator:aceee05f2d5cc88b14ebf0fc4f714b8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -214,73 +231,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00257">257</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Checks if the selected piece can move any further to any direction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sy</td><td>piece y limit coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selected</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>piece rotation </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">0</td><td>if it can move further </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">1</td><td>if it will collide </td></tr>
+  </table>
+  </dd>
+</dl>
 
-</div>
-</div>
-<a id="aebea68d8de7a864e98a363edb853bff7" name="aebea68d8de7a864e98a363edb853bff7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebea68d8de7a864e98a363edb853bff7">&#9670;&nbsp;</a></span>fall()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fall </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>map</em>[15][10], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sy</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>selected</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>rotation</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>score</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>player</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00423">423</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00422">422</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -340,7 +305,30 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00432">432</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Make the piece fall until the bottom of the map or the before colliding with another piece (SinglePlayer) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sy</td><td>piece y limit coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selected</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>piece rotation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>current score </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_cut_8h.html#a9cb7b2d3ea20c422a23e44936eb8e875" title="Checks if the selected piece can move any further to any direction.">avoidPieces()</a> </dd>
+<dd>
+updateScore() </dd>
+<dd>
+<a class="el" href="_cut_8h.html#a1515458ebe31caafde5c67c95e8cb9ff" title="Prints out the SinglePlayer interface while the piece (tetramino) is moving inside the map.">introSDynamic()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#aee97c5a4ef026c8650c36bf2ae504e83">movebackSelected()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a5d22ad5e258a2a031612ffc15d2dd298">drawSelected()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00634">634</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -436,7 +424,40 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00451">451</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Make the piece fall until the bottom of the map or the before colliding with another piece and, if it occurs, inverts the rows (MultiPlayer) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mapEnemy</td><td>enemy's game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sy</td><td>piece y limit coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selected</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>piece rotation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorPiece</td><td>map color (the one who is moving the piece) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">center</td><td>a value to set the text position </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>index of player </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>player's name (the one who is moving the piece) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_cut_8h.html#a9cb7b2d3ea20c422a23e44936eb8e875" title="Checks if the selected piece can move any further to any direction.">avoidPieces()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a37d6817948e584c4f3fd4a8d72ed3a1d">updateScoreMP2()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a324846e6d5e158c401990ebbb9e584c9">invertEnemy()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#afad99cae6255fb630bef1ba9a484af9f" title="Prints out the MultiPlayer (1 vs 1) interface while the player 1 or 2 is moving the piece inside the ...">introMPDynamicName()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#af90f106fad12831a2806a540acc4bc91" title="Prints out the MultiPlayer (1 vs PC) interface while the player or PC is moving the piece inside the ...">introMPDynamicPC()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#aee97c5a4ef026c8650c36bf2ae504e83">movebackSelected()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a5d22ad5e258a2a031612ffc15d2dd298">drawSelected()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00680">680</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -604,7 +625,50 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00720">720</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Move the selected piece inside the map (MultiPlayer) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>player1 game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">map1</td><td>player2 game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>player1 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score1</td><td>player2 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">drawn</td><td>player1 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">drawn1</td><td>player2 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>player1 piece rotation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation1</td><td>player2 piece rotation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">released</td><td>if player1 piece is released or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">released1</td><td>if player2 piece is released or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedSM</td><td>player1 selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedMP</td><td>player2 selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">avaibleMP</td><td>avaible pieces (shared) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>avaibleMP array's size </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">won</td><td>if player1 has finished the pieces avaible </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">won1</td><td>if player2 has finished the pieces avaible </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">winning</td><td>if player1 has moved the piece uncorrectly </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">winning1</td><td>if player2 has moved the piece uncorrectly </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color1</td><td>player1 map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color2</td><td>player2 map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name1</td><td>player1 name (the one who is moving the piece) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name2</td><td>player2 name (the one who is moving the piece) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_cut_8h.html#ad013642412c359a29bc8a25d9628af4f" title="Prints out the MultiPlayer (1 vs 1) interface, updates the scores and, if occurs, inverts the enemy&#39;s...">introMP2()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#a31d08c0c40d8f48175b75e48f8412c8b" title="Selects a piece (tetramino), its rotation and updates avaible pieces.">selectProcess()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#af3f86220a64193d10c7eb528f3ab64ea" title="Move the selected piece inside the map (MultiPlayer)">movePieceMP()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#ac993c9fce28666b89ab798f7c7e79c32">checkEndGame()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a1076c28ca965d7ebaa8a26c91488e457">printWinner()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a333725dd882aacbc83cb91a13cba04ab">checkWinMP()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l01040">1040</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -766,7 +830,53 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00765">765</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Move the selected piece inside the map (MultiPlayer) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>player1 game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">map1</td><td>player2 game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>player1 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score1</td><td>player2 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">drawn</td><td>player1 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">drawn1</td><td>player2 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>player1 piece rotation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation1</td><td>player2 piece rotation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">released</td><td>if player1 piece is released or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">released1</td><td>if player2 piece is released or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedSM</td><td>player1 selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedMP</td><td>player2 selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">avaibleMP</td><td>avaible pieces (shared) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>avaibleMP array's size </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">won</td><td>if player1 has finished the pieces avaible </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">won1</td><td>if player2 has finished the pieces avaible </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">winning</td><td>if player1 has moved the piece uncorrectly </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">winning1</td><td>if player2 has moved the piece uncorrectly </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color1</td><td>player1 map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color2</td><td>player2 map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>player1 name (the one who is moving the piece) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_cut_8h.html#a5486ee999c7c672bd64802a3311a5e28" title="Prints out the MultiPlayer (1 vs PC) interface, updates the scores and, if occurs,...">introMP2PC()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#a31d08c0c40d8f48175b75e48f8412c8b" title="Selects a piece (tetramino), its rotation and updates avaible pieces.">selectProcess()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#af3f86220a64193d10c7eb528f3ab64ea" title="Move the selected piece inside the map (MultiPlayer)">movePieceMP()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#ac993c9fce28666b89ab798f7c7e79c32">checkEndGame()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a9fbc1f7e744174b1dab9de2a2a923803">printLoser()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a1076c28ca965d7ebaa8a26c91488e457">printWinner()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a7ae65784891006a5afc1c0212ad86a54">checkWinMPC()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#ae1436a9803c69c5bd7b6ff9355bed613" title="Select randomly a piece (tetramino) and its rotation, then updates avaible pieces (1 vs PC)">selectProcessPC()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l01120">1120</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -802,7 +912,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00339">339</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Returns the last y coords of the selected piece. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">selected</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>piece rotation </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">sy</td><td>piece y limit coord. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00512">512</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -838,7 +959,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00381">381</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Returns the last x coords of the selected piece. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">selected</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>piece rotation </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">sx</td><td>piece x limit coord. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00561">561</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -879,13 +1011,13 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">avaiblep</td><td>avaible pieces </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>avaiblep array's dimension </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>avaiblep array's size </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_initializer_8h.html#a3c193f4a435c0a6e3c521047d5c56a6d">initMap(int map[15][10])</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_initializer_8h.html#a3c193f4a435c0a6e3c521047d5c56a6d">initMap()</a> </dd>
 <dd>
-<a class="el" href="_initializer_8h.html#aa28b44bd9035c5570c5b36df4707657e">initAvaiblePieces(int *pieces, int dim, int limit)</a> </dd></dl>
+<a class="el" href="_initializer_8h.html#aa28b44bd9035c5570c5b36df4707657e">initAvaiblePieces()</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00067">67</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
@@ -939,8 +1071,11 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_initializer_8h.html#a3c193f4a435c0a6e3c521047d5c56a6d">initMap()</a> </dd>
+<dd>
+<a class="el" href="_initializer_8h.html#aa28b44bd9035c5570c5b36df4707657e">initAvaiblePieces()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00079">79</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00081">81</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -960,7 +1095,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00087">87</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Initialize the score of a match. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>score of player 1 or player 2 or PC </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00091">91</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -979,16 +1122,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Main Game Menu: Prints out options to select as input: </p>
-<ol type="1">
-<li>2 Game Modes, 2. Game Instructions 3. Quit <dl class="params"><dt>Parameters</dt><dd>
+<p>Prints out the Main Game Menu and asks the user to choose an option. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">opt</td><td>game option which the user has selected </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ol>
 
 <p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00044">44</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
@@ -1062,7 +1202,36 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00180">180</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Prints out the MultiPlayer (1 vs 1) interface, updates the scores and, if occurs, inverts the enemy's rows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>player1 game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">map1</td><td>player2 game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>player1 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score1</td><td>player2 current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color1</td><td>player1 map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color2</td><td>player2 map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name1</td><td>player1 name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name2</td><td>player2 name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_text_settings_8h.html#a8d6d4d62e9c7c82b10b30b093e80b248">setcolorText()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5564a74283c7de4315aa6c31e3a18cd1">printTitle()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a37d6817948e584c4f3fd4a8d72ed3a1d">updateScoreMP2()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a324846e6d5e158c401990ebbb9e584c9">invertEnemy()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a2875dfc0ecfe0639e759d9814d48f52e">printMaps()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#aab849fdc6e864a042e075a698cb0a6b5">printScoreName()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00279">279</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1128,7 +1297,37 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00150">150</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Prints out the MultiPlayer (1 vs PC) interface, updates the scores and, if occurs, inverts the enemy's rows. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>player's game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">map1</td><td>PC's game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>player's current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score1</td><td>PC's current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color1</td><td>player's map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color2</td><td>PC's map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>player's name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_text_settings_8h.html#a8d6d4d62e9c7c82b10b30b093e80b248">setcolorText()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5564a74283c7de4315aa6c31e3a18cd1">printTitle()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a37d6817948e584c4f3fd4a8d72ed3a1d">updateScoreMP2()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a324846e6d5e158c401990ebbb9e584c9">invertEnemy()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a2875dfc0ecfe0639e759d9814d48f52e">printMaps()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#aab849fdc6e864a042e075a698cb0a6b5">printScoreName()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a535d6e965412bba0c9f8b027d8160b60">printScorePC()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00228">228</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1188,7 +1387,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00124">124</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Prints out the MultiPlayer (1 vs 1) interface while the player 1 or 2 is moving the piece inside the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorPiece</td><td>map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">center</td><td>a value to set the text position </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>index player 1 or 2 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>player's name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_text_settings_8h.html#a8d6d4d62e9c7c82b10b30b093e80b248">setcolorText()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5564a74283c7de4315aa6c31e3a18cd1">printTitle()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a1dd3cf15452a5093ce71f8d9ec956e9c">printMapColor()</a> </dd>
+<dd>
+<a class="el" href="_text_settings_8h.html#a0916589349f2d883bef905033b33278c">saltaRighe()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#aab849fdc6e864a042e075a698cb0a6b5">printScoreName()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00167">167</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1242,7 +1466,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00137">137</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Prints out the MultiPlayer (1 vs PC) interface while the player or PC is moving the piece inside the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorPiece</td><td>map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">center</td><td>a value to set the text position </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>index player 1 or 2 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>player's name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_text_settings_8h.html#a8d6d4d62e9c7c82b10b30b093e80b248">setcolorText()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5564a74283c7de4315aa6c31e3a18cd1">printTitle()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a1dd3cf15452a5093ce71f8d9ec956e9c">printMapColor()</a> </dd>
+<dd>
+<a class="el" href="_text_settings_8h.html#a0916589349f2d883bef905033b33278c">saltaRighe()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a535d6e965412bba0c9f8b027d8160b60">printScorePC()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00196">196</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1272,7 +1521,26 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00093">93</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Prints out the SinglePlayer Game Menu and asks the user to choose an option. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">singleopt</td><td>option selected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_text_settings_8h.html#a8d6d4d62e9c7c82b10b30b093e80b248">setcolorText()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5564a74283c7de4315aa6c31e3a18cd1">printTitle()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a1dd3cf15452a5093ce71f8d9ec956e9c">printMapColor()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#af93aaa5be98af25bcbce45e2048fe1c5">printSModeOptions()</a> </dd>
+<dd>
+<a class="el" href="_text_settings_8h.html#a0916589349f2d883bef905033b33278c">saltaRighe()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00107">107</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1308,7 +1576,30 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00111">111</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Prints out the SinglePlayer interface while the piece (tetramino) is moving inside the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>current score </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_text_settings_8h.html#a8d6d4d62e9c7c82b10b30b093e80b248">setcolorText()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5564a74283c7de4315aa6c31e3a18cd1">printTitle()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a1dd3cf15452a5093ce71f8d9ec956e9c">printMapColor()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#af93aaa5be98af25bcbce45e2048fe1c5">printSModeOptions()</a> </dd>
+<dd>
+<a class="el" href="_text_settings_8h.html#a0916589349f2d883bef905033b33278c">saltaRighe()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#ae953d69c998a186cfa2f6a69aa15c09a">printScore()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00138">138</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1368,7 +1659,50 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00482">482</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Move the selected piece inside the map (SinglePlayer) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedSM</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>piece rotation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">released</td><td>if the piece is released or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>current score </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">0</td><td>if the piece wasn't correctly moved </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">1</td><td>if the piece was correctly moved </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_cut_8h.html#a1515458ebe31caafde5c67c95e8cb9ff" title="Prints out the SinglePlayer interface while the piece (tetramino) is moving inside the map.">introSDynamic()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#a76773923e027d0b15c74e290a4fe6835" title="Returns the last y coords of the selected piece.">getLastCoords()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#a9cb7b2d3ea20c422a23e44936eb8e875" title="Checks if the selected piece can move any further to any direction.">avoidPieces()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa38551f4c09a2a9e3b9a08715d986973">delay()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a0260142fa170a80c2fdb27c4a94c4536">updateScoreSM()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#aee97c5a4ef026c8650c36bf2ae504e83">movebackSelected()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a5d22ad5e258a2a031612ffc15d2dd298">drawSelected()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd>
+<dd>
+<a class="el" href="_text_settings_8h.html#a0916589349f2d883bef905033b33278c">saltaRighe()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#ac85689d5eed0c8c34599597430e003e3" title="Returns the last x coords of the selected piece.">getLastCoords1()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#af3f41027773f43451ef6f65ef084f34f" title="Make the piece fall until the bottom of the map or the before colliding with another piece (SinglePla...">fallDown()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a1dd3cf15452a5093ce71f8d9ec956e9c">printMapColor()</a> </dd>
+<dd>
+<a class="el" href="_text_settings_8h.html#a8d6d4d62e9c7c82b10b30b093e80b248">setcolorText()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5564a74283c7de4315aa6c31e3a18cd1">printTitle()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00736">736</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1464,7 +1798,56 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00588">588</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Move the selected piece inside the map (MultiPlayer) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mapEnemy</td><td>enemy's game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedSM</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>piece rotation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">released</td><td>if the piece is released or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">score</td><td>current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorPiece</td><td>map color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">center</td><td>a value to set text position </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">player</td><td>index </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>player's name (the one who is moving the piece) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">0</td><td>if the piece wasn't correctly moved </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">1</td><td>if the piece was correctly moved </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_logic_8h.html#a37d6817948e584c4f3fd4a8d72ed3a1d">updateScoreMP2()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a324846e6d5e158c401990ebbb9e584c9">invertEnemy()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#afad99cae6255fb630bef1ba9a484af9f" title="Prints out the MultiPlayer (1 vs 1) interface while the player 1 or 2 is moving the piece inside the ...">introMPDynamicName()</a> </dd>
+<dd>
+introMPDynamiPC() </dd>
+<dd>
+<a class="el" href="_cut_8h.html#a76773923e027d0b15c74e290a4fe6835" title="Returns the last y coords of the selected piece.">getLastCoords()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#a9cb7b2d3ea20c422a23e44936eb8e875" title="Checks if the selected piece can move any further to any direction.">avoidPieces()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa38551f4c09a2a9e3b9a08715d986973">delay()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#aee97c5a4ef026c8650c36bf2ae504e83">movebackSelected()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a5d22ad5e258a2a031612ffc15d2dd298">drawSelected()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd>
+<dd>
+<a class="el" href="_text_settings_8h.html#a0916589349f2d883bef905033b33278c">saltaRighe()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#ac85689d5eed0c8c34599597430e003e3" title="Returns the last x coords of the selected piece.">getLastCoords1()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#a457202fb177a5b743ac49c05c2e05e2e" title="Make the piece fall until the bottom of the map or the before colliding with another piece and,...">fallDownMP()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a1dd3cf15452a5093ce71f8d9ec956e9c">printMapColor()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00874">874</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1542,7 +1925,43 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00215">215</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Selects a piece (tetramino), its rotation and updates avaible pieces. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">avaiblep</td><td>avaible pieces </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>avaiblep array's size </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedSM</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>player's current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">drawn</td><td>if piece was drawn or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorPiece</td><td>map color </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_text_settings_8h.html#a0916589349f2d883bef905033b33278c">saltaRighe()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#ae77770b22209ba7e20e82bbe37cc2b25">printLegendaPieces()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a7163d93faf2f9bfaf60660fa60164095">printAvaiblePieces()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5c0024f7636f893e7c57e72c6f0e7f93">printLegendaAllPieces()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a8a177e9cdae096c627c34a7af3259f47">selectPiece()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a368eec4ffe984c02c5cf96bf6b6f0add">selectRotation()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a5d22ad5e258a2a031612ffc15d2dd298">drawSelected()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa38551f4c09a2a9e3b9a08715d986973">delay()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#ad9877321139162ae1207fd239f48ea43" title="When a piece could not be drawn, this function stores back the amout (decreased) to its original valu...">updateAvPieces()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00346">346</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1620,7 +2039,41 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00233">233</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>Select randomly a piece (tetramino) and its rotation, then updates avaible pieces (1 vs PC) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">avaiblep</td><td>avaible pieces </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>avaiblep array's size </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedSM</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rotation</td><td>player's current score </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">drawn</td><td>if piece was drawn or not </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">map</td><td>game map </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>map x coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>map y coord. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorMode</td><td>text color </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colorPiece</td><td>map color </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_text_settings_8h.html#a0916589349f2d883bef905033b33278c">saltaRighe()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#ae77770b22209ba7e20e82bbe37cc2b25">printLegendaPieces()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a7163d93faf2f9bfaf60660fa60164095">printAvaiblePieces()</a> </dd>
+<dd>
+<a class="el" href="_print_8h.html#a5c0024f7636f893e7c57e72c6f0e7f93">printLegendaAllPieces()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a1970eaa9e312cd74d102b660684ae60d">checkAvaible()</a> </dd>
+<dd>
+<a class="el" href="_logic_8h.html#a5d22ad5e258a2a031612ffc15d2dd298">drawSelected()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa38551f4c09a2a9e3b9a08715d986973">delay()</a> </dd>
+<dd>
+<a class="el" href="_cut_8h.html#ad9877321139162ae1207fd239f48ea43" title="When a piece could not be drawn, this function stores back the amout (decreased) to its original valu...">updateAvPieces()</a> </dd>
+<dd>
+<a class="el" href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY()</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00388">388</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>
@@ -1684,7 +2137,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00209">209</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
+<p>When a piece could not be drawn, this function stores back the amout (decreased) to its original value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">avaiblep</td><td>avaible pieces </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">selectedSM</td><td>selected piece </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">drawn</td><td>if piece was drawn or not </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_cut_8h_source.html#l00316">316</a> of file <a class="el" href="_cut_8h_source.html">Cut.h</a>.</p>
 
 </div>
 </div>

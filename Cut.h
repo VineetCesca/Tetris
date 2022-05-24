@@ -60,7 +60,7 @@ int intro(){
  * Initialize a match in SinglePlayer
  * @param[in] map game map
  * @param[in] avaiblep avaible pieces
- * @param[in] dim avaiblep array's dimension
+ * @param[in] dim avaiblep array's size
  * @see initMap()
  * @see initAvaiblePieces()
  */
@@ -94,10 +94,11 @@ void initScore(int *score){
 
 /** 
  * Prints out the SinglePlayer Game Menu
- * and asks the user to choos an option
+ * and asks the user to choose an option
  * @param[in] map game map
  * @param[in] colorMode text color
  * @param[out] singleopt option selected
+ * @see setcolorText()
  * @see printTitle()
  * @see printMapColor()
  * @see printSModeOptions()
@@ -125,12 +126,13 @@ int introS(int map[15][10], char *colorMode){
  * inside the map
  * @param[in] map game map
  * @param[in] colorMode text color
- * @param[out] score current score
+ * @param[in] score current score
+ * @see setcolorText()
  * @see printTitle()
  * @see printMapColor()
  * @see printSModeOptions()
  * @see saltaRighe()
- * @see printScorePC()
+ * @see printScore()
  * @see gotoXY()
  */
 void introSDynamic(int map[15][10], char* colorMode, int score){
@@ -145,18 +147,21 @@ void introSDynamic(int map[15][10], char* colorMode, int score){
 }
 
 /**
- * menu della modalità multiplayer 1 vs 1: stampa opzioni, selezione del tetramino, stampa legenda, punteggio e mappa del giocatore attivo 
- * Prints out the SinglePlayer interface
- * while the piece (tetramino) is moving
+ * Prints out the MultiPlayer (1 vs 1) interface
+ * while the player 1 or 2 is moving the piece
  * inside the map
  * @param[in] map game map
+ * @param[in] colorPiece map color
  * @param[in] colorMode text color
- * @param[out] score current score
+ * @param[in] score current score
+ * @param[in] center a value to set the text position
+ * @param[in] player index player 1 or 2
+ * @param[in] name player's name
+ * @see setcolorText()
  * @see printTitle()
  * @see printMapColor()
- * @see printSModeOptions()
  * @see saltaRighe()
- * @see printScorePC()
+ * @see printScoreName()
  * @see gotoXY()
  */
 void introMPDynamicName(int map[15][10], char *colorPiece, char* colorMode, int score, int center, char player, char name[20]){
@@ -164,27 +169,62 @@ void introMPDynamicName(int map[15][10], char *colorPiece, char* colorMode, int 
     system("cls");
     printTitle("MULTIPLAYER MODE");
     saltaRighe(2);
-    /*printMapColor(map, width, height, "yellow", colorMode, 80);
-    printMapColor(map1, width, height, "purple", colorMode, 115);*/
     printMapColor(map, colorPiece, colorMode, center);
     saltaRighe(2);
     printScoreName(score, colorPiece, 3, player, name);
     gotoXY(0, 25);
 }
 
+/**
+ * Prints out the MultiPlayer (1 vs PC) interface
+ * while the player or PC is moving the piece
+ * inside the map
+ * @param[in] map game map
+ * @param[in] colorPiece map color
+ * @param[in] colorMode text color
+ * @param[in] score current score
+ * @param[in] center a value to set the text position
+ * @param[in] player index player 1 or 2
+ * @param[in] name player's name
+ * @see setcolorText()
+ * @see printTitle()
+ * @see printMapColor()
+ * @see saltaRighe()
+ * @see printScorePC()
+ * @see gotoXY()
+ */
 void introMPDynamicPC(int map[15][10], char *colorPiece, char* colorMode, int score, int center, char player){
     setcolorText(colorMode, 1);
     system("cls");
     printTitle("MULTIPLAYER MODE");
     saltaRighe(2);
-    /*printMapColor(map, width, height, "yellow", colorMode, 80);
-    printMapColor(map1, width, height, "purple", colorMode, 115);*/
     printMapColor(map, colorPiece, colorMode, center);
     saltaRighe(2);
     printScorePC(score, colorPiece, 3, player);
     gotoXY(0, 25);
 }
 
+/** 
+ * Prints out the MultiPlayer (1 vs PC) interface,
+ * updates the scores and, if occurs, inverts the
+ * enemy's rows
+ * @param[in] map player's game map
+ * @param[in] map1 PC's game map
+ * @param[in] colorMode text color
+ * @param[in] score player's current score
+ * @param[in] score1 PC's current score
+ * @param[in] color1 player's map color
+ * @param[in] color2 PC's map color
+ * @param[in] name player's name
+ * @see setcolorText()
+ * @see printTitle()
+ * @see updateScoreMP2()
+ * @see invertEnemy()
+ * @see printMaps()
+ * @see printScoreName()
+ * @see printScorePC()
+ * @see gotoXY()
+ */
 void introMP2PC(int map[15][10], int map1[15][10], char* colorMode, int *score, int *score1,
              char *color1, char *color2, char name[20]){
     int invert;
@@ -215,6 +255,27 @@ void introMP2PC(int map[15][10], int map1[15][10], char* colorMode, int *score, 
     
 }
 
+/** 
+ * Prints out the MultiPlayer (1 vs 1) interface,
+ * updates the scores and, if occurs, inverts the
+ * enemy's rows
+ * @param[in] map player1 game map
+ * @param[in] map1 player2 game map
+ * @param[in] colorMode text color
+ * @param[in] score player1 current score
+ * @param[in] score1 player2 current score
+ * @param[in] color1 player1 map color
+ * @param[in] color2 player2 map color
+ * @param[in] name1 player1 name
+ * @param[in] name2 player2 name
+ * @see setcolorText()
+ * @see printTitle()
+ * @see updateScoreMP2()
+ * @see invertEnemy()
+ * @see printMaps()
+ * @see printScoreName()
+ * @see gotoXY()
+ */
 void introMP2(int map[15][10], int map1[15][10], char* colorMode, int *score, int *score1,
              char *color1, char *color2, char name1[20], char name2[20]){
     int invert;
@@ -244,12 +305,44 @@ void introMP2(int map[15][10], int map1[15][10], char* colorMode, int *score, in
     
 }
 
+/** 
+ * When a piece could not be drawn,
+ * this function stores back the amout
+ * (decreased) to its original value
+ * @param[in] avaiblep avaible pieces
+ * @param[in] selectedSM selected piece
+ * @param[in] drawn if piece was drawn or not
+ */
 void updateAvPieces(int avaiblep[6], int selectedSM, int drawn){
     if(drawn == 0){
         avaiblep[selectedSM]++;
     }
 }
 
+/** 
+ * Selects a piece (tetramino), its rotation and
+ * updates avaible pieces
+ * @param[in] avaiblep avaible pieces
+ * @param[in] dim avaiblep array's size
+ * @param[in] selectedSM selected piece
+ * @param[in] rotation player's current score
+ * @param[in] drawn if piece was drawn or not
+ * @param[in] map game map
+ * @param[in] x map x coord.
+ * @param[in] y map y coord.
+ * @param[in] colorMode text color
+ * @param[in] colorPiece map color
+ * @see saltaRighe()
+ * @see printLegendaPieces()
+ * @see printAvaiblePieces()
+ * @see printLegendaAllPieces()
+ * @see selectPiece()
+ * @see selectRotation()
+ * @see drawSelected()
+ * @see delay()
+ * @see updateAvPieces()
+ * @see gotoXY()
+ */
 void selectProcess(int avaiblep[6], int dim, int *selectedSM, int *rotation, 
                    int *drawn, int map[15][10], int x, int y,
                    char *colorMode, char *colorPiece){
@@ -263,11 +356,35 @@ void selectProcess(int avaiblep[6], int dim, int *selectedSM, int *rotation,
     *rotation = selectRotation(colorPiece);
     *drawn = drawSelected(map, x, y, *selectedSM, *rotation);
     printf("drawn = %d\n", *drawn);
-    delay(0.5);
+    delay(1.5);
     updateAvPieces(avaiblep, *selectedSM, *drawn);
     gotoXY(0, 25);
 }
 
+/** 
+ * Select randomly a piece (tetramino) 
+ * and its rotation, then updates avaible pieces
+ * (1 vs PC)
+ * @param[in] avaiblep avaible pieces
+ * @param[in] dim avaiblep array's size
+ * @param[in] selectedSM selected piece
+ * @param[in] rotation player's current score
+ * @param[in] drawn if piece was drawn or not
+ * @param[in] map game map
+ * @param[in] x map x coord.
+ * @param[in] y map y coord.
+ * @param[in] colorMode text color
+ * @param[in] colorPiece map color
+ * @see saltaRighe()
+ * @see printLegendaPieces()
+ * @see printAvaiblePieces()
+ * @see printLegendaAllPieces()
+ * @see checkAvaible()
+ * @see drawSelected()
+ * @see delay()
+ * @see updateAvPieces()
+ * @see gotoXY()
+ */
 void selectProcessPC(int avaiblep[6], int dim, int *selectedSM, int *rotation, 
                    int *drawn, int map[15][10], int x, int y,
                    char *colorMode, char *colorPiece){
@@ -291,7 +408,17 @@ void selectProcessPC(int avaiblep[6], int dim, int *selectedSM, int *rotation,
     gotoXY(0, 25);
 }
 
-
+/** 
+ * Checks if the selected piece can move
+ *  any further to any direction
+ * @param[in] map game map
+ * @param[in] x map x coord.
+ * @param[in] sy piece y limit coord.
+ * @param[in] selected selected piece
+ * @param[in] rotation piece rotation
+ * @param[out] 0 if it can move further
+ * @param[out] 1 if it will collide
+ */
 int avoidPieces(int map[15][10], int x, int sy, int selected, int rotation){
 
     int i;
@@ -374,6 +501,14 @@ int avoidPieces(int map[15][10], int x, int sy, int selected, int rotation){
     return 1;
 }
 
+
+/** 
+ * Returns the last y coords of the selected piece.
+ * @param[in] selected selected piece
+ * @param[in] y map y coord.
+ * @param[in] rotation piece rotation
+ * @param[out] sy piece y limit coord.
+ */
 int getLastCoords(int y, int selected, int rotation){
     /* ci da le coordinate corrette per il falldown
      in base al pezzo e alla rotazione: man mano che il pezzo cade, quindi y aumenta,
@@ -416,6 +551,13 @@ int getLastCoords(int y, int selected, int rotation){
     return sy;
 }
 
+/** 
+ * Returns the last x coords of the selected piece.
+ * @param[in] selected selected piece
+ * @param[in] x map x coord.
+ * @param[in] rotation piece rotation
+ * @param[out] sx piece x limit coord.
+ */
 int getLastCoords1(int x, int selected, int rotation){
     /* ci da le coordinate corrette per il falldown
      in base al pezzo e alla rotazione: man mano che il pezzo cade, quindi y aumenta,
@@ -458,6 +600,8 @@ int getLastCoords1(int x, int selected, int rotation){
     return sx;
 }
 
+/*
+
 void fall(int map[15][10], int x, int y, int sy, int selected, int rotation, int score, char player){
     if(sy < height - 2 && avoidPieces(map, x, sy, selected, rotation) == 1){
         introSDynamic(map, colorSM, score);
@@ -467,6 +611,26 @@ void fall(int map[15][10], int x, int y, int sy, int selected, int rotation, int
 
 }
 
+*/
+
+/** 
+ * Make the piece fall until
+ * the bottom of the map or
+ * the before colliding with
+ * another piece (SinglePlayer)
+ * @param[in] map game map
+ * @param[in] x map x coord.
+ * @param[in] y map y coord.
+ * @param[in] sy piece y limit coord.
+ * @param[in] selected selected piece
+ * @param[in] rotation piece rotation
+ * @param[in] score current score
+ * @see avoidPieces()
+ * @see updateScore()
+ * @see introSDynamic()
+ * @see movebackSelected()
+ * @see drawSelected()
+ */
 void fallDown(int map[15][10], int x, int y, int sy, int selected, int rotation, int *score){
      /* servono le coordinate x e y dell'ultima riga di 1 del pezzo considerato */
     do{
@@ -486,6 +650,33 @@ void fallDown(int map[15][10], int x, int y, int sy, int selected, int rotation,
     } while(sy < height - 2);
 }
 
+/** 
+ * Make the piece fall until
+ * the bottom of the map or
+ * the before colliding with
+ * another piece and, if it occurs,
+ * inverts the rows (MultiPlayer)
+ * @param[in] map game map
+ * @param[in] mapEnemy enemy's game map
+ * @param[in] x map x coord.
+ * @param[in] y map y coord.
+ * @param[in] sy piece y limit coord.
+ * @param[in] selected selected piece
+ * @param[in] rotation piece rotation
+ * @param[in] score current score
+ * @param[in] colorPiece map color (the one who is moving the piece)
+ * @param[in] colorMode text color
+ * @param[in] center a value to set the text position
+ * @param[in] player index of player
+ * @param[in] name player's name (the one who is moving the piece)
+ * @see avoidPieces()
+ * @see updateScoreMP2()
+ * @see invertEnemy()
+ * @see introMPDynamicName()
+ * @see introMPDynamicPC()
+ * @see movebackSelected()
+ * @see drawSelected()
+ */
 void fallDownMP(int map[15][10], int mapEnemy[15][10], int x, int y, int sy, int selected, int rotation, int *score,
                  char *colorPiece, char *colorMode, int center, char player, char name[20]){
     /* servono le coordinate x e y dell'ultima riga di 1 del pezzo considerato */
@@ -516,7 +707,32 @@ void fallDownMP(int map[15][10], int mapEnemy[15][10], int x, int y, int sy, int
 }
 
 
-
+/** 
+ * Move the selected piece inside the map (SinglePlayer)
+ * @param[in] map game map
+ * @param[in] x map x coord.
+ * @param[in] y map y coord.
+ * @param[in] selectedSM selected piece
+ * @param[in] rotation piece rotation
+ * @param[in] released if the piece is released or not
+ * @param[in] score current score
+ * @param[out] 0 if the piece wasn't correctly moved
+ * @param[out] 1 if the piece was correctly moved
+ * @see introSDynamic()
+ * @see getLastCoords()
+ * @see avoidPieces()
+ * @see delay()
+ * @see updateScoreSM()
+ * @see movebackSelected()
+ * @see drawSelected()
+ * @see gotoXY()
+ * @see saltaRighe()
+ * @see getLastCoords1()
+ * @see fallDown()
+ * @see printMapColor()
+ * @see setcolorText()
+ * @see printTitle()
+ */
 int movePiece(int map[15][10], int x, int y, int selectedSM, int rotation, int *released, int *score){
 
     int winning = 1;
@@ -623,6 +839,38 @@ int movePiece(int map[15][10], int x, int y, int selectedSM, int rotation, int *
     }
 }
 
+/** 
+ * Move the selected piece inside the map (MultiPlayer)
+ * @param[in] map game map
+ * @param[in] mapEnemy enemy's game map
+ * @param[in] x map x coord.
+ * @param[in] y map y coord.
+ * @param[in] selectedSM selected piece
+ * @param[in] rotation piece rotation
+ * @param[in] released if the piece is released or not
+ * @param[in] score current score
+ * @param[in] colorMode text color
+ * @param[in] colorPiece map color
+ * @param[in] center a value to set text position
+ * @param[in] player index
+ * @param[in] name player's name (the one who is moving the piece)
+ * @param[out] 0 if the piece wasn't correctly moved
+ * @param[out] 1 if the piece was correctly moved
+ * @see updateScoreMP2()
+ * @see invertEnemy()
+ * @see introMPDynamicName()
+ * @see introMPDynamiPC()
+ * @see getLastCoords()
+ * @see avoidPieces()
+ * @see delay()
+ * @see movebackSelected()
+ * @see drawSelected()
+ * @see gotoXY()
+ * @see saltaRighe()
+ * @see getLastCoords1()
+ * @see fallDownMP()
+ * @see printMapColor()
+ */
 int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selectedMP, int rotation, int *released, int *score, 
                 char *colorMode, char *colorPiece, int center, char player, char name[20]){
 
@@ -755,6 +1003,40 @@ int movePieceMP(int map[15][10], int mapEnemy[15][10], int x, int y, int selecte
 }
 
 
+/** 
+ * Move the selected piece inside the map (MultiPlayer)
+ * @param[in] map player1 game map
+ * @param[in] map1 player2 game map
+ * @param[in] x map x coord.
+ * @param[in] y map y coord.
+ * @param[in] score player1 current score
+ * @param[in] score1 player2 current score
+ * @param[in] drawn player1 current score
+ * @param[in] drawn1 player2 current score
+ * @param[in] rotation player1 piece rotation
+ * @param[in] rotation1 player2 piece rotation
+ * @param[in] released if player1 piece is released or not
+ * @param[in] released1 if player2 piece is released or not
+ * @param[in] selectedSM player1 selected piece
+ * @param[in] selectedMP player2 selected piece
+ * @param[in] avaibleMP avaible pieces (shared)
+ * @param[in] dim avaibleMP array's size
+ * @param[in] won if player1 has finished the pieces avaible
+ * @param[in] won1 if player2 has finished the pieces avaible
+ * @param[in] winning if player1 has moved the piece uncorrectly
+ * @param[in] winning1 if player2 has moved the piece uncorrectly
+ * @param[in] colorMode text color
+ * @param[in] color1 player1 map color
+ * @param[in] color2 player2 map color
+ * @param[in] name1 player1 name (the one who is moving the piece)
+ * @param[in] name2 player2 name (the one who is moving the piece)
+ * @see introMP2()
+ * @see selectProcess()
+ * @see movePieceMP()
+ * @see checkEndGame()
+ * @see printWinner()
+ * @see checkWinMP() 
+ */
 void gameOneVSOne(int map[15][10], int map1[15][10], int x, int y, int *score, int *score1, int *drawn,
               int *drawn1, int *rotation, int *rotation1, int *released, int *released1, int *selectedSM, int *selectedMP,
               int avaiblepMP[6], int dim, int *won, int *won1, int *winning, int *winning1, char *colorMode, 
@@ -800,6 +1082,41 @@ void gameOneVSOne(int map[15][10], int map1[15][10], int x, int y, int *score, i
 
 }
 
+/** 
+ * Move the selected piece inside the map (MultiPlayer)
+ * @param[in] map player1 game map
+ * @param[in] map1 player2 game map
+ * @param[in] x map x coord.
+ * @param[in] y map y coord.
+ * @param[in] score player1 current score
+ * @param[in] score1 player2 current score
+ * @param[in] drawn player1 current score
+ * @param[in] drawn1 player2 current score
+ * @param[in] rotation player1 piece rotation
+ * @param[in] rotation1 player2 piece rotation
+ * @param[in] released if player1 piece is released or not
+ * @param[in] released1 if player2 piece is released or not
+ * @param[in] selectedSM player1 selected piece
+ * @param[in] selectedMP player2 selected piece
+ * @param[in] avaibleMP avaible pieces (shared)
+ * @param[in] dim avaibleMP array's size
+ * @param[in] won if player1 has finished the pieces avaible
+ * @param[in] won1 if player2 has finished the pieces avaible
+ * @param[in] winning if player1 has moved the piece uncorrectly
+ * @param[in] winning1 if player2 has moved the piece uncorrectly
+ * @param[in] colorMode text color
+ * @param[in] color1 player1 map color
+ * @param[in] color2 player2 map color
+ * @param[in] name player1 name (the one who is moving the piece)
+ * @see introMP2PC()
+ * @see selectProcess()
+ * @see movePieceMP()
+ * @see checkEndGame()
+ * @see printLoser()
+ * @see printWinner()
+ * @see checkWinMPC()
+ * @see selectProcessPC()
+ */
 void gameOneVSPC(int map[15][10], int map1[15][10], int x, int y, int *score, int *score1, int *drawn,
               int *drawn1, int *rotation, int *rotation1, int *released, int *released1, int *selectedSM, int *selectedMP,
               int avaiblepMP[6], int dim, int *won, int *won1, int *winning, int *winning1, char *colorMode, 
