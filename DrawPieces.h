@@ -7,12 +7,10 @@
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a T.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawT(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -47,7 +45,7 @@ int drawT(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a T.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -76,12 +74,10 @@ void deleteT(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a T1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawT1(int map[15][10], int x, int y){  /* */
     int k, i , j, f = 1;
@@ -113,7 +109,7 @@ int drawT1(int map[15][10], int x, int y){  /* */
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a T1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -140,12 +136,10 @@ void deleteT1(int map[15][10], int x, int y){  /* */
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a T2.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawT2(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -177,7 +171,7 @@ int drawT2(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a T2.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -204,12 +198,10 @@ void deleteT2(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a T3.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawT3(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -242,7 +234,7 @@ int drawT3(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a T3.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -271,12 +263,10 @@ void deleteT3(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a Z.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawZ(int map[15][10], int x, int y){
    int k, i , j, f = 1;
@@ -311,7 +301,7 @@ int drawZ(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a Z.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -342,12 +332,10 @@ void deleteZ(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a Z1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawZ1(int map[15][10], int x, int y){
    int k, i , j, f = 1;
@@ -382,7 +370,7 @@ int drawZ1(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a Z1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -411,12 +399,10 @@ void deleteZ1(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a Z2.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawZ2(int map[15][10], int x, int y){
    int k, i , j, f = 1;
@@ -451,7 +437,7 @@ int drawZ2(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a Z2.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -481,12 +467,10 @@ void deleteZ2(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a Z3.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawZ3(int map[15][10], int x, int y){
    int k, i , j, f = 1;
@@ -521,7 +505,7 @@ int drawZ3(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a Z3.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -559,12 +543,10 @@ void deleteZ3(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a I.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawI(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -594,7 +576,7 @@ int drawI(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a I.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -620,12 +602,10 @@ void deleteI(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a I1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawI1(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -655,7 +635,7 @@ int drawI1(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a I1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -687,12 +667,10 @@ void deleteI1(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a L.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawL(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -725,7 +703,7 @@ int drawL(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a L.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -755,12 +733,10 @@ void deleteL(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a L1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawL1(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -793,7 +769,7 @@ int drawL1(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a L1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -824,12 +800,10 @@ void deleteL1(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a L2.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawL2(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -862,7 +836,7 @@ int drawL2(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete L2.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -892,12 +866,10 @@ void deleteL2(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a L3.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawL3(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -930,7 +902,7 @@ int drawL3(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a L3.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -964,12 +936,10 @@ void deleteL3(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a Lr.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawLr(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -1002,7 +972,7 @@ int drawLr(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a Lr.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -1032,12 +1002,10 @@ void deleteLr(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a Lr1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawLr1(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -1070,7 +1038,7 @@ int drawLr1(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a Lr1.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -1101,12 +1069,10 @@ void deleteLr1(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a Lr2.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawLr2(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -1139,7 +1105,7 @@ int drawLr2(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a Lr2.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -1169,12 +1135,10 @@ void deleteLr2(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a Lr3.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawLr3(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -1207,7 +1171,7 @@ int drawLr3(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a Lr3.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */
@@ -1241,12 +1205,10 @@ void deleteLr3(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '1' values in order to draw a O.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
- * @param[out] f if (x, y) are out of map borders
- * @param[out] 1 (x, y) coords are got filled
- * @param[out] 0 if (x, y) coords are not empy
+ * @return f: if (x, y) are out of map borders, 1: (x, y) coords are got filled, 0: if (x, y) coords are not empy
  */
 int drawO(int map[15][10], int x, int y){
     int k, i , j, f = 1;
@@ -1277,7 +1239,7 @@ int drawO(int map[15][10], int x, int y){
  * Goes to (x, y) coords and insert
  * '0' values in order to delete a O.
  * (follow the Legenda)
- * @param[in] map game map
+ * @param[out] map game map
  * @param[in] x map x coord.
  * @param[in] y map y coord.
  */

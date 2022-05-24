@@ -4,12 +4,37 @@
 #include <time.h>
 #include <windows.h>
 
-const int height = 15, width = 10;
+/**
+ * Map height
+ */
+const int height = 15;
+/**
+ * Map width
+ */
+const int width = 10;
+/**
+ * Number of pieces and avaible array's size
+ */
 const int dim = 6; /* T, I, O, Z, L, Lr */
+/**
+ * Map color in SinglePlayer
+ */
 char *colorSM = "blue";
+/**
+ * Piece color in SinglePlayer
+ */
 char *colorSMPiece = "green";
+/**
+ * Map color in MultiPlayer
+ */
 char *colorMP = "red";
+/**
+ * Player1 piece color
+ */
 char *color1 = "yellow";
+/**
+ * Player2 or PC piece color
+ */
 char *color2 = "purple";
 
 
@@ -22,9 +47,37 @@ char *color2 = "purple";
 #include "Cut.h"
 
 /**
- * Main Game Loop
+ * Main Function, contains the main game loop
  * @param[in] void
  * @param[out] 0
+ * @see loadGame()
+ * @see intro()
+ * @see initGame()
+ * @see setCursor()
+ * @see initScore()
+ * @see updateScoreSM()
+ * @see introSDynamic()
+ * @see selectProcess()
+ * @see movePiece()
+ * @see checkEndGame()
+ * @see setcolorText()
+ * @see whoEnemy()
+ * @see initGameMP()
+ * @see askName()
+ * @see gameOneVSPC()
+ * @see gameOneVSOne()
+ * @see printTitle()
+ * @see printMoveMenu()
+ * @see saltaRighe()
+ * @see gotoXY()
+ * @see printLegendaPieces()
+ * @see printLegendaAllPieces()
+ * @see centerText()
+ * @see initMap()
+ * @see fillOne()
+ * @see printMaps()
+ * @see delay()
+ * @see closeGame()
  */ 
 int main(void){
     

@@ -4,11 +4,11 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{init\+Map}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]})
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the map. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}{set\+Cursor}} (int $\ast$x, int $\ast$y, int vx, int vy)
-\item 
-void \mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{init\+Avaible\+Pieces}} (int $\ast$pieces, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int limit)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set the Cursor object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{init\+Avaible\+Pieces}} (int $\ast$pieces, int \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int limit)
+\begin{DoxyCompactList}\small\item\em Initializes avaible pieces array. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -20,7 +20,20 @@ void \mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{init\+A
 
 
 
-Definition at line \mbox{\hyperlink{_initializer_8h_source_l00015}{15}} of file \mbox{\hyperlink{_initializer_8h_source}{Initializer.\+h}}.
+Initializes avaible pieces array. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em pieces} & points to the avaible array \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim} & avaible array\textquotesingle{}s size \\
+\hline
+\mbox{\texttt{ in}}  & {\em limit} & a max value of availability \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_initializer_8h_source_l00034}{34}} of file \mbox{\hyperlink{_initializer_8h_source}{Initializer.\+h}}.
 
 \mbox{\Hypertarget{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}\label{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}} 
 \index{Initializer.h@{Initializer.h}!initMap@{initMap}}
@@ -30,7 +43,16 @@ Definition at line \mbox{\hyperlink{_initializer_8h_source_l00015}{15}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_initializer_8h_source_l00001}{1}} of file \mbox{\hyperlink{_initializer_8h_source}{Initializer.\+h}}.
+Initializes the map. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em map} & game map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_initializer_8h_source_l00005}{5}} of file \mbox{\hyperlink{_initializer_8h_source}{Initializer.\+h}}.
 
 \mbox{\Hypertarget{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}\label{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}} 
 \index{Initializer.h@{Initializer.h}!setCursor@{setCursor}}
@@ -40,5 +62,20 @@ Definition at line \mbox{\hyperlink{_initializer_8h_source_l00001}{1}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_initializer_8h_source_l00010}{10}} of file \mbox{\hyperlink{_initializer_8h_source}{Initializer.\+h}}.
+Set the Cursor object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em x} & Cursor x coord. \\
+\hline
+\mbox{\texttt{ out}}  & {\em y} & Cursor y coord. \\
+\hline
+\mbox{\texttt{ in}}  & {\em vx} & x value \\
+\hline
+\mbox{\texttt{ in}}  & {\em vy} & y value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_initializer_8h_source_l00022}{22}} of file \mbox{\hyperlink{_initializer_8h_source}{Initializer.\+h}}.
 

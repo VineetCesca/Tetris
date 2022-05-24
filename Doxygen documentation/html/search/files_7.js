@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['textsettings_2eh_0',['TextSettings.h',['../_text_settings_8h.html',1,'']]],
-  ['trash_2ec_1',['trash.c',['../trash_8c.html',1,'']]],
-  ['tryhard_2ec_2',['tryhard.c',['../tryhard_8c.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
 ];

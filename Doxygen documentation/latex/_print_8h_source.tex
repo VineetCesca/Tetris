@@ -4,10 +4,10 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00001}00001 }
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00007}\mbox{\hyperlink{_print_8h_a2aa18c495cf17747e69b7fc8d45fe437}{00007}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2aa18c495cf17747e69b7fc8d45fe437}{printMap}}(\textcolor{keywordtype}{int} map[15][10])\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00008}00008     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00009}00009     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00009}00009     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00010}00010         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00011}00011         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00012}00012             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1 || map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00011}00011         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00012}00012             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1 || map[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00013}00013                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00014}00014             \} \textcolor{keywordflow}{else}\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00015}00015                 printf(\textcolor{stringliteral}{"{}  "{}});}
@@ -19,16 +19,16 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00021}00021     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00022}00022 \}}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00023}00023 }
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00034}\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{00034}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{printMapColor}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \textcolor{keywordtype}{char} *color0, \textcolor{keywordtype}{int} center)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00034}\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{00034}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{printMapColor}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *\mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \textcolor{keywordtype}{char} *color0, \textcolor{keywordtype}{int} center)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00035}00035     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00036}00036     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00036}00036     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00037}00037         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(center);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00038}00038         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00039}00039             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00038}00038         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00039}00039             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00040}00040                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00041}00041                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00042}00042             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00043}00043                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00043}00043                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, 1);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00044}00044                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00045}00045             \} \textcolor{keywordflow}{else} \{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00046}00046                 printf(\textcolor{stringliteral}{"{}  "{}});}
@@ -40,11 +40,11 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00052}00052     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00053}00053 \}}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00054}00054 }
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00066}\mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{00066}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{printMaps}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, \textcolor{keywordtype}{char} *color0)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00066}\mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{00066}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{printMaps}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char} *\mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \textcolor{keywordtype}{char} *\mbox{\hyperlink{main_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, \textcolor{keywordtype}{char} *color0)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00067}00067     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00068}00068     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00069}00069         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00070}00070             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00068}00068     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00069}00069         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00070}00070             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00071}00071                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00072}00072                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(40 + j*2, 7 + i);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00073}00073                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
@@ -54,14 +54,14 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00077}00077 }
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00078}00078             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1 || map1[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00079}00079                 \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00080}00080                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00080}00080                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, 1);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00081}00081                     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(40 + j*2, 7 + i);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00082}00082                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00083}00083                 \}}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00084}00084 }
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00085}00085                 \textcolor{comment}{/* second map */}}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00086}00086                 \textcolor{keywordflow}{if}(map1[i][j] == 1)\{}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00087}00087                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{trash_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00087}00087                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{main_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, 1);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00088}00088                     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(70 + j*2, 7 + i);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00089}00089                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00090}00090                 \}}
@@ -77,9 +77,9 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00100}00100 }
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00107}\mbox{\hyperlink{_print_8h_a9c20781191d0dadbbcea017aab19e83f}{00107}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a9c20781191d0dadbbcea017aab19e83f}{printMap2}}(\textcolor{keywordtype}{int} map[15][10])\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00108}00108     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00109}00109     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00109}00109     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00110}00110         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00111}00111         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00111}00111         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00112}00112             \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00113}00113                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}red"{}}, 1);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00114}00114             \} \textcolor{keywordflow}{else}\{}
@@ -110,9 +110,9 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00151}00151     printf(\textcolor{stringliteral}{"{}0 -\/ Quit\(\backslash\)n"{}});}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00152}00152 \}}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00153}00153 }
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00162}\mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{00162}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{printAvaiblePieces}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} \mbox{\hyperlink{trash_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00162}\mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{00162}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{printAvaiblePieces}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */}}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00163}00163     \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00164}00164     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00164}00164     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00165}00165         \textcolor{keywordflow}{if}(pieces[i] > 0)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00166}00166             }
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00167}00167             printf(\textcolor{stringliteral}{"{}Piece \%d : "{}}, i);}
@@ -196,9 +196,9 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00278}00278             f = \mbox{\hyperlink{_draw_pieces_8h_a805a433c4b2d7b6fdf72b7a19e625740}{drawT1}}(map, x, y + 3);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00279}00279             f = \mbox{\hyperlink{_draw_pieces_8h_a3ff0916b18bf28f7a3ecb6aa9f0ac9e5}{drawT2}}(map, x, y + 6);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00280}00280             f = \mbox{\hyperlink{_draw_pieces_8h_ab4e33293ecaad87886da645fceacb5c7}{drawT3}}(map, x, y + 10);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00281}00281             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00281}00281             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00282}00282                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00283}00283                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00283}00283                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00284}00284                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00285}00285                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00286}00286                     \} \textcolor{keywordflow}{else}\{}
@@ -213,9 +213,9 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00295}00295             f = \mbox{\hyperlink{_draw_pieces_8h_ae9c8aae39834ed2147cc508fbd65d6f5}{drawZ1}}(map, x, y + 3);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00296}00296             f = \mbox{\hyperlink{_draw_pieces_8h_a3c6a275e0b3bec11b9e66eac47c6816f}{drawZ2}}(map, x, y + 7);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00297}00297             f = \mbox{\hyperlink{_draw_pieces_8h_a03e667be37f44af9ea5c05e1ebd6c2a9}{drawZ3}}(map, x, y + 10);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00298}00298             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00298}00298             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00299}00299                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00300}00300                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00300}00300                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00301}00301                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00302}00302                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00303}00303                     \} \textcolor{keywordflow}{else}\{}
@@ -230,9 +230,9 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00312}00312             f = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x -\/ 1, y + 5);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00313}00313             f = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y + 7);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00314}00314             f = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x -\/ 1, y + 12);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00315}00315             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00315}00315             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00316}00316                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00317}00317                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00317}00317                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00318}00318                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00319}00319                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00320}00320                     \} \textcolor{keywordflow}{else}\{}
@@ -247,9 +247,9 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00329}00329             f = \mbox{\hyperlink{_draw_pieces_8h_a0fce015e695a1e8cd4a5cc534fdafc7a}{drawL1}}(map, x, y + 4);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00330}00330             f = \mbox{\hyperlink{_draw_pieces_8h_ac9456f234576a39da9ba4168e41c20bb}{drawL2}}(map, x, y + 7);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00331}00331             f = \mbox{\hyperlink{_draw_pieces_8h_a266c5f3c4f76c89bc9bd1e543b88705c}{drawL3}}(map, x, y + 11);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00332}00332             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00332}00332             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00333}00333                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00334}00334                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00334}00334                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00335}00335                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00336}00336                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00337}00337                     \} \textcolor{keywordflow}{else}\{}
@@ -264,9 +264,9 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00346}00346             f = \mbox{\hyperlink{_draw_pieces_8h_ada5d4f3503c3b5b06611e6a920d9e3e1}{drawLr1}}(map, x, y + 4);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00347}00347             f = \mbox{\hyperlink{_draw_pieces_8h_aaf5822c80dd59f4bf05ec11eb017f952}{drawLr2}}(map, x, y + 7);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00348}00348             f = \mbox{\hyperlink{_draw_pieces_8h_a2b3aa20da9bd5814a92c84337836e003}{drawLr3}}(map, x, y + 11);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00349}00349             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00349}00349             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00350}00350                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00351}00351                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00351}00351                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00352}00352                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00353}00353                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00354}00354                     \} \textcolor{keywordflow}{else}\{}
@@ -281,9 +281,9 @@
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00363}00363             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 4);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00364}00364             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 7);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00365}00365             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 11);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00366}00366             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00366}00366             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00367}00367                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{\Hypertarget{_print_8h_source_l00368}00368                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00368}00368                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00369}00369                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00370}00370                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
 \DoxyCodeLine{\Hypertarget{_print_8h_source_l00371}00371                     \} \textcolor{keywordflow}{else}\{}

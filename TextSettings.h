@@ -36,7 +36,7 @@ void setcolorText(char *color, int bold){
 }
 
 /**
- * <Jumps to N new lines forward
+ * Jumps to N new lines forward
  * @param[in] N number of new lines to do
  */
 void saltaRighe(int N){

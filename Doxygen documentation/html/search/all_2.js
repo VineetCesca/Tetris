@@ -21,7 +21,7 @@ var searchData=
   ['deletez1_18',['deleteZ1',['../_draw_pieces_8h.html#aeb8338f46c3992a3c59f2c95166edc4a',1,'DrawPieces.h']]],
   ['deletez2_19',['deleteZ2',['../_draw_pieces_8h.html#a9091baa61b82443e77e491a8b2d45b5d',1,'DrawPieces.h']]],
   ['deletez3_20',['deleteZ3',['../_draw_pieces_8h.html#ae590977bbcf68de98b9cf1f317b5b426',1,'DrawPieces.h']]],
-  ['dim_21',['dim',['../tryhard_8c.html#afe4f94e033c0d1c57d407b4338a64b33',1,'dim():&#160;tryhard.c'],['../trash_8c.html#afe4f94e033c0d1c57d407b4338a64b33',1,'dim():&#160;trash.c']]],
+  ['dim_21',['dim',['../main_8c.html#afe4f94e033c0d1c57d407b4338a64b33',1,'main.c']]],
   ['drawi_22',['drawI',['../_draw_pieces_8h.html#a99e0c040ad6c9cf5007a873ceff4e390',1,'DrawPieces.h']]],
   ['drawi1_23',['drawI1',['../_draw_pieces_8h.html#ae2b07a02fd9fdb6f8ff7907736f0de89',1,'DrawPieces.h']]],
   ['drawl_24',['drawL',['../_draw_pieces_8h.html#ab230773ef3eb81dcdc7e9f531a43488a',1,'DrawPieces.h']]],

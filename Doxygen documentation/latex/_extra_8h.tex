@@ -4,17 +4,17 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY}} (int x, int y)
-\item 
+\begin{DoxyCompactList}\small\item\em Moves the cursor at (x, y) coords (windows.\+h) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}} (float number\+\_\+of\+\_\+seconds)
-\item 
+\begin{DoxyCompactList}\small\item\em Waits for a certain number of seconds. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_extra_8h_ab31643a884d56d21baa151f155d93b26}{load\+Game}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Prints out the loading bar. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_extra_8h_ae3629e6aee96848a9799d6706b42aa3d}{close\+Game}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Shutting down bar while closing the game. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\+\_\+stdin}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Useful to prevent input mistakes (wrong data type) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{_extra_8h_ade365d5befabc715613a08d8248d5aea}{fill\+One}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Fills the map with \textquotesingle{}1\textquotesingle{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -26,7 +26,14 @@ void \mbox{\hyperlink{_extra_8h_ade365d5befabc715613a08d8248d5aea}{fill\+One}} (
 
 
 
-Definition at line \mbox{\hyperlink{_extra_8h_source_l00059}{59}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
+Useful to prevent input mistakes (wrong data type) 
+
+\begin{DoxyReturn}{Returns}
+1 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_extra_8h_source_l00085}{85}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
 
 \mbox{\Hypertarget{_extra_8h_ae3629e6aee96848a9799d6706b42aa3d}\label{_extra_8h_ae3629e6aee96848a9799d6706b42aa3d}} 
 \index{Extra.h@{Extra.h}!closeGame@{closeGame}}
@@ -36,7 +43,16 @@ Definition at line \mbox{\hyperlink{_extra_8h_source_l00059}{59}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{_extra_8h_source_l00043}{43}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
+Shutting down bar while closing the game. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+
+\mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_extra_8h_source_l00065}{65}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
 
 \mbox{\Hypertarget{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}\label{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}} 
 \index{Extra.h@{Extra.h}!delay@{delay}}
@@ -46,7 +62,19 @@ Definition at line \mbox{\hyperlink{_extra_8h_source_l00043}{43}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{_extra_8h_source_l00013}{13}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
+Waits for a certain number of seconds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em number\+\_\+of\+\_\+seconds} & amount of seconds to wait \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+clock() 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_extra_8h_source_l00025}{25}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
 
 \mbox{\Hypertarget{_extra_8h_ade365d5befabc715613a08d8248d5aea}\label{_extra_8h_ade365d5befabc715613a08d8248d5aea}} 
 \index{Extra.h@{Extra.h}!fillOne@{fillOne}}
@@ -56,7 +84,16 @@ Definition at line \mbox{\hyperlink{_extra_8h_source_l00013}{13}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{_extra_8h_source_l00066}{66}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
+Fills the map with \textquotesingle{}1\textquotesingle{}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em map} & game map \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_extra_8h_source_l00096}{96}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
 
 \mbox{\Hypertarget{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}\label{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}} 
 \index{Extra.h@{Extra.h}!gotoXY@{gotoXY}}
@@ -66,7 +103,21 @@ Definition at line \mbox{\hyperlink{_extra_8h_source_l00066}{66}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{_extra_8h_source_l00001}{1}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
+Moves the cursor at (x, y) coords (windows.\+h) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & screen x coord. \\
+\hline
+{\em y} & screen y coord. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+Set\+Console\+Cursor\+Position() 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_extra_8h_source_l00008}{8}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
 
 \mbox{\Hypertarget{_extra_8h_ab31643a884d56d21baa151f155d93b26}\label{_extra_8h_ab31643a884d56d21baa151f155d93b26}} 
 \index{Extra.h@{Extra.h}!loadGame@{loadGame}}
@@ -76,5 +127,14 @@ Definition at line \mbox{\hyperlink{_extra_8h_source_l00001}{1}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_extra_8h_source_l00024}{24}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
+Prints out the loading bar. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+
+\mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay()}} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{_extra_8h_source_l00041}{41}} of file \mbox{\hyperlink{_extra_8h_source}{Extra.\+h}}.
 

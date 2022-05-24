@@ -1,3 +1,10 @@
+/**
+ * Moves the cursor at (x, y) coords
+ * (windows.h)
+ * @param x screen x coord.
+ * @param y screen y coord.
+ * @see SetConsoleCursorPosition()
+ */
 void gotoXY(int x, int y){
  
  COORD coord;
@@ -10,6 +17,11 @@ void gotoXY(int x, int y){
  
 }
 
+/**
+ * Waits for a certain number of seconds
+ * @param[in] number_of_seconds amount of seconds to wait
+ * @see clock()
+ */
 void delay(float number_of_seconds){
     /* Converting time into milli_seconds */
     float milli_seconds = 1000 * number_of_seconds;
@@ -21,6 +33,11 @@ void delay(float number_of_seconds){
     while (clock() < start_time + milli_seconds);
 }
 
+/**
+ * Prints out the loading bar
+ * @see gotoXY()
+ * @see delay() 
+ */
 void loadGame(){
     int r, cnt = 5, n = 60, m = n;
     gotoXY(n + 5, 25);
@@ -40,6 +57,11 @@ void loadGame(){
     getch();
 }
 
+/**
+ * Shutting down bar while closing the game
+ * @see gotoXY()
+ * @see delay()
+ */
 void closeGame(){
     int r, cnt = 5, n = 60;
     gotoXY(n + 2, 25);
@@ -56,6 +78,10 @@ void closeGame(){
 
 }
 
+/**
+ * Useful to prevent input mistakes (wrong data type)
+ * @return 1 
+ */
 int clean_stdin() /* useful to prevent input data errors */
 {
     while (getchar()!='\n');
@@ -63,6 +89,10 @@ int clean_stdin() /* useful to prevent input data errors */
 }
 
 /* self-made */
+/**
+ * Fills the map with '1'
+ * @param[out] map game map
+ */
 void fillOne(int map[15][10]){
     int i, j;
     for (i = 1; i < height - 1; i++){
