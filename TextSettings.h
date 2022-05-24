@@ -1,3 +1,7 @@
+/**
+ * Put the next text printing in the middle of the current line
+ * @param[in] n a value to set the text position
+ */
 void centerText(int n){
     int i;
     for(i = 0; i < n/2; i++){
@@ -5,6 +9,11 @@ void centerText(int n){
     }
 }
 
+/**
+ * Set the text to a certain color (string -> color)
+ * @param[in] color string color name
+ * @param[in] bold text option
+ */
 void setcolorText(char *color, int bold){
 
     if( (color == "black" || color == "BLACK" || color == "Black") && (bold == 1 || bold == 0) ){
@@ -26,6 +35,10 @@ void setcolorText(char *color, int bold){
     }
 }
 
+/**
+ * <Jumps to N new lines forward
+ * @param[in] N number of new lines to do
+ */
 void saltaRighe(int N){
     int i;
     for(i = 0; i < N; i++){
