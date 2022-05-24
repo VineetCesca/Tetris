@@ -1,0 +1,149 @@
+\hypertarget{tryhard_8c_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/tryhard.c}
+\mbox{\hyperlink{tryhard_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00001}00001 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00002}00002 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00003}00003 \textcolor{preprocessor}{\#include <conio.h>}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00004}00004 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00005}00005 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00007}\mbox{\hyperlink{tryhard_8c_ad13e9131f5062934438fa82334e4b2ee}{00007}} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{tryhard_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} = 15, \mbox{\hyperlink{tryhard_8c_a837aabdd54757cb86d0f66387511753f}{width}} = 10;}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00008}\mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{00008}} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}} = 6; \textcolor{comment}{/* T, I, O, Z, L, Lr */}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00009}\mbox{\hyperlink{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{00009}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{colorSM}} = \textcolor{stringliteral}{"{}blue"{}};}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00010}\mbox{\hyperlink{tryhard_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{00010}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{tryhard_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{colorSMPiece}} = \textcolor{stringliteral}{"{}green"{}};}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00011}\mbox{\hyperlink{tryhard_8c_a7877c058e57d6f338d6864342ba596a7}{00011}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{tryhard_8c_a7877c058e57d6f338d6864342ba596a7}{colorMP}} = \textcolor{stringliteral}{"{}red"{}};}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00012}\mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{00012}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}} = \textcolor{stringliteral}{"{}yellow"{}};}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00013}\mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{00013}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}} = \textcolor{stringliteral}{"{}purple"{}};}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00016}00016 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_text_settings_8h}{TextSettings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00017}00017 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_initializer_8h}{Initializer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00018}00018 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_draw_pieces_8h}{DrawPieces.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00019}00019 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_extra_8h}{Extra.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00020}00020 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_print_8h}{Print.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00021}00021 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_logic_8h}{Logic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00022}00022 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_cut_8h}{Cut.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00029}\mbox{\hyperlink{tryhard_8c_a840291bc02cba5474a4cb46a9b9566fe}{00029}} \textcolor{keywordtype}{int} \mbox{\hyperlink{tryhard_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00030}00030     }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00031}00031     \textcolor{keywordtype}{int} map[15][10];}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00032}00032     \textcolor{keywordtype}{int} map1[15][10];}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00033}00033     \textcolor{keywordtype}{int} avaiblep[6];}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00034}00034     \textcolor{keywordtype}{int} avaiblepMP[6];}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00036}00036     \textcolor{keywordtype}{int} winning, winning1,}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00037}00037         x, y, }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00038}00038         opt, singleopt, multiopt, }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00039}00039         selectedSM, selectedMP, }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00040}00040         rotation, rotation1, }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00041}00041         drawn, drawn1, }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00042}00042         released, released1,}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00043}00043         score, score1,}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00044}00044         won, won1;}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00046}00046     \textcolor{keywordtype}{char} player1[20], player2[20];}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00048}00048     \mbox{\hyperlink{_extra_8h_ab31643a884d56d21baa151f155d93b26}{loadGame}}();}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00050}00050     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00051}00051         opt = \mbox{\hyperlink{_cut_8h_ab35e175ef92b0a09d11eade80c803c15}{intro}}();}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00053}00053         \textcolor{keywordflow}{if}(opt == 1)\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00054}00054             \mbox{\hyperlink{_cut_8h_ac6cf1cc8abe38959f3638c4b6d791e0d}{initGame}}(map, avaiblep, \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00055}00055             \mbox{\hyperlink{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}{setCursor}}(\&x, \&y, 4, 0);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00056}00056             \mbox{\hyperlink{_cut_8h_ac60705307c9228dac45d51d603e9fb77}{initScore}}(\&score);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00057}00057             \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00058}00058                 won = 0;}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00059}00059                 released = 0;}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00060}00060                 \mbox{\hyperlink{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}{updateScoreSM}}(map, \&score);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00061}00061                 \mbox{\hyperlink{_cut_8h_a1515458ebe31caafde5c67c95e8cb9ff}{introSDynamic}}(map, \mbox{\hyperlink{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{colorSM}}, score);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00062}00062                 \mbox{\hyperlink{_cut_8h_a31d08c0c40d8f48175b75e48f8412c8b}{selectProcess}}(avaiblep, \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \&selectedSM, \&rotation, \&drawn, map, x, y, \mbox{\hyperlink{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{colorSM}}, \mbox{\hyperlink{tryhard_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{colorSMPiece}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00063}00063                 winning = \mbox{\hyperlink{_cut_8h_a1d4d532ae9ededc1d84ef89e8fc3f992}{movePiece}}(map, x, y, selectedSM, rotation, \&released, \&score);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00064}00064                 \mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{checkEndGame}}(avaiblep, \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \&won);\textcolor{comment}{/*verifichiamo la disponibilità dei tetramini (condivisi) -\/> se non }}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00065}00065 \textcolor{comment}{                ce ne sono più, bisogna concludere il gioco*/}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00066}00066             \}\textcolor{keywordflow}{while}(winning != 0 \&\& !won);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00068}00068             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1); }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00069}00069         \}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00071}00071         \textcolor{keywordflow}{if}(opt == 2)\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00072}00072             multiopt = \mbox{\hyperlink{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}{whoEnemy}}();}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00073}00073             }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00074}00074             \textcolor{keywordflow}{if}(multiopt > 0)\{ \textcolor{comment}{/* p1 vs pc? p1 vs p2?*/}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00075}00075             \textcolor{comment}{/*Un giocatore perde la partita se non posiziona correttamente un pezzo nel proprio campo di gioco. Se i pezzi}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00076}00076 \textcolor{comment}{            finiscono vince il giocatore con il punteggio più alto.*/}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00077}00077         }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00078}00078                 won = 0; \textcolor{comment}{/* è bene ricordare che all'inizio nessuno dei due vince -\/> vince chi continua a fare punti */}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00079}00079                 won1 = 0; \textcolor{comment}{/*il gioco va in crush se qualcuno fa scontrare i suoi tetramini, motivo per cui la partita termina}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00080}00080 \textcolor{comment}{                            e si guarda al punteggio più alto*/}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00081}00081                 \mbox{\hyperlink{_cut_8h_a3de115086c75040b94838386ba16902b}{initGameMP}}(map, map1, avaiblepMP, \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}); \textcolor{comment}{/*un solo array avaibleMP perchè p1 e p2(pc) pescano dallo stesso insieme di tetramini}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00082}00082 \textcolor{comment}{                rispetto al avaiblep in modalità singolo giocatore, hai il doppio dei tetramini (20*2) = 40 CODIVISI*/}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00083}00083                 \mbox{\hyperlink{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}{setCursor}}(\&x, \&y, 4, 0);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00084}00084                 \mbox{\hyperlink{_cut_8h_ac60705307c9228dac45d51d603e9fb77}{initScore}}(\&score);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00085}00085                 \mbox{\hyperlink{_cut_8h_ac60705307c9228dac45d51d603e9fb77}{initScore}}(\&score1);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00087}00087                 \textcolor{keywordflow}{if}(multiopt == 1)\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00088}00088                     }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00089}00089                     \mbox{\hyperlink{_cut_8h_a18a2aae538ddaae3f0e111969fd20111}{askName}}(player1, \textcolor{charliteral}{'1'});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00091}00091                     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00093}00093                         \mbox{\hyperlink{_cut_8h_aceee05f2d5cc88b14ebf0fc4f714b8d3}{gameOneVSPC}}(map, map1, x, y, \&score, \&score1, \&drawn, \&drawn1, \&rotation, \&rotation1, \&released, \&released1, \&selectedSM, }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00094}00094                                  \&selectedMP, avaiblepMP, \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \&won, \&won1, \&winning, \&winning1, \mbox{\hyperlink{tryhard_8c_a7877c058e57d6f338d6864342ba596a7}{colorMP}}, \mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, player1);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00096}00096                     \}\textcolor{keywordflow}{while}( (winning1 != 0 \&\& !won1) \&\& (winning != 0 \&\& !won) );}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00098}00098                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(multiopt == 2)\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00100}00100                     \mbox{\hyperlink{_cut_8h_a18a2aae538ddaae3f0e111969fd20111}{askName}}(player1, \textcolor{charliteral}{'1'});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00101}00101                     \mbox{\hyperlink{_cut_8h_a18a2aae538ddaae3f0e111969fd20111}{askName}}(player2, \textcolor{charliteral}{'2'});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00103}00103                     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00105}00105                         \mbox{\hyperlink{_cut_8h_ae0a29bd1d44e72663fe0c6f9ec04bc6d}{gameOneVSOne}}(map, map1, x, y, \&score, \&score1, \&drawn, \&drawn1, \&rotation, \&rotation1, \&released, \&released1, \&selectedSM, }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00106}00106                                  \&selectedMP, avaiblepMP, \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \&won, \&won1, \&winning, \&winning1, \mbox{\hyperlink{tryhard_8c_a7877c058e57d6f338d6864342ba596a7}{colorMP}}, \mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, player1, player2);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00108}00108                     \}\textcolor{keywordflow}{while}( (winning1 != 0 \&\& !won1) \&\& (winning != 0 \&\& !won) );}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00109}00109                 \}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00111}00111             \}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00112}00112              }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00113}00113             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00114}00114         \}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00116}00116         \textcolor{keywordflow}{if}(opt== 3)\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00117}00117             system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00118}00118             \mbox{\hyperlink{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}{setCursor}}(\&x, \&y, 0, 0);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00119}00119             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00120}00120             \mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{printTitle}}(\textcolor{stringliteral}{"{}GAME INSTRUCTIONS\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00121}00121             \mbox{\hyperlink{_print_8h_ad5deb4d6da93418db2c13080bae46bdc}{printMoveMenu}}(x, y, \mbox{\hyperlink{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{colorSM}});            }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00122}00122             \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(4);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00123}00123             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(0, 24);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00124}00124             \mbox{\hyperlink{_print_8h_ae77770b22209ba7e20e82bbe37cc2b25}{printLegendaPieces}}(\mbox{\hyperlink{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{colorSM}}, \mbox{\hyperlink{tryhard_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{colorSMPiece}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00125}00125             \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(4);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00126}00126             \mbox{\hyperlink{_print_8h_a5c0024f7636f893e7c57e72c6f0e7f93}{printLegendaAllPieces}}(\mbox{\hyperlink{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{colorSM}}, \mbox{\hyperlink{tryhard_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{colorSMPiece}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00127}00127             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(0, 17);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00128}00128             \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00129}00129             printf(\textcolor{stringliteral}{"{}ENTER ANYTHING TO GO BACK TO THE MENU: "{}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00130}00130             getch();}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00131}00131             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00132}00132         \}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00134}00134         \textcolor{keywordflow}{if}(opt == 0)\{}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00135}00135             system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00136}00136             \mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{initMap}}(map);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00137}00137             \mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{initMap}}(map1);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00138}00138             \mbox{\hyperlink{_extra_8h_ade365d5befabc715613a08d8248d5aea}{fillOne}}(map);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00139}00139             \mbox{\hyperlink{_extra_8h_ade365d5befabc715613a08d8248d5aea}{fillOne}}(map1);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00140}00140             \mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{printMaps}}(map, map1, \mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, \mbox{\hyperlink{tryhard_8c_a7877c058e57d6f338d6864342ba596a7}{colorMP}});}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00141}00141             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00142}00142             \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(1.5);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00143}00143             \mbox{\hyperlink{_extra_8h_ae3629e6aee96848a9799d6706b42aa3d}{closeGame}}();}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00144}00144         \}}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00146}00146     \}\textcolor{keywordflow}{while}(opt != 0);}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00148}00148     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{tryhard_8c_source_l00149}00149 \}}
+
+\end{DoxyCode}

@@ -1,11 +1,18 @@
-/* riceve in ingresso il nome del player (char *) e lo stampa */
-
+/**
+ * Prints out the player's name
+ * @param[in] playerone char pointer
+ */ 
 void stampaNome(char *playerone){
     printf("Your name is %s \n", playerone);
 }
 
-/* chiede al giocatore n(1 o 2) di inserire il suo nome e aggiorna la variabile chr [20] in ingresso */
-
+/**
+ * Asks to player 1 or 2 to type the name 
+ * and stores it and 
+ * then asks to confirm
+ * @param[in] name array of 20 chars
+ * @param[in] n index: player1 or player2
+ */ 
 void askName(char name[20], char n){
     int a = 0;
     char confirm;
@@ -18,16 +25,7 @@ void askName(char name[20], char n){
         scanf("%s", name);
 
         printf("You've typed: %s, are you sure? (Y/N):", name);
-        /*
-          The %c conversion specifier won't automatically skip any leading whitespace, so if there's
-          a stray newline in the input stream (from a previous entry, for example) the scanf call
-          will consume it immediately.
-          One way around the problem is to put a blank space before the conversion specifier
-          in the format string:
-          
-          scanf(" %c", &c);
         
-        */
         scanf(" %c", &confirm);
 
         if(confirm == 'y' || confirm == 'Y'){
@@ -38,8 +36,11 @@ void askName(char name[20], char n){
 
 }
 
-/* menu introduttivo al gioco, mostra le opzioni di gioco (codificate come interi), chiede all'utente di sceglierne una e la restituisce */
-
+/**
+ * Prints out the Main Game Menu and asks
+ * the user to choose an option
+ * @param[out] opt game option which the user has selected
+ */
 int intro(){
     int opt;
     char c;
@@ -55,29 +56,53 @@ int intro(){
 
 }
 
-/* inizializza una partita in single mode: inizializza la mappa e l'array di tetramini disponibili tramite due funzioni */
-
+/** 
+ * Initialize a match in SinglePlayer
+ * @param[in] map game map
+ * @param[in] avaiblep avaible pieces
+ * @param[in] dim avaiblep array's dimension
+ * @see initMap()
+ * @see initAvaiblePieces()
+ */
 void initGame(int map[15][10], int avaiblep[6], int dim){
     initMap(map);
     initAvaiblePieces(avaiblep, dim, 20);
 }
 
-/* inizializza una partita in multiplayer mode: inizializza entrambe le mappe e l'array di tetramini disponibili condiviso tramite altre due funzioni */
-
+/** 
+ * Initialize a match in MultiPlayer
+ * @param[in] map game map of player1
+ * @param[in] map1 game map of player2
+ * @param[in] avaiblep avaible pieces (shared)
+ * @param[in] dim avaiblep array's dimension
+ * @see initMap()
+ * @see initAvaiblePieces()
+ */
 void initGameMP(int map[15][10], int map1[15][10], int avaibleMP[6], int dim){
     initMap(map);
     initMap(map1);
     initAvaiblePieces(avaibleMP, dim, 40);
 }
 
-/* inizializza il punteggio a zero */
-
+/** 
+ * Initialize the score of a match
+ * @param[in] score score of player 1 or player 2 or PC
+ */
 void initScore(int *score){
     *score = 0;
 }
 
-/* menu della modalità single player: selezione del tetramino, stampa della mappa, delle opzioni, della legenda e del punteggio */
-
+/** 
+ * Prints out the SinglePlayer Game Menu
+ * and asks the user to choos an option
+ * @param[in] map game map
+ * @param[in] colorMode text color
+ * @param[out] singleopt option selected
+ * @see printTitle()
+ * @see printMapColor()
+ * @see printSModeOptions()
+ * @see saltaRighe()
+ */
 int introS(int map[15][10], char *colorMode){
     int singleopt; 
     char c;
@@ -94,8 +119,20 @@ int introS(int map[15][10], char *colorMode){
     return singleopt;
 }
 
-/* stampa della schermata modalità single player in fase dinamica, non avviene alcuna selezione */
-
+/** 
+ * Prints out the SinglePlayer interface
+ * while the piece (tetramino) is moving
+ * inside the map
+ * @param[in] map game map
+ * @param[in] colorMode text color
+ * @param[out] score current score
+ * @see printTitle()
+ * @see printMapColor()
+ * @see printSModeOptions()
+ * @see saltaRighe()
+ * @see printScorePC()
+ * @see gotoXY()
+ */
 void introSDynamic(int map[15][10], char* colorMode, int score){
     setcolorText(colorMode, 1);
     system("cls");
@@ -103,12 +140,25 @@ void introSDynamic(int map[15][10], char* colorMode, int score){
     saltaRighe(2);
     printMapColor(map, colorSMPiece, colorMode, 103);
     saltaRighe(2);
-    printScorePC(score, colorSMPiece, 3, '1');
+    printScore(score, colorSMPiece, 3, '1');
     gotoXY(0, 25);
 }
 
-/* menu della modalità multiplayer 1 vs 1: stampa opzioni, selezione del tetramino, stampa legenda, punteggio e mappa del giocatore attivo */
-
+/**
+ * menu della modalità multiplayer 1 vs 1: stampa opzioni, selezione del tetramino, stampa legenda, punteggio e mappa del giocatore attivo 
+ * Prints out the SinglePlayer interface
+ * while the piece (tetramino) is moving
+ * inside the map
+ * @param[in] map game map
+ * @param[in] colorMode text color
+ * @param[out] score current score
+ * @see printTitle()
+ * @see printMapColor()
+ * @see printSModeOptions()
+ * @see saltaRighe()
+ * @see printScorePC()
+ * @see gotoXY()
+ */
 void introMPDynamicName(int map[15][10], char *colorPiece, char* colorMode, int score, int center, char player, char name[20]){
     setcolorText(colorMode, 1);
     system("cls");

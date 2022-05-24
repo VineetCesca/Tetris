@@ -1,0 +1,113 @@
+\hypertarget{trash_8c_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/trash.c}
+\mbox{\hyperlink{trash_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00001}00001 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00002}00002 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00003}00003 \textcolor{preprocessor}{\#include <strings.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00004}00004 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00005}00005 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00006}00006 \textcolor{preprocessor}{\#include <conio.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00007}00007 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00008}00008 \textcolor{preprocessor}{\#include <ctype.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00009}00009 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00010}00010 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00011}00011 \textcolor{preprocessor}{\#include <process.h>}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00013}\mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{00013}} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} = 15, \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}} = 10;}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00014}\mbox{\hyperlink{trash_8c_afe4f94e033c0d1c57d407b4338a64b33}{00014}} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{trash_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}} = 6; \textcolor{comment}{/* T, I, O, Z, L, Lr */}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00015}\mbox{\hyperlink{trash_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{00015}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{colorSM}} = \textcolor{stringliteral}{"{}blue"{}};}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00016}\mbox{\hyperlink{trash_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{00016}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{colorSMPiece}} = \textcolor{stringliteral}{"{}green"{}};}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00017}\mbox{\hyperlink{trash_8c_a7877c058e57d6f338d6864342ba596a7}{00017}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_a7877c058e57d6f338d6864342ba596a7}{colorMP}} = \textcolor{stringliteral}{"{}red"{}};}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00018}\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{00018}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}} = \textcolor{stringliteral}{"{}yellow"{}};}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00019}\mbox{\hyperlink{trash_8c_a7662939be01f9535a08f5a53d83d6c01}{00019}} \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}} = \textcolor{stringliteral}{"{}purple"{}};}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00021}00021 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_text_settings_8h}{TextSettings.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00022}00022 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_initializer_8h}{Initializer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00023}00023 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_draw_pieces_8h}{DrawPieces.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00024}00024 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_extra_8h}{Extra.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00025}00025 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_logic_8h}{Logic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00026}00026 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_print_8h}{Print.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00027}00027 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_cut_8h}{Cut.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00031}\mbox{\hyperlink{trash_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00031}} \textcolor{keywordtype}{int} \mbox{\hyperlink{trash_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\{}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00033}00033     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00034}00034 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00035}00035 \textcolor{comment}{    char key;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00036}00036 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00037}00037 \textcolor{comment}{    while(1)\{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00038}00038 \textcolor{comment}{        while(!kbhit())\{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00039}00039 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00040}00040 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00041}00041 \textcolor{comment}{        key = getch();}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00042}00042 \textcolor{comment}{        printf("{}\%c \(\backslash\)n"{}, key);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00043}00043 \textcolor{comment}{        if(key == 'a')\{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00044}00044 \textcolor{comment}{            printf("{}a"{});}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00045}00045 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00046}00046 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00047}00047 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00048}00048 \textcolor{comment}{    int width = 10, height = 15;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00049}00049 \textcolor{comment}{    int score;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00050}00050 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00051}00051 \textcolor{comment}{    initScore(\&score);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00052}00052 \textcolor{comment}{    printLegendaAllPieces(width, height);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00053}00053 \textcolor{comment}{    printScore(score);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00054}00054 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00055}00055 \textcolor{comment}{    time\_t curtime;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00056}00056 \textcolor{comment}{    struct tm *loc\_time;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00057}00057 \textcolor{comment}{    }}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00058}00058 \textcolor{comment}{    Getting current time of system:}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00059}00059 \textcolor{comment}{    curtime = time (NULL);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00060}00060 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00061}00061 \textcolor{comment}{    Converting current time to local time:}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00062}00062 \textcolor{comment}{    loc\_time = localtime (\&curtime);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00063}00063 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00064}00064 \textcolor{comment}{    Displaying date and time in standard format}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00065}00065 \textcolor{comment}{    printf("{}\%s"{}, asctime (loc\_time));}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00066}00066 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00067}00067 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00068}00068 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00069}00069 \textcolor{comment}{    char key;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00070}00070 \textcolor{comment}{    int t;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00071}00071 \textcolor{comment}{    int i = 0;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00072}00072 \textcolor{comment}{    time\_t curtime;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00073}00073 \textcolor{comment}{    struct tm *loc\_time;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00074}00074 \textcolor{comment}{    curtime = time(NULL);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00075}00075 \textcolor{comment}{    loc\_time = localtime(\&curtime);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00076}00076 \textcolor{comment}{    printf("{}\%s \(\backslash\)n"{}, asctime (loc\_time));}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00077}00077 \textcolor{comment}{    key = 's';}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00078}00078 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00079}00079 \textcolor{comment}{    while(1)\{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00080}00080 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00081}00081 \textcolor{comment}{        while(!kbhit())\{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00082}00082 \textcolor{comment}{            i += 2;}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00083}00083 \textcolor{comment}{            Sleep(850);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00084}00084 \textcolor{comment}{            gotoXY(i, 30);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00085}00085 \textcolor{comment}{            printf("{}\%c "{}, key);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00086}00086 \textcolor{comment}{        \}}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00087}00087 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00088}00088 \textcolor{comment}{        key = getch();}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00089}00089 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00090}00090 \textcolor{comment}{        printf("{}\%c "{}, key);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00091}00091 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00092}00092 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00093}00093 \textcolor{comment}{        fflush(stdin);}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00094}00094 \textcolor{comment}{    \}*/}}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00095}00095     }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00096}00096     \textcolor{keywordtype}{char} playerone[20];}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00097}00097     \textcolor{keywordtype}{char} n;}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00098}00098 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00099}00099     \mbox{\hyperlink{_cut_8h_a18a2aae538ddaae3f0e111969fd20111}{askName}}(playerone, n);}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00101}00101     printf(\textcolor{stringliteral}{"{}Your name is: \%s \(\backslash\)n"{}}, playerone);}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00103}00103     \textcolor{keywordtype}{char} *name = playerone;}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00105}00105     \mbox{\hyperlink{_cut_8h_ac2887fddac9e3cb86275cc401f3fcd77}{stampaNome}}(name);}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00107}00107     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{trash_8c_source_l00108}00108 \}}
+
+\end{DoxyCode}

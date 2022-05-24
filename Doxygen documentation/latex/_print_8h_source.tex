@@ -1,380 +1,380 @@
 \hypertarget{_print_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Print.h}
-
+\mbox{\hyperlink{_print_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{keywordtype}{void} printMap(\textcolor{keywordtype}{int} map[15][10])\{}
-\DoxyCodeLine{2     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{3     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{4         centerText(100);}
-\DoxyCodeLine{5         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{6             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1 || map[i][j] == 1)\{}
-\DoxyCodeLine{7                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{8             \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{9                 printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{10             \}}
-\DoxyCodeLine{11         \}}
-\DoxyCodeLine{12         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{13     \}}
-\DoxyCodeLine{14     }
-\DoxyCodeLine{15     saltaRighe(3);}
-\DoxyCodeLine{16 \}}
-\DoxyCodeLine{17 }
-\DoxyCodeLine{18 \textcolor{keywordtype}{void} printMapColor(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color0, \textcolor{keywordtype}{int} center)\{}
-\DoxyCodeLine{19     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{20     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{21         centerText(center);}
-\DoxyCodeLine{22         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{23             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1)\{}
-\DoxyCodeLine{24                 setcolorText(color0, 1);}
-\DoxyCodeLine{25                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{26             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{27                 setcolorText(color1, 1);}
-\DoxyCodeLine{28                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{29             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{30                 printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{31             \}}
-\DoxyCodeLine{32         \}}
-\DoxyCodeLine{33         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{34     \}}
-\DoxyCodeLine{35     setcolorText(color0, 1);}
-\DoxyCodeLine{36     saltaRighe(3);}
-\DoxyCodeLine{37 \}}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{39 \textcolor{keywordtype}{void} printMaps(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color2, \textcolor{keywordtype}{char} *color0)\{}
-\DoxyCodeLine{40     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{41     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{42         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{43             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1)\{}
-\DoxyCodeLine{44                 setcolorText(color0, 1);}
-\DoxyCodeLine{45                 gotoXY(40 + j*2, 7 + i);}
-\DoxyCodeLine{46                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{47                 \textcolor{comment}{/* second map */}}
-\DoxyCodeLine{48                 gotoXY(70 + j*2, 7 + i);}
-\DoxyCodeLine{49                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
-\DoxyCodeLine{50 }
-\DoxyCodeLine{51             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1 || map1[i][j] == 1)\{}
-\DoxyCodeLine{52                 \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{53                     setcolorText(color1, 1);}
-\DoxyCodeLine{54                     gotoXY(40 + j*2, 7 + i);}
-\DoxyCodeLine{55                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{56                 \}}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58                 \textcolor{comment}{/* second map */}}
-\DoxyCodeLine{59                 \textcolor{keywordflow}{if}(map1[i][j] == 1)\{}
-\DoxyCodeLine{60                     setcolorText(color2, 1);}
-\DoxyCodeLine{61                     gotoXY(70 + j*2, 7 + i);}
-\DoxyCodeLine{62                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
-\DoxyCodeLine{63                 \}}
-\DoxyCodeLine{64             \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{65                 printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{66             \}}
-\DoxyCodeLine{67         \}}
-\DoxyCodeLine{68         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{69     \}}
-\DoxyCodeLine{70     setcolorText(color0, 1);}
-\DoxyCodeLine{71     saltaRighe(3);}
-\DoxyCodeLine{72 \}}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74 \textcolor{keywordtype}{void} printMap2(\textcolor{keywordtype}{int} map[15][10])\{}
-\DoxyCodeLine{75     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{76     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{77         centerText(100);}
-\DoxyCodeLine{78         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{79             \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{80                 setcolorText(\textcolor{stringliteral}{"{}red"{}}, 1);}
-\DoxyCodeLine{81             \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{82                 setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
-\DoxyCodeLine{83             \}}
-\DoxyCodeLine{84             printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{85         \}}
-\DoxyCodeLine{86         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{87     \}}
-\DoxyCodeLine{88 \}}
-\DoxyCodeLine{89 }
-\DoxyCodeLine{90 \textcolor{keywordtype}{void} printTitle(\textcolor{keywordtype}{char} *title)\{}
-\DoxyCodeLine{91     centerText(110);}
-\DoxyCodeLine{92     printf(\textcolor{stringliteral}{"{}\%s"{}}, title);}
-\DoxyCodeLine{93     saltaRighe(3);}
-\DoxyCodeLine{94 \}}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{96 \textcolor{keywordtype}{void} printGameMenu()\{}
-\DoxyCodeLine{97     printf(\textcolor{stringliteral}{"{}1 -\/ SINGLE PLAYER\(\backslash\)n"{}});}
-\DoxyCodeLine{98     printf(\textcolor{stringliteral}{"{}2 -\/ MULTIPLAYER\(\backslash\)n"{}});}
-\DoxyCodeLine{99     printf(\textcolor{stringliteral}{"{}3 -\/ GAME INSTRUCTIONS\(\backslash\)n"{}});}
-\DoxyCodeLine{100     printf(\textcolor{stringliteral}{"{}0 -\/ QUIT\(\backslash\)n"{}});}
-\DoxyCodeLine{101 \}}
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103 \textcolor{keywordtype}{void} printSModeOptions()\{}
-\DoxyCodeLine{104     printf(\textcolor{stringliteral}{"{}1 -\/ SELECT A PIECE\(\backslash\)n"{}});}
-\DoxyCodeLine{105     printf(\textcolor{stringliteral}{"{}2 -\/ MOVE THE PIECE\(\backslash\)n"{}});}
-\DoxyCodeLine{106     printf(\textcolor{stringliteral}{"{}0 -\/ Quit\(\backslash\)n"{}});}
-\DoxyCodeLine{107 \}}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109 \textcolor{keywordtype}{void} printAvaiblePieces(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */}}
-\DoxyCodeLine{110     \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{111     \textcolor{keywordflow}{for}(i = 0; i < dim; i++)\{}
-\DoxyCodeLine{112         \textcolor{keywordflow}{if}(pieces[i] > 0)\{}
-\DoxyCodeLine{113             }
-\DoxyCodeLine{114             printf(\textcolor{stringliteral}{"{}Piece \%d : "{}}, i);}
-\DoxyCodeLine{115             setcolorText(colorPiece, 1);}
-\DoxyCodeLine{116             printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)n"{}}, pieces[i]);}
-\DoxyCodeLine{117             setcolorText(colorMode, 1);}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{120             printf(\textcolor{stringliteral}{"{}Piece \%d is not avaible! \(\backslash\)n"{}}, i);}
-\DoxyCodeLine{121         \}}
-\DoxyCodeLine{122     \}}
-\DoxyCodeLine{123 \}}
-\DoxyCodeLine{124 }
-\DoxyCodeLine{125 \textcolor{keywordtype}{void} printLegendaPieces(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{}
-\DoxyCodeLine{126     setcolorText(colorMode, 1);}
-\DoxyCodeLine{127     printf(\textcolor{stringliteral}{"{}0 -\/ "{}});}
-\DoxyCodeLine{128     setcolorText(colorPiece, 1);}
-\DoxyCodeLine{129     printf(\textcolor{stringliteral}{"{}T\(\backslash\)n"{}});}
-\DoxyCodeLine{130     setcolorText(colorMode, 1);}
-\DoxyCodeLine{131     printf(\textcolor{stringliteral}{"{}1 -\/ "{}});}
-\DoxyCodeLine{132     setcolorText(colorPiece, 1);}
-\DoxyCodeLine{133     printf(\textcolor{stringliteral}{"{}Z\(\backslash\)n"{}});}
-\DoxyCodeLine{134     setcolorText(colorMode, 1);}
-\DoxyCodeLine{135     printf(\textcolor{stringliteral}{"{}2 -\/ "{}});}
-\DoxyCodeLine{136     setcolorText(colorPiece, 1);}
-\DoxyCodeLine{137     printf(\textcolor{stringliteral}{"{}I\(\backslash\)n"{}});}
-\DoxyCodeLine{138     setcolorText(colorMode, 1);}
-\DoxyCodeLine{139     printf(\textcolor{stringliteral}{"{}3 -\/ "{}});}
-\DoxyCodeLine{140     setcolorText(colorPiece, 1);}
-\DoxyCodeLine{141     printf(\textcolor{stringliteral}{"{}L\(\backslash\)n"{}});}
-\DoxyCodeLine{142     setcolorText(colorMode, 1);}
-\DoxyCodeLine{143     printf(\textcolor{stringliteral}{"{}4 -\/ "{}});}
-\DoxyCodeLine{144     setcolorText(colorPiece, 1);}
-\DoxyCodeLine{145     printf(\textcolor{stringliteral}{"{}Lr\(\backslash\)n"{}});}
-\DoxyCodeLine{146     setcolorText(colorMode, 1);}
-\DoxyCodeLine{147     printf(\textcolor{stringliteral}{"{}5 -\/ "{}});}
-\DoxyCodeLine{148     setcolorText(colorPiece, 1);}
-\DoxyCodeLine{149     printf(\textcolor{stringliteral}{"{}O\(\backslash\)n"{}});}
-\DoxyCodeLine{150     setcolorText(colorMode, 1);}
-\DoxyCodeLine{151 \}}
-\DoxyCodeLine{152 }
-\DoxyCodeLine{153 \textcolor{keywordtype}{void} printLegendaAllPieces(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{154     \textcolor{keywordtype}{int} i, j, k;}
-\DoxyCodeLine{155     \textcolor{keywordtype}{int} gx = 28, gy = 25;}
-\DoxyCodeLine{156     \textcolor{keywordtype}{int} f;}
-\DoxyCodeLine{157     \textcolor{keywordtype}{int} x = 4, y = 0;}
-\DoxyCodeLine{158     \textcolor{keywordtype}{int} map[15][10];}
-\DoxyCodeLine{159 }
-\DoxyCodeLine{160     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
-\DoxyCodeLine{161         \textcolor{keywordflow}{if}(k == 0)\{}
-\DoxyCodeLine{162             gotoXY(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{163             printf(\textcolor{stringliteral}{"{}T"{}});}
-\DoxyCodeLine{164         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{}
-\DoxyCodeLine{165             gotoXY(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{166             printf(\textcolor{stringliteral}{"{}Z"{}});}
-\DoxyCodeLine{167         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
-\DoxyCodeLine{168             gotoXY(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{169             printf(\textcolor{stringliteral}{"{}I"{}});}
-\DoxyCodeLine{170         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
-\DoxyCodeLine{171             gotoXY(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{172             printf(\textcolor{stringliteral}{"{}L"{}});}
-\DoxyCodeLine{173         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
-\DoxyCodeLine{174             gotoXY(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{175             printf(\textcolor{stringliteral}{"{}Lr"{}});}
-\DoxyCodeLine{176         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
-\DoxyCodeLine{177             gotoXY(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{178             printf(\textcolor{stringliteral}{"{}O"{}});}
-\DoxyCodeLine{179         \}}
-\DoxyCodeLine{180     \}}
-\DoxyCodeLine{181 }
-\DoxyCodeLine{182     setcolorText(colorMode, 1);}
-\DoxyCodeLine{183     \textcolor{keywordflow}{for}(i = 0; i < 4; i++)\{}
-\DoxyCodeLine{184         gotoXY(gx -\/ 11, 25 + i*4);}
-\DoxyCodeLine{185         printf(\textcolor{stringliteral}{"{}ROTATION: \%d"{}}, i);}
-\DoxyCodeLine{186     \}}
-\DoxyCodeLine{187     setcolorText(colorPiece, 1);}
-\DoxyCodeLine{188     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
-\DoxyCodeLine{189         initMap(map);}
-\DoxyCodeLine{190         \textcolor{keywordflow}{if}(k == 0)\{}
-\DoxyCodeLine{191             f = drawT(map, x, y);}
-\DoxyCodeLine{192             f = drawT1(map, x, y + 3);}
-\DoxyCodeLine{193             f = drawT2(map, x, y + 6);}
-\DoxyCodeLine{194             f = drawT3(map, x, y + 10);}
-\DoxyCodeLine{195             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{196                 gotoXY(gx + k, gy + i);}
-\DoxyCodeLine{197                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{198                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{199                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{200                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{201                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{202                     \}  }
-\DoxyCodeLine{203                 \}}
-\DoxyCodeLine{204                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{205             \}}
-\DoxyCodeLine{206             }
-\DoxyCodeLine{207         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{ }
-\DoxyCodeLine{208             f = drawZ(map, x, y);}
-\DoxyCodeLine{209             f = drawZ1(map, x, y + 3);}
-\DoxyCodeLine{210             f = drawZ2(map, x, y + 7);}
-\DoxyCodeLine{211             f = drawZ3(map, x, y + 10);}
-\DoxyCodeLine{212             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{213                 gotoXY(gx + k, gy + i);}
-\DoxyCodeLine{214                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{215                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{216                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{217                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{218                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{219                     \}  }
-\DoxyCodeLine{220                 \}}
-\DoxyCodeLine{221                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{222             \}}
-\DoxyCodeLine{223 }
-\DoxyCodeLine{224         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
-\DoxyCodeLine{225             f = drawI(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{226             f = drawI1(map, x -\/ 1, y + 5);}
-\DoxyCodeLine{227             f = drawI(map, x, y + 7);}
-\DoxyCodeLine{228             f = drawI1(map, x -\/ 1, y + 12);}
-\DoxyCodeLine{229             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{230                 gotoXY(gx + k, gy + i);}
-\DoxyCodeLine{231                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{232                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{233                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{234                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{235                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{236                     \}  }
-\DoxyCodeLine{237                 \}}
-\DoxyCodeLine{238                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{239             \}}
-\DoxyCodeLine{240 }
-\DoxyCodeLine{241         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
-\DoxyCodeLine{242             f = drawL(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{243             f = drawL1(map, x, y + 4);}
-\DoxyCodeLine{244             f = drawL2(map, x, y + 7);}
-\DoxyCodeLine{245             f = drawL3(map, x, y + 11);}
-\DoxyCodeLine{246             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{247                 gotoXY(gx + k, gy + i);}
-\DoxyCodeLine{248                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{249                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{250                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{251                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{252                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{253                     \}  }
-\DoxyCodeLine{254                 \}}
-\DoxyCodeLine{255                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{256             \}}
-\DoxyCodeLine{257 }
-\DoxyCodeLine{258         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
-\DoxyCodeLine{259             f = drawLr(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{260             f = drawLr1(map, x, y + 4);}
-\DoxyCodeLine{261             f = drawLr2(map, x, y + 7);}
-\DoxyCodeLine{262             f = drawLr3(map, x, y + 11);}
-\DoxyCodeLine{263             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{264                 gotoXY(gx + k, gy + i);}
-\DoxyCodeLine{265                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{266                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{267                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{268                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{269                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{270                     \}  }
-\DoxyCodeLine{271                 \}}
-\DoxyCodeLine{272                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{273             \}            }
-\DoxyCodeLine{274 }
-\DoxyCodeLine{275         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
-\DoxyCodeLine{276             f = drawO(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{277             f = drawO(map, x, y + 4);}
-\DoxyCodeLine{278             f = drawO(map, x, y + 7);}
-\DoxyCodeLine{279             f = drawO(map, x, y + 11);}
-\DoxyCodeLine{280             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{281                 gotoXY(gx + k, gy + i);}
-\DoxyCodeLine{282                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{283                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{284                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{285                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{286                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{287                     \}  }
-\DoxyCodeLine{288                 \}}
-\DoxyCodeLine{289                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{290             \} }
-\DoxyCodeLine{291         \}}
-\DoxyCodeLine{292     \}}
-\DoxyCodeLine{293     setcolorText(colorMode, 1);}
-\DoxyCodeLine{294 \}}
-\DoxyCodeLine{295 }
-\DoxyCodeLine{296 \textcolor{keywordtype}{void} printMoveMenu(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} *colorMode)\{}
-\DoxyCodeLine{297     setcolorText(colorMode, 1);}
-\DoxyCodeLine{298     printf(\textcolor{stringliteral}{"{}HOW TO SELECT THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{299     printf(\textcolor{stringliteral}{"{}   1-\/ SELECT THE PIECE SHAPE TYPE: \(\backslash\)n"{}});}
-\DoxyCodeLine{300     centerText(100);}
-\DoxyCodeLine{301     printf(\textcolor{stringliteral}{"{}EACH LETTER IS ABBINED WITH A NUMBER: \(\backslash\)n"{}});}
-\DoxyCodeLine{302     centerText(100);}
-\DoxyCodeLine{303     printf(\textcolor{stringliteral}{"{} T = 0, Z = 1,  I = 2, L = 3,  Lr = 4,  O = 5\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{304     printf(\textcolor{stringliteral}{"{}   2-\/ SELECT THE PIECE ROTATION: \(\backslash\)n"{}});}
-\DoxyCodeLine{305     centerText(100);}
-\DoxyCodeLine{306     printf(\textcolor{stringliteral}{"{}YOU CAN CHOOSE A ROTATION FROM 0 TO 3\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{307     printf(\textcolor{stringliteral}{"{}HOW TO MOVE THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{308     centerText(100);}
-\DoxyCodeLine{309     printf(\textcolor{stringliteral}{"{}USE THE A-\/D KEYS TO MOVE THE PIECE AROUND THE MAP \(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{310     centerText(100);}
-\DoxyCodeLine{311     printf(\textcolor{stringliteral}{"{}USE THE W KEY TO ROTATE THE PIECE \(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{312     centerText(100);}
-\DoxyCodeLine{313     printf(\textcolor{stringliteral}{"{}USE 0-\/1-\/2-\/3 TO SET THE EXACT ROTATION \(\backslash\)n\(\backslash\)n"{}}, x, y);}
-\DoxyCodeLine{314     centerText(100);}
-\DoxyCodeLine{315     printf(\textcolor{stringliteral}{"{}ENTER Q TO QUIT AND SET THE PIECE AT X:\%d Y:\%d POSITION \(\backslash\)n\(\backslash\)n"{}}, x, y);}
-\DoxyCodeLine{316 }
-\DoxyCodeLine{317 \}}
-\DoxyCodeLine{318 }
-\DoxyCodeLine{319 \textcolor{keywordtype}{void} printScoreName(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player, \textcolor{keywordtype}{char} name[20])\{}
-\DoxyCodeLine{320     gotoXY(100, y);}
-\DoxyCodeLine{321     setcolorText(colorMode, 1);}
-\DoxyCodeLine{322     \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'1'})\{}
-\DoxyCodeLine{323         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
-\DoxyCodeLine{324     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'2'})\{}
-\DoxyCodeLine{325         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
-\DoxyCodeLine{326     \}}
-\DoxyCodeLine{327     setcolorText(\textcolor{stringliteral}{"{}blue"{}}, 1);}
-\DoxyCodeLine{328 \}}
-\DoxyCodeLine{329 }
-\DoxyCodeLine{330 \textcolor{keywordtype}{void} printScorePC(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player)\{}
-\DoxyCodeLine{331     gotoXY(100, y);}
-\DoxyCodeLine{332     setcolorText(colorMode, 1);}
-\DoxyCodeLine{333     printf(\textcolor{stringliteral}{"{}SCORE PC: \%d"{}}, score);}
-\DoxyCodeLine{334     setcolorText(\textcolor{stringliteral}{"{}blue"{}}, 1);}
-\DoxyCodeLine{335     \textcolor{comment}{/*gotoXY(100, y);}}
-\DoxyCodeLine{336 \textcolor{comment}{    setcolorText(colorMode, 1);}}
-\DoxyCodeLine{337 \textcolor{comment}{    if(player == '1')\{}}
-\DoxyCodeLine{338 \textcolor{comment}{        printf("{}SCORE PLAYER 1: \%d"{}, score);}}
-\DoxyCodeLine{339 \textcolor{comment}{    \} else if(player == '2')\{}}
-\DoxyCodeLine{340 \textcolor{comment}{        printf("{}SCORE PLAYER 2: \%d"{}, score);}}
-\DoxyCodeLine{341 \textcolor{comment}{    \} else \{}}
-\DoxyCodeLine{342 \textcolor{comment}{        printf("{}SCORE PC: \%d"{}, score);}}
-\DoxyCodeLine{343 \textcolor{comment}{    \}}}
-\DoxyCodeLine{344 \textcolor{comment}{    setcolorText("{}blue"{}, 1);*/}}
-\DoxyCodeLine{345 \}}
-\DoxyCodeLine{346 }
-\DoxyCodeLine{347 \textcolor{keywordtype}{void} printWinner(\textcolor{keywordtype}{char} name[20])\{}
-\DoxyCodeLine{348     system(\textcolor{stringliteral}{"{}cls"{}});}
-\DoxyCodeLine{349     setcolorText(\textcolor{stringliteral}{"{}green"{}}, 1);}
-\DoxyCodeLine{350     centerText(100);}
-\DoxyCodeLine{351     printf(\textcolor{stringliteral}{"{}THE WINNER IS \%s \(\backslash\)n"{}}, name);}
-\DoxyCodeLine{352     delay(2.0); \textcolor{comment}{/*due . 0 secondi*/}}
-\DoxyCodeLine{353     setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
-\DoxyCodeLine{354 \}}
-\DoxyCodeLine{355 }
-\DoxyCodeLine{356 \textcolor{keywordtype}{void} printLoser(\textcolor{keywordtype}{char} name[20])\{}
-\DoxyCodeLine{357     system(\textcolor{stringliteral}{"{}cls"{}});}
-\DoxyCodeLine{358     setcolorText(\textcolor{stringliteral}{"{}red"{}}, 1);}
-\DoxyCodeLine{359     centerText(100);}
-\DoxyCodeLine{360     printf(\textcolor{stringliteral}{"{}\%s LOOSE AGAINST PC"{}}, name);}
-\DoxyCodeLine{361     delay(2.0);}
-\DoxyCodeLine{362     setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
-\DoxyCodeLine{363 \}}
-\DoxyCodeLine{364 }
-\DoxyCodeLine{365 \textcolor{keywordtype}{void} printPareggio()\{}
-\DoxyCodeLine{366     system(\textcolor{stringliteral}{"{}cls"{}});}
-\DoxyCodeLine{367     setcolorText(\textcolor{stringliteral}{"{}yellow"{}}, 1);}
-\DoxyCodeLine{368     printTitle(\textcolor{stringliteral}{"{}DRAW"{}});}
-\DoxyCodeLine{369     delay(2.0);}
-\DoxyCodeLine{370     setcolorText(\textcolor{stringliteral}{"{}white"{}}, 1);}
-\DoxyCodeLine{371 \}}
-\DoxyCodeLine{372 }
-\DoxyCodeLine{373 \textcolor{keywordtype}{void} dude()\{}
-\DoxyCodeLine{374     printf(\textcolor{stringliteral}{"{}DUDE\(\backslash\)n"{}});}
-\DoxyCodeLine{375 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00001}\mbox{\hyperlink{_print_8h_a2aa18c495cf17747e69b7fc8d45fe437}{00001}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2aa18c495cf17747e69b7fc8d45fe437}{printMap}}(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00002}00002     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00003}00003     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00004}00004         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00005}00005         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00006}00006             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1 || map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00007}00007                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00008}00008             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00009}00009                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00010}00010             \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00011}00011         \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00012}00012         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00013}00013     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00014}00014     }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00015}00015     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00016}00016 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00018}\mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{00018}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{printMapColor}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \textcolor{keywordtype}{char} *color0, \textcolor{keywordtype}{int} center)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00019}00019     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00020}00020     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00021}00021         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(center);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00022}00022         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00023}00023             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00024}00024                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00025}00025                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00026}00026             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00027}00027                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00028}00028                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00029}00029             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00030}00030                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00031}00031             \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00032}00032         \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00033}00033         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00035}00035     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00036}00036     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00037}00037 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00039}\mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{00039}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{printMaps}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \textcolor{keywordtype}{char} *\mbox{\hyperlink{trash_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, \textcolor{keywordtype}{char} *color0)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00040}00040     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00041}00041     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00042}00042         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00043}00043             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00044}00044                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00045}00045                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(40 + j*2, 7 + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00046}00046                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00047}00047                 \textcolor{comment}{/* second map */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00048}00048                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(70 + j*2, 7 + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00049}00049                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00051}00051             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1 || map1[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00052}00052                 \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00053}00053                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{trash_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00054}00054                     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(40 + j*2, 7 + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00055}00055                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00056}00056                 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00058}00058                 \textcolor{comment}{/* second map */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00059}00059                 \textcolor{keywordflow}{if}(map1[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00060}00060                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{trash_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00061}00061                     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(70 + j*2, 7 + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00062}00062                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00063}00063                 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00064}00064             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00065}00065                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00066}00066             \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00067}00067         \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00068}00068         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00070}00070     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00071}00071     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00072}00072 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00074}\mbox{\hyperlink{_print_8h_a9c20781191d0dadbbcea017aab19e83f}{00074}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a9c20781191d0dadbbcea017aab19e83f}{printMap2}}(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00075}00075     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00076}00076     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00077}00077         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00078}00078         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00079}00079             \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00080}00080                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}red"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00081}00081             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00082}00082                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00083}00083             \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00084}00084             printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00085}00085         \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00086}00086         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00087}00087     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00088}00088 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00090}\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{00090}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{printTitle}}(\textcolor{keywordtype}{char} *title)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00091}00091     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(110);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00092}00092     printf(\textcolor{stringliteral}{"{}\%s"{}}, title);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00093}00093     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00094}00094 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00096}\mbox{\hyperlink{_print_8h_ae5ced7d7e756c5e7cc57256ac6865aa3}{00096}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ae5ced7d7e756c5e7cc57256ac6865aa3}{printGameMenu}}()\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00097}00097     printf(\textcolor{stringliteral}{"{}1 -\/ SINGLE PLAYER\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00098}00098     printf(\textcolor{stringliteral}{"{}2 -\/ MULTIPLAYER\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00099}00099     printf(\textcolor{stringliteral}{"{}3 -\/ GAME INSTRUCTIONS\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00100}00100     printf(\textcolor{stringliteral}{"{}0 -\/ QUIT\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00101}00101 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00103}\mbox{\hyperlink{_print_8h_af93aaa5be98af25bcbce45e2048fe1c5}{00103}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_af93aaa5be98af25bcbce45e2048fe1c5}{printSModeOptions}}()\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00104}00104     printf(\textcolor{stringliteral}{"{}1 -\/ SELECT A PIECE\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00105}00105     printf(\textcolor{stringliteral}{"{}2 -\/ MOVE THE PIECE\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00106}00106     printf(\textcolor{stringliteral}{"{}0 -\/ Quit\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00107}00107 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00109}\mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{00109}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{printAvaiblePieces}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} \mbox{\hyperlink{trash_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00110}00110     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00111}00111     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00112}00112         \textcolor{keywordflow}{if}(pieces[i] > 0)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00113}00113             }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00114}00114             printf(\textcolor{stringliteral}{"{}Piece \%d : "{}}, i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00115}00115             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00116}00116             printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)n"{}}, pieces[i]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00117}00117             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00119}00119         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00120}00120             printf(\textcolor{stringliteral}{"{}Piece \%d is not avaible! \(\backslash\)n"{}}, i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00121}00121         \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00122}00122     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00123}00123 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00125}\mbox{\hyperlink{_print_8h_ae77770b22209ba7e20e82bbe37cc2b25}{00125}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ae77770b22209ba7e20e82bbe37cc2b25}{printLegendaPieces}}(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00126}00126     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00127}00127     printf(\textcolor{stringliteral}{"{}0 -\/ "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00128}00128     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00129}00129     printf(\textcolor{stringliteral}{"{}T\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00130}00130     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00131}00131     printf(\textcolor{stringliteral}{"{}1 -\/ "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00132}00132     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00133}00133     printf(\textcolor{stringliteral}{"{}Z\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00134}00134     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00135}00135     printf(\textcolor{stringliteral}{"{}2 -\/ "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00136}00136     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00137}00137     printf(\textcolor{stringliteral}{"{}I\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00138}00138     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00139}00139     printf(\textcolor{stringliteral}{"{}3 -\/ "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00140}00140     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00141}00141     printf(\textcolor{stringliteral}{"{}L\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00142}00142     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00143}00143     printf(\textcolor{stringliteral}{"{}4 -\/ "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00144}00144     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00145}00145     printf(\textcolor{stringliteral}{"{}Lr\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00146}00146     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00147}00147     printf(\textcolor{stringliteral}{"{}5 -\/ "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00148}00148     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00149}00149     printf(\textcolor{stringliteral}{"{}O\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00150}00150     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00151}00151 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00153}\mbox{\hyperlink{_print_8h_a5c0024f7636f893e7c57e72c6f0e7f93}{00153}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a5c0024f7636f893e7c57e72c6f0e7f93}{printLegendaAllPieces}}(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00154}00154     \textcolor{keywordtype}{int} i, j, k;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00155}00155     \textcolor{keywordtype}{int} gx = 28, gy = 25;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00156}00156     \textcolor{keywordtype}{int} f;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00157}00157     \textcolor{keywordtype}{int} x = 4, y = 0;}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00158}00158     \textcolor{keywordtype}{int} map[15][10];}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00160}00160     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00161}00161         \textcolor{keywordflow}{if}(k == 0)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00162}00162             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00163}00163             printf(\textcolor{stringliteral}{"{}T"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00164}00164         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00165}00165             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00166}00166             printf(\textcolor{stringliteral}{"{}Z"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00167}00167         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00168}00168             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00169}00169             printf(\textcolor{stringliteral}{"{}I"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00170}00170         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00171}00171             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00172}00172             printf(\textcolor{stringliteral}{"{}L"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00173}00173         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00174}00174             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00175}00175             printf(\textcolor{stringliteral}{"{}Lr"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00176}00176         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00177}00177             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00178}00178             printf(\textcolor{stringliteral}{"{}O"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00179}00179         \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00180}00180     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00182}00182     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00183}00183     \textcolor{keywordflow}{for}(i = 0; i < 4; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00184}00184         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx -\/ 11, 25 + i*4);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00185}00185         printf(\textcolor{stringliteral}{"{}ROTATION: \%d"{}}, i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00186}00186     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00187}00187     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00188}00188     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00189}00189         \mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{initMap}}(map);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00190}00190         \textcolor{keywordflow}{if}(k == 0)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00191}00191             f = \mbox{\hyperlink{_draw_pieces_8h_aa3b575340bab8f3bec25b8776faadb6e}{drawT}}(map, x, y);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00192}00192             f = \mbox{\hyperlink{_draw_pieces_8h_a805a433c4b2d7b6fdf72b7a19e625740}{drawT1}}(map, x, y + 3);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00193}00193             f = \mbox{\hyperlink{_draw_pieces_8h_a3ff0916b18bf28f7a3ecb6aa9f0ac9e5}{drawT2}}(map, x, y + 6);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00194}00194             f = \mbox{\hyperlink{_draw_pieces_8h_ab4e33293ecaad87886da645fceacb5c7}{drawT3}}(map, x, y + 10);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00195}00195             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00196}00196                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00197}00197                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00198}00198                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00199}00199                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00200}00200                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00201}00201                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00202}00202                     \}  }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00203}00203                 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00204}00204                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00205}00205             \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00206}00206             }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00207}00207         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{ }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00208}00208             f = \mbox{\hyperlink{_draw_pieces_8h_a41d0e649c136de7512dd63649b48a323}{drawZ}}(map, x, y);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00209}00209             f = \mbox{\hyperlink{_draw_pieces_8h_ae9c8aae39834ed2147cc508fbd65d6f5}{drawZ1}}(map, x, y + 3);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00210}00210             f = \mbox{\hyperlink{_draw_pieces_8h_a3c6a275e0b3bec11b9e66eac47c6816f}{drawZ2}}(map, x, y + 7);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00211}00211             f = \mbox{\hyperlink{_draw_pieces_8h_a03e667be37f44af9ea5c05e1ebd6c2a9}{drawZ3}}(map, x, y + 10);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00212}00212             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00213}00213                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00214}00214                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00215}00215                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00216}00216                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00217}00217                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00218}00218                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00219}00219                     \}  }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00220}00220                 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00221}00221                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00222}00222             \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00224}00224         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00225}00225             f = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00226}00226             f = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x -\/ 1, y + 5);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00227}00227             f = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y + 7);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00228}00228             f = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x -\/ 1, y + 12);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00229}00229             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00230}00230                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00231}00231                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00232}00232                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00233}00233                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00234}00234                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00235}00235                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00236}00236                     \}  }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00237}00237                 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00238}00238                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00239}00239             \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00241}00241         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00242}00242             f = \mbox{\hyperlink{_draw_pieces_8h_ab230773ef3eb81dcdc7e9f531a43488a}{drawL}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00243}00243             f = \mbox{\hyperlink{_draw_pieces_8h_a0fce015e695a1e8cd4a5cc534fdafc7a}{drawL1}}(map, x, y + 4);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00244}00244             f = \mbox{\hyperlink{_draw_pieces_8h_ac9456f234576a39da9ba4168e41c20bb}{drawL2}}(map, x, y + 7);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00245}00245             f = \mbox{\hyperlink{_draw_pieces_8h_a266c5f3c4f76c89bc9bd1e543b88705c}{drawL3}}(map, x, y + 11);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00246}00246             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00247}00247                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00248}00248                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00249}00249                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00250}00250                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00251}00251                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00252}00252                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00253}00253                     \}  }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00254}00254                 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00255}00255                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00256}00256             \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00257}00257 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00258}00258         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00259}00259             f = \mbox{\hyperlink{_draw_pieces_8h_a8f2ed46cd55891a5926377152188b8ab}{drawLr}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00260}00260             f = \mbox{\hyperlink{_draw_pieces_8h_ada5d4f3503c3b5b06611e6a920d9e3e1}{drawLr1}}(map, x, y + 4);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00261}00261             f = \mbox{\hyperlink{_draw_pieces_8h_aaf5822c80dd59f4bf05ec11eb017f952}{drawLr2}}(map, x, y + 7);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00262}00262             f = \mbox{\hyperlink{_draw_pieces_8h_a2b3aa20da9bd5814a92c84337836e003}{drawLr3}}(map, x, y + 11);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00263}00263             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00264}00264                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00265}00265                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00266}00266                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00267}00267                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00268}00268                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00269}00269                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00270}00270                     \}  }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00271}00271                 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00272}00272                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00273}00273             \}            }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00275}00275         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00276}00276             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00277}00277             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 4);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00278}00278             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 7);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00279}00279             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 11);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00280}00280             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{trash_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00281}00281                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00282}00282                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{trash_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00283}00283                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00284}00284                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00285}00285                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00286}00286                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00287}00287                     \}  }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00288}00288                 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00289}00289                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00290}00290             \} }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00291}00291         \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00292}00292     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00293}00293     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00294}00294 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00295}00295 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00296}\mbox{\hyperlink{_print_8h_ad5deb4d6da93418db2c13080bae46bdc}{00296}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ad5deb4d6da93418db2c13080bae46bdc}{printMoveMenu}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} *colorMode)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00297}00297     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00298}00298     printf(\textcolor{stringliteral}{"{}HOW TO SELECT THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00299}00299     printf(\textcolor{stringliteral}{"{}   1-\/ SELECT THE PIECE SHAPE TYPE: \(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00300}00300     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00301}00301     printf(\textcolor{stringliteral}{"{}EACH LETTER IS ABBINED WITH A NUMBER: \(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00302}00302     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00303}00303     printf(\textcolor{stringliteral}{"{} T = 0, Z = 1,  I = 2, L = 3,  Lr = 4,  O = 5\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00304}00304     printf(\textcolor{stringliteral}{"{}   2-\/ SELECT THE PIECE ROTATION: \(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00305}00305     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00306}00306     printf(\textcolor{stringliteral}{"{}YOU CAN CHOOSE A ROTATION FROM 0 TO 3\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00307}00307     printf(\textcolor{stringliteral}{"{}HOW TO MOVE THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00308}00308     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00309}00309     printf(\textcolor{stringliteral}{"{}USE THE A-\/D KEYS TO MOVE THE PIECE AROUND THE MAP \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00310}00310     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00311}00311     printf(\textcolor{stringliteral}{"{}USE THE W KEY TO ROTATE THE PIECE \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00312}00312     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00313}00313     printf(\textcolor{stringliteral}{"{}USE 0-\/1-\/2-\/3 TO SET THE EXACT ROTATION \(\backslash\)n\(\backslash\)n"{}}, x, y);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00314}00314     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00315}00315     printf(\textcolor{stringliteral}{"{}ENTER Q TO QUIT AND SET THE PIECE AT X:\%d Y:\%d POSITION \(\backslash\)n\(\backslash\)n"{}}, x, y);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00316}00316 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00317}00317 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00318}00318 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00319}\mbox{\hyperlink{_print_8h_aab849fdc6e864a042e075a698cb0a6b5}{00319}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_aab849fdc6e864a042e075a698cb0a6b5}{printScoreName}}(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player, \textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00320}00320     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(100, y);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00321}00321     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00322}00322     \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'1'})\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00323}00323         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00324}00324     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'2'})\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00325}00325         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00326}00326     \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00327}00327     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}blue"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00328}00328 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00329}00329 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00330}\mbox{\hyperlink{_print_8h_a535d6e965412bba0c9f8b027d8160b60}{00330}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a535d6e965412bba0c9f8b027d8160b60}{printScorePC}}(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player)\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00331}00331     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(100, y);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00332}00332     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00333}00333     printf(\textcolor{stringliteral}{"{}SCORE PC: \%d"{}}, score);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00334}00334     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}blue"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00335}00335     \textcolor{comment}{/*gotoXY(100, y);}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00336}00336 \textcolor{comment}{    setcolorText(colorMode, 1);}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00337}00337 \textcolor{comment}{    if(player == '1')\{}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00338}00338 \textcolor{comment}{        printf("{}SCORE PLAYER 1: \%d"{}, score);}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00339}00339 \textcolor{comment}{    \} else if(player == '2')\{}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00340}00340 \textcolor{comment}{        printf("{}SCORE PLAYER 2: \%d"{}, score);}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00341}00341 \textcolor{comment}{    \} else \{}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00342}00342 \textcolor{comment}{        printf("{}SCORE PC: \%d"{}, score);}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00343}00343 \textcolor{comment}{    \}}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00344}00344 \textcolor{comment}{    setcolorText("{}blue"{}, 1);*/}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00345}00345 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00346}00346 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00347}\mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{00347}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(\textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00348}00348     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00349}00349     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}green"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00350}00350     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00351}00351     printf(\textcolor{stringliteral}{"{}THE WINNER IS \%s \(\backslash\)n"{}}, name);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00352}00352     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0); \textcolor{comment}{/*due . 0 secondi*/}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00353}00353     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00354}00354 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00355}00355 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00356}\mbox{\hyperlink{_print_8h_a9fbc1f7e744174b1dab9de2a2a923803}{00356}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a9fbc1f7e744174b1dab9de2a2a923803}{printLoser}}(\textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00357}00357     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00358}00358     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}red"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00359}00359     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00360}00360     printf(\textcolor{stringliteral}{"{}\%s LOOSE AGAINST PC"{}}, name);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00361}00361     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00362}00362     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00363}00363 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00364}00364 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00365}\mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{00365}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{printPareggio}}()\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00366}00366     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00367}00367     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}yellow"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00368}00368     \mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{printTitle}}(\textcolor{stringliteral}{"{}DRAW"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00369}00369     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00370}00370     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00371}00371 \}}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00372}00372 }
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00373}\mbox{\hyperlink{_print_8h_a8252c60e6e40b41712045f3f6ef50d95}{00373}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a8252c60e6e40b41712045f3f6ef50d95}{dude}}()\{}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00374}00374     printf(\textcolor{stringliteral}{"{}DUDE\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_print_8h_source_l00375}00375 \}}
 
 \end{DoxyCode}

@@ -1,0 +1,200 @@
+\hypertarget{_logic_8h}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Logic.h File Reference}
+\label{_logic_8h}\index{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/Tetris/Logic.h@{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/Tetris/Logic.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{check\+Avaible}} (int $\ast$pieces, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int selected)
+\item 
+int \mbox{\hyperlink{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}{select\+Piece}} (int $\ast$pieces, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, char $\ast$color\+Piece)
+\item 
+int \mbox{\hyperlink{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}{select\+Rotation}} (char $\ast$color\+Piece)
+\item 
+int \mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{draw\+Selected}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int selected, int rotation)
+\item 
+void \mbox{\hyperlink{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}{moveback\+Selected}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int selected, int rotation)
+\item 
+void \mbox{\hyperlink{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}{Fall\+Column}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int j)
+\item 
+void \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{Fall\+All}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]})
+\item 
+void \mbox{\hyperlink{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}{delete\+Row}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int i)
+\item 
+int \mbox{\hyperlink{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}{count\+Rows}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]})
+\item 
+void \mbox{\hyperlink{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}{update\+Score\+SM}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int $\ast$score)
+\item 
+void \mbox{\hyperlink{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}{invert\+Enemy}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int invert)
+\item 
+int \mbox{\hyperlink{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}{update\+Score\+MP2}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int $\ast$score)
+\item 
+void \mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{check\+End\+Game}} (int avaiblep\mbox{[}6\mbox{]}, int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int $\ast$won)
+\item 
+void \mbox{\hyperlink{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}{check\+Win\+MP}} (char name\mbox{[}20\mbox{]}, char name1\mbox{[}20\mbox{]}, int score, int score1)
+\item 
+void \mbox{\hyperlink{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}{check\+Win\+MPC}} (char name\mbox{[}20\mbox{]}, int score, int score1)
+\item 
+int \mbox{\hyperlink{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}{who\+Enemy}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}\label{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}} 
+\index{Logic.h@{Logic.h}!checkAvaible@{checkAvaible}}
+\index{checkAvaible@{checkAvaible}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{checkAvaible()}{checkAvaible()}}
+{\footnotesize\ttfamily int check\+Avaible (\begin{DoxyParamCaption}\item[{int $\ast$}]{pieces,  }\item[{int}]{dim,  }\item[{int}]{selected }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00001}{1}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}\label{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}} 
+\index{Logic.h@{Logic.h}!checkEndGame@{checkEndGame}}
+\index{checkEndGame@{checkEndGame}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{checkEndGame()}{checkEndGame()}}
+{\footnotesize\ttfamily void check\+End\+Game (\begin{DoxyParamCaption}\item[{int}]{avaiblep\mbox{[}6\mbox{]},  }\item[{int}]{dim,  }\item[{int $\ast$}]{won }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00277}{277}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}\label{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}} 
+\index{Logic.h@{Logic.h}!checkWinMP@{checkWinMP}}
+\index{checkWinMP@{checkWinMP}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{checkWinMP()}{checkWinMP()}}
+{\footnotesize\ttfamily void check\+Win\+MP (\begin{DoxyParamCaption}\item[{char}]{name\mbox{[}20\mbox{]},  }\item[{char}]{name1\mbox{[}20\mbox{]},  }\item[{int}]{score,  }\item[{int}]{score1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00290}{290}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}\label{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}} 
+\index{Logic.h@{Logic.h}!checkWinMPC@{checkWinMPC}}
+\index{checkWinMPC@{checkWinMPC}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{checkWinMPC()}{checkWinMPC()}}
+{\footnotesize\ttfamily void check\+Win\+MPC (\begin{DoxyParamCaption}\item[{char}]{name\mbox{[}20\mbox{]},  }\item[{int}]{score,  }\item[{int}]{score1 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00302}{302}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}\label{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}} 
+\index{Logic.h@{Logic.h}!countRows@{countRows}}
+\index{countRows@{countRows}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{countRows()}{countRows()}}
+{\footnotesize\ttfamily int count\+Rows (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00186}{186}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}\label{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}} 
+\index{Logic.h@{Logic.h}!deleteRow@{deleteRow}}
+\index{deleteRow@{deleteRow}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{deleteRow()}{deleteRow()}}
+{\footnotesize\ttfamily void delete\+Row (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00175}{175}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}\label{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}} 
+\index{Logic.h@{Logic.h}!drawSelected@{drawSelected}}
+\index{drawSelected@{drawSelected}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{drawSelected()}{drawSelected()}}
+{\footnotesize\ttfamily int draw\+Selected (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{selected,  }\item[{int}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00033}{33}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}\label{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}} 
+\index{Logic.h@{Logic.h}!FallAll@{FallAll}}
+\index{FallAll@{FallAll}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{FallAll()}{FallAll()}}
+{\footnotesize\ttfamily void Fall\+All (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00168}{168}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}\label{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}} 
+\index{Logic.h@{Logic.h}!FallColumn@{FallColumn}}
+\index{FallColumn@{FallColumn}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{FallColumn()}{FallColumn()}}
+{\footnotesize\ttfamily void Fall\+Column (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00152}{152}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}\label{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}} 
+\index{Logic.h@{Logic.h}!invertEnemy@{invertEnemy}}
+\index{invertEnemy@{invertEnemy}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{invertEnemy()}{invertEnemy()}}
+{\footnotesize\ttfamily void invert\+Enemy (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{invert }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00234}{234}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}\label{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}} 
+\index{Logic.h@{Logic.h}!movebackSelected@{movebackSelected}}
+\index{movebackSelected@{movebackSelected}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{movebackSelected()}{movebackSelected()}}
+{\footnotesize\ttfamily void moveback\+Selected (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{selected,  }\item[{int}]{rotation }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00091}{91}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}\label{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}} 
+\index{Logic.h@{Logic.h}!selectPiece@{selectPiece}}
+\index{selectPiece@{selectPiece}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{selectPiece()}{selectPiece()}}
+{\footnotesize\ttfamily int select\+Piece (\begin{DoxyParamCaption}\item[{int $\ast$}]{pieces,  }\item[{int}]{dim,  }\item[{char $\ast$}]{color\+Piece }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00008}{8}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}\label{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}} 
+\index{Logic.h@{Logic.h}!selectRotation@{selectRotation}}
+\index{selectRotation@{selectRotation}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{selectRotation()}{selectRotation()}}
+{\footnotesize\ttfamily int select\+Rotation (\begin{DoxyParamCaption}\item[{char $\ast$}]{color\+Piece }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00022}{22}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}\label{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}} 
+\index{Logic.h@{Logic.h}!updateScoreMP2@{updateScoreMP2}}
+\index{updateScoreMP2@{updateScoreMP2}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{updateScoreMP2()}{updateScoreMP2()}}
+{\footnotesize\ttfamily int update\+Score\+MP2 (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int $\ast$}]{score }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00248}{248}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}\label{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}} 
+\index{Logic.h@{Logic.h}!updateScoreSM@{updateScoreSM}}
+\index{updateScoreSM@{updateScoreSM}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{updateScoreSM()}{updateScoreSM()}}
+{\footnotesize\ttfamily void update\+Score\+SM (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int $\ast$}]{score }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00210}{210}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+
+\mbox{\Hypertarget{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}\label{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}} 
+\index{Logic.h@{Logic.h}!whoEnemy@{whoEnemy}}
+\index{whoEnemy@{whoEnemy}!Logic.h@{Logic.h}}
+\doxysubsubsection{\texorpdfstring{whoEnemy()}{whoEnemy()}}
+{\footnotesize\ttfamily int who\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_logic_8h_source_l00314}{314}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
+

@@ -21,7 +21,11 @@ char *color2 = "purple";
 #include "Logic.h"
 #include "Cut.h"
 
-
+/**
+ * Main Game Loop
+ * @param[in] void
+ * @param[out] 0
+ */ 
 int main(void){
     
     int map[15][10];

@@ -1,0 +1,145 @@
+\hypertarget{tryhard_8c}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/tryhard.c File Reference}
+\label{tryhard_8c}\index{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/Tetris/tryhard.c@{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/Tetris/tryhard.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Text\+Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Initializer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Draw\+Pieces.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Extra.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Print.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Logic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Cut.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{tryhard_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main Game Loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{tryhard_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} = 15
+\item 
+const int \mbox{\hyperlink{tryhard_8c_a837aabdd54757cb86d0f66387511753f}{width}} = 10
+\item 
+const int \mbox{\hyperlink{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}} = 6
+\item 
+char $\ast$ \mbox{\hyperlink{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{color\+SM}} = \char`\"{}blue\char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{tryhard_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{color\+SMPiece}} = \char`\"{}green\char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{tryhard_8c_a7877c058e57d6f338d6864342ba596a7}{color\+MP}} = \char`\"{}red\char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}{color1}} = \char`\"{}yellow\char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}} = \char`\"{}purple\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tryhard_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{tryhard_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{tryhard.c@{tryhard.c}!main@{main}}
+\index{main@{main}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main Game Loop. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em 0} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00029}{29}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}\label{tryhard_8c_ad4b5e2b0713d831828332485842e91f1}} 
+\index{tryhard.c@{tryhard.c}!color1@{color1}}
+\index{color1@{color1}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{color1}{color1}}
+{\footnotesize\ttfamily char$\ast$ color1 = \char`\"{}yellow\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00012}{12}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
+\mbox{\Hypertarget{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}\label{tryhard_8c_a7662939be01f9535a08f5a53d83d6c01}} 
+\index{tryhard.c@{tryhard.c}!color2@{color2}}
+\index{color2@{color2}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{color2}{color2}}
+{\footnotesize\ttfamily char$\ast$ color2 = \char`\"{}purple\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00013}{13}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
+\mbox{\Hypertarget{tryhard_8c_a7877c058e57d6f338d6864342ba596a7}\label{tryhard_8c_a7877c058e57d6f338d6864342ba596a7}} 
+\index{tryhard.c@{tryhard.c}!colorMP@{colorMP}}
+\index{colorMP@{colorMP}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{colorMP}{colorMP}}
+{\footnotesize\ttfamily char$\ast$ color\+MP = \char`\"{}red\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00011}{11}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
+\mbox{\Hypertarget{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}\label{tryhard_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}} 
+\index{tryhard.c@{tryhard.c}!colorSM@{colorSM}}
+\index{colorSM@{colorSM}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{colorSM}{colorSM}}
+{\footnotesize\ttfamily char$\ast$ color\+SM = \char`\"{}blue\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00009}{9}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
+\mbox{\Hypertarget{tryhard_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}\label{tryhard_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}} 
+\index{tryhard.c@{tryhard.c}!colorSMPiece@{colorSMPiece}}
+\index{colorSMPiece@{colorSMPiece}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{colorSMPiece}{colorSMPiece}}
+{\footnotesize\ttfamily char$\ast$ color\+SMPiece = \char`\"{}green\char`\"{}}
+
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00010}{10}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
+\mbox{\Hypertarget{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}\label{tryhard_8c_afe4f94e033c0d1c57d407b4338a64b33}} 
+\index{tryhard.c@{tryhard.c}!dim@{dim}}
+\index{dim@{dim}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily const int dim = 6}
+
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00008}{8}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
+\mbox{\Hypertarget{tryhard_8c_ad13e9131f5062934438fa82334e4b2ee}\label{tryhard_8c_ad13e9131f5062934438fa82334e4b2ee}} 
+\index{tryhard.c@{tryhard.c}!height@{height}}
+\index{height@{height}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily const int height = 15}
+
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00007}{7}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
+\mbox{\Hypertarget{tryhard_8c_a837aabdd54757cb86d0f66387511753f}\label{tryhard_8c_a837aabdd54757cb86d0f66387511753f}} 
+\index{tryhard.c@{tryhard.c}!width@{width}}
+\index{width@{width}!tryhard.c@{tryhard.c}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily const int width = 10}
+
+
+
+Definition at line \mbox{\hyperlink{tryhard_8c_source_l00007}{7}} of file \mbox{\hyperlink{tryhard_8c_source}{tryhard.\+c}}.
+
