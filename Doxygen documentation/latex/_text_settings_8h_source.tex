@@ -1,39 +1,40 @@
 \hypertarget{_text_settings_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Text\+Settings.h}
 \mbox{\hyperlink{_text_settings_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00001}\mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{00001}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(\textcolor{keywordtype}{int} n)\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00002}00002     \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00003}00003     \textcolor{keywordflow}{for}(i = 0; i < n/2; i++)\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00004}00004         printf(\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00005}00005     \}}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00006}00006 \}}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00007}00007 }
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00008}\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{00008}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{keywordtype}{char} *color, \textcolor{keywordtype}{int} bold)\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00009}00009 }
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00010}00010     \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}black"{}} || color == \textcolor{stringliteral}{"{}BLACK"{}} || color == \textcolor{stringliteral}{"{}Black"{}}) \&\& (bold == 1 || bold == 0) )\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00011}00011         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;30m"{}}, bold);}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00012}00012     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}red"{}} || color == \textcolor{stringliteral}{"{}RED"{}} || color == \textcolor{stringliteral}{"{}Red"{}}) \&\& (bold == 1 || bold == 0) )\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00013}00013         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;31m"{}}, bold); \textcolor{comment}{/*funziona anche così*/}}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00014}00014     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}green"{}} || color == \textcolor{stringliteral}{"{}GREEN"{}} || color == \textcolor{stringliteral}{"{}Green"{}}) \&\& (bold == 1 || bold == 0) )\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00015}00015         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;32m"{}}, bold);}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00016}00016     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}yellow"{}} || color == \textcolor{stringliteral}{"{}YELLOW"{}} || color == \textcolor{stringliteral}{"{}Yellow"{}}) \&\& (bold == 1 || bold == 0) )\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00017}00017         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;33m"{}}, bold);}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00018}00018     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}blue"{}} || color == \textcolor{stringliteral}{"{}BLUE"{}} || color == \textcolor{stringliteral}{"{}Blue"{}}) \&\& (bold == 1 || bold == 0) )\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00019}00019         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;34m"{}}, bold);}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00020}00020     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}purple"{}} || color == \textcolor{stringliteral}{"{}PURPLE"{}} || color == \textcolor{stringliteral}{"{}Purple"{}}) \&\& (bold == 1 || bold == 0) )\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00021}00021         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;35m"{}}, bold);}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00022}00022     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}cyan"{}} || color == \textcolor{stringliteral}{"{}CYAN"{}} || color == \textcolor{stringliteral}{"{}Cyan"{}}) \&\& (bold == 1 || bold == 0) )\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00023}00023         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;36m"{}}, bold);}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00024}00024     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}white"{}} || color == \textcolor{stringliteral}{"{}WHITE"{}} || color == \textcolor{stringliteral}{"{}White"{}}) \&\& (bold == 1 || bold == 0) )\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00025}00025         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;37m"{}}, bold);}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00026}00026     \}}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00027}00027 \}}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00028}00028 }
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00029}\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{00029}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(\textcolor{keywordtype}{int} N)\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00030}00030     \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00031}00031     \textcolor{keywordflow}{for}(i = 0; i < N; i++)\{}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00032}00032         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00033}00033     \}}
-\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00034}00034 \}}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00005}\mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{00005}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(\textcolor{keywordtype}{int} n)\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00006}00006     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00007}00007     \textcolor{keywordflow}{for}(i = 0; i < n/2; i++)\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00008}00008         printf(\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00009}00009     \}}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00010}00010 \}}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00017}\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{00017}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{keywordtype}{char} *color, \textcolor{keywordtype}{int} bold)\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00019}00019     \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}black"{}} || color == \textcolor{stringliteral}{"{}BLACK"{}} || color == \textcolor{stringliteral}{"{}Black"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00020}00020         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;30m"{}}, bold);}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00021}00021     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}red"{}} || color == \textcolor{stringliteral}{"{}RED"{}} || color == \textcolor{stringliteral}{"{}Red"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00022}00022         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;31m"{}}, bold); \textcolor{comment}{/*funziona anche così*/}}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00023}00023     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}green"{}} || color == \textcolor{stringliteral}{"{}GREEN"{}} || color == \textcolor{stringliteral}{"{}Green"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00024}00024         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;32m"{}}, bold);}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00025}00025     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}yellow"{}} || color == \textcolor{stringliteral}{"{}YELLOW"{}} || color == \textcolor{stringliteral}{"{}Yellow"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00026}00026         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;33m"{}}, bold);}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00027}00027     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}blue"{}} || color == \textcolor{stringliteral}{"{}BLUE"{}} || color == \textcolor{stringliteral}{"{}Blue"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00028}00028         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;34m"{}}, bold);}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00029}00029     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}purple"{}} || color == \textcolor{stringliteral}{"{}PURPLE"{}} || color == \textcolor{stringliteral}{"{}Purple"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00030}00030         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;35m"{}}, bold);}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00031}00031     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}cyan"{}} || color == \textcolor{stringliteral}{"{}CYAN"{}} || color == \textcolor{stringliteral}{"{}Cyan"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00032}00032         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;36m"{}}, bold);}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00033}00033     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( (color == \textcolor{stringliteral}{"{}white"{}} || color == \textcolor{stringliteral}{"{}WHITE"{}} || color == \textcolor{stringliteral}{"{}White"{}}) \&\& (bold == 1 || bold == 0) )\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00034}00034         printf(\textcolor{stringliteral}{"{}\(\backslash\)033[\%d;37m"{}}, bold);}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00035}00035     \}}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00042}\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{00042}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(\textcolor{keywordtype}{int} N)\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00043}00043     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00044}00044     \textcolor{keywordflow}{for}(i = 0; i < N; i++)\{}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00045}00045         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00046}00046     \}}
+\DoxyCodeLine{\Hypertarget{_text_settings_8h_source_l00047}00047 \}}
 
 \end{DoxyCode}

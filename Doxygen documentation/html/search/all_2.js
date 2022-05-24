@@ -42,6 +42,5 @@ var searchData=
   ['drawz_39',['drawZ',['../_draw_pieces_8h.html#a41d0e649c136de7512dd63649b48a323',1,'DrawPieces.h']]],
   ['drawz1_40',['drawZ1',['../_draw_pieces_8h.html#ae9c8aae39834ed2147cc508fbd65d6f5',1,'DrawPieces.h']]],
   ['drawz2_41',['drawZ2',['../_draw_pieces_8h.html#a3c6a275e0b3bec11b9e66eac47c6816f',1,'DrawPieces.h']]],
-  ['drawz3_42',['drawZ3',['../_draw_pieces_8h.html#a03e667be37f44af9ea5c05e1ebd6c2a9',1,'DrawPieces.h']]],
-  ['dude_43',['dude',['../_print_8h.html#a8252c60e6e40b41712045f3f6ef50d95',1,'Print.h']]]
+  ['drawz3_42',['drawZ3',['../_draw_pieces_8h.html#a03e667be37f44af9ea5c05e1ebd6c2a9',1,'DrawPieces.h']]]
 ];
