@@ -3,374 +3,374 @@
 \mbox{\hyperlink{_print_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
-\DoxyCodeLine{7 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2aa18c495cf17747e69b7fc8d45fe437}{printMap}}(\textcolor{keywordtype}{int} map[15][10])\{}
-\DoxyCodeLine{8     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{9     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{10         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{11         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{12             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1 || map[i][j] == 1)\{}
-\DoxyCodeLine{13                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{14             \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{15                 printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{16             \}}
-\DoxyCodeLine{17         \}}
-\DoxyCodeLine{18         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{19     \}}
-\DoxyCodeLine{20     }
-\DoxyCodeLine{21     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
-\DoxyCodeLine{22 \}}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{34 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{printMapColor}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color0, \textcolor{keywordtype}{int} center)\{}
-\DoxyCodeLine{35     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{36     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{37         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(center);}
-\DoxyCodeLine{38         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{39             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1)\{}
-\DoxyCodeLine{40                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
-\DoxyCodeLine{41                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{42             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{43                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color1, 1);}
-\DoxyCodeLine{44                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{45             \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{46                 printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{47             \}}
-\DoxyCodeLine{48         \}}
-\DoxyCodeLine{49         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{50     \}}
-\DoxyCodeLine{51     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
-\DoxyCodeLine{52     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
-\DoxyCodeLine{53 \}}
-\DoxyCodeLine{54 }
-\DoxyCodeLine{66 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{printMaps}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char} *color1, \textcolor{keywordtype}{char} *color2, \textcolor{keywordtype}{char} *color0)\{}
-\DoxyCodeLine{67     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{68     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{69         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{70             \textcolor{keywordflow}{if}(j == 0 || j == width -\/ 1 || i == height -\/ 1)\{}
-\DoxyCodeLine{71                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
-\DoxyCodeLine{72                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(40 + j*2, 7 + i);}
-\DoxyCodeLine{73                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{74                 \textcolor{comment}{/* second map */}}
-\DoxyCodeLine{75                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(70 + j*2, 7 + i);}
-\DoxyCodeLine{76                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{78             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1 || map1[i][j] == 1)\{}
-\DoxyCodeLine{79                 \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{80                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color1, 1);}
-\DoxyCodeLine{81                     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(40 + j*2, 7 + i);}
-\DoxyCodeLine{82                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{83                 \}}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85                 \textcolor{comment}{/* second map */}}
-\DoxyCodeLine{86                 \textcolor{keywordflow}{if}(map1[i][j] == 1)\{}
-\DoxyCodeLine{87                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color2, 1);}
-\DoxyCodeLine{88                     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(70 + j*2, 7 + i);}
-\DoxyCodeLine{89                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
-\DoxyCodeLine{90                 \}}
-\DoxyCodeLine{91             \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{92                 printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{93             \}}
-\DoxyCodeLine{94         \}}
-\DoxyCodeLine{95         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{96     \}}
-\DoxyCodeLine{97     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
-\DoxyCodeLine{98     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
-\DoxyCodeLine{99 \}}
-\DoxyCodeLine{100 }
-\DoxyCodeLine{107 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a9c20781191d0dadbbcea017aab19e83f}{printMap2}}(\textcolor{keywordtype}{int} map[15][10])\{}
-\DoxyCodeLine{108     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{109     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{110         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{111         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{112             \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{113                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}red"{}}, 1);}
-\DoxyCodeLine{114             \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{115                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
-\DoxyCodeLine{116             \}}
-\DoxyCodeLine{117             printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{118         \}}
-\DoxyCodeLine{119         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{120     \}}
-\DoxyCodeLine{121 \}}
-\DoxyCodeLine{122 }
-\DoxyCodeLine{129 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{printTitle}}(\textcolor{keywordtype}{char} *title)\{}
-\DoxyCodeLine{130     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(110);}
-\DoxyCodeLine{131     printf(\textcolor{stringliteral}{"{}\%s"{}}, title);}
-\DoxyCodeLine{132     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
-\DoxyCodeLine{133 \}}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{138 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ae5ced7d7e756c5e7cc57256ac6865aa3}{printGameMenu}}()\{}
-\DoxyCodeLine{139     printf(\textcolor{stringliteral}{"{}1 -\/ SINGLE PLAYER\(\backslash\)n"{}});}
-\DoxyCodeLine{140     printf(\textcolor{stringliteral}{"{}2 -\/ MULTIPLAYER\(\backslash\)n"{}});}
-\DoxyCodeLine{141     printf(\textcolor{stringliteral}{"{}3 -\/ GAME INSTRUCTIONS\(\backslash\)n"{}});}
-\DoxyCodeLine{142     printf(\textcolor{stringliteral}{"{}0 -\/ QUIT\(\backslash\)n"{}});}
-\DoxyCodeLine{143 \}}
-\DoxyCodeLine{144 }
-\DoxyCodeLine{148 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_af93aaa5be98af25bcbce45e2048fe1c5}{printSModeOptions}}()\{}
-\DoxyCodeLine{149     printf(\textcolor{stringliteral}{"{}1 -\/ SELECT A PIECE\(\backslash\)n"{}});}
-\DoxyCodeLine{150     printf(\textcolor{stringliteral}{"{}2 -\/ MOVE THE PIECE\(\backslash\)n"{}});}
-\DoxyCodeLine{151     printf(\textcolor{stringliteral}{"{}0 -\/ Quit\(\backslash\)n"{}});}
-\DoxyCodeLine{152 \}}
-\DoxyCodeLine{153 }
-\DoxyCodeLine{162 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{printAvaiblePieces}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */}}
-\DoxyCodeLine{163     \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{164     \textcolor{keywordflow}{for}(i = 0; i < dim; i++)\{}
-\DoxyCodeLine{165         \textcolor{keywordflow}{if}(pieces[i] > 0)\{}
-\DoxyCodeLine{166             }
-\DoxyCodeLine{167             printf(\textcolor{stringliteral}{"{}Piece \%d : "{}}, i);}
-\DoxyCodeLine{168             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{169             printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)n"{}}, pieces[i]);}
-\DoxyCodeLine{170             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{171 }
-\DoxyCodeLine{172         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{173             printf(\textcolor{stringliteral}{"{}Piece \%d is not avaible! \(\backslash\)n"{}}, i);}
-\DoxyCodeLine{174         \}}
-\DoxyCodeLine{175     \}}
-\DoxyCodeLine{176 \}}
+\DoxyCodeLine{13 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2aa18c495cf17747e69b7fc8d45fe437}{printMap}}(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{15     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{16         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{17         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{18             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1 || map[i][j] == 1)\{}
+\DoxyCodeLine{19                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{20             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{21                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{22             \}}
+\DoxyCodeLine{23         \}}
+\DoxyCodeLine{24         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26     }
+\DoxyCodeLine{27     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
+\DoxyCodeLine{28 \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{40 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a1dd3cf15452a5093ce71f8d9ec956e9c}{printMapColor}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{char} *\mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \textcolor{keywordtype}{char} *color0, \textcolor{keywordtype}{int} center)\{}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{42     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{43         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(center);}
+\DoxyCodeLine{44         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{45             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1)\{}
+\DoxyCodeLine{46                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
+\DoxyCodeLine{47                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{48             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{49                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, 1);}
+\DoxyCodeLine{50                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{51             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{52                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{53             \}}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
+\DoxyCodeLine{58     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
+\DoxyCodeLine{59 \}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{72 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{printMaps}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} map1[15][10], \textcolor{keywordtype}{char} *\mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, \textcolor{keywordtype}{char} *\mbox{\hyperlink{main_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, \textcolor{keywordtype}{char} *color0)\{}
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{74     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{75         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{76             \textcolor{keywordflow}{if}(j == 0 || j == \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1 || i == \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1)\{}
+\DoxyCodeLine{77                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
+\DoxyCodeLine{78                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(40 + j*2, 7 + i);}
+\DoxyCodeLine{79                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{80                 \textcolor{comment}{/* second map */}}
+\DoxyCodeLine{81                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(70 + j*2, 7 + i);}
+\DoxyCodeLine{82                 printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1 || map1[i][j] == 1)\{}
+\DoxyCodeLine{85                 \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{86                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}}, 1);}
+\DoxyCodeLine{87                     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(40 + j*2, 7 + i);}
+\DoxyCodeLine{88                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{89                 \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91                 \textcolor{comment}{/* second map */}}
+\DoxyCodeLine{92                 \textcolor{keywordflow}{if}(map1[i][j] == 1)\{}
+\DoxyCodeLine{93                     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\mbox{\hyperlink{main_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}, 1);}
+\DoxyCodeLine{94                     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(70 + j*2, 7 + i);}
+\DoxyCodeLine{95                     printf(\textcolor{stringliteral}{"{}\%d "{}}, map1[i][j]);}
+\DoxyCodeLine{96                 \}}
+\DoxyCodeLine{97             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{98                 printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{99             \}}
+\DoxyCodeLine{100         \}}
+\DoxyCodeLine{101         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{102     \}}
+\DoxyCodeLine{103     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(color0, 1);}
+\DoxyCodeLine{104     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
+\DoxyCodeLine{105 \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{113 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a9c20781191d0dadbbcea017aab19e83f}{printMap2}}(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{115     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{116         \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{117         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{118             \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{119                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}red"{}}, 1);}
+\DoxyCodeLine{120             \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{121                 \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{122             \}}
+\DoxyCodeLine{123             printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{124         \}}
+\DoxyCodeLine{125         printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127 \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{135 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{printTitle}}(\textcolor{keywordtype}{char} *title)\{}
+\DoxyCodeLine{136     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(110);}
+\DoxyCodeLine{137     printf(\textcolor{stringliteral}{"{}\%s"{}}, title);}
+\DoxyCodeLine{138     \mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{saltaRighe}}(3);}
+\DoxyCodeLine{139 \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{144 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ae5ced7d7e756c5e7cc57256ac6865aa3}{printGameMenu}}()\{}
+\DoxyCodeLine{145     printf(\textcolor{stringliteral}{"{}1 -\/ SINGLE PLAYER\(\backslash\)n"{}});}
+\DoxyCodeLine{146     printf(\textcolor{stringliteral}{"{}2 -\/ MULTIPLAYER\(\backslash\)n"{}});}
+\DoxyCodeLine{147     printf(\textcolor{stringliteral}{"{}3 -\/ GAME INSTRUCTIONS\(\backslash\)n"{}});}
+\DoxyCodeLine{148     printf(\textcolor{stringliteral}{"{}0 -\/ QUIT\(\backslash\)n"{}});}
+\DoxyCodeLine{149 \}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{154 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_af93aaa5be98af25bcbce45e2048fe1c5}{printSModeOptions}}()\{}
+\DoxyCodeLine{155     printf(\textcolor{stringliteral}{"{}1 -\/ SELECT A PIECE\(\backslash\)n"{}});}
+\DoxyCodeLine{156     printf(\textcolor{stringliteral}{"{}2 -\/ MOVE THE PIECE\(\backslash\)n"{}});}
+\DoxyCodeLine{157     printf(\textcolor{stringliteral}{"{}0 -\/ Quit\(\backslash\)n"{}});}
+\DoxyCodeLine{158 \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{168 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a7163d93faf2f9bfaf60660fa60164095}{printAvaiblePieces}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* perchè stamparli tutti se te ne serve solo uno ogni volta che ne selezioni uno? */}}
+\DoxyCodeLine{169     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{170     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}; i++)\{}
+\DoxyCodeLine{171         \textcolor{keywordflow}{if}(pieces[i] > 0)\{}
+\DoxyCodeLine{172             }
+\DoxyCodeLine{173             printf(\textcolor{stringliteral}{"{}Piece \%d : "{}}, i);}
+\DoxyCodeLine{174             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{175             printf(\textcolor{stringliteral}{"{}\%d\(\backslash\)n"{}}, pieces[i]);}
+\DoxyCodeLine{176             \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
 \DoxyCodeLine{177 }
-\DoxyCodeLine{184 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ae77770b22209ba7e20e82bbe37cc2b25}{printLegendaPieces}}(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{}
-\DoxyCodeLine{185     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{186     printf(\textcolor{stringliteral}{"{}0 -\/ "{}});}
-\DoxyCodeLine{187     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{188     printf(\textcolor{stringliteral}{"{}T\(\backslash\)n"{}});}
-\DoxyCodeLine{189     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{190     printf(\textcolor{stringliteral}{"{}1 -\/ "{}});}
-\DoxyCodeLine{191     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{192     printf(\textcolor{stringliteral}{"{}Z\(\backslash\)n"{}});}
-\DoxyCodeLine{193     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{194     printf(\textcolor{stringliteral}{"{}2 -\/ "{}});}
-\DoxyCodeLine{195     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{196     printf(\textcolor{stringliteral}{"{}I\(\backslash\)n"{}});}
-\DoxyCodeLine{197     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{198     printf(\textcolor{stringliteral}{"{}3 -\/ "{}});}
-\DoxyCodeLine{199     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{200     printf(\textcolor{stringliteral}{"{}L\(\backslash\)n"{}});}
-\DoxyCodeLine{201     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{202     printf(\textcolor{stringliteral}{"{}4 -\/ "{}});}
-\DoxyCodeLine{203     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{204     printf(\textcolor{stringliteral}{"{}Lr\(\backslash\)n"{}});}
-\DoxyCodeLine{205     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{206     printf(\textcolor{stringliteral}{"{}5 -\/ "{}});}
-\DoxyCodeLine{207     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{208     printf(\textcolor{stringliteral}{"{}O\(\backslash\)n"{}});}
-\DoxyCodeLine{209     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{210 \}}
-\DoxyCodeLine{211 }
-\DoxyCodeLine{239 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a5c0024f7636f893e7c57e72c6f0e7f93}{printLegendaAllPieces}}(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{240     \textcolor{keywordtype}{int} i, j, k;}
-\DoxyCodeLine{241     \textcolor{keywordtype}{int} gx = 28, gy = 25;}
-\DoxyCodeLine{242     \textcolor{keywordtype}{int} f;}
-\DoxyCodeLine{243     \textcolor{keywordtype}{int} x = 4, y = 0;}
-\DoxyCodeLine{244     \textcolor{keywordtype}{int} map[15][10];}
-\DoxyCodeLine{245 }
-\DoxyCodeLine{246     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
-\DoxyCodeLine{247         \textcolor{keywordflow}{if}(k == 0)\{}
-\DoxyCodeLine{248             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{249             printf(\textcolor{stringliteral}{"{}T"{}});}
-\DoxyCodeLine{250         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{}
-\DoxyCodeLine{251             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{252             printf(\textcolor{stringliteral}{"{}Z"{}});}
-\DoxyCodeLine{253         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
+\DoxyCodeLine{178         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{179             printf(\textcolor{stringliteral}{"{}Piece \%d is not avaible! \(\backslash\)n"{}}, i);}
+\DoxyCodeLine{180         \}}
+\DoxyCodeLine{181     \}}
+\DoxyCodeLine{182 \}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{190 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ae77770b22209ba7e20e82bbe37cc2b25}{printLegendaPieces}}(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{191     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{192     printf(\textcolor{stringliteral}{"{}0 -\/ "{}});}
+\DoxyCodeLine{193     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{194     printf(\textcolor{stringliteral}{"{}T\(\backslash\)n"{}});}
+\DoxyCodeLine{195     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{196     printf(\textcolor{stringliteral}{"{}1 -\/ "{}});}
+\DoxyCodeLine{197     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{198     printf(\textcolor{stringliteral}{"{}Z\(\backslash\)n"{}});}
+\DoxyCodeLine{199     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{200     printf(\textcolor{stringliteral}{"{}2 -\/ "{}});}
+\DoxyCodeLine{201     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{202     printf(\textcolor{stringliteral}{"{}I\(\backslash\)n"{}});}
+\DoxyCodeLine{203     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{204     printf(\textcolor{stringliteral}{"{}3 -\/ "{}});}
+\DoxyCodeLine{205     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{206     printf(\textcolor{stringliteral}{"{}L\(\backslash\)n"{}});}
+\DoxyCodeLine{207     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{208     printf(\textcolor{stringliteral}{"{}4 -\/ "{}});}
+\DoxyCodeLine{209     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{210     printf(\textcolor{stringliteral}{"{}Lr\(\backslash\)n"{}});}
+\DoxyCodeLine{211     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{212     printf(\textcolor{stringliteral}{"{}5 -\/ "{}});}
+\DoxyCodeLine{213     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{214     printf(\textcolor{stringliteral}{"{}O\(\backslash\)n"{}});}
+\DoxyCodeLine{215     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{216 \}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{245 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a5c0024f7636f893e7c57e72c6f0e7f93}{printLegendaAllPieces}}(\textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{char} *colorPiece)\{ \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{246     \textcolor{keywordtype}{int} i, j, k;}
+\DoxyCodeLine{247     \textcolor{keywordtype}{int} gx = 28, gy = 25;}
+\DoxyCodeLine{248     \textcolor{keywordtype}{int} f;}
+\DoxyCodeLine{249     \textcolor{keywordtype}{int} x = 4, y = 0;}
+\DoxyCodeLine{250     \textcolor{keywordtype}{int} map[15][10];}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
+\DoxyCodeLine{253         \textcolor{keywordflow}{if}(k == 0)\{}
 \DoxyCodeLine{254             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{255             printf(\textcolor{stringliteral}{"{}I"{}});}
-\DoxyCodeLine{256         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
+\DoxyCodeLine{255             printf(\textcolor{stringliteral}{"{}T"{}});}
+\DoxyCodeLine{256         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{}
 \DoxyCodeLine{257             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{258             printf(\textcolor{stringliteral}{"{}L"{}});}
-\DoxyCodeLine{259         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
+\DoxyCodeLine{258             printf(\textcolor{stringliteral}{"{}Z"{}});}
+\DoxyCodeLine{259         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
 \DoxyCodeLine{260             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{261             printf(\textcolor{stringliteral}{"{}Lr"{}});}
-\DoxyCodeLine{262         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
+\DoxyCodeLine{261             printf(\textcolor{stringliteral}{"{}I"{}});}
+\DoxyCodeLine{262         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
 \DoxyCodeLine{263             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
-\DoxyCodeLine{264             printf(\textcolor{stringliteral}{"{}O"{}});}
-\DoxyCodeLine{265         \}}
-\DoxyCodeLine{266     \}}
-\DoxyCodeLine{267 }
-\DoxyCodeLine{268     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{269     \textcolor{keywordflow}{for}(i = 0; i < 4; i++)\{}
-\DoxyCodeLine{270         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx -\/ 11, 25 + i*4);}
-\DoxyCodeLine{271         printf(\textcolor{stringliteral}{"{}ROTATION: \%d"{}}, i);}
+\DoxyCodeLine{264             printf(\textcolor{stringliteral}{"{}L"{}});}
+\DoxyCodeLine{265         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
+\DoxyCodeLine{266             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{267             printf(\textcolor{stringliteral}{"{}Lr"{}});}
+\DoxyCodeLine{268         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
+\DoxyCodeLine{269             \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k + 8, gy -\/ 2);}
+\DoxyCodeLine{270             printf(\textcolor{stringliteral}{"{}O"{}});}
+\DoxyCodeLine{271         \}}
 \DoxyCodeLine{272     \}}
-\DoxyCodeLine{273     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{274     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
-\DoxyCodeLine{275         \mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{initMap}}(map);}
-\DoxyCodeLine{276         \textcolor{keywordflow}{if}(k == 0)\{}
-\DoxyCodeLine{277             f = \mbox{\hyperlink{_draw_pieces_8h_aa3b575340bab8f3bec25b8776faadb6e}{drawT}}(map, x, y);}
-\DoxyCodeLine{278             f = \mbox{\hyperlink{_draw_pieces_8h_a805a433c4b2d7b6fdf72b7a19e625740}{drawT1}}(map, x, y + 3);}
-\DoxyCodeLine{279             f = \mbox{\hyperlink{_draw_pieces_8h_a3ff0916b18bf28f7a3ecb6aa9f0ac9e5}{drawT2}}(map, x, y + 6);}
-\DoxyCodeLine{280             f = \mbox{\hyperlink{_draw_pieces_8h_ab4e33293ecaad87886da645fceacb5c7}{drawT3}}(map, x, y + 10);}
-\DoxyCodeLine{281             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{282                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{283                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{284                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{285                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{286                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{287                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{288                     \}  }
-\DoxyCodeLine{289                 \}}
-\DoxyCodeLine{290                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{291             \}}
-\DoxyCodeLine{292             }
-\DoxyCodeLine{293         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{ }
-\DoxyCodeLine{294             f = \mbox{\hyperlink{_draw_pieces_8h_a41d0e649c136de7512dd63649b48a323}{drawZ}}(map, x, y);}
-\DoxyCodeLine{295             f = \mbox{\hyperlink{_draw_pieces_8h_ae9c8aae39834ed2147cc508fbd65d6f5}{drawZ1}}(map, x, y + 3);}
-\DoxyCodeLine{296             f = \mbox{\hyperlink{_draw_pieces_8h_a3c6a275e0b3bec11b9e66eac47c6816f}{drawZ2}}(map, x, y + 7);}
-\DoxyCodeLine{297             f = \mbox{\hyperlink{_draw_pieces_8h_a03e667be37f44af9ea5c05e1ebd6c2a9}{drawZ3}}(map, x, y + 10);}
-\DoxyCodeLine{298             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{299                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{300                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{301                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{302                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{303                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{304                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{305                     \}  }
-\DoxyCodeLine{306                 \}}
-\DoxyCodeLine{307                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{308             \}}
-\DoxyCodeLine{309 }
-\DoxyCodeLine{310         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
-\DoxyCodeLine{311             f = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{312             f = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x -\/ 1, y + 5);}
-\DoxyCodeLine{313             f = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y + 7);}
-\DoxyCodeLine{314             f = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x -\/ 1, y + 12);}
-\DoxyCodeLine{315             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{316                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{317                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{318                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{319                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{320                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{321                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{322                     \}  }
-\DoxyCodeLine{323                 \}}
-\DoxyCodeLine{324                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{325             \}}
-\DoxyCodeLine{326 }
-\DoxyCodeLine{327         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
-\DoxyCodeLine{328             f = \mbox{\hyperlink{_draw_pieces_8h_ab230773ef3eb81dcdc7e9f531a43488a}{drawL}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{329             f = \mbox{\hyperlink{_draw_pieces_8h_a0fce015e695a1e8cd4a5cc534fdafc7a}{drawL1}}(map, x, y + 4);}
-\DoxyCodeLine{330             f = \mbox{\hyperlink{_draw_pieces_8h_ac9456f234576a39da9ba4168e41c20bb}{drawL2}}(map, x, y + 7);}
-\DoxyCodeLine{331             f = \mbox{\hyperlink{_draw_pieces_8h_a266c5f3c4f76c89bc9bd1e543b88705c}{drawL3}}(map, x, y + 11);}
-\DoxyCodeLine{332             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{333                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{334                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{335                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{336                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{337                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{338                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{339                     \}  }
-\DoxyCodeLine{340                 \}}
-\DoxyCodeLine{341                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{342             \}}
-\DoxyCodeLine{343 }
-\DoxyCodeLine{344         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
-\DoxyCodeLine{345             f = \mbox{\hyperlink{_draw_pieces_8h_a8f2ed46cd55891a5926377152188b8ab}{drawLr}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{346             f = \mbox{\hyperlink{_draw_pieces_8h_ada5d4f3503c3b5b06611e6a920d9e3e1}{drawLr1}}(map, x, y + 4);}
-\DoxyCodeLine{347             f = \mbox{\hyperlink{_draw_pieces_8h_aaf5822c80dd59f4bf05ec11eb017f952}{drawLr2}}(map, x, y + 7);}
-\DoxyCodeLine{348             f = \mbox{\hyperlink{_draw_pieces_8h_a2b3aa20da9bd5814a92c84337836e003}{drawLr3}}(map, x, y + 11);}
-\DoxyCodeLine{349             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{350                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{351                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{352                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{353                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{354                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{355                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{356                     \}  }
-\DoxyCodeLine{357                 \}}
-\DoxyCodeLine{358                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{359             \}            }
-\DoxyCodeLine{360 }
-\DoxyCodeLine{361         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
-\DoxyCodeLine{362             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{363             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 4);}
-\DoxyCodeLine{364             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 7);}
-\DoxyCodeLine{365             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 11);}
-\DoxyCodeLine{366             \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
-\DoxyCodeLine{367                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
-\DoxyCodeLine{368                 \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
-\DoxyCodeLine{369                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{370                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
-\DoxyCodeLine{371                     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{372                         printf(\textcolor{stringliteral}{"{}  "{}});}
-\DoxyCodeLine{373                     \}  }
-\DoxyCodeLine{374                 \}}
-\DoxyCodeLine{375                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
-\DoxyCodeLine{376             \} }
-\DoxyCodeLine{377         \}}
-\DoxyCodeLine{378     \}}
-\DoxyCodeLine{379     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{380 \}}
-\DoxyCodeLine{381 }
-\DoxyCodeLine{390 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ad5deb4d6da93418db2c13080bae46bdc}{printMoveMenu}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} *colorMode)\{}
-\DoxyCodeLine{391     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{392     printf(\textcolor{stringliteral}{"{}HOW TO SELECT THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{393     printf(\textcolor{stringliteral}{"{}   1-\/ SELECT THE PIECE SHAPE TYPE: \(\backslash\)n"{}});}
-\DoxyCodeLine{394     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{395     printf(\textcolor{stringliteral}{"{}EACH LETTER IS ABBINED WITH A NUMBER: \(\backslash\)n"{}});}
-\DoxyCodeLine{396     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{397     printf(\textcolor{stringliteral}{"{} T = 0, Z = 1,  I = 2, L = 3,  Lr = 4,  O = 5\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{398     printf(\textcolor{stringliteral}{"{}   2-\/ SELECT THE PIECE ROTATION: \(\backslash\)n"{}});}
-\DoxyCodeLine{399     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{400     printf(\textcolor{stringliteral}{"{}YOU CAN CHOOSE A ROTATION FROM 0 TO 3\(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{401     printf(\textcolor{stringliteral}{"{}HOW TO MOVE THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{275     \textcolor{keywordflow}{for}(i = 0; i < 4; i++)\{}
+\DoxyCodeLine{276         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx -\/ 11, 25 + i*4);}
+\DoxyCodeLine{277         printf(\textcolor{stringliteral}{"{}ROTATION: \%d"{}}, i);}
+\DoxyCodeLine{278     \}}
+\DoxyCodeLine{279     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{280     \textcolor{keywordflow}{for}(k = 0; k < 84; k += 14)\{}
+\DoxyCodeLine{281         \mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{initMap}}(map);}
+\DoxyCodeLine{282         \textcolor{keywordflow}{if}(k == 0)\{}
+\DoxyCodeLine{283             f = \mbox{\hyperlink{_draw_pieces_8h_aa3b575340bab8f3bec25b8776faadb6e}{drawT}}(map, x, y);}
+\DoxyCodeLine{284             f = \mbox{\hyperlink{_draw_pieces_8h_a805a433c4b2d7b6fdf72b7a19e625740}{drawT1}}(map, x, y + 3);}
+\DoxyCodeLine{285             f = \mbox{\hyperlink{_draw_pieces_8h_a3ff0916b18bf28f7a3ecb6aa9f0ac9e5}{drawT2}}(map, x, y + 6);}
+\DoxyCodeLine{286             f = \mbox{\hyperlink{_draw_pieces_8h_ab4e33293ecaad87886da645fceacb5c7}{drawT3}}(map, x, y + 10);}
+\DoxyCodeLine{287             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{288                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{289                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{290                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{291                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{292                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{293                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{294                     \}  }
+\DoxyCodeLine{295                 \}}
+\DoxyCodeLine{296                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{297             \}}
+\DoxyCodeLine{298             }
+\DoxyCodeLine{299         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 14)\{ }
+\DoxyCodeLine{300             f = \mbox{\hyperlink{_draw_pieces_8h_a41d0e649c136de7512dd63649b48a323}{drawZ}}(map, x, y);}
+\DoxyCodeLine{301             f = \mbox{\hyperlink{_draw_pieces_8h_ae9c8aae39834ed2147cc508fbd65d6f5}{drawZ1}}(map, x, y + 3);}
+\DoxyCodeLine{302             f = \mbox{\hyperlink{_draw_pieces_8h_a3c6a275e0b3bec11b9e66eac47c6816f}{drawZ2}}(map, x, y + 7);}
+\DoxyCodeLine{303             f = \mbox{\hyperlink{_draw_pieces_8h_a03e667be37f44af9ea5c05e1ebd6c2a9}{drawZ3}}(map, x, y + 10);}
+\DoxyCodeLine{304             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{305                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{306                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{307                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{308                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{309                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{310                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{311                     \}  }
+\DoxyCodeLine{312                 \}}
+\DoxyCodeLine{313                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{314             \}}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 28)\{}
+\DoxyCodeLine{317             f = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{318             f = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x -\/ 1, y + 5);}
+\DoxyCodeLine{319             f = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y + 7);}
+\DoxyCodeLine{320             f = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x -\/ 1, y + 12);}
+\DoxyCodeLine{321             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{322                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{323                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{324                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{325                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{326                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{327                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{328                     \}  }
+\DoxyCodeLine{329                 \}}
+\DoxyCodeLine{330                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{331             \}}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 42)\{}
+\DoxyCodeLine{334             f = \mbox{\hyperlink{_draw_pieces_8h_ab230773ef3eb81dcdc7e9f531a43488a}{drawL}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{335             f = \mbox{\hyperlink{_draw_pieces_8h_a0fce015e695a1e8cd4a5cc534fdafc7a}{drawL1}}(map, x, y + 4);}
+\DoxyCodeLine{336             f = \mbox{\hyperlink{_draw_pieces_8h_ac9456f234576a39da9ba4168e41c20bb}{drawL2}}(map, x, y + 7);}
+\DoxyCodeLine{337             f = \mbox{\hyperlink{_draw_pieces_8h_a266c5f3c4f76c89bc9bd1e543b88705c}{drawL3}}(map, x, y + 11);}
+\DoxyCodeLine{338             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{339                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{340                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{341                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{342                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{343                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{344                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{345                     \}  }
+\DoxyCodeLine{346                 \}}
+\DoxyCodeLine{347                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{348             \}}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{350         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 56)\{}
+\DoxyCodeLine{351             f = \mbox{\hyperlink{_draw_pieces_8h_a8f2ed46cd55891a5926377152188b8ab}{drawLr}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{352             f = \mbox{\hyperlink{_draw_pieces_8h_ada5d4f3503c3b5b06611e6a920d9e3e1}{drawLr1}}(map, x, y + 4);}
+\DoxyCodeLine{353             f = \mbox{\hyperlink{_draw_pieces_8h_aaf5822c80dd59f4bf05ec11eb017f952}{drawLr2}}(map, x, y + 7);}
+\DoxyCodeLine{354             f = \mbox{\hyperlink{_draw_pieces_8h_a2b3aa20da9bd5814a92c84337836e003}{drawLr3}}(map, x, y + 11);}
+\DoxyCodeLine{355             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{356                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{357                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{358                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{359                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{360                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{361                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{362                     \}  }
+\DoxyCodeLine{363                 \}}
+\DoxyCodeLine{364                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{365             \}            }
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(k == 70)\{}
+\DoxyCodeLine{368             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{369             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 4);}
+\DoxyCodeLine{370             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 7);}
+\DoxyCodeLine{371             f = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y + 11);}
+\DoxyCodeLine{372             \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
+\DoxyCodeLine{373                 \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(gx + k, gy + i);}
+\DoxyCodeLine{374                 \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
+\DoxyCodeLine{375                     \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{376                         printf(\textcolor{stringliteral}{"{}\%d "{}}, map[i][j]);}
+\DoxyCodeLine{377                     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{378                         printf(\textcolor{stringliteral}{"{}  "{}});}
+\DoxyCodeLine{379                     \}  }
+\DoxyCodeLine{380                 \}}
+\DoxyCodeLine{381                 printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{382             \} }
+\DoxyCodeLine{383         \}}
+\DoxyCodeLine{384     \}}
+\DoxyCodeLine{385     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{386 \}}
+\DoxyCodeLine{387 }
+\DoxyCodeLine{396 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ad5deb4d6da93418db2c13080bae46bdc}{printMoveMenu}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} *colorMode)\{}
+\DoxyCodeLine{397     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{398     printf(\textcolor{stringliteral}{"{}HOW TO SELECT THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{399     printf(\textcolor{stringliteral}{"{}   1-\/ SELECT THE PIECE SHAPE TYPE: \(\backslash\)n"{}});}
+\DoxyCodeLine{400     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{401     printf(\textcolor{stringliteral}{"{}EACH LETTER IS ABBINED WITH A NUMBER: \(\backslash\)n"{}});}
 \DoxyCodeLine{402     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{403     printf(\textcolor{stringliteral}{"{}USE THE A-\/D KEYS TO MOVE THE PIECE AROUND THE MAP \(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{404     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{405     printf(\textcolor{stringliteral}{"{}USE THE W KEY TO ROTATE THE PIECE \(\backslash\)n\(\backslash\)n"{}});}
-\DoxyCodeLine{406     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{407     printf(\textcolor{stringliteral}{"{}USE 0-\/1-\/2-\/3 TO SET THE EXACT ROTATION \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{403     printf(\textcolor{stringliteral}{"{} T = 0, Z = 1,  I = 2, L = 3,  Lr = 4,  O = 5\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{404     printf(\textcolor{stringliteral}{"{}   2-\/ SELECT THE PIECE ROTATION: \(\backslash\)n"{}});}
+\DoxyCodeLine{405     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{406     printf(\textcolor{stringliteral}{"{}YOU CAN CHOOSE A ROTATION FROM 0 TO 3\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{407     printf(\textcolor{stringliteral}{"{}HOW TO MOVE THE PIECE: \(\backslash\)n\(\backslash\)n"{}});}
 \DoxyCodeLine{408     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{409     printf(\textcolor{stringliteral}{"{}ENTER Q TO QUIT AND SET THE PIECE AT X:\%d Y:\%d POSITION \(\backslash\)n\(\backslash\)n"{}}, x, y);}
-\DoxyCodeLine{410 }
-\DoxyCodeLine{411 \}}
-\DoxyCodeLine{412 }
-\DoxyCodeLine{423 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_aab849fdc6e864a042e075a698cb0a6b5}{printScoreName}}(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player, \textcolor{keywordtype}{char} name[20])\{}
-\DoxyCodeLine{424     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(100, y);}
-\DoxyCodeLine{425     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{426     \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'1'})\{}
-\DoxyCodeLine{427         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
-\DoxyCodeLine{428     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'2'})\{}
-\DoxyCodeLine{429         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
-\DoxyCodeLine{430     \}}
-\DoxyCodeLine{431     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}blue"{}}, 1);}
-\DoxyCodeLine{432 \}}
-\DoxyCodeLine{433 }
-\DoxyCodeLine{443 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ae953d69c998a186cfa2f6a69aa15c09a}{printScore}}(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player)\{}
-\DoxyCodeLine{444     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(100, y);}
-\DoxyCodeLine{445     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{446     printf(\textcolor{stringliteral}{"{}SCORE: \%d"{}}, score);}
-\DoxyCodeLine{447     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}blue"{}}, 1);}
-\DoxyCodeLine{448 \}}
-\DoxyCodeLine{449 }
-\DoxyCodeLine{459 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a535d6e965412bba0c9f8b027d8160b60}{printScorePC}}(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player)\{}
-\DoxyCodeLine{460     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(100, y);}
-\DoxyCodeLine{461     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
-\DoxyCodeLine{462     printf(\textcolor{stringliteral}{"{}SCORE PC: \%d"{}}, score);}
-\DoxyCodeLine{463     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}blue"{}}, 1);}
-\DoxyCodeLine{464 \}}
-\DoxyCodeLine{465 }
-\DoxyCodeLine{473 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(\textcolor{keywordtype}{char} name[20])\{}
-\DoxyCodeLine{474     system(\textcolor{stringliteral}{"{}cls"{}});}
-\DoxyCodeLine{475     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}green"{}}, 1);}
-\DoxyCodeLine{476     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{477     printf(\textcolor{stringliteral}{"{}THE WINNER IS \%s \(\backslash\)n"{}}, name);}
-\DoxyCodeLine{478     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0); \textcolor{comment}{/*due . 0 secondi*/}}
-\DoxyCodeLine{479     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
-\DoxyCodeLine{480 \}}
-\DoxyCodeLine{481 }
-\DoxyCodeLine{489 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a9fbc1f7e744174b1dab9de2a2a923803}{printLoser}}(\textcolor{keywordtype}{char} name[20])\{}
-\DoxyCodeLine{490     system(\textcolor{stringliteral}{"{}cls"{}});}
-\DoxyCodeLine{491     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}red"{}}, 1);}
-\DoxyCodeLine{492     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
-\DoxyCodeLine{493     printf(\textcolor{stringliteral}{"{}\%s LOOSE AGAINST PC"{}}, name);}
-\DoxyCodeLine{494     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0);}
-\DoxyCodeLine{495     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
-\DoxyCodeLine{496 \}}
-\DoxyCodeLine{497 }
-\DoxyCodeLine{504 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{printPareggio}}()\{}
-\DoxyCodeLine{505     system(\textcolor{stringliteral}{"{}cls"{}});}
-\DoxyCodeLine{506     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}yellow"{}}, 1);}
-\DoxyCodeLine{507     \mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{printTitle}}(\textcolor{stringliteral}{"{}DRAW"{}});}
-\DoxyCodeLine{508     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0);}
-\DoxyCodeLine{509     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
-\DoxyCodeLine{510 \}}
-\DoxyCodeLine{511 }
+\DoxyCodeLine{409     printf(\textcolor{stringliteral}{"{}USE THE A-\/D KEYS TO MOVE THE PIECE AROUND THE MAP \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{410     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{411     printf(\textcolor{stringliteral}{"{}USE THE W KEY TO ROTATE THE PIECE \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{412     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{413     printf(\textcolor{stringliteral}{"{}USE 0-\/1-\/2-\/3 TO SET THE EXACT ROTATION \(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{414     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{415     printf(\textcolor{stringliteral}{"{}ENTER Q TO QUIT AND SET THE PIECE AT X:\%d Y:\%d POSITION \(\backslash\)n\(\backslash\)n"{}}, x, y);}
+\DoxyCodeLine{416 }
+\DoxyCodeLine{417 \}}
+\DoxyCodeLine{418 }
+\DoxyCodeLine{429 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_aab849fdc6e864a042e075a698cb0a6b5}{printScoreName}}(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player, \textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{430     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(100, y);}
+\DoxyCodeLine{431     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{432     \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'1'})\{}
+\DoxyCodeLine{433         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
+\DoxyCodeLine{434     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(player == \textcolor{charliteral}{'2'})\{}
+\DoxyCodeLine{435         printf(\textcolor{stringliteral}{"{}SCORE \%s: \%d"{}}, name, score);}
+\DoxyCodeLine{436     \}}
+\DoxyCodeLine{437     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}blue"{}}, 1);}
+\DoxyCodeLine{438 \}}
+\DoxyCodeLine{439 }
+\DoxyCodeLine{449 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_ae953d69c998a186cfa2f6a69aa15c09a}{printScore}}(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player)\{}
+\DoxyCodeLine{450     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(100, y);}
+\DoxyCodeLine{451     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{452     printf(\textcolor{stringliteral}{"{}SCORE: \%d"{}}, score);}
+\DoxyCodeLine{453     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}blue"{}}, 1);}
+\DoxyCodeLine{454 \}}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{465 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a535d6e965412bba0c9f8b027d8160b60}{printScorePC}}(\textcolor{keywordtype}{int} score, \textcolor{keywordtype}{char} *colorMode, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{char} player)\{}
+\DoxyCodeLine{466     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(100, y);}
+\DoxyCodeLine{467     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorMode, 1);}
+\DoxyCodeLine{468     printf(\textcolor{stringliteral}{"{}SCORE PC: \%d"{}}, score);}
+\DoxyCodeLine{469     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}blue"{}}, 1);}
+\DoxyCodeLine{470 \}}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{479 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(\textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{480     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{481     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}green"{}}, 1);}
+\DoxyCodeLine{482     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{483     printf(\textcolor{stringliteral}{"{}THE WINNER IS \%s \(\backslash\)n"{}}, name);}
+\DoxyCodeLine{484     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0); \textcolor{comment}{/*due . 0 secondi*/}}
+\DoxyCodeLine{485     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{486 \}}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{495 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a9fbc1f7e744174b1dab9de2a2a923803}{printLoser}}(\textcolor{keywordtype}{char} name[20])\{}
+\DoxyCodeLine{496     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{497     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}red"{}}, 1);}
+\DoxyCodeLine{498     \mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{centerText}}(100);}
+\DoxyCodeLine{499     printf(\textcolor{stringliteral}{"{}\%s LOOSE AGAINST PC"{}}, name);}
+\DoxyCodeLine{500     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0);}
+\DoxyCodeLine{501     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{502 \}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{510 \textcolor{keywordtype}{void} \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{printPareggio}}()\{}
+\DoxyCodeLine{511     system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{512     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}yellow"{}}, 1);}
+\DoxyCodeLine{513     \mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{printTitle}}(\textcolor{stringliteral}{"{}DRAW"{}});}
+\DoxyCodeLine{514     \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(2.0);}
+\DoxyCodeLine{515     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(\textcolor{stringliteral}{"{}white"{}}, 1);}
+\DoxyCodeLine{516 \}}
+\DoxyCodeLine{517 }
 
 \end{DoxyCode}

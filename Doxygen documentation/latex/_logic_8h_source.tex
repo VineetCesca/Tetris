@@ -3,329 +3,329 @@
 \mbox{\hyperlink{_logic_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
-\DoxyCodeLine{9 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{checkAvaible}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} selected)\{}
-\DoxyCodeLine{10     \textcolor{keywordflow}{if}(pieces[selected] <= 0)\{}
-\DoxyCodeLine{11         \textcolor{keywordflow}{return} 0; \textcolor{comment}{/* piece is not avaible */}}
-\DoxyCodeLine{12     \}}
-\DoxyCodeLine{13     \textcolor{keywordflow}{return} 1; \textcolor{comment}{/* piece is avaible */}}
-\DoxyCodeLine{14 \}}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{27 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}{selectPiece}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{char} *colorPiece)\{}
-\DoxyCodeLine{28     \textcolor{keywordtype}{int} selected;}
-\DoxyCodeLine{29     \textcolor{keywordtype}{char} c;}
-\DoxyCodeLine{30     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{31     \textcolor{keywordflow}{do}\{}
-\DoxyCodeLine{32         printf(\textcolor{stringliteral}{"{}Select a piece (0, 1, 2, 3, 4, 5): "{}}); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
-\DoxyCodeLine{33     \}\textcolor{keywordflow}{while}( ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&selected, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\_stdin}}() == 1 ) || selected < 0 || selected > 5);}
-\DoxyCodeLine{34     \textcolor{keywordflow}{if}( \mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{checkAvaible}}(pieces, dim, selected) == 1 )\{}
-\DoxyCodeLine{35         pieces[selected]-\/-\/; \textcolor{comment}{/* update avaiblepieces */}}
-\DoxyCodeLine{36     \}}
-\DoxyCodeLine{37     }
-\DoxyCodeLine{38     \textcolor{keywordflow}{return} selected;}
-\DoxyCodeLine{39 \}}
-\DoxyCodeLine{40 }
-\DoxyCodeLine{49 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}{selectRotation}}(\textcolor{keywordtype}{char} *colorPiece)\{}
-\DoxyCodeLine{50     \textcolor{keywordtype}{int} r;}
-\DoxyCodeLine{51     \textcolor{keywordtype}{char} c;}
-\DoxyCodeLine{52     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
-\DoxyCodeLine{53     \textcolor{keywordflow}{do}\{}
-\DoxyCodeLine{54         printf(\textcolor{stringliteral}{"{}Select a rotation (0, 1, 2, 3): "{}});}
-\DoxyCodeLine{55     \} \textcolor{keywordflow}{while}(  ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&r, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\_stdin}}() == 1 ) || r < 0 || r > 3);}
-\DoxyCodeLine{56 }
-\DoxyCodeLine{57     \textcolor{keywordflow}{return} r;}
-\DoxyCodeLine{58 \}}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{88 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{drawSelected}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
-\DoxyCodeLine{89     \textcolor{comment}{/*rotation = 0 1 2 3 */}}
-\DoxyCodeLine{90     \textcolor{keywordtype}{int} drawn;}
-\DoxyCodeLine{91     \textcolor{keywordflow}{if}(selected == 0)\{}
-\DoxyCodeLine{92         \textcolor{keywordflow}{if}(rotation == 0)\{}
-\DoxyCodeLine{93             drawn = \mbox{\hyperlink{_draw_pieces_8h_aa3b575340bab8f3bec25b8776faadb6e}{drawT}}(map, x, y);}
-\DoxyCodeLine{94         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
-\DoxyCodeLine{95             drawn = \mbox{\hyperlink{_draw_pieces_8h_a805a433c4b2d7b6fdf72b7a19e625740}{drawT1}}(map, x, y);}
-\DoxyCodeLine{96         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
-\DoxyCodeLine{97             drawn = \mbox{\hyperlink{_draw_pieces_8h_a3ff0916b18bf28f7a3ecb6aa9f0ac9e5}{drawT2}}(map, x, y);}
-\DoxyCodeLine{98         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
-\DoxyCodeLine{99             drawn = \mbox{\hyperlink{_draw_pieces_8h_ab4e33293ecaad87886da645fceacb5c7}{drawT3}}(map, x, y);}
-\DoxyCodeLine{100         \}  }
-\DoxyCodeLine{101     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1)\{}
-\DoxyCodeLine{102         \textcolor{keywordflow}{if}(rotation == 0)\{}
-\DoxyCodeLine{103             drawn = \mbox{\hyperlink{_draw_pieces_8h_a41d0e649c136de7512dd63649b48a323}{drawZ}}(map, x, y);}
-\DoxyCodeLine{104         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
-\DoxyCodeLine{105             drawn = \mbox{\hyperlink{_draw_pieces_8h_ae9c8aae39834ed2147cc508fbd65d6f5}{drawZ1}}(map, x, y);}
-\DoxyCodeLine{106         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
-\DoxyCodeLine{107             drawn = \mbox{\hyperlink{_draw_pieces_8h_a3c6a275e0b3bec11b9e66eac47c6816f}{drawZ2}}(map, x, y);}
-\DoxyCodeLine{108         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
-\DoxyCodeLine{109             drawn = \mbox{\hyperlink{_draw_pieces_8h_a03e667be37f44af9ea5c05e1ebd6c2a9}{drawZ3}}(map, x, y);}
-\DoxyCodeLine{110         \}}
-\DoxyCodeLine{111     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2)\{}
-\DoxyCodeLine{112         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
-\DoxyCodeLine{113             drawn = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y);}
-\DoxyCodeLine{114         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
-\DoxyCodeLine{115             drawn = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x, y);}
+\DoxyCodeLine{15 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{checkAvaible}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \textcolor{keywordtype}{int} selected)\{}
+\DoxyCodeLine{16     \textcolor{keywordflow}{if}(pieces[selected] <= 0)\{}
+\DoxyCodeLine{17         \textcolor{keywordflow}{return} 0; \textcolor{comment}{/* piece is not avaible */}}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19     \textcolor{keywordflow}{return} 1; \textcolor{comment}{/* piece is avaible */}}
+\DoxyCodeLine{20 \}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{33 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}{selectPiece}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} selected;}
+\DoxyCodeLine{35     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{36     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{37     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{38         printf(\textcolor{stringliteral}{"{}Select a piece (0, 1, 2, 3, 4, 5): "{}}); \textcolor{comment}{/* T = 0  Z = 1  I = 2  L = 3  Lr = 4  O = 5 */}}
+\DoxyCodeLine{39     \}\textcolor{keywordflow}{while}( ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&selected, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\_stdin}}() == 1 ) || selected < 0 || selected > 5);}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}( \mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{checkAvaible}}(pieces, \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, selected) == 1 )\{}
+\DoxyCodeLine{41         pieces[selected]-\/-\/; \textcolor{comment}{/* update avaiblepieces */}}
+\DoxyCodeLine{42     \}}
+\DoxyCodeLine{43     }
+\DoxyCodeLine{44     \textcolor{keywordflow}{return} selected;}
+\DoxyCodeLine{45 \}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{55 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}{selectRotation}}(\textcolor{keywordtype}{char} *colorPiece)\{}
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} r;}
+\DoxyCodeLine{57     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{58     \mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolorText}}(colorPiece, 1);}
+\DoxyCodeLine{59     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{60         printf(\textcolor{stringliteral}{"{}Select a rotation (0, 1, 2, 3): "{}});}
+\DoxyCodeLine{61     \} \textcolor{keywordflow}{while}(  ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&r, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\_stdin}}() == 1 ) || r < 0 || r > 3);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63     \textcolor{keywordflow}{return} r;}
+\DoxyCodeLine{64 \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{94 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{drawSelected}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
+\DoxyCodeLine{95     \textcolor{comment}{/*rotation = 0 1 2 3 */}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{int} drawn;}
+\DoxyCodeLine{97     \textcolor{keywordflow}{if}(selected == 0)\{}
+\DoxyCodeLine{98         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{99             drawn = \mbox{\hyperlink{_draw_pieces_8h_aa3b575340bab8f3bec25b8776faadb6e}{drawT}}(map, x, y);}
+\DoxyCodeLine{100         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{101             drawn = \mbox{\hyperlink{_draw_pieces_8h_a805a433c4b2d7b6fdf72b7a19e625740}{drawT1}}(map, x, y);}
+\DoxyCodeLine{102         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{103             drawn = \mbox{\hyperlink{_draw_pieces_8h_a3ff0916b18bf28f7a3ecb6aa9f0ac9e5}{drawT2}}(map, x, y);}
+\DoxyCodeLine{104         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{105             drawn = \mbox{\hyperlink{_draw_pieces_8h_ab4e33293ecaad87886da645fceacb5c7}{drawT3}}(map, x, y);}
+\DoxyCodeLine{106         \}  }
+\DoxyCodeLine{107     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1)\{}
+\DoxyCodeLine{108         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{109             drawn = \mbox{\hyperlink{_draw_pieces_8h_a41d0e649c136de7512dd63649b48a323}{drawZ}}(map, x, y);}
+\DoxyCodeLine{110         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{111             drawn = \mbox{\hyperlink{_draw_pieces_8h_ae9c8aae39834ed2147cc508fbd65d6f5}{drawZ1}}(map, x, y);}
+\DoxyCodeLine{112         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{113             drawn = \mbox{\hyperlink{_draw_pieces_8h_a3c6a275e0b3bec11b9e66eac47c6816f}{drawZ2}}(map, x, y);}
+\DoxyCodeLine{114         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{115             drawn = \mbox{\hyperlink{_draw_pieces_8h_a03e667be37f44af9ea5c05e1ebd6c2a9}{drawZ3}}(map, x, y);}
 \DoxyCodeLine{116         \}}
-\DoxyCodeLine{117     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3)\{}
-\DoxyCodeLine{118         \textcolor{keywordflow}{if}(rotation == 0)\{}
-\DoxyCodeLine{119             drawn = \mbox{\hyperlink{_draw_pieces_8h_ab230773ef3eb81dcdc7e9f531a43488a}{drawL}}(map, x, y);}
-\DoxyCodeLine{120         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
-\DoxyCodeLine{121             drawn = \mbox{\hyperlink{_draw_pieces_8h_a0fce015e695a1e8cd4a5cc534fdafc7a}{drawL1}}(map, x, y);}
-\DoxyCodeLine{122         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
-\DoxyCodeLine{123             drawn = \mbox{\hyperlink{_draw_pieces_8h_ac9456f234576a39da9ba4168e41c20bb}{drawL2}}(map, x, y);}
-\DoxyCodeLine{124         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
-\DoxyCodeLine{125             drawn = \mbox{\hyperlink{_draw_pieces_8h_a266c5f3c4f76c89bc9bd1e543b88705c}{drawL3}}(map, x, y);}
-\DoxyCodeLine{126         \}}
-\DoxyCodeLine{127     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4)\{}
-\DoxyCodeLine{128         \textcolor{keywordflow}{if}(rotation == 0)\{}
-\DoxyCodeLine{129             drawn = \mbox{\hyperlink{_draw_pieces_8h_a8f2ed46cd55891a5926377152188b8ab}{drawLr}}(map, x, y);}
-\DoxyCodeLine{130         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
-\DoxyCodeLine{131             drawn = \mbox{\hyperlink{_draw_pieces_8h_ada5d4f3503c3b5b06611e6a920d9e3e1}{drawLr1}}(map, x, y);}
-\DoxyCodeLine{132         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
-\DoxyCodeLine{133             drawn = \mbox{\hyperlink{_draw_pieces_8h_aaf5822c80dd59f4bf05ec11eb017f952}{drawLr2}}(map, x, y);}
-\DoxyCodeLine{134         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
-\DoxyCodeLine{135             drawn = \mbox{\hyperlink{_draw_pieces_8h_a2b3aa20da9bd5814a92c84337836e003}{drawLr3}}(map, x, y);}
-\DoxyCodeLine{136         \}}
-\DoxyCodeLine{137     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
-\DoxyCodeLine{138         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3)\{}
-\DoxyCodeLine{139             drawn = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y);}
-\DoxyCodeLine{140         \}}
-\DoxyCodeLine{141     \}}
-\DoxyCodeLine{142 }
-\DoxyCodeLine{143     \textcolor{keywordflow}{return} drawn;}
-\DoxyCodeLine{144 \}}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{173 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}{movebackSelected}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
-\DoxyCodeLine{174     \textcolor{comment}{/*rotation = 0 1 2 3 */}}
-\DoxyCodeLine{175     \textcolor{keywordflow}{if}(selected == 0)\{}
-\DoxyCodeLine{176         \textcolor{keywordflow}{if}(rotation == 0)\{}
-\DoxyCodeLine{177             \mbox{\hyperlink{_draw_pieces_8h_a7873ccc05b022e6ee34014fc65ed62b1}{deleteT}}(map, x, y);}
-\DoxyCodeLine{178         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
-\DoxyCodeLine{179             \mbox{\hyperlink{_draw_pieces_8h_aaec55de9c547471029b8edcf3c325b7e}{deleteT1}}(map, x, y);}
-\DoxyCodeLine{180         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
-\DoxyCodeLine{181             \mbox{\hyperlink{_draw_pieces_8h_a0b89de0f248b56b5d459de50378c6900}{deleteT2}}(map, x, y);}
-\DoxyCodeLine{182         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
-\DoxyCodeLine{183             \mbox{\hyperlink{_draw_pieces_8h_accad6a71a2ab14740aa0b36c9e519f00}{deleteT3}}(map, x, y);}
-\DoxyCodeLine{184         \}}
-\DoxyCodeLine{185     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1)\{}
-\DoxyCodeLine{186         \textcolor{keywordflow}{if}(rotation == 0)\{}
-\DoxyCodeLine{187             \mbox{\hyperlink{_draw_pieces_8h_a1cb0b93818f173c24b276a05367f6c48}{deleteZ}}(map, x, y);}
-\DoxyCodeLine{188         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
-\DoxyCodeLine{189             \mbox{\hyperlink{_draw_pieces_8h_aeb8338f46c3992a3c59f2c95166edc4a}{deleteZ1}}(map, x, y);}
-\DoxyCodeLine{190         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
-\DoxyCodeLine{191             \mbox{\hyperlink{_draw_pieces_8h_a9091baa61b82443e77e491a8b2d45b5d}{deleteZ2}}(map, x, y);}
-\DoxyCodeLine{192         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
-\DoxyCodeLine{193             \mbox{\hyperlink{_draw_pieces_8h_ae590977bbcf68de98b9cf1f317b5b426}{deleteZ3}}(map, x, y);}
-\DoxyCodeLine{194         \}}
-\DoxyCodeLine{195     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2)\{}
-\DoxyCodeLine{196         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
-\DoxyCodeLine{197             \mbox{\hyperlink{_draw_pieces_8h_aa388bfa13edf3ac7e6470d57af861936}{deleteI}}(map, x, y);}
-\DoxyCodeLine{198         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
-\DoxyCodeLine{199             \mbox{\hyperlink{_draw_pieces_8h_adb316c0010c667035a7444dd99a67ce0}{deleteI1}}(map, x, y);}
+\DoxyCodeLine{117     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2)\{}
+\DoxyCodeLine{118         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{119             drawn = \mbox{\hyperlink{_draw_pieces_8h_a99e0c040ad6c9cf5007a873ceff4e390}{drawI}}(map, x, y);}
+\DoxyCodeLine{120         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{121             drawn = \mbox{\hyperlink{_draw_pieces_8h_ae2b07a02fd9fdb6f8ff7907736f0de89}{drawI1}}(map, x, y);}
+\DoxyCodeLine{122         \}}
+\DoxyCodeLine{123     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3)\{}
+\DoxyCodeLine{124         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{125             drawn = \mbox{\hyperlink{_draw_pieces_8h_ab230773ef3eb81dcdc7e9f531a43488a}{drawL}}(map, x, y);}
+\DoxyCodeLine{126         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{127             drawn = \mbox{\hyperlink{_draw_pieces_8h_a0fce015e695a1e8cd4a5cc534fdafc7a}{drawL1}}(map, x, y);}
+\DoxyCodeLine{128         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{129             drawn = \mbox{\hyperlink{_draw_pieces_8h_ac9456f234576a39da9ba4168e41c20bb}{drawL2}}(map, x, y);}
+\DoxyCodeLine{130         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{131             drawn = \mbox{\hyperlink{_draw_pieces_8h_a266c5f3c4f76c89bc9bd1e543b88705c}{drawL3}}(map, x, y);}
+\DoxyCodeLine{132         \}}
+\DoxyCodeLine{133     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4)\{}
+\DoxyCodeLine{134         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{135             drawn = \mbox{\hyperlink{_draw_pieces_8h_a8f2ed46cd55891a5926377152188b8ab}{drawLr}}(map, x, y);}
+\DoxyCodeLine{136         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{137             drawn = \mbox{\hyperlink{_draw_pieces_8h_ada5d4f3503c3b5b06611e6a920d9e3e1}{drawLr1}}(map, x, y);}
+\DoxyCodeLine{138         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{139             drawn = \mbox{\hyperlink{_draw_pieces_8h_aaf5822c80dd59f4bf05ec11eb017f952}{drawLr2}}(map, x, y);}
+\DoxyCodeLine{140         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{141             drawn = \mbox{\hyperlink{_draw_pieces_8h_a2b3aa20da9bd5814a92c84337836e003}{drawLr3}}(map, x, y);}
+\DoxyCodeLine{142         \}}
+\DoxyCodeLine{143     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
+\DoxyCodeLine{144         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3)\{}
+\DoxyCodeLine{145             drawn = \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}}(map, x, y);}
+\DoxyCodeLine{146         \}}
+\DoxyCodeLine{147     \}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \textcolor{keywordflow}{return} drawn;}
+\DoxyCodeLine{150 \}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{179 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}{movebackSelected}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} selected, \textcolor{keywordtype}{int} rotation)\{}
+\DoxyCodeLine{180     \textcolor{comment}{/*rotation = 0 1 2 3 */}}
+\DoxyCodeLine{181     \textcolor{keywordflow}{if}(selected == 0)\{}
+\DoxyCodeLine{182         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{183             \mbox{\hyperlink{_draw_pieces_8h_a7873ccc05b022e6ee34014fc65ed62b1}{deleteT}}(map, x, y);}
+\DoxyCodeLine{184         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{185             \mbox{\hyperlink{_draw_pieces_8h_aaec55de9c547471029b8edcf3c325b7e}{deleteT1}}(map, x, y);}
+\DoxyCodeLine{186         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{187             \mbox{\hyperlink{_draw_pieces_8h_a0b89de0f248b56b5d459de50378c6900}{deleteT2}}(map, x, y);}
+\DoxyCodeLine{188         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{189             \mbox{\hyperlink{_draw_pieces_8h_accad6a71a2ab14740aa0b36c9e519f00}{deleteT3}}(map, x, y);}
+\DoxyCodeLine{190         \}}
+\DoxyCodeLine{191     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 1)\{}
+\DoxyCodeLine{192         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{193             \mbox{\hyperlink{_draw_pieces_8h_a1cb0b93818f173c24b276a05367f6c48}{deleteZ}}(map, x, y);}
+\DoxyCodeLine{194         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{195             \mbox{\hyperlink{_draw_pieces_8h_aeb8338f46c3992a3c59f2c95166edc4a}{deleteZ1}}(map, x, y);}
+\DoxyCodeLine{196         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{197             \mbox{\hyperlink{_draw_pieces_8h_a9091baa61b82443e77e491a8b2d45b5d}{deleteZ2}}(map, x, y);}
+\DoxyCodeLine{198         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{199             \mbox{\hyperlink{_draw_pieces_8h_ae590977bbcf68de98b9cf1f317b5b426}{deleteZ3}}(map, x, y);}
 \DoxyCodeLine{200         \}}
-\DoxyCodeLine{201     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3)\{}
-\DoxyCodeLine{202         \textcolor{keywordflow}{if}(rotation == 0)\{}
-\DoxyCodeLine{203             \mbox{\hyperlink{_draw_pieces_8h_a4f28b388bdfdebc99fd609a9d62a1509}{deleteL}}(map, x, y);}
-\DoxyCodeLine{204         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
-\DoxyCodeLine{205             \mbox{\hyperlink{_draw_pieces_8h_a04ab594cb4d1fe677142a2b599c15d8a}{deleteL1}}(map, x, y);}
-\DoxyCodeLine{206         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
-\DoxyCodeLine{207             \mbox{\hyperlink{_draw_pieces_8h_a088b93825f77815e1308a8bd188dc97b}{deleteL2}}(map, x, y);}
-\DoxyCodeLine{208         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
-\DoxyCodeLine{209             \mbox{\hyperlink{_draw_pieces_8h_abfa6d6f577fc1b8ff3e2fc082173a158}{deleteL3}}(map, x, y);}
-\DoxyCodeLine{210         \}}
-\DoxyCodeLine{211     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4)\{}
-\DoxyCodeLine{212         \textcolor{keywordflow}{if}(rotation == 0)\{}
-\DoxyCodeLine{213             \mbox{\hyperlink{_draw_pieces_8h_a3f7a48f0fe5c94ac6ad92bf2cdc8ed9a}{deleteLr}}(map, x, y);}
-\DoxyCodeLine{214         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
-\DoxyCodeLine{215             \mbox{\hyperlink{_draw_pieces_8h_a7c02220296b3d6f7be60d1e33a77b5d6}{deleteLr1}}(map, x, y);}
-\DoxyCodeLine{216         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
-\DoxyCodeLine{217             \mbox{\hyperlink{_draw_pieces_8h_ab850ab153cbaddd8e4e79e480dd4dde1}{deleteLr2}}(map, x, y);}
-\DoxyCodeLine{218         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
-\DoxyCodeLine{219             \mbox{\hyperlink{_draw_pieces_8h_adf887b48c8f09041a388673057eaeac1}{deleteLr3}}(map, x, y);}
-\DoxyCodeLine{220         \}}
-\DoxyCodeLine{221     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
-\DoxyCodeLine{222         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3)\{}
-\DoxyCodeLine{223             \mbox{\hyperlink{_draw_pieces_8h_a5a44fc57ffb4aa81cd29e755e532010b}{deleteO}}(map, x, y);}
-\DoxyCodeLine{224         \}}
-\DoxyCodeLine{225     \}}
-\DoxyCodeLine{226 \} }
-\DoxyCodeLine{227 }
-\DoxyCodeLine{228 \textcolor{comment}{/* Una volta posizionato un tetramino, se una o più righe orizzontali vengono riempite}}
-\DoxyCodeLine{229 \textcolor{comment}{ * per intero, queste righe vengono cancellate come nel tetris originale.}}
-\DoxyCodeLine{230 \textcolor{comment}{ * La rimozione di una riga vale 1 punto, la rimozione di due righe con un solo pezzo vale}}
-\DoxyCodeLine{231 \textcolor{comment}{ * 3 punti, tre righe 6 punti, quattro righe 12 punti.}}
-\DoxyCodeLine{232 \textcolor{comment}{ */}}
+\DoxyCodeLine{201     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 2)\{}
+\DoxyCodeLine{202         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 2)\{}
+\DoxyCodeLine{203             \mbox{\hyperlink{_draw_pieces_8h_aa388bfa13edf3ac7e6470d57af861936}{deleteI}}(map, x, y);}
+\DoxyCodeLine{204         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1 || rotation == 3)\{}
+\DoxyCodeLine{205             \mbox{\hyperlink{_draw_pieces_8h_adb316c0010c667035a7444dd99a67ce0}{deleteI1}}(map, x, y);}
+\DoxyCodeLine{206         \}}
+\DoxyCodeLine{207     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 3)\{}
+\DoxyCodeLine{208         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{209             \mbox{\hyperlink{_draw_pieces_8h_a4f28b388bdfdebc99fd609a9d62a1509}{deleteL}}(map, x, y);}
+\DoxyCodeLine{210         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{211             \mbox{\hyperlink{_draw_pieces_8h_a04ab594cb4d1fe677142a2b599c15d8a}{deleteL1}}(map, x, y);}
+\DoxyCodeLine{212         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{213             \mbox{\hyperlink{_draw_pieces_8h_a088b93825f77815e1308a8bd188dc97b}{deleteL2}}(map, x, y);}
+\DoxyCodeLine{214         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{215             \mbox{\hyperlink{_draw_pieces_8h_abfa6d6f577fc1b8ff3e2fc082173a158}{deleteL3}}(map, x, y);}
+\DoxyCodeLine{216         \}}
+\DoxyCodeLine{217     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 4)\{}
+\DoxyCodeLine{218         \textcolor{keywordflow}{if}(rotation == 0)\{}
+\DoxyCodeLine{219             \mbox{\hyperlink{_draw_pieces_8h_a3f7a48f0fe5c94ac6ad92bf2cdc8ed9a}{deleteLr}}(map, x, y);}
+\DoxyCodeLine{220         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 1)\{}
+\DoxyCodeLine{221             \mbox{\hyperlink{_draw_pieces_8h_a7c02220296b3d6f7be60d1e33a77b5d6}{deleteLr1}}(map, x, y);}
+\DoxyCodeLine{222         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 2)\{}
+\DoxyCodeLine{223             \mbox{\hyperlink{_draw_pieces_8h_ab850ab153cbaddd8e4e79e480dd4dde1}{deleteLr2}}(map, x, y);}
+\DoxyCodeLine{224         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(rotation == 3)\{}
+\DoxyCodeLine{225             \mbox{\hyperlink{_draw_pieces_8h_adf887b48c8f09041a388673057eaeac1}{deleteLr3}}(map, x, y);}
+\DoxyCodeLine{226         \}}
+\DoxyCodeLine{227     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(selected == 5)\{}
+\DoxyCodeLine{228         \textcolor{keywordflow}{if}(rotation == 0 || rotation == 1 || rotation == 2 || rotation == 3)\{}
+\DoxyCodeLine{229             \mbox{\hyperlink{_draw_pieces_8h_a5a44fc57ffb4aa81cd29e755e532010b}{deleteO}}(map, x, y);}
+\DoxyCodeLine{230         \}}
+\DoxyCodeLine{231     \}}
+\DoxyCodeLine{232 \} }
 \DoxyCodeLine{233 }
-\DoxyCodeLine{239 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}{FallColumn}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} j)\{}
-\DoxyCodeLine{240     \textcolor{keywordtype}{int} i, k, count;}
-\DoxyCodeLine{241     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
-\DoxyCodeLine{242         count = 0;}
-\DoxyCodeLine{243         \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{244             \textcolor{keywordflow}{for}(k = i + 1; k < height -\/ 1 \&\& count < 1;  k++)\{}
-\DoxyCodeLine{245                 \textcolor{keywordflow}{if}(map[k][j] == 0)\{}
-\DoxyCodeLine{246                     map[i][j] = 0;}
-\DoxyCodeLine{247                     map[k][j] = 1;}
-\DoxyCodeLine{248                     count++;}
-\DoxyCodeLine{249                 \}}
-\DoxyCodeLine{250             \}}
-\DoxyCodeLine{251         \}}
-\DoxyCodeLine{252     \}}
-\DoxyCodeLine{253 \}}
-\DoxyCodeLine{254 }
-\DoxyCodeLine{260 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{FallAll}}(\textcolor{keywordtype}{int} map[15][10])\{}
-\DoxyCodeLine{261     \textcolor{keywordtype}{int} j;}
-\DoxyCodeLine{262     \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
-\DoxyCodeLine{263         \mbox{\hyperlink{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}{FallColumn}}(map, j);}
-\DoxyCodeLine{264     \}}
-\DoxyCodeLine{265 \}}
-\DoxyCodeLine{266 }
-\DoxyCodeLine{272 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}{deleteRow}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} i)\{}
-\DoxyCodeLine{273     \textcolor{keywordtype}{int} k, j;}
-\DoxyCodeLine{274     \textcolor{keywordflow}{for}(k = 0; k < height -\/ 1; k++)\{}
-\DoxyCodeLine{275         \textcolor{keywordflow}{if}(k == i)\{}
-\DoxyCodeLine{276             \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
-\DoxyCodeLine{277                 map[k][j] = 0;}
-\DoxyCodeLine{278             \} }
-\DoxyCodeLine{279         \}}
-\DoxyCodeLine{280     \}}
-\DoxyCodeLine{281 \}}
-\DoxyCodeLine{282 }
-\DoxyCodeLine{289 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}{countRows}}(\textcolor{keywordtype}{int} map[15][10])\{}
-\DoxyCodeLine{290     \textcolor{keywordtype}{int} i, j, n, count;}
-\DoxyCodeLine{291     count = 0;}
-\DoxyCodeLine{292     \textcolor{keywordflow}{for}(i = 0; i < height -\/ 1; i++)\{}
-\DoxyCodeLine{293         n = 1;}
-\DoxyCodeLine{294         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
-\DoxyCodeLine{295             \textcolor{keywordflow}{if}(map[i][j] == 0)\{}
-\DoxyCodeLine{296                 n = 0;}
-\DoxyCodeLine{297             \}}
-\DoxyCodeLine{298         \}}
-\DoxyCodeLine{299         \textcolor{keywordflow}{if}(n == 1)\{}
-\DoxyCodeLine{300             count++;}
-\DoxyCodeLine{301             \mbox{\hyperlink{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}{deleteRow}}(map, i);\textcolor{comment}{/* l'iesima riga deve essere eliminata */}}
-\DoxyCodeLine{302         \}}
-\DoxyCodeLine{303     \}}
-\DoxyCodeLine{304     \textcolor{keywordflow}{return} count;}
-\DoxyCodeLine{305 \}}
-\DoxyCodeLine{306 }
-\DoxyCodeLine{307 \textcolor{comment}{/* Una volta posizionato un tetramino, se una o più righe orizzontali vengono riempite}}
-\DoxyCodeLine{308 \textcolor{comment}{ * per intero, queste righe vengono cancellate come nel tetris originale.}}
-\DoxyCodeLine{309 \textcolor{comment}{ * La rimozione di una riga vale 1 punto, la rimozione di due righe con un solo pezzo vale}}
-\DoxyCodeLine{310 \textcolor{comment}{ * 3 punti, tre righe 6 punti, quattro righe 12 punti.}}
-\DoxyCodeLine{311 \textcolor{comment}{ */}}
+\DoxyCodeLine{234 \textcolor{comment}{/* Una volta posizionato un tetramino, se una o più righe orizzontali vengono riempite}}
+\DoxyCodeLine{235 \textcolor{comment}{ * per intero, queste righe vengono cancellate come nel tetris originale.}}
+\DoxyCodeLine{236 \textcolor{comment}{ * La rimozione di una riga vale 1 punto, la rimozione di due righe con un solo pezzo vale}}
+\DoxyCodeLine{237 \textcolor{comment}{ * 3 punti, tre righe 6 punti, quattro righe 12 punti.}}
+\DoxyCodeLine{238 \textcolor{comment}{ */}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{245 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}{FallColumn}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} j)\{}
+\DoxyCodeLine{246     \textcolor{keywordtype}{int} i, k, count;}
+\DoxyCodeLine{247     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1; i++)\{}
+\DoxyCodeLine{248         count = 0;}
+\DoxyCodeLine{249         \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{250             \textcolor{keywordflow}{for}(k = i + 1; k < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1 \&\& count < 1;  k++)\{}
+\DoxyCodeLine{251                 \textcolor{keywordflow}{if}(map[k][j] == 0)\{}
+\DoxyCodeLine{252                     map[i][j] = 0;}
+\DoxyCodeLine{253                     map[k][j] = 1;}
+\DoxyCodeLine{254                     count++;}
+\DoxyCodeLine{255                 \}}
+\DoxyCodeLine{256             \}}
+\DoxyCodeLine{257         \}}
+\DoxyCodeLine{258     \}}
+\DoxyCodeLine{259 \}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{266 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{FallAll}}(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{267     \textcolor{keywordtype}{int} j;}
+\DoxyCodeLine{268     \textcolor{keywordflow}{for}(j = 1; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1; j++)\{}
+\DoxyCodeLine{269         \mbox{\hyperlink{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}{FallColumn}}(map, j);}
+\DoxyCodeLine{270     \}}
+\DoxyCodeLine{271 \}}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{278 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}{deleteRow}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} i)\{}
+\DoxyCodeLine{279     \textcolor{keywordtype}{int} k, j;}
+\DoxyCodeLine{280     \textcolor{keywordflow}{for}(k = 0; k < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1; k++)\{}
+\DoxyCodeLine{281         \textcolor{keywordflow}{if}(k == i)\{}
+\DoxyCodeLine{282             \textcolor{keywordflow}{for}(j = 1; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1; j++)\{}
+\DoxyCodeLine{283                 map[k][j] = 0;}
+\DoxyCodeLine{284             \} }
+\DoxyCodeLine{285         \}}
+\DoxyCodeLine{286     \}}
+\DoxyCodeLine{287 \}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{295 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}{countRows}}(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{296     \textcolor{keywordtype}{int} i, j, n, count;}
+\DoxyCodeLine{297     count = 0;}
+\DoxyCodeLine{298     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1; i++)\{}
+\DoxyCodeLine{299         n = 1;}
+\DoxyCodeLine{300         \textcolor{keywordflow}{for}(j = 1; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1; j++)\{}
+\DoxyCodeLine{301             \textcolor{keywordflow}{if}(map[i][j] == 0)\{}
+\DoxyCodeLine{302                 n = 0;}
+\DoxyCodeLine{303             \}}
+\DoxyCodeLine{304         \}}
+\DoxyCodeLine{305         \textcolor{keywordflow}{if}(n == 1)\{}
+\DoxyCodeLine{306             count++;}
+\DoxyCodeLine{307             \mbox{\hyperlink{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}{deleteRow}}(map, i);\textcolor{comment}{/* l'iesima riga deve essere eliminata */}}
+\DoxyCodeLine{308         \}}
+\DoxyCodeLine{309     \}}
+\DoxyCodeLine{310     \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{311 \}}
 \DoxyCodeLine{312 }
-\DoxyCodeLine{320 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}{updateScoreSM}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} *score)\{}
-\DoxyCodeLine{321     \textcolor{keywordtype}{int} count;}
-\DoxyCodeLine{322     count = \mbox{\hyperlink{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}{countRows}}(map);}
-\DoxyCodeLine{323     \textcolor{keywordflow}{if}(count <= 0)\{}
-\DoxyCodeLine{324         \textcolor{keywordflow}{return};}
-\DoxyCodeLine{325     \} \textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{326 }
-\DoxyCodeLine{327         \textcolor{keywordflow}{if}(count == 1)\{}
-\DoxyCodeLine{328             *score = *score +  1;     \textcolor{comment}{/* BIG MISTAKE: *score += 1 -\/> WRONG */}}
-\DoxyCodeLine{329         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 2)\{}
-\DoxyCodeLine{330             *score = *score +  3;}
-\DoxyCodeLine{331         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 3)\{}
-\DoxyCodeLine{332             *score = *score +  6;}
-\DoxyCodeLine{333         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 4)\{}
-\DoxyCodeLine{334             *score = *score +  12;}
-\DoxyCodeLine{335         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{336             *score = *score +  count;}
-\DoxyCodeLine{337         \}}
-\DoxyCodeLine{338 }
-\DoxyCodeLine{339     \} }
-\DoxyCodeLine{340 }
-\DoxyCodeLine{341     \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{FallAll}}(map); \textcolor{comment}{/* FallAll sempre e comunque,  */}}
-\DoxyCodeLine{342 \}}
-\DoxyCodeLine{343 }
-\DoxyCodeLine{349 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}{invertEnemy}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} invert)\{}
-\DoxyCodeLine{350     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{351     \textcolor{keywordflow}{for}(i = height -\/ invert -\/ 2; i < height -\/ 1 \&\& i >= 0; i++)\{  \textcolor{comment}{/*usiamo i = height -\/ invert -\/ 2 perchè le }}
-\DoxyCodeLine{352 \textcolor{comment}{                                                posizioni i = height e i = height -\/ 1 non sono valide */}}
-\DoxyCodeLine{353         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
-\DoxyCodeLine{354             \textcolor{keywordflow}{if}(map[i][j] == 0)\{}
-\DoxyCodeLine{355                 map[i][j] = 1;}
-\DoxyCodeLine{356             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
-\DoxyCodeLine{357                 map[i][j] = 0;}
-\DoxyCodeLine{358             \}}
-\DoxyCodeLine{359         \}}
-\DoxyCodeLine{360     \}}
-\DoxyCodeLine{361 \}}
-\DoxyCodeLine{362 }
-\DoxyCodeLine{372 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}{updateScoreMP2}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} *score)\{}
-\DoxyCodeLine{373     }
-\DoxyCodeLine{374     \textcolor{keywordtype}{int} count;}
-\DoxyCodeLine{375     count = \mbox{\hyperlink{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}{countRows}}(map);}
-\DoxyCodeLine{376 }
-\DoxyCodeLine{377     \textcolor{keywordflow}{if}(count <= 0)\{}
-\DoxyCodeLine{378         \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{379     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{380         }
-\DoxyCodeLine{381         \textcolor{keywordflow}{if}(count == 1)\{}
-\DoxyCodeLine{382             *score = *score +  1;   \textcolor{comment}{/* BIG MISTAKE: *score += 1 -\/> WRONG */}}
-\DoxyCodeLine{383         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 2)\{}
-\DoxyCodeLine{384             *score = *score +  3;}
-\DoxyCodeLine{385         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 3)\{}
-\DoxyCodeLine{386             *score = *score +  6;}
-\DoxyCodeLine{387         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 4)\{}
-\DoxyCodeLine{388             *score = *score +  12;}
-\DoxyCodeLine{389         \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{390             *score = *score + count;}
-\DoxyCodeLine{391         \}}
-\DoxyCodeLine{392 }
-\DoxyCodeLine{393     \}}
-\DoxyCodeLine{394 }
-\DoxyCodeLine{395     \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{FallAll}}(map);}
-\DoxyCodeLine{396 }
-\DoxyCodeLine{397     \textcolor{comment}{/* aggiungi le cose dalla consegna del progetto nel pdf */}}
-\DoxyCodeLine{398     \textcolor{keywordflow}{return} count;}
-\DoxyCodeLine{399 \}}
+\DoxyCodeLine{313 \textcolor{comment}{/* Una volta posizionato un tetramino, se una o più righe orizzontali vengono riempite}}
+\DoxyCodeLine{314 \textcolor{comment}{ * per intero, queste righe vengono cancellate come nel tetris originale.}}
+\DoxyCodeLine{315 \textcolor{comment}{ * La rimozione di una riga vale 1 punto, la rimozione di due righe con un solo pezzo vale}}
+\DoxyCodeLine{316 \textcolor{comment}{ * 3 punti, tre righe 6 punti, quattro righe 12 punti.}}
+\DoxyCodeLine{317 \textcolor{comment}{ */}}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{326 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}{updateScoreSM}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} *score)\{}
+\DoxyCodeLine{327     \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{328     count = \mbox{\hyperlink{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}{countRows}}(map);}
+\DoxyCodeLine{329     \textcolor{keywordflow}{if}(count <= 0)\{}
+\DoxyCodeLine{330         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{331     \} \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333         \textcolor{keywordflow}{if}(count == 1)\{}
+\DoxyCodeLine{334             *score = *score +  1;     \textcolor{comment}{/* BIG MISTAKE: *score += 1 -\/> WRONG */}}
+\DoxyCodeLine{335         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 2)\{}
+\DoxyCodeLine{336             *score = *score +  3;}
+\DoxyCodeLine{337         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 3)\{}
+\DoxyCodeLine{338             *score = *score +  6;}
+\DoxyCodeLine{339         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 4)\{}
+\DoxyCodeLine{340             *score = *score +  12;}
+\DoxyCodeLine{341         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{342             *score = *score +  count;}
+\DoxyCodeLine{343         \}}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345     \} }
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347     \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{FallAll}}(map); \textcolor{comment}{/* FallAll sempre e comunque,  */}}
+\DoxyCodeLine{348 \}}
+\DoxyCodeLine{349 }
+\DoxyCodeLine{355 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}{invertEnemy}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} invert)\{}
+\DoxyCodeLine{356     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{357     \textcolor{keywordflow}{for}(i = \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ invert -\/ 2; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1 \&\& i >= 0; i++)\{  \textcolor{comment}{/*usiamo i = height -\/ invert -\/ 2 perchè le }}
+\DoxyCodeLine{358 \textcolor{comment}{                                                posizioni i = height e i = height -\/ 1 non sono valide */}}
+\DoxyCodeLine{359         \textcolor{keywordflow}{for}(j = 1; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1; j++)\{}
+\DoxyCodeLine{360             \textcolor{keywordflow}{if}(map[i][j] == 0)\{}
+\DoxyCodeLine{361                 map[i][j] = 1;}
+\DoxyCodeLine{362             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(map[i][j] == 1)\{}
+\DoxyCodeLine{363                 map[i][j] = 0;}
+\DoxyCodeLine{364             \}}
+\DoxyCodeLine{365         \}}
+\DoxyCodeLine{366     \}}
+\DoxyCodeLine{367 \}}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{378 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}{updateScoreMP2}}(\textcolor{keywordtype}{int} map[15][10], \textcolor{keywordtype}{int} *score)\{}
+\DoxyCodeLine{379     }
+\DoxyCodeLine{380     \textcolor{keywordtype}{int} count;}
+\DoxyCodeLine{381     count = \mbox{\hyperlink{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}{countRows}}(map);}
+\DoxyCodeLine{382 }
+\DoxyCodeLine{383     \textcolor{keywordflow}{if}(count <= 0)\{}
+\DoxyCodeLine{384         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{385     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{386         }
+\DoxyCodeLine{387         \textcolor{keywordflow}{if}(count == 1)\{}
+\DoxyCodeLine{388             *score = *score +  1;   \textcolor{comment}{/* BIG MISTAKE: *score += 1 -\/> WRONG */}}
+\DoxyCodeLine{389         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 2)\{}
+\DoxyCodeLine{390             *score = *score +  3;}
+\DoxyCodeLine{391         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 3)\{}
+\DoxyCodeLine{392             *score = *score +  6;}
+\DoxyCodeLine{393         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(count == 4)\{}
+\DoxyCodeLine{394             *score = *score +  12;}
+\DoxyCodeLine{395         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{396             *score = *score + count;}
+\DoxyCodeLine{397         \}}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399     \}}
 \DoxyCodeLine{400 }
-\DoxyCodeLine{407 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{checkEndGame}}(\textcolor{keywordtype}{int} avaiblep[6], \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} *won)\{}
-\DoxyCodeLine{408     \textcolor{keywordtype}{int} i;}
-\DoxyCodeLine{409     \textcolor{keywordtype}{int} count = 0;}
-\DoxyCodeLine{410     \textcolor{keywordflow}{for}(i = 0; i < dim; i++)\{}
-\DoxyCodeLine{411         \textcolor{keywordflow}{if}(avaiblep[i] == 0)\{}
-\DoxyCodeLine{412             count++;}
-\DoxyCodeLine{413         \}}
-\DoxyCodeLine{414     \}}
-\DoxyCodeLine{415     \textcolor{keywordflow}{if}(count == dim)\{}
-\DoxyCodeLine{416         *won = 1;}
-\DoxyCodeLine{417     \}}
-\DoxyCodeLine{418 \}}
-\DoxyCodeLine{419 }
-\DoxyCodeLine{429 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}{checkWinMP}}(\textcolor{keywordtype}{char} name[20], \textcolor{keywordtype}{char} name1[20], \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{int} score1)\{}
-\DoxyCodeLine{430 }
-\DoxyCodeLine{431     \textcolor{keywordflow}{if}(score > score1)\{}
-\DoxyCodeLine{432         \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(name);}
-\DoxyCodeLine{433     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(score < score1)\{}
-\DoxyCodeLine{434         \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(name1);}
-\DoxyCodeLine{435     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{436         \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{printPareggio}}();}
-\DoxyCodeLine{437     \}}
-\DoxyCodeLine{438     }
-\DoxyCodeLine{439 \}}
-\DoxyCodeLine{440 }
-\DoxyCodeLine{450 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}{checkWinMPC}}(\textcolor{keywordtype}{char} name[20], \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{int} score1)\{}
-\DoxyCodeLine{451 }
-\DoxyCodeLine{452     \textcolor{keywordflow}{if}(score > score1)\{}
-\DoxyCodeLine{453         \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(name);}
-\DoxyCodeLine{454     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(score < score1)\{}
-\DoxyCodeLine{455         \mbox{\hyperlink{_print_8h_a9fbc1f7e744174b1dab9de2a2a923803}{printLoser}}(name);}
-\DoxyCodeLine{456     \} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{457         \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{printPareggio}}();}
-\DoxyCodeLine{458     \}}
-\DoxyCodeLine{459     }
-\DoxyCodeLine{460 \}}
-\DoxyCodeLine{461 }
-\DoxyCodeLine{467 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}{whoEnemy}}()\{}
-\DoxyCodeLine{468 }
-\DoxyCodeLine{469     \textcolor{keywordtype}{int} p;}
-\DoxyCodeLine{470     \textcolor{keywordtype}{char} c;}
-\DoxyCodeLine{471     \textcolor{keywordflow}{do}\{}
-\DoxyCodeLine{472         system(\textcolor{stringliteral}{"{}cls"{}});}
-\DoxyCodeLine{473         printf(\textcolor{stringliteral}{"{}How many players? (0, 1, 2): "{}});}
-\DoxyCodeLine{474     \}\textcolor{keywordflow}{while}( ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&p, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\_stdin}}() == 1 ) || p < 0 || p > 2);}
-\DoxyCodeLine{475     \textcolor{keywordflow}{return} p;}
-\DoxyCodeLine{476 \}}
-\DoxyCodeLine{477    }
+\DoxyCodeLine{401     \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{FallAll}}(map);}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{403     \textcolor{comment}{/* aggiungi le cose dalla consegna del progetto nel pdf */}}
+\DoxyCodeLine{404     \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{405 \}}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{413 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{checkEndGame}}(\textcolor{keywordtype}{int} avaiblep[6], \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \textcolor{keywordtype}{int} *won)\{}
+\DoxyCodeLine{414     \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{415     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{416     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}; i++)\{}
+\DoxyCodeLine{417         \textcolor{keywordflow}{if}(avaiblep[i] == 0)\{}
+\DoxyCodeLine{418             count++;}
+\DoxyCodeLine{419         \}}
+\DoxyCodeLine{420     \}}
+\DoxyCodeLine{421     \textcolor{keywordflow}{if}(count == \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}})\{}
+\DoxyCodeLine{422         *won = 1;}
+\DoxyCodeLine{423     \}}
+\DoxyCodeLine{424 \}}
+\DoxyCodeLine{425 }
+\DoxyCodeLine{435 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}{checkWinMP}}(\textcolor{keywordtype}{char} name[20], \textcolor{keywordtype}{char} name1[20], \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{int} score1)\{}
+\DoxyCodeLine{436 }
+\DoxyCodeLine{437     \textcolor{keywordflow}{if}(score > score1)\{}
+\DoxyCodeLine{438         \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(name);}
+\DoxyCodeLine{439     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(score < score1)\{}
+\DoxyCodeLine{440         \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(name1);}
+\DoxyCodeLine{441     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{442         \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{printPareggio}}();}
+\DoxyCodeLine{443     \}}
+\DoxyCodeLine{444     }
+\DoxyCodeLine{445 \}}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{456 \textcolor{keywordtype}{void} \mbox{\hyperlink{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}{checkWinMPC}}(\textcolor{keywordtype}{char} name[20], \textcolor{keywordtype}{int} score, \textcolor{keywordtype}{int} score1)\{}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458     \textcolor{keywordflow}{if}(score > score1)\{}
+\DoxyCodeLine{459         \mbox{\hyperlink{_print_8h_a1076c28ca965d7ebaa8a26c91488e457}{printWinner}}(name);}
+\DoxyCodeLine{460     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(score < score1)\{}
+\DoxyCodeLine{461         \mbox{\hyperlink{_print_8h_a9fbc1f7e744174b1dab9de2a2a923803}{printLoser}}(name);}
+\DoxyCodeLine{462     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{463         \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{printPareggio}}();}
+\DoxyCodeLine{464     \}}
+\DoxyCodeLine{465     }
+\DoxyCodeLine{466 \}}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{473 \textcolor{keywordtype}{int} \mbox{\hyperlink{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}{whoEnemy}}()\{}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475     \textcolor{keywordtype}{int} p;}
+\DoxyCodeLine{476     \textcolor{keywordtype}{char} c;}
+\DoxyCodeLine{477     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{478         system(\textcolor{stringliteral}{"{}cls"{}});}
+\DoxyCodeLine{479         printf(\textcolor{stringliteral}{"{}How many players? (0, 1, 2): "{}});}
+\DoxyCodeLine{480     \}\textcolor{keywordflow}{while}( ( (scanf(\textcolor{stringliteral}{"{}\%d\%c"{}}, \&p, \&c) != 2 || c != \textcolor{charliteral}{'\(\backslash\)n'}) \&\& \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\_stdin}}() == 1 ) || p < 0 || p > 2);}
+\DoxyCodeLine{481     \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{482 \}}
+\DoxyCodeLine{483    }
 
 \end{DoxyCode}

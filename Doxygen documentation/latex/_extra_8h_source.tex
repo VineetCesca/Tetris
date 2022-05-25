@@ -3,81 +3,81 @@
 \mbox{\hyperlink{_extra_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
-\DoxyCodeLine{8 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
-\DoxyCodeLine{9  }
-\DoxyCodeLine{10  COORD coord;}
-\DoxyCodeLine{11  }
-\DoxyCodeLine{12  coord.X = x;}
-\DoxyCodeLine{13  }
-\DoxyCodeLine{14  coord.Y = y;}
+\DoxyCodeLine{14 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y)\{}
 \DoxyCodeLine{15  }
-\DoxyCodeLine{16  SetConsoleCursorPosition(GetStdHandle(STD\_OUTPUT\_HANDLE), coord);}
+\DoxyCodeLine{16  COORD coord;}
 \DoxyCodeLine{17  }
-\DoxyCodeLine{18 \}}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{25 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(\textcolor{keywordtype}{float} number\_of\_seconds)\{}
-\DoxyCodeLine{26     \textcolor{comment}{/* Converting time into milli\_seconds */}}
-\DoxyCodeLine{27     \textcolor{keywordtype}{float} milli\_seconds = 1000 * number\_of\_seconds;}
-\DoxyCodeLine{28   }
-\DoxyCodeLine{29     \textcolor{comment}{/* Storing start time */}}
-\DoxyCodeLine{30     clock\_t start\_time = clock();}
-\DoxyCodeLine{31   }
-\DoxyCodeLine{32     \textcolor{comment}{/* looping till required time is not achieved*/}}
-\DoxyCodeLine{33     \textcolor{keywordflow}{while} (clock() < start\_time + milli\_seconds);}
-\DoxyCodeLine{34 \}}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{41 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_ab31643a884d56d21baa151f155d93b26}{loadGame}}()\{}
-\DoxyCodeLine{42     \textcolor{keywordtype}{int} r, cnt = 5, n = 60, m = n;}
-\DoxyCodeLine{43     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n + 5, 25);}
-\DoxyCodeLine{44     printf(\textcolor{stringliteral}{"{}LOADING..."{}});}
-\DoxyCodeLine{45     \textcolor{keywordflow}{for}(r=1;r<=20;r++)\{}
-\DoxyCodeLine{46         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n, 26);}
-\DoxyCodeLine{47         \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(0.100);}
-\DoxyCodeLine{48         printf(\textcolor{stringliteral}{"{}\%c"{}}, 177);}
-\DoxyCodeLine{49         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n + 5, 27);}
-\DoxyCodeLine{50         printf(\textcolor{stringliteral}{"{}\%3d/100"{}}, cnt);}
-\DoxyCodeLine{51         cnt += 5;}
-\DoxyCodeLine{52         n++;}
-\DoxyCodeLine{53     \}}
-\DoxyCodeLine{54     }
-\DoxyCodeLine{55     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(m + 2, 30);}
-\DoxyCodeLine{56     printf(\textcolor{stringliteral}{"{}Enter anything to play \(\backslash\)n"{}});  }
-\DoxyCodeLine{57     getch();}
-\DoxyCodeLine{58 \}}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{65 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_ae3629e6aee96848a9799d6706b42aa3d}{closeGame}}()\{}
-\DoxyCodeLine{66     \textcolor{keywordtype}{int} r, cnt = 5, n = 60;}
-\DoxyCodeLine{67     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n + 2, 25);}
-\DoxyCodeLine{68     printf(\textcolor{stringliteral}{"{}SHUTTING DOWN..."{}});}
-\DoxyCodeLine{69     \textcolor{keywordflow}{for}(r=1;r<=20;r++)\{}
-\DoxyCodeLine{70         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n, 26);}
-\DoxyCodeLine{71         \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(0.100);}
-\DoxyCodeLine{72         printf(\textcolor{stringliteral}{"{}\%c"{}}, 177);}
-\DoxyCodeLine{73         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n + 5, 27);}
-\DoxyCodeLine{74         printf(\textcolor{stringliteral}{"{}\%3d/100"{}}, cnt);}
-\DoxyCodeLine{75         cnt += 5;}
-\DoxyCodeLine{76         n++;}
-\DoxyCodeLine{77     \}}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{79 \}}
-\DoxyCodeLine{80 }
-\DoxyCodeLine{85 \textcolor{keywordtype}{int} \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\_stdin}}() \textcolor{comment}{/* useful to prevent input data errors */}}
-\DoxyCodeLine{86 \{}
-\DoxyCodeLine{87     \textcolor{keywordflow}{while} (getchar()!=\textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{88     \textcolor{keywordflow}{return} 1;}
-\DoxyCodeLine{89 \}}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91 \textcolor{comment}{/* self-\/made */}}
-\DoxyCodeLine{96 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_ade365d5befabc715613a08d8248d5aea}{fillOne}}(\textcolor{keywordtype}{int} map[15][10])\{}
-\DoxyCodeLine{97     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{98     \textcolor{keywordflow}{for} (i = 1; i < height -\/ 1; i++)\{}
-\DoxyCodeLine{99         \textcolor{keywordflow}{for}(j = 1; j < width -\/ 1; j++)\{}
-\DoxyCodeLine{100             map[i][j] = 1;}
-\DoxyCodeLine{101         \}}
-\DoxyCodeLine{102     \}}
-\DoxyCodeLine{103 \}}
-\DoxyCodeLine{104 }
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106 }
+\DoxyCodeLine{18  coord.X = x;}
+\DoxyCodeLine{19  }
+\DoxyCodeLine{20  coord.Y = y;}
+\DoxyCodeLine{21  }
+\DoxyCodeLine{22  SetConsoleCursorPosition(GetStdHandle(STD\_OUTPUT\_HANDLE), coord);}
+\DoxyCodeLine{23  }
+\DoxyCodeLine{24 \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{31 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(\textcolor{keywordtype}{float} number\_of\_seconds)\{}
+\DoxyCodeLine{32     \textcolor{comment}{/* Converting time into milli\_seconds */}}
+\DoxyCodeLine{33     \textcolor{keywordtype}{float} milli\_seconds = 1000 * number\_of\_seconds;}
+\DoxyCodeLine{34   }
+\DoxyCodeLine{35     \textcolor{comment}{/* Storing start time */}}
+\DoxyCodeLine{36     clock\_t start\_time = clock();}
+\DoxyCodeLine{37   }
+\DoxyCodeLine{38     \textcolor{comment}{/* looping till required time is not achieved*/}}
+\DoxyCodeLine{39     \textcolor{keywordflow}{while} (clock() < start\_time + milli\_seconds);}
+\DoxyCodeLine{40 \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_ab31643a884d56d21baa151f155d93b26}{loadGame}}()\{}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} r, cnt = 5, n = 60, m = n;}
+\DoxyCodeLine{49     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n + 5, 25);}
+\DoxyCodeLine{50     printf(\textcolor{stringliteral}{"{}LOADING..."{}});}
+\DoxyCodeLine{51     \textcolor{keywordflow}{for}(r=1;r<=20;r++)\{}
+\DoxyCodeLine{52         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n, 26);}
+\DoxyCodeLine{53         \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(0.100);}
+\DoxyCodeLine{54         printf(\textcolor{stringliteral}{"{}\%c"{}}, 177);}
+\DoxyCodeLine{55         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n + 5, 27);}
+\DoxyCodeLine{56         printf(\textcolor{stringliteral}{"{}\%3d/100"{}}, cnt);}
+\DoxyCodeLine{57         cnt += 5;}
+\DoxyCodeLine{58         n++;}
+\DoxyCodeLine{59     \}}
+\DoxyCodeLine{60     }
+\DoxyCodeLine{61     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(m + 2, 30);}
+\DoxyCodeLine{62     printf(\textcolor{stringliteral}{"{}Enter anything to play \(\backslash\)n"{}});  }
+\DoxyCodeLine{63     getch();}
+\DoxyCodeLine{64 \}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_ae3629e6aee96848a9799d6706b42aa3d}{closeGame}}()\{}
+\DoxyCodeLine{72     \textcolor{keywordtype}{int} r, cnt = 5, n = 60;}
+\DoxyCodeLine{73     \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n + 2, 25);}
+\DoxyCodeLine{74     printf(\textcolor{stringliteral}{"{}SHUTTING DOWN..."{}});}
+\DoxyCodeLine{75     \textcolor{keywordflow}{for}(r=1;r<=20;r++)\{}
+\DoxyCodeLine{76         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n, 26);}
+\DoxyCodeLine{77         \mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay}}(0.100);}
+\DoxyCodeLine{78         printf(\textcolor{stringliteral}{"{}\%c"{}}, 177);}
+\DoxyCodeLine{79         \mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{gotoXY}}(n + 5, 27);}
+\DoxyCodeLine{80         printf(\textcolor{stringliteral}{"{}\%3d/100"{}}, cnt);}
+\DoxyCodeLine{81         cnt += 5;}
+\DoxyCodeLine{82         n++;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{91 \textcolor{keywordtype}{int} \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\_stdin}}() \textcolor{comment}{/* useful to prevent input data errors */}}
+\DoxyCodeLine{92 \{}
+\DoxyCodeLine{93     \textcolor{keywordflow}{while} (getchar()!=\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{94     \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{95 \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{comment}{/* self-\/made */}}
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} \mbox{\hyperlink{_extra_8h_ade365d5befabc715613a08d8248d5aea}{fillOne}}(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{103     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{104     \textcolor{keywordflow}{for} (i = 1; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} -\/ 1; i++)\{}
+\DoxyCodeLine{105         \textcolor{keywordflow}{for}(j = 1; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} -\/ 1; j++)\{}
+\DoxyCodeLine{106             map[i][j] = 1;}
+\DoxyCodeLine{107         \}}
+\DoxyCodeLine{108     \}}
+\DoxyCodeLine{109 \}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 }
 
 \end{DoxyCode}
