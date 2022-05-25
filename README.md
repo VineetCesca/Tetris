@@ -1,3 +1,3 @@
-# Tetris
+# X-Tetris
 
-description...
+A simple version of the so known Tetris game
