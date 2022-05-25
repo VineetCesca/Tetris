@@ -1,21 +1,11 @@
 var searchData=
 [
-  ['print_2eh_0',['Print.h',['../_print_8h.html',1,'']]],
-  ['printavaiblepieces_1',['printAvaiblePieces',['../_print_8h.html#a7163d93faf2f9bfaf60660fa60164095',1,'Print.h']]],
-  ['printgamemenu_2',['printGameMenu',['../_print_8h.html#ae5ced7d7e756c5e7cc57256ac6865aa3',1,'Print.h']]],
-  ['printlegendaallpieces_3',['printLegendaAllPieces',['../_print_8h.html#a5c0024f7636f893e7c57e72c6f0e7f93',1,'Print.h']]],
-  ['printlegendapieces_4',['printLegendaPieces',['../_print_8h.html#ae77770b22209ba7e20e82bbe37cc2b25',1,'Print.h']]],
-  ['printloser_5',['printLoser',['../_print_8h.html#a9fbc1f7e744174b1dab9de2a2a923803',1,'Print.h']]],
-  ['printmap_6',['printMap',['../_print_8h.html#a2aa18c495cf17747e69b7fc8d45fe437',1,'Print.h']]],
-  ['printmap2_7',['printMap2',['../_print_8h.html#a9c20781191d0dadbbcea017aab19e83f',1,'Print.h']]],
-  ['printmapcolor_8',['printMapColor',['../_print_8h.html#a1dd3cf15452a5093ce71f8d9ec956e9c',1,'Print.h']]],
-  ['printmaps_9',['printMaps',['../_print_8h.html#a2875dfc0ecfe0639e759d9814d48f52e',1,'Print.h']]],
-  ['printmovemenu_10',['printMoveMenu',['../_print_8h.html#ad5deb4d6da93418db2c13080bae46bdc',1,'Print.h']]],
-  ['printpareggio_11',['printPareggio',['../_print_8h.html#a277aa4d6daf83c78553264a2483b009a',1,'Print.h']]],
-  ['printscore_12',['printScore',['../_print_8h.html#ae953d69c998a186cfa2f6a69aa15c09a',1,'Print.h']]],
-  ['printscorename_13',['printScoreName',['../_print_8h.html#aab849fdc6e864a042e075a698cb0a6b5',1,'Print.h']]],
-  ['printscorepc_14',['printScorePC',['../_print_8h.html#a535d6e965412bba0c9f8b027d8160b60',1,'Print.h']]],
-  ['printsmodeoptions_15',['printSModeOptions',['../_print_8h.html#af93aaa5be98af25bcbce45e2048fe1c5',1,'Print.h']]],
-  ['printtitle_16',['printTitle',['../_print_8h.html#a5564a74283c7de4315aa6c31e3a18cd1',1,'Print.h']]],
-  ['printwinner_17',['printWinner',['../_print_8h.html#a1076c28ca965d7ebaa8a26c91488e457',1,'Print.h']]]
+  ['saltarighe_0',['saltaRighe',['../_text_settings_8h.html#a0916589349f2d883bef905033b33278c',1,'TextSettings.h']]],
+  ['selectpiece_1',['selectPiece',['../_logic_8h.html#a8a177e9cdae096c627c34a7af3259f47',1,'Logic.h']]],
+  ['selectprocess_2',['selectProcess',['../_cut_8h.html#a31d08c0c40d8f48175b75e48f8412c8b',1,'Cut.h']]],
+  ['selectprocesspc_3',['selectProcessPC',['../_cut_8h.html#ae1436a9803c69c5bd7b6ff9355bed613',1,'Cut.h']]],
+  ['selectrotation_4',['selectRotation',['../_logic_8h.html#a368eec4ffe984c02c5cf96bf6b6f0add',1,'Logic.h']]],
+  ['setcolortext_5',['setcolorText',['../_text_settings_8h.html#a8d6d4d62e9c7c82b10b30b093e80b248',1,'TextSettings.h']]],
+  ['setcursor_6',['setCursor',['../_initializer_8h.html#aae120d7676c71a9758569bcc70aa6678',1,'Initializer.h']]],
+  ['stampanome_7',['stampaNome',['../_cut_8h.html#ac2887fddac9e3cb86275cc401f3fcd77',1,'Cut.h']]]
 ];

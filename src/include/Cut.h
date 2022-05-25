@@ -1,4 +1,10 @@
 /**
+ * @file Cut.h
+ * @brief A summary of all the functions that would have made the main file be hard to read
+ * @author Vineet
+ */
+
+/**
  * Prints out the player's name
  * @param[out] playerone char pointer
  */ 

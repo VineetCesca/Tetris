@@ -1,4 +1,10 @@
 /**
+ * @file Initializer.h
+ * @brief Set everything to play a match
+ * @author Vineet
+ */
+
+/**
  * Initializes the map
  * @param[out] map game map
  */

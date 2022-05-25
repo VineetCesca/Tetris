@@ -1,4 +1,10 @@
 /**
+ * @file Logic.h
+ * @brief Implements some logical process during a match
+ * @author Vineet
+ */
+
+/**
  * Checks if the selected piece is avaible
  * 
  * @param[in] pieces points to avaible array

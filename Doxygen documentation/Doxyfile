@@ -41,7 +41,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "My Project"
+PROJECT_NAME           = X-Tetris
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -60,7 +60,7 @@ PROJECT_BRIEF          = X-Tetris
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = "C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione_e_Laboratorio/ProgettoEsame_ANSI_C/Tetris/Doxygen documentation/Logo.png"
+PROJECT_LOGO           =
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -208,7 +208,7 @@ SHORT_NAMES            = NO
 # description.)
 # The default value is: NO.
 
-JAVADOC_AUTOBRIEF      = NO
+JAVADOC_AUTOBRIEF      = YES
 
 # If the JAVADOC_BANNER tag is set to YES then doxygen will interpret a line
 # such as
@@ -290,7 +290,7 @@ ALIASES                =
 # members will be omitted, etc.
 # The default value is: NO.
 
-OPTIMIZE_OUTPUT_FOR_C  = NO
+OPTIMIZE_OUTPUT_FOR_C  = YES
 
 # Set the OPTIMIZE_OUTPUT_JAVA tag to YES if your project consists of Java or
 # Python sources only. Doxygen will then generate output that is more tailored
@@ -498,13 +498,13 @@ NUM_PROC_THREADS       = 1
 # normally produced when WARNINGS is set to YES.
 # The default value is: NO.
 
-EXTRACT_ALL            = NO
+EXTRACT_ALL            = YES
 
 # If the EXTRACT_PRIVATE tag is set to YES, all private members of a class will
 # be included in the documentation.
 # The default value is: NO.
 
-EXTRACT_PRIVATE        = NO
+EXTRACT_PRIVATE        = YES
 
 # If the EXTRACT_PRIV_VIRTUAL tag is set to YES, documented private virtual
 # methods of a class will be included in the documentation.
@@ -522,7 +522,7 @@ EXTRACT_PACKAGE        = NO
 # included in the documentation.
 # The default value is: NO.
 
-EXTRACT_STATIC         = NO
+EXTRACT_STATIC         = YES
 
 # If the EXTRACT_LOCAL_CLASSES tag is set to YES, classes (and structs) defined
 # locally in source files will be included in the documentation. If set to NO,
@@ -591,7 +591,7 @@ HIDE_IN_BODY_DOCS      = NO
 # will be excluded. Set it to YES to include the internal documentation.
 # The default value is: NO.
 
-INTERNAL_DOCS          = NO
+INTERNAL_DOCS          = YES
 
 # With the correct setting of option CASE_SENSE_NAMES doxygen will better be
 # able to match the capabilities of the underlying filesystem. In case the
@@ -614,7 +614,7 @@ CASE_SENSE_NAMES       = NO
 # scope will be hidden.
 # The default value is: NO.
 
-HIDE_SCOPE_NAMES       = NO
+HIDE_SCOPE_NAMES       = YES
 
 # If the HIDE_COMPOUND_REFERENCE tag is set to NO (default) then doxygen will
 # append additional text to a page's title, such as Class Reference. If set to
@@ -1117,7 +1117,7 @@ USE_MDFILE_AS_MAINPAGE =
 # also VERBATIM_HEADERS is set to NO.
 # The default value is: NO.
 
-SOURCE_BROWSER         = NO
+SOURCE_BROWSER         = YES
 
 # Setting the INLINE_SOURCES tag to YES will include the body of functions,
 # classes and enums directly into the documentation.

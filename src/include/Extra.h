@@ -1,4 +1,10 @@
 /**
+ * @file Extra.h
+ * @brief Functions which are not really needed to play the game
+ * @author Vineet (with some third part of codes)
+ */
+
+/**
  * Moves the cursor at (x, y) coords
  * (windows.h)
  * @param x screen x coord.

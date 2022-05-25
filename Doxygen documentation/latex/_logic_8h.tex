@@ -1,40 +1,40 @@
-\hypertarget{_logic_8h}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Logic.h File Reference}
-\label{_logic_8h}\index{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/Tetris/Logic.h@{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/Tetris/Logic.h}}
+\hypertarget{_logic_8h}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+X-\/\+Tetris/src/include/\+Logic.h File Reference}
+\label{_logic_8h}\index{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/X-\/Tetris/src/include/Logic.h@{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/X-\/Tetris/src/include/Logic.h}}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{check\+Avaible}} (int $\ast$pieces, int \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int selected)
-\begin{DoxyCompactList}\small\item\em Checks if the selected piece is avaible. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}{select\+Piece}} (int $\ast$pieces, int \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, char $\ast$color\+Piece)
-\begin{DoxyCompactList}\small\item\em Prints the options, asks the player to select a piece and updates the avaible pieces and returns the selected piece. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{check\+Avaible}} (int $\ast$pieces, int dim, int selected)
+\item 
+int \mbox{\hyperlink{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}{select\+Piece}} (int $\ast$pieces, int dim, char $\ast$color\+Piece)
+\item 
 int \mbox{\hyperlink{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}{select\+Rotation}} (char $\ast$color\+Piece)
-\begin{DoxyCompactList}\small\item\em Prints the options, asks the player to select a piece rotation and updates the avaible pieces and returns the selected piece rotation. \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}{draw\+Selected}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int selected, int rotation)
-\begin{DoxyCompactList}\small\item\em Fills the map with the selected piece adding \textquotesingle{}1\textquotesingle{}. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}{moveback\+Selected}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int x, int y, int selected, int rotation)
-\begin{DoxyCompactList}\small\item\em Fills the map with the selected piece adding \textquotesingle{}0\textquotesingle{}. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}{Fall\+Column}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int j)
-\begin{DoxyCompactList}\small\item\em Make the pieces inside the column fall. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{Fall\+All}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]})
-\begin{DoxyCompactList}\small\item\em Make all pieces inside the map fall. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}{delete\+Row}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int i)
-\begin{DoxyCompactList}\small\item\em If there\textquotesingle{}s a row of \textquotesingle{}1\textquotesingle{}, it converts it to \textquotesingle{}0\textquotesingle{}. \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}{count\+Rows}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]})
-\begin{DoxyCompactList}\small\item\em Counts the rows filled with \textquotesingle{}1\textquotesingle{} and, if necessary, deletes them. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}{update\+Score\+SM}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int $\ast$score)
-\begin{DoxyCompactList}\small\item\em Updates the score, counts the rows and , if necessary, deletes them. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}{invert\+Enemy}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int invert)
-\begin{DoxyCompactList}\small\item\em Inverts the enemy\textquotesingle{}s map. \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}{update\+Score\+MP2}} (int map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]}, int $\ast$score)
-\begin{DoxyCompactList}\small\item\em Updates the score in Multi\+Player, counts the rwos and, if necessary, deletes them. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{check\+End\+Game}} (int avaiblep\mbox{[}6\mbox{]}, int \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, int $\ast$won)
-\begin{DoxyCompactList}\small\item\em Checks if player/players have run out of pieces. \end{DoxyCompactList}\item 
+\item 
+void \mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{check\+End\+Game}} (int avaiblep\mbox{[}6\mbox{]}, int dim, int $\ast$won)
+\item 
 void \mbox{\hyperlink{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}{check\+Win\+MP}} (char name\mbox{[}20\mbox{]}, char name1\mbox{[}20\mbox{]}, int score, int score1)
-\begin{DoxyCompactList}\small\item\em Checks who has the bigger score and prints out the winner (1 vs 1) or or draw screen. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}{check\+Win\+MPC}} (char name\mbox{[}20\mbox{]}, int score, int score1)
-\begin{DoxyCompactList}\small\item\em Checks if player has won or lost and prints out the result (1 vs PC) \end{DoxyCompactList}\item 
+\item 
 int \mbox{\hyperlink{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}{who\+Enemy}} ()
-\begin{DoxyCompactList}\small\item\em Shows options and returns how many players will play. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -44,9 +44,7 @@ int \mbox{\hyperlink{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}{who\+Enemy}} (
 \doxysubsubsection{\texorpdfstring{checkAvaible()}{checkAvaible()}}
 {\footnotesize\ttfamily int check\+Avaible (\begin{DoxyParamCaption}\item[{int $\ast$}]{pieces,  }\item[{int}]{dim,  }\item[{int}]{selected }\end{DoxyParamCaption})}
 
-
-
-Checks if the selected piece is avaible. 
+Checks if the selected piece is avaible
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -60,21 +58,13 @@ Checks if the selected piece is avaible.
 \begin{DoxyReturn}{Returns}
 1\+: if it is abvaible, 0\+: if it is not avaible 
 \end{DoxyReturn}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00009}{9}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}\label{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}} 
 \index{Logic.h@{Logic.h}!checkEndGame@{checkEndGame}}
 \index{checkEndGame@{checkEndGame}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{checkEndGame()}{checkEndGame()}}
 {\footnotesize\ttfamily void check\+End\+Game (\begin{DoxyParamCaption}\item[{int}]{avaiblep\mbox{[}6\mbox{]},  }\item[{int}]{dim,  }\item[{int $\ast$}]{won }\end{DoxyParamCaption})}
 
-
-
-Checks if player/players have run out of pieces. 
-
-
+Checks if player/players have run out of pieces 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em avaiblep} & avaible pieces \\
 \hline
@@ -83,21 +73,13 @@ Checks if player/players have run out of pieces.
 \mbox{\texttt{ out}}  & {\em won} & if pieces are finished or not \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00407}{407}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}\label{_logic_8h_a333725dd882aacbc83cb91a13cba04ab}} 
 \index{Logic.h@{Logic.h}!checkWinMP@{checkWinMP}}
 \index{checkWinMP@{checkWinMP}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{checkWinMP()}{checkWinMP()}}
 {\footnotesize\ttfamily void check\+Win\+MP (\begin{DoxyParamCaption}\item[{char}]{name\mbox{[}20\mbox{]},  }\item[{char}]{name1\mbox{[}20\mbox{]},  }\item[{int}]{score,  }\item[{int}]{score1 }\end{DoxyParamCaption})}
 
-
-
-Checks who has the bigger score and prints out the winner (1 vs 1) or or draw screen. 
-
-
+Checks who has the bigger score and prints out the winner (1 vs 1) or or draw screen 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em name} & player1 name \\
 \hline
@@ -113,21 +95,13 @@ Checks who has the bigger score and prints out the winner (1 vs 1) or or draw sc
 
 \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{print\+Pareggio()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00429}{429}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}\label{_logic_8h_a7ae65784891006a5afc1c0212ad86a54}} 
 \index{Logic.h@{Logic.h}!checkWinMPC@{checkWinMPC}}
 \index{checkWinMPC@{checkWinMPC}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{checkWinMPC()}{checkWinMPC()}}
 {\footnotesize\ttfamily void check\+Win\+MPC (\begin{DoxyParamCaption}\item[{char}]{name\mbox{[}20\mbox{]},  }\item[{int}]{score,  }\item[{int}]{score1 }\end{DoxyParamCaption})}
 
-
-
 Checks if player has won or lost and prints out the result (1 vs PC) 
-
-
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em name} & player\textquotesingle{}s name \\
 \hline
@@ -143,21 +117,13 @@ Checks if player has won or lost and prints out the result (1 vs PC)
 
 \mbox{\hyperlink{_print_8h_a277aa4d6daf83c78553264a2483b009a}{print\+Pareggio()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00450}{450}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}\label{_logic_8h_abad30d0bfcc0a73c9df01d974f8e8882}} 
 \index{Logic.h@{Logic.h}!countRows@{countRows}}
 \index{countRows@{countRows}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{countRows()}{countRows()}}
 {\footnotesize\ttfamily int count\+Rows (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]} }\end{DoxyParamCaption})}
 
-
-
-Counts the rows filled with \textquotesingle{}1\textquotesingle{} and, if necessary, deletes them. 
-
-
+Counts the rows filled with \textquotesingle{}1\textquotesingle{} and, if necessary, deletes them 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & game map \\
 \hline
@@ -168,42 +134,26 @@ count\+: number of rows filled with \textquotesingle{}1\textquotesingle{}
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}{delete\+Row()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00289}{289}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}\label{_logic_8h_a1bcee7c64e802deb14834e81b7b3b93d}} 
 \index{Logic.h@{Logic.h}!deleteRow@{deleteRow}}
 \index{deleteRow@{deleteRow}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{deleteRow()}{deleteRow()}}
 {\footnotesize\ttfamily void delete\+Row (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{i }\end{DoxyParamCaption})}
 
-
-
-If there\textquotesingle{}s a row of \textquotesingle{}1\textquotesingle{}, it converts it to \textquotesingle{}0\textquotesingle{}. 
-
-
+If there\textquotesingle{}s a row of \textquotesingle{}1\textquotesingle{}, it converts it to \textquotesingle{}0\textquotesingle{} 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & game map \\
 \hline
 \mbox{\texttt{ in}}  & {\em i} & map row \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00272}{272}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}\label{_logic_8h_a5d22ad5e258a2a031612ffc15d2dd298}} 
 \index{Logic.h@{Logic.h}!drawSelected@{drawSelected}}
 \index{drawSelected@{drawSelected}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{drawSelected()}{drawSelected()}}
 {\footnotesize\ttfamily int draw\+Selected (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{selected,  }\item[{int}]{rotation }\end{DoxyParamCaption})}
 
-
-
-Fills the map with the selected piece adding \textquotesingle{}1\textquotesingle{}. 
-
-
+Fills the map with the selected piece adding \textquotesingle{}1\textquotesingle{} 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & game map \\
 \hline
@@ -258,21 +208,13 @@ drawn\+: if the piece was put inside the map or not
 
 \mbox{\hyperlink{_draw_pieces_8h_a1f0f37fcbe16c992da82419f30c529e6}{drawO}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00088}{88}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}\label{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}} 
 \index{Logic.h@{Logic.h}!FallAll@{FallAll}}
 \index{FallAll@{FallAll}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{FallAll()}{FallAll()}}
 {\footnotesize\ttfamily void Fall\+All (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]} }\end{DoxyParamCaption})}
 
-
-
-Make all pieces inside the map fall. 
-
-
+Make all pieces inside the map fall 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & game map \\
 \hline
@@ -280,63 +222,39 @@ Make all pieces inside the map fall.
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}{Fall\+Column()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00260}{260}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}\label{_logic_8h_abc84f7c8e631c6f043f9e1229f7fb613}} 
 \index{Logic.h@{Logic.h}!FallColumn@{FallColumn}}
 \index{FallColumn@{FallColumn}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{FallColumn()}{FallColumn()}}
 {\footnotesize\ttfamily void Fall\+Column (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{j }\end{DoxyParamCaption})}
 
-
-
-Make the pieces inside the column fall. 
-
-
+Make the pieces inside the column fall 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & game map \\
 \hline
 \mbox{\texttt{ in}}  & {\em j} & map columnn \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00239}{239}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}\label{_logic_8h_a324846e6d5e158c401990ebbb9e584c9}} 
 \index{Logic.h@{Logic.h}!invertEnemy@{invertEnemy}}
 \index{invertEnemy@{invertEnemy}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{invertEnemy()}{invertEnemy()}}
 {\footnotesize\ttfamily void invert\+Enemy (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{invert }\end{DoxyParamCaption})}
 
-
-
-Inverts the enemy\textquotesingle{}s map. 
-
-
+Inverts the enemy\textquotesingle{}s map 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & enemy\textquotesingle{}s map \\
 \hline
 \mbox{\texttt{ in}}  & {\em invert} & from which row we need to convert \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00349}{349}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}\label{_logic_8h_aee97c5a4ef026c8650c36bf2ae504e83}} 
 \index{Logic.h@{Logic.h}!movebackSelected@{movebackSelected}}
 \index{movebackSelected@{movebackSelected}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{movebackSelected()}{movebackSelected()}}
 {\footnotesize\ttfamily void moveback\+Selected (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{selected,  }\item[{int}]{rotation }\end{DoxyParamCaption})}
 
-
-
-Fills the map with the selected piece adding \textquotesingle{}0\textquotesingle{}. 
-
-
+Fills the map with the selected piece adding \textquotesingle{}0\textquotesingle{} 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & game map \\
 \hline
@@ -388,21 +306,13 @@ Fills the map with the selected piece adding \textquotesingle{}0\textquotesingle
 
 \mbox{\hyperlink{_draw_pieces_8h_a5a44fc57ffb4aa81cd29e755e532010b}{deleteO}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00173}{173}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}\label{_logic_8h_a8a177e9cdae096c627c34a7af3259f47}} 
 \index{Logic.h@{Logic.h}!selectPiece@{selectPiece}}
 \index{selectPiece@{selectPiece}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{selectPiece()}{selectPiece()}}
 {\footnotesize\ttfamily int select\+Piece (\begin{DoxyParamCaption}\item[{int $\ast$}]{pieces,  }\item[{int}]{dim,  }\item[{char $\ast$}]{color\+Piece }\end{DoxyParamCaption})}
 
-
-
-Prints the options, asks the player to select a piece and updates the avaible pieces and returns the selected piece. 
-
-
+Prints the options, asks the player to select a piece and updates the avaible pieces and returns the selected piece 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em pieces} & points to avaible array \\
 \hline
@@ -421,21 +331,13 @@ selected\+: piece which the user has selected
 
 \mbox{\hyperlink{_logic_8h_a1970eaa9e312cd74d102b660684ae60d}{check\+Avaible()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00027}{27}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}\label{_logic_8h_a368eec4ffe984c02c5cf96bf6b6f0add}} 
 \index{Logic.h@{Logic.h}!selectRotation@{selectRotation}}
 \index{selectRotation@{selectRotation}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{selectRotation()}{selectRotation()}}
 {\footnotesize\ttfamily int select\+Rotation (\begin{DoxyParamCaption}\item[{char $\ast$}]{color\+Piece }\end{DoxyParamCaption})}
 
-
-
-Prints the options, asks the player to select a piece rotation and updates the avaible pieces and returns the selected piece rotation. 
-
-
+Prints the options, asks the player to select a piece rotation and updates the avaible pieces and returns the selected piece rotation 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em color\+Piece} & piece color \\
 \hline
@@ -448,21 +350,13 @@ r\+: piece rotation
 
 \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\+\_\+stdin()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00049}{49}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}\label{_logic_8h_a37d6817948e584c4f3fd4a8d72ed3a1d}} 
 \index{Logic.h@{Logic.h}!updateScoreMP2@{updateScoreMP2}}
 \index{updateScoreMP2@{updateScoreMP2}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{updateScoreMP2()}{updateScoreMP2()}}
 {\footnotesize\ttfamily int update\+Score\+MP2 (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int $\ast$}]{score }\end{DoxyParamCaption})}
 
-
-
-Updates the score in Multi\+Player, counts the rwos and, if necessary, deletes them. 
-
-
+Updates the score in Multi\+Player, counts the rwos and, if necessary, deletes them 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & game map \\
 \hline
@@ -477,21 +371,13 @@ cout\+: number of rows filled with \textquotesingle{}1\textquotesingle{}
 
 \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{Fall\+All()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00372}{372}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}\label{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}} 
 \index{Logic.h@{Logic.h}!updateScoreSM@{updateScoreSM}}
 \index{updateScoreSM@{updateScoreSM}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{updateScoreSM()}{updateScoreSM()}}
 {\footnotesize\ttfamily void update\+Score\+SM (\begin{DoxyParamCaption}\item[{int}]{map\mbox{[}15\mbox{]}\mbox{[}10\mbox{]},  }\item[{int $\ast$}]{score }\end{DoxyParamCaption})}
 
-
-
-Updates the score, counts the rows and , if necessary, deletes them. 
-
-
+Updates the score, counts the rows and , if necessary, deletes them 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ out}}  & {\em map} & game map \\
 \hline
@@ -503,27 +389,15 @@ Updates the score, counts the rows and , if necessary, deletes them.
 
 \mbox{\hyperlink{_logic_8h_a16612123865a67e5000f9cd48e4f87d3}{Fall\+All()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00320}{320}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-
 \mbox{\Hypertarget{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}\label{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}} 
 \index{Logic.h@{Logic.h}!whoEnemy@{whoEnemy}}
 \index{whoEnemy@{whoEnemy}!Logic.h@{Logic.h}}
 \doxysubsubsection{\texorpdfstring{whoEnemy()}{whoEnemy()}}
 {\footnotesize\ttfamily int who\+Enemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Shows options and returns how many players will play. 
-
-\begin{DoxyReturn}{Returns}
+Shows options and returns how many players will play \begin{DoxyReturn}{Returns}
 p\+: 0 back Main Menu, 1\+: 1 vs PC, 2\+: 1 vs 1 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{_extra_8h_acd245ad1ccba04eebd92376ea44cb41d}{clean\+\_\+stdin()}} 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{_logic_8h_source_l00467}{467}} of file \mbox{\hyperlink{_logic_8h_source}{Logic.\+h}}.
-

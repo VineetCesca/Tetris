@@ -1,4 +1,10 @@
 /**
+ * @file Print.h
+ * @brief Prints out everything to play a match
+ * @author Vineet
+ */
+
+/**
  * Prints out the map (SinglePlayer)
  * @param[in] map game map
  * @see centerText()

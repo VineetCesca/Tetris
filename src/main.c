@@ -1,3 +1,57 @@
+/**
+ * @file main.c
+ * @brief wrap all the things
+ * @author Vineet
+ * @mainpage X-Tetris
+ * @section Intro
+ * X-Tetris game implementantion in ANSI C
+ * @section Dependencies
+ *
+ * <ul>
+ *      <li>MinGW (for windows users)</li>
+ * </ul>
+ *
+ * @section Installation
+ * <ol>
+ *      <li>
+ *          Download the repository
+ *          <br />
+ *          <code>git clone https://github.com/VineetCesca/Tetris</code>
+ *      </li>
+ *      <li>
+ *          Install every dependecies
+ *      </li>
+ *      <li>
+ *          Go into the repository folder and then change directory
+ *          <br />
+ *          <code>cd src</code>
+ *      </li>
+ *      <li>
+ *          Compile and run the game
+ *          <br />
+ *          <code>gcc main.c -o main -ansi && ./main</code>
+ *      </li>
+ * </ol>
+ *
+ * @section Commands
+ * Here the complete list of commands for the game. First of all you can select the game mode by input: <code>1</code> SinglePlayer, <code>2</code> MultiPlayer, <code>3</code> Game Instructions and <code>0</code> Quit.
+ * If you have selected Multiplayer Game Mode, you need to specify how many players are going to play by input: <code>1</code> 1 vs PC, <code>2</code> 1 vs 1, <code>0</code> Main Menu.
+ * Once you are playing a match, when it's your turn, you have to select a tetramino by input: <code>0</code> tetramino T, <code>1</code> tetramino Z , <code>2</code> tetramino I, <code>3</code> tetramino L, <code>4</code> tetramino Lr and <code>5</code> tetramino O.
+ * Then you need to specify the rotation by input: <code>0</code>, <code>1>/code>, <code>2</code>, <code>3</code>.
+ * You need to follow the Legenda to understand the exact tetramino shape and rotation you are choosing.
+ * When you join the game, here is a list of complete commands:
+ *
+ * <ul>
+ *      <li><code>W</code>: rotate tetramino</li>
+ *      <li><code>A</code>: move left</li>
+ *      <li><code>D</code>: move right</li>
+ *      <li><code>S</code>: move down</li>
+ *      <li><code>Q</code>: Release tetramino, make it fall</li>
+ * </ul>
+ *
+ * The commands are the <b>same</b> for both of the two game modes avaible.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -38,13 +92,13 @@ char *color1 = "yellow";
 char *color2 = "purple";
 
 
-#include "TextSettings.h"
-#include "Initializer.h"
-#include "DrawPieces.h"
-#include "Extra.h"
-#include "Print.h"
-#include "Logic.h"
-#include "Cut.h"
+#include "include/TextSettings.h"
+#include "include/Initializer.h"
+#include "include/DrawPieces.h"
+#include "include/Extra.h"
+#include "include/Print.h"
+#include "include/Logic.h"
+#include "include/Cut.h"
 
 /**
  * Main Function, contains the main game loop

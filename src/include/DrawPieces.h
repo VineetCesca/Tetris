@@ -1,3 +1,9 @@
+/**
+ * @file DrawPieces.h
+ * @brief Draw or delete all the tetramini inside the map (each one with all its rotations)
+ * @author Vineet
+ */
+
 /* T, T1, T2, T3 */
 
 /*  ***  */

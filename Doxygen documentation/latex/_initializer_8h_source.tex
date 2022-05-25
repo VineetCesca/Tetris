@@ -1,27 +1,28 @@
-\hypertarget{_initializer_8h_source}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/\+Initializer.h}
+\hypertarget{_initializer_8h_source}{}\doxysection{Initializer.\+h}
+\label{_initializer_8h_source}\index{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/X-\/Tetris/src/include/Initializer.h@{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/X-\/Tetris/src/include/Initializer.h}}
 \mbox{\hyperlink{_initializer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00001}00001 }
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00005}\mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{00005}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{initMap}}(\textcolor{keywordtype}{int} map[15][10])\{}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00006}00006     \textcolor{keywordtype}{int} i, j;}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00007}00007     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}}; i++)\{}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00008}00008         \textcolor{keywordflow}{for}(j = 0; j < \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}}; j++)\{}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00009}00009             map[i][j] = 0;}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00010}00010         \}}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00011}00011     \}}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00012}00012 \}}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00013}00013 }
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00022}\mbox{\hyperlink{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}{00022}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}{setCursor}}(\textcolor{keywordtype}{int} *x, \textcolor{keywordtype}{int} *y, \textcolor{keywordtype}{int} vx, \textcolor{keywordtype}{int} vy)\{}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00023}00023     *x = vx;}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00024}00024     *y = vy;}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00025}00025 \}}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00026}00026 }
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00034}\mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{00034}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{initAvaiblePieces}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}, \textcolor{keywordtype}{int} limit)\{ \textcolor{comment}{/* T  Z  I  L Lr  O */}}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00035}00035     \textcolor{keywordtype}{int} i;                                    \textcolor{comment}{/* 0  1  2  3  4  5 */}}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00036}00036     \textcolor{keywordflow}{for}(i = 0; i < \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}}; i++)\{}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00037}00037         pieces[i] = limit;}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00038}00038     \}}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00039}00039 \}}
-\DoxyCodeLine{\Hypertarget{_initializer_8h_source_l00040}00040 }
+\DoxyCodeLine{1 }
+\DoxyCodeLine{5 \textcolor{keywordtype}{void} \mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{initMap}}(\textcolor{keywordtype}{int} map[15][10])\{}
+\DoxyCodeLine{6     \textcolor{keywordtype}{int} i, j;}
+\DoxyCodeLine{7     \textcolor{keywordflow}{for}(i = 0; i < height; i++)\{}
+\DoxyCodeLine{8         \textcolor{keywordflow}{for}(j = 0; j < width; j++)\{}
+\DoxyCodeLine{9             map[i][j] = 0;}
+\DoxyCodeLine{10         \}}
+\DoxyCodeLine{11     \}}
+\DoxyCodeLine{12 \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{void} \mbox{\hyperlink{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}{setCursor}}(\textcolor{keywordtype}{int} *x, \textcolor{keywordtype}{int} *y, \textcolor{keywordtype}{int} vx, \textcolor{keywordtype}{int} vy)\{}
+\DoxyCodeLine{23     *x = vx;}
+\DoxyCodeLine{24     *y = vy;}
+\DoxyCodeLine{25 \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} \mbox{\hyperlink{_initializer_8h_aa28b44bd9035c5570c5b36df4707657e}{initAvaiblePieces}}(\textcolor{keywordtype}{int} *pieces, \textcolor{keywordtype}{int} dim, \textcolor{keywordtype}{int} limit)\{ \textcolor{comment}{/* T  Z  I  L Lr  O */}}
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} i;                                    \textcolor{comment}{/* 0  1  2  3  4  5 */}}
+\DoxyCodeLine{36     \textcolor{keywordflow}{for}(i = 0; i < dim; i++)\{}
+\DoxyCodeLine{37         pieces[i] = limit;}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
 
 \end{DoxyCode}

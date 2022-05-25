@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>X-Tetris: C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione_e_Laboratorio/ProgettoEsame_ANSI_C/Tetris/Extra.h Source File</title>
+<title>X-Tetris: C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione_e_Laboratorio/ProgettoEsame_ANSI_C/X-Tetris/src/include/Extra.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,9 +20,8 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="Logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">X-Tetris<span id="projectnumber">&#160;Final02</span>
+   <div id="projectname">X-Tetris<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">X-Tetris</div>
   </td>
@@ -48,7 +47,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -63,8 +61,13 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione_e_Laboratorio/ProgettoEsame_ANSI_C/Tetris/Extra.h</div></div>
+  <div class="headertitle"><div class="title">Extra.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="_extra_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
@@ -135,8 +138,8 @@ $(function() {
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">/* self-made */</span></div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="_extra_8h.html#ade365d5befabc715613a08d8248d5aea">   96</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_extra_8h.html#ade365d5befabc715613a08d8248d5aea">fillOne</a>(<span class="keywordtype">int</span> map[15][10]){</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">int</span> i, j;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">for</span> (i = 1; i &lt; <a class="code hl_variable" href="main_8c.html#ad13e9131f5062934438fa82334e4b2ee">height</a> - 1; i++){</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">for</span>(j = 1; j &lt; <a class="code hl_variable" href="main_8c.html#a837aabdd54757cb86d0f66387511753f">width</a> - 1; j++){</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">for</span> (i = 1; i &lt; height - 1; i++){</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">for</span>(j = 1; j &lt; width - 1; j++){</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            map[i][j] = 1;</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        }</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
@@ -144,14 +147,12 @@ $(function() {
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="ttc" id="a_extra_8h_html_aa294b49bfcc17cf4b490fb020e359851"><div class="ttname"><a href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY</a></div><div class="ttdeci">void gotoXY(int x, int y)</div><div class="ttdoc">Moves the cursor at (x, y) coords (windows.h)</div><div class="ttdef"><b>Definition:</b> <a href="_extra_8h_source.html#l00008">Extra.h:8</a></div></div>
-<div class="ttc" id="a_extra_8h_html_aa38551f4c09a2a9e3b9a08715d986973"><div class="ttname"><a href="_extra_8h.html#aa38551f4c09a2a9e3b9a08715d986973">delay</a></div><div class="ttdeci">void delay(float number_of_seconds)</div><div class="ttdoc">Waits for a certain number of seconds.</div><div class="ttdef"><b>Definition:</b> <a href="_extra_8h_source.html#l00025">Extra.h:25</a></div></div>
-<div class="ttc" id="a_extra_8h_html_ab31643a884d56d21baa151f155d93b26"><div class="ttname"><a href="_extra_8h.html#ab31643a884d56d21baa151f155d93b26">loadGame</a></div><div class="ttdeci">void loadGame()</div><div class="ttdoc">Prints out the loading bar.</div><div class="ttdef"><b>Definition:</b> <a href="_extra_8h_source.html#l00041">Extra.h:41</a></div></div>
-<div class="ttc" id="a_extra_8h_html_acd245ad1ccba04eebd92376ea44cb41d"><div class="ttname"><a href="_extra_8h.html#acd245ad1ccba04eebd92376ea44cb41d">clean_stdin</a></div><div class="ttdeci">int clean_stdin()</div><div class="ttdoc">Useful to prevent input mistakes (wrong data type)</div><div class="ttdef"><b>Definition:</b> <a href="_extra_8h_source.html#l00085">Extra.h:85</a></div></div>
-<div class="ttc" id="a_extra_8h_html_ade365d5befabc715613a08d8248d5aea"><div class="ttname"><a href="_extra_8h.html#ade365d5befabc715613a08d8248d5aea">fillOne</a></div><div class="ttdeci">void fillOne(int map[15][10])</div><div class="ttdoc">Fills the map with '1'.</div><div class="ttdef"><b>Definition:</b> <a href="_extra_8h_source.html#l00096">Extra.h:96</a></div></div>
-<div class="ttc" id="a_extra_8h_html_ae3629e6aee96848a9799d6706b42aa3d"><div class="ttname"><a href="_extra_8h.html#ae3629e6aee96848a9799d6706b42aa3d">closeGame</a></div><div class="ttdeci">void closeGame()</div><div class="ttdoc">Shutting down bar while closing the game.</div><div class="ttdef"><b>Definition:</b> <a href="_extra_8h_source.html#l00065">Extra.h:65</a></div></div>
-<div class="ttc" id="amain_8c_html_a837aabdd54757cb86d0f66387511753f"><div class="ttname"><a href="main_8c.html#a837aabdd54757cb86d0f66387511753f">width</a></div><div class="ttdeci">const int width</div><div class="ttdoc">Map width.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00014">main.c:14</a></div></div>
-<div class="ttc" id="amain_8c_html_ad13e9131f5062934438fa82334e4b2ee"><div class="ttname"><a href="main_8c.html#ad13e9131f5062934438fa82334e4b2ee">height</a></div><div class="ttdeci">const int height</div><div class="ttdoc">Map height.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00010">main.c:10</a></div></div>
+<div class="ttc" id="a_extra_8h_html_aa294b49bfcc17cf4b490fb020e359851"><div class="ttname"><a href="_extra_8h.html#aa294b49bfcc17cf4b490fb020e359851">gotoXY</a></div><div class="ttdeci">void gotoXY(int x, int y)</div><div class="ttdef"><b>Definition:</b> Extra.h:8</div></div>
+<div class="ttc" id="a_extra_8h_html_aa38551f4c09a2a9e3b9a08715d986973"><div class="ttname"><a href="_extra_8h.html#aa38551f4c09a2a9e3b9a08715d986973">delay</a></div><div class="ttdeci">void delay(float number_of_seconds)</div><div class="ttdef"><b>Definition:</b> Extra.h:25</div></div>
+<div class="ttc" id="a_extra_8h_html_ab31643a884d56d21baa151f155d93b26"><div class="ttname"><a href="_extra_8h.html#ab31643a884d56d21baa151f155d93b26">loadGame</a></div><div class="ttdeci">void loadGame()</div><div class="ttdef"><b>Definition:</b> Extra.h:41</div></div>
+<div class="ttc" id="a_extra_8h_html_acd245ad1ccba04eebd92376ea44cb41d"><div class="ttname"><a href="_extra_8h.html#acd245ad1ccba04eebd92376ea44cb41d">clean_stdin</a></div><div class="ttdeci">int clean_stdin()</div><div class="ttdef"><b>Definition:</b> Extra.h:85</div></div>
+<div class="ttc" id="a_extra_8h_html_ade365d5befabc715613a08d8248d5aea"><div class="ttname"><a href="_extra_8h.html#ade365d5befabc715613a08d8248d5aea">fillOne</a></div><div class="ttdeci">void fillOne(int map[15][10])</div><div class="ttdef"><b>Definition:</b> Extra.h:96</div></div>
+<div class="ttc" id="a_extra_8h_html_ae3629e6aee96848a9799d6706b42aa3d"><div class="ttname"><a href="_extra_8h.html#ae3629e6aee96848a9799d6706b42aa3d">closeGame</a></div><div class="ttdeci">void closeGame()</div><div class="ttdef"><b>Definition:</b> Extra.h:65</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,41 +1,54 @@
-\hypertarget{main_8c}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+Tetris/main.c File Reference}
-\label{main_8c}\index{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/Tetris/main.c@{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/Tetris/main.c}}
+\hypertarget{main_8c}{}\doxysection{C\+:/\+Users/vinee/\+One\+Drive/\+Desktop/\+Uni/\+Programmazione\+\_\+e\+\_\+\+Laboratorio/\+Progetto\+Esame\+\_\+\+ANSI\+\_\+\+C/\+X-\/\+Tetris/src/main.c File Reference}
+\label{main_8c}\index{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/X-\/Tetris/src/main.c@{C:/Users/vinee/OneDrive/Desktop/Uni/Programmazione\_e\_Laboratorio/ProgettoEsame\_ANSI\_C/X-\/Tetris/src/main.c}}
+
+
+wrap all the things  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$conio.\+h$>$}\newline
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include $<$windows.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}Text\+Settings.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Initializer.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Draw\+Pieces.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Extra.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Print.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Logic.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}Cut.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Text\+Settings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Initializer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Draw\+Pieces.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Extra.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Print.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Logic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}include/\+Cut.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
-\begin{DoxyCompactList}\small\item\em Main Function, contains the main game loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 const int \mbox{\hyperlink{main_8c_ad13e9131f5062934438fa82334e4b2ee}{height}} = 15
-\begin{DoxyCompactList}\small\item\em Map height. \end{DoxyCompactList}\item 
+\item 
 const int \mbox{\hyperlink{main_8c_a837aabdd54757cb86d0f66387511753f}{width}} = 10
-\begin{DoxyCompactList}\small\item\em Map width. \end{DoxyCompactList}\item 
+\item 
 const int \mbox{\hyperlink{main_8c_afe4f94e033c0d1c57d407b4338a64b33}{dim}} = 6
-\begin{DoxyCompactList}\small\item\em Number of pieces and avaible array\textquotesingle{}s size. \end{DoxyCompactList}\item 
+\item 
 char $\ast$ \mbox{\hyperlink{main_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}{color\+SM}} = \char`\"{}blue\char`\"{}
-\begin{DoxyCompactList}\small\item\em Map color in Single\+Player. \end{DoxyCompactList}\item 
+\item 
 char $\ast$ \mbox{\hyperlink{main_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}{color\+SMPiece}} = \char`\"{}green\char`\"{}
-\begin{DoxyCompactList}\small\item\em Piece color in Single\+Player. \end{DoxyCompactList}\item 
+\item 
 char $\ast$ \mbox{\hyperlink{main_8c_a7877c058e57d6f338d6864342ba596a7}{color\+MP}} = \char`\"{}red\char`\"{}
-\begin{DoxyCompactList}\small\item\em Map color in Multi\+Player. \end{DoxyCompactList}\item 
+\item 
 char $\ast$ \mbox{\hyperlink{main_8c_ad4b5e2b0713d831828332485842e91f1}{color1}} = \char`\"{}yellow\char`\"{}
-\begin{DoxyCompactList}\small\item\em Player1 piece color. \end{DoxyCompactList}\item 
+\item 
 char $\ast$ \mbox{\hyperlink{main_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}} = \char`\"{}purple\char`\"{}
-\begin{DoxyCompactList}\small\item\em Player2 or PC piece color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+wrap all the things 
+
+\begin{DoxyAuthor}{Author}
+Vineet 
+\end{DoxyAuthor}
 
 
 \doxysubsection{Function Documentation}
@@ -45,11 +58,7 @@ char $\ast$ \mbox{\hyperlink{main_8c_a7662939be01f9535a08f5a53d83d6c01}{color2}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-
-
-Main Function, contains the main game loop. 
-
-
+Main Function, contains the main game loop 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em void} & \\
 \hline
@@ -57,66 +66,62 @@ Main Function, contains the main game loop.
 \hline
 \end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{_extra_8h_ab31643a884d56d21baa151f155d93b26}{load\+Game()}} 
+load\+Game() 
 
-\mbox{\hyperlink{_cut_8h_ab35e175ef92b0a09d11eade80c803c15}{intro()}} 
+intro() 
 
-\mbox{\hyperlink{_cut_8h_ac6cf1cc8abe38959f3638c4b6d791e0d}{init\+Game()}} 
+init\+Game() 
 
-\mbox{\hyperlink{_initializer_8h_aae120d7676c71a9758569bcc70aa6678}{set\+Cursor()}} 
+set\+Cursor() 
 
-\mbox{\hyperlink{_cut_8h_ac60705307c9228dac45d51d603e9fb77}{init\+Score()}} 
+init\+Score() 
 
-\mbox{\hyperlink{_logic_8h_a0260142fa170a80c2fdb27c4a94c4536}{update\+Score\+SM()}} 
+update\+Score\+SM() 
 
-\mbox{\hyperlink{_cut_8h_a1515458ebe31caafde5c67c95e8cb9ff}{intro\+SDynamic()}} 
+intro\+SDynamic() 
 
-\mbox{\hyperlink{_cut_8h_a31d08c0c40d8f48175b75e48f8412c8b}{select\+Process()}} 
+select\+Process() 
 
-\mbox{\hyperlink{_cut_8h_a1d4d532ae9ededc1d84ef89e8fc3f992}{move\+Piece()}} 
+move\+Piece() 
 
-\mbox{\hyperlink{_logic_8h_ac993c9fce28666b89ab798f7c7e79c32}{check\+End\+Game()}} 
+check\+End\+Game() 
 
-\mbox{\hyperlink{_text_settings_8h_a8d6d4d62e9c7c82b10b30b093e80b248}{setcolor\+Text()}} 
+setcolor\+Text() 
 
-\mbox{\hyperlink{_logic_8h_afa4b35c44b2a4924a676ddc2aa408f95}{who\+Enemy()}} 
+who\+Enemy() 
 
-\mbox{\hyperlink{_cut_8h_a3de115086c75040b94838386ba16902b}{init\+Game\+MP()}} 
+init\+Game\+MP() 
 
-\mbox{\hyperlink{_cut_8h_a18a2aae538ddaae3f0e111969fd20111}{ask\+Name()}} 
+ask\+Name() 
 
-\mbox{\hyperlink{_cut_8h_aceee05f2d5cc88b14ebf0fc4f714b8d3}{game\+One\+VSPC()}} 
+game\+One\+VSPC() 
 
-\mbox{\hyperlink{_cut_8h_ae0a29bd1d44e72663fe0c6f9ec04bc6d}{game\+One\+VSOne()}} 
+game\+One\+VSOne() 
 
-\mbox{\hyperlink{_print_8h_a5564a74283c7de4315aa6c31e3a18cd1}{print\+Title()}} 
+print\+Title() 
 
-\mbox{\hyperlink{_print_8h_ad5deb4d6da93418db2c13080bae46bdc}{print\+Move\+Menu()}} 
+print\+Move\+Menu() 
 
-\mbox{\hyperlink{_text_settings_8h_a0916589349f2d883bef905033b33278c}{salta\+Righe()}} 
+salta\+Righe() 
 
-\mbox{\hyperlink{_extra_8h_aa294b49bfcc17cf4b490fb020e359851}{goto\+XY()}} 
+goto\+XY() 
 
-\mbox{\hyperlink{_print_8h_ae77770b22209ba7e20e82bbe37cc2b25}{print\+Legenda\+Pieces()}} 
+print\+Legenda\+Pieces() 
 
-\mbox{\hyperlink{_print_8h_a5c0024f7636f893e7c57e72c6f0e7f93}{print\+Legenda\+All\+Pieces()}} 
+print\+Legenda\+All\+Pieces() 
 
-\mbox{\hyperlink{_text_settings_8h_af668614eb7df53d77d3891b7cc514eb1}{center\+Text()}} 
+center\+Text() 
 
-\mbox{\hyperlink{_initializer_8h_a3c193f4a435c0a6e3c521047d5c56a6d}{init\+Map()}} 
+init\+Map() 
 
-\mbox{\hyperlink{_extra_8h_ade365d5befabc715613a08d8248d5aea}{fill\+One()}} 
+fill\+One() 
 
-\mbox{\hyperlink{_print_8h_a2875dfc0ecfe0639e759d9814d48f52e}{print\+Maps()}} 
+print\+Maps() 
 
-\mbox{\hyperlink{_extra_8h_aa38551f4c09a2a9e3b9a08715d986973}{delay()}} 
+delay() 
 
-\mbox{\hyperlink{_extra_8h_ae3629e6aee96848a9799d6706b42aa3d}{close\+Game()}} 
+close\+Game() 
 \end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00082}{82}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
 
 
 \doxysubsection{Variable Documentation}
@@ -126,109 +131,46 @@ Definition at line \mbox{\hyperlink{main_8c_source_l00082}{82}} of file \mbox{\h
 \doxysubsubsection{\texorpdfstring{color1}{color1}}
 {\footnotesize\ttfamily char$\ast$ color1 = \char`\"{}yellow\char`\"{}}
 
-
-
-Player1 piece color. 
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00034}{34}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
-\mbox{\Hypertarget{main_8c_a7662939be01f9535a08f5a53d83d6c01}\label{main_8c_a7662939be01f9535a08f5a53d83d6c01}} 
+Player1 piece color \mbox{\Hypertarget{main_8c_a7662939be01f9535a08f5a53d83d6c01}\label{main_8c_a7662939be01f9535a08f5a53d83d6c01}} 
 \index{main.c@{main.c}!color2@{color2}}
 \index{color2@{color2}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{color2}{color2}}
 {\footnotesize\ttfamily char$\ast$ color2 = \char`\"{}purple\char`\"{}}
 
-
-
-Player2 or PC piece color. 
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00038}{38}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
-\mbox{\Hypertarget{main_8c_a7877c058e57d6f338d6864342ba596a7}\label{main_8c_a7877c058e57d6f338d6864342ba596a7}} 
+Player2 or PC piece color \mbox{\Hypertarget{main_8c_a7877c058e57d6f338d6864342ba596a7}\label{main_8c_a7877c058e57d6f338d6864342ba596a7}} 
 \index{main.c@{main.c}!colorMP@{colorMP}}
 \index{colorMP@{colorMP}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{colorMP}{colorMP}}
 {\footnotesize\ttfamily char$\ast$ color\+MP = \char`\"{}red\char`\"{}}
 
-
-
-Map color in Multi\+Player. 
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00030}{30}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
-\mbox{\Hypertarget{main_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}\label{main_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}} 
+Map color in Multi\+Player \mbox{\Hypertarget{main_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}\label{main_8c_ae2efb4c043d87acd5ad8c76ed709e6f3}} 
 \index{main.c@{main.c}!colorSM@{colorSM}}
 \index{colorSM@{colorSM}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{colorSM}{colorSM}}
 {\footnotesize\ttfamily char$\ast$ color\+SM = \char`\"{}blue\char`\"{}}
 
-
-
-Map color in Single\+Player. 
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00022}{22}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
-\mbox{\Hypertarget{main_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}\label{main_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}} 
+Map color in Single\+Player \mbox{\Hypertarget{main_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}\label{main_8c_ac9e5a4d0ead02f49e351a6cad6d2067a}} 
 \index{main.c@{main.c}!colorSMPiece@{colorSMPiece}}
 \index{colorSMPiece@{colorSMPiece}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{colorSMPiece}{colorSMPiece}}
 {\footnotesize\ttfamily char$\ast$ color\+SMPiece = \char`\"{}green\char`\"{}}
 
-
-
-Piece color in Single\+Player. 
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00026}{26}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
-\mbox{\Hypertarget{main_8c_afe4f94e033c0d1c57d407b4338a64b33}\label{main_8c_afe4f94e033c0d1c57d407b4338a64b33}} 
+Piece color in Single\+Player \mbox{\Hypertarget{main_8c_afe4f94e033c0d1c57d407b4338a64b33}\label{main_8c_afe4f94e033c0d1c57d407b4338a64b33}} 
 \index{main.c@{main.c}!dim@{dim}}
 \index{dim@{dim}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{dim}{dim}}
 {\footnotesize\ttfamily const int dim = 6}
 
-
-
-Number of pieces and avaible array\textquotesingle{}s size. 
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00018}{18}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
-\mbox{\Hypertarget{main_8c_ad13e9131f5062934438fa82334e4b2ee}\label{main_8c_ad13e9131f5062934438fa82334e4b2ee}} 
+Number of pieces and avaible array\textquotesingle{}s size \mbox{\Hypertarget{main_8c_ad13e9131f5062934438fa82334e4b2ee}\label{main_8c_ad13e9131f5062934438fa82334e4b2ee}} 
 \index{main.c@{main.c}!height@{height}}
 \index{height@{height}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{height}{height}}
 {\footnotesize\ttfamily const int height = 15}
 
-
-
-Map height. 
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00010}{10}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
-\mbox{\Hypertarget{main_8c_a837aabdd54757cb86d0f66387511753f}\label{main_8c_a837aabdd54757cb86d0f66387511753f}} 
+Map height \mbox{\Hypertarget{main_8c_a837aabdd54757cb86d0f66387511753f}\label{main_8c_a837aabdd54757cb86d0f66387511753f}} 
 \index{main.c@{main.c}!width@{width}}
 \index{width@{width}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{width}{width}}
 {\footnotesize\ttfamily const int width = 10}
 
-
-
-Map width. 
-
-
-
-Definition at line \mbox{\hyperlink{main_8c_source_l00014}{14}} of file \mbox{\hyperlink{main_8c_source}{main.\+c}}.
-
+Map width 

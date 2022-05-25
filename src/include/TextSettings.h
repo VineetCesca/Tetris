@@ -1,4 +1,10 @@
 /**
+ * @file TextSettings.h
+ * @brief Lets some text changes
+ * @author Vineet
+ */
+
+/**
  * Put the next text printing in the middle of the current line
  * @param[in] n a value to set the text position
  */

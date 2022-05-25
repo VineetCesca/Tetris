@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['print_2eh_0',['Print.h',['../_print_8h.html',1,'']]]
+  ['textsettings_2eh_0',['TextSettings.h',['../_text_settings_8h.html',1,'']]]
 ];
